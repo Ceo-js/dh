@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <title></title>
+      
+      <link rel="icon" href="src/pix/logo.svg" type="svg+xml">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://globals.onrender.com/global-dh.css">
+      <script src="https://globals.onrender.com/global.js" defer></script>
+   </head>
+   <body>
+      <!-- <AppBar>
+         <AppBar-Body>
+            <AppBar-Brand></AppBar-Brand>
+            <t1></t1>
+            <AppBar-Options></AppBar-Options>
+         </AppBar-Body>
+      </AppBar> -->
+
+      <top-bar>
+         Módulo:  9 - React
+      </top-bar>
+
+      <modulo n="9">
+         <rotas-no-react>
+            <banner>Rotas no React</banner>
+
+            <O-que-vamos-ver-na-aula>
+               <h3>O que vamos ver na aula?</h3>
+               <display>
+                  <h1>O que vamos ver nesta aula?</h1>
+
+                  <p>É hora de colocar asas no carrinho e fazê-lo voar!</p>
+                  <p>
+                     Até agora, tudo o que construímos no React teve que ser renderizado no mesmo componente, mas se quiséssemos mostrar outro conteúdo, como poderíamos fazer isso?
+                  </p>
+                  <p>
+                     O que veremos a seguir nos ajudará nesse sentido. A biblioteca React Router nos dá a possibilidade de renderizar um ou outro componente dependendo do caminho que acessamos na barra de endereço do navegador.
+                  </p>
+                  <p>Ao final desta aula seremos capazes de:</p>
+                  <ul>
+                     <li>
+                        <p>Reconhecer a diferença entre as rotas React e as rotas da aplicação Express.</p>
+                     </li>
+                     <li>
+                        <p>
+                           Implementar um sistema de roteamento para um aplicativo React que permita a renderização de diferentes componentes.
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                           Gerar uma "404 not found" quando não houver componentes a serem exibidos em um determinado caminho.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Renderizar um componente dinamicamente a partir de um fluxo parametrizado.</p>
+                     </li>
+                  </ul>
+                  <h4>
+                     Embora o React não precise da biblioteca React Router para funcionar, é importante
+                     esclarecer que esta é uma das bibliotecas mais comumente usadas no ambiente de
+                     desenvolvimento de aplicativos front-end com React. Portanto, saber como funciona
+                     e como implementá-lo é um ponto positivo fundamental.
+                  </h4>
+               </display>
+            </O-que-vamos-ver-na-aula>
+
+            <spa>
+               <h3>SPA</h3>
+               <display>
+                  <h1>SPA, o que é isso?</h1>
+
+                  <p>
+                     SPA ou também chamado de Single Page Application é um aplicativo da web no qual há apenas um único ponto de entrada, geralmente um arquivo index.html.
+                  </p>
+                  <p>
+                     Em um SPA não há outro arquivo HTML que possa ser acessado separadamente, pois todo o conteúdo do aplicativo será carregado e processado no mesmo arquivo index.html.
+                  </p>
+                  <p>
+                     Dentro deste contexto, mesmo que tenhamos apenas um arquivo, ainda temos a possibilidade de termos várias views que serão trocadas em sua exibição, produzindo assim o efeito de que existem várias "páginas" ou "arquivos" de conteúdo dentro da aplicação, quando a realidade é que tudo está sendo mostrado a partir de um único arquivo.
+                  </p>
+                  <p>
+                     Um SPA oferece, por sua vez, uma experiência de usuário bastante agradável e fluida. Por não ter que fazer upload de um arquivo diferente, o upload do conteúdo será muito mais rápido. E é aqui que o React Virtual DOM assume um papel real, graças à sua existência será possível identificar quais os conteúdos da view que devem ser alterados e quais os que devem ser mantidos.
+                  </p>
+                  <p>
+                     O conceito de SPA é relativamente novo e pode ser implementado graças a bibliotecas como o React. E faz ainda mais sentido ter roteadores de aplicativos que permitem escolher dinamicamente qual componente deve ser exibido na tela de acordo com o caminho na barra de aplicativos do navegador.
+                  </p>
+
+                  <iframe src="https://view.genial.ly/622a34e0f552c700187c5574" frameborder="0"></iframe>
+               </display>
+            </spa>
+
+            <Instalando-React-Router-Dom>
+               <h3>Instalando React Router Dom</h3>
+               <display>
+                  <h1>Instalando React Router DOM</h1>
+
+                  <p>
+                     Para permitir que nosso aplicativo React se comporte como um SPA real, teremos que instalar uma biblioteca adicional que nos permite gerenciar o sistema de roteamento de forma otimizada e inteligente, e assim ser capaz de renderizar os componentes da aplicação seletivamente dependendo da rota presente na barra de endereços do navegador.
+                  </p>
+                  <p>Vamos ver no vídeo a seguir como realizar esse processo simples.</p>
+
+                  <img src="./Módulo 9 - React/Instalação-do-React-Router-DOM.jpg" width="100%" alt="">
+               </display>
+            </Instalando-React-Router-Dom>
+
+            <Que-componentes-o-React-Router-nos-prove>
+               <h3>Que componentes o React Router nos prove</h3>
+               <display>
+                  <h1></h1>
+               </display>
+            </Que-componentes-o-React-Router-nos-prove>
+
+            <componente-especifico>
+               <h3>componente específico</h3>
+               <display>
+                  <h1></h1>
+               </display>
+            </componente-especifico>
+
+
+            <switch-de-rotas-e-componentes>
+               <h3>Como fazer switch de rotas e componentes</h3>
+               <display>
+                  <h1></h1>
+               </display>
+            </switch-de-rotas-e-componentes>
+
+            <rotas-parametrizadas>
+               <h3>Como trabalhar com rotas parametrizadas</h3>
+               <display>
+                  <h1></h1>
+               </display>
+            </rotas-parametrizadas>
+
+            <ao-vivo>
+               <h3>Para classe ao vivo</h3>
+               <display>
+                  <h1></h1>
+               </display>   
+            </ao-vivo>
+
+            <Ligando-os-componentes-da-aplicacao-ao-Vivo>
+               <h3>Ligando os componentes da aplicação [ao Vivo]</h3>
+               <display>
+                  <h1></h1>
+               </display>
+            </Ligando-os-componentes-da-aplicacao-ao-Vivo>
+
+
+         </rotas-no-react>
+
+         
+
+            
+            <!-- 
+               quiz>header>h2{Quiz}+question>h4^^home>header>p[n]^choices>label[choice]>input[type="radio"]+t^^res>p
+               <questions>
+               <header>
+                  <h2>Quiz</h2>
+                  <question>
+                     <h4></h4>
+                  </question>
+               </header>
+               <home>
+                  <header>
+                     <p n="1"></p>
+                  </header>
+                  <choices>
+                     <label choice="">
+                        <input type="radio">
+                        <t></t>
+                     </label>
+                  </choices>
+               </home>
+               
+            </questions> 
+         -->
+      </modulo>
+
+   </body>
+</html>
+
+<style>
+</style>
+
+<script co-de>
+   /* == [ code template ] == == == == == == == == == */
+   let codeTemplate = `
+   <style>
+      code {
+         display: block;
+         background: #212329;
+         position: relative;
+         min-height: calc( 36px + 48px );
+         overflow: hidden;
+         border-radius: 7px;
+      }
+      code > top-bar {
+         display: block;
+         background: #16181c;
+         position: absolute;
+         top: 0; left: 0;
+         width: 100%;
+         height: 36px;
+         padding: 2px;
+      }
+      code > side-bar {
+         display: block;
+         background: #1b1d22;
+         position: absolute;
+         top: calc( 36px + 4px ); left: 0;
+         width: 48px;
+         height: calc( 100% - 40px );
+         padding: 2px 4px;
+      }
+      code > bg {
+         display: block;
+         position: relative;
+         top: 36px; right: 0;
+         margin: 0 0 0 auto;
+         padding: 10px 0;
+         width: calc( 98% - 48px );
+         height: calc( 100% - 36px );
+         height: 100;
+         color: #eee;
+      }
+   </style>
+   <code>
+      <top-bar></top-bar>
+      <side-bar></side-bar>
+      <bg></bg>
+   </code>
+   `;
+
+   class Code extends HTMLElement {
+      constructor() {
+         super();
+         let code = document.createElement( "template" );
+         code.innerHTML = codeTemplate;
+         this.attachShadow( { mode: "open" } );
+         this.shadowRoot.append( code.content.cloneNode( true ) );
+         this.shadowRoot.querySelector( "bg" ).innerHTML = this.innerHTML;
+         this.shadowRoot.querySelector( "bg" ).style.height = this.getAttribute( "h" );
+
+      } 
+      connectedCallback() {
+         this.render();
+      }
+      render() {
+      }
+   }
+   window.customElements.define( "co-de", Code );
+</script>
