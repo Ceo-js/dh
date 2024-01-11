@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+</head>
+<body>
+    <app-bar></app-bar>
+    <side-bar></side-bar>
+    <home-page>
+        <post>
+            <post-home>
+                <overlay>
+                <post-header>
+                    <t1>Relações N:M</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        "Um ator trabalha em muitos filmes e um filme tem muitos atores."
+                        <br><br>
+                        Este é o contexto tradicional de relacionamentos muitos-para-muitos ou também chamadas de N para M.
+                        <br><br>
+                        Esse tipo específico de relacionamento armazena dados relacionados em uma tabela intermediária, também chamada de tabela dinâmica. Mas, como podemos, a partir do Sequelize, acessar os dados da referida tabela?
+                        <br><br>
+                        Essa resposta é justamente aquela que vamos resolver no próximo átomo do vídeo, então prepare um lápis e papel, tome nota e fique atento aos conceitos que veremos a seguir.
+                    </p>
+                    <video src="06 - Sequelize - Relacionamentos e CRUD completo/03 - Relações NM/Relações N_M.mp4"></video>
+                </post-body>
+                </overlay>
+            </post-home>
+            <iframe src="06 - Sequelize - Relacionamentos e CRUD completo/03 - Relações NM/pdf-Relações N_M.html"display frameborder="0"></iframe>
+        </post>
+        <post>
+            <post-home>
+                <overlay>
+                <post-header>
+                    <t1>Exercício 01</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        No MySQL, ao indicar relacionamentos muitos para muitos, é necessário criar uma tabela dinâmica. Algo semelhante acontece com Sequelize. Para relacionar dois models por meio da relação belongsToMany, devemos primeiro criar um model "dinâmico".
+                        <br><br>
+                        Neste exemplo, queremos relacionar os models de filme e ator. Para isso, vamos criar o modelo FilmeAtor. Como na criação de qualquer model, o primeiro parâmetro é o nome da tabela, neste caso: "filme_ator". Como segundo parâmetro, passamos a JSON as colunas e suas propriedades. Sendo a representação de uma tabela dinâmica, ela terá duas colunas "filme_id" e "ator_id".
+                        <br><br>
+                        Além de indicar que cada uma dessas colunas é um número inteiro, devemos definir o parâmetro references indicando os atributos do model e key. O model será com qual model está relacionado e a chave para qual coluna ele aponta.
+                        <br><br>
+                        Para a coluna filme_id, o model será "Filme" e a key "id". Enquanto para a coluna ator_id, o model será "Ator" e a key "id".
+                        <br><br>
+                        Mãos à obra.
+                    </p>
+                    <ul>
+                        <li>O primeiro parâmetro do método é o nome da tabela: "filme_ator"</li>
+                        <li>O segundo parâmetro é um JSON com a configuração das colunas.</li>
+                        <li>Como nossa tabela possui duas colunas, nosso JSON deve ter duas chaves: "filme_id" e "ator_id".</li>
+                        <li>Para cada chave, vamos definir type e references.</li>
+                        <li>O tipo para as duas colunas é Sequelize.INTEGER</li>
+                        <li>As referências para filme_id devem ser: {model: 'Filme', key: 'id'}</li>
+                        <li>As referências para ator_id devem ser: {model: 'Ator', key: 'id'}</li>
+                    </ul>
+                    <res>
+                        <js>
+                            const Sequelize = require('sequelize'); <br>
+                            const sequelize = require('../database'); <br><br>
+
+                            const FilmeAtor = sequelize.define(
+                            <tabs>
+                                "filme_ator",
+                                {
+                                <tabs>
+                                    filme_id: {
+                                    <tabs>
+                                        type: Sequelize.INTEGER, <br>
+                                        references: {
+                                            <tabs>
+                                                model: 'Filme', key: 'id'
+                                            </tabs>
+                                        }
+                                    </tabs>
+                                    }, <br>
+                                    ator_id: {
+                                    <tabs>
+                                        type: Sequelize.INTEGER, <br>
+                                        references: {
+                                            <tabs>
+                                                model: 'Ator', key: 'id'
+                                            </tabs>
+                                        }
+                                    </tabs>
+                                    }
+                                </tabs>
+                                }
+                            </tabs>
+                            ); <br><br>
+
+                            module.exports = FilmeAtor;
+                        </js>
+                    </res>
+                </post-body>
+                </overlay>
+            </post-home>
+        </post>
+        <post>
+            <post-home>
+                <overlay>
+                <post-header>
+                    <t1>Exercício 2</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        Depois de criar o model dinâmico, devemos estabelecer um relacionamento do tipo belongsTo com cada um dos modelos relacionados.
+                        <br><br>
+                        Em nosso exemplo, precisaríamos adicionar um belongsTo com Filme e outro com Ator. Como em todos os belongsTo, o primeiro parâmetro será o nome do model e o segundo um JSON indicando a ForeignKey (não é necessário definir "as").
+                    </p>
+                    <ul>
+                        <li>Defina a relação FilmeAtor.belongsTo(Filme)</li>
+                        <li>Passe um JSON com a configuração para a foreignKey como o segundo parâmetro. FilmeAtor.belongsTo(Filme, {foreignKey: "..."})</li>
+                        <li>A foreignKey será "filme_id"</li>
+                        <li>Definir relacionamento FilmeAtor.belongsTo(Ator)</li>
+                        <li>Passe um JSON com a configuração para a foreignKey como o segundo parâmetro. FilmeAtor.belongsTo (ator, {foreignKey: "..."})</li>
+                        <li>A foreignKey será "ator_id"</li>
+                    </ul>
+                    <res>
+                        <js>
+                            const Sequelize = require('sequelize'), <br>
+                                  sequelize = require('../database'), <br>
+                                  Ator = require('model/ator.js'), <br>
+                                  Filme = require('model/filme.js'); <br><br>
+
+                            const FilmeAtor = sequelize.define('filme_ator',{
+                            <tabs>
+                                pelicula_id: {
+                                <tabs>
+                                    type: Sequelize.INTEGER, <br>
+                                    references: {
+                                    <tabs>
+                                        model: 'Filme', <br>
+                                        key: 'id'
+                                    </tabs>
+                                    }
+                                </tabs>
+                                }, <br>
+                                ator_id: {
+                                <tabs>
+                                    type: Sequelize.INTEGER, <br>
+                                    references: {
+                                    <tabs>
+                                        model: 'Ator', <br>
+                                        key: 'id'
+                                    </tabs>
+                                    }
+                                </tabs>
+                                }
+                            </tabs>
+                            } ); <br>
+
+                            FilmeAtor.belongsTo(
+                            <tabs>
+                                Filme, <br>
+                                {
+                                <tabs>
+                                    foreignKey: "filme_id"
+                                </tabs>
+                                }
+                            </tabs>
+                            ); <br><br>
+
+                            FilmeAtor.belongsTo(
+                            <tabs>
+                                Ator, <br>
+                                {
+                                <tabs>
+                                    foreignKey: "ator_id"
+                                </tabs>
+                                }
+                            </tabs>
+                            ); <br><br>
+
+                            module.exports = FilmeAtor;
+                        </js>
+                    </res>
+                </post-body>
+                </overlay>
+            </post-home>
+        </post>
+        <post>
+            <post-home>
+                <overlay>
+                <post-header>
+                    <t1>Exercício 3</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        O objetivo deste exercício é relacionar o modelo do filme e ator através de um relacionamento muitos-para-muitos (N-M).
+                        <br>
+                        Para indicar isso, vamos usar o método belongsToMany no modelo Filme. Não se esqueça que devemos executar esse método dentro da função associate.
+                        <br>
+                        Para a configuração da relação, a ForeignKey será a coluna filme_id, com alias "atores" e a tabela intermediaria será o modelo FilmeAtor.
+                    </p>
+                    <ul>
+                        <li>Você deve executar o método belongsToMany do modelo Filme</li>
+                        <li>O primeiro parâmetro do método belongsToMany deve ser o modelo Ator que recebemos da lista de modelos da função associate. Filme.belongsToMany (listaModelos.Ator)</li>
+                    </ul>
+                    <res>
+                        <js>
+                            module.exports = (sequelize, DataTypes) =>{ <br>
+                            <tabs>
+                                const Filme = sequelize.define('filmes',{
+                                <tabs>
+                                    titulo: DataTypes.STRING, <br>
+                                    genero_id: DataTypes.INTEGER,
+                                </tabs>
+                                }); <br><br>
+                              
+                                Filme.associate = ( models => {
+                                <tabs>
+                                    Filme.belongsToMany(
+                                    <tabs>
+                                        models.Ator, <br>
+                                        {
+                                        <tabs>
+                                            as: 'atores', <br>
+                                            foreignKey: 'filme_id', <br>
+                                            through: "FilmeAtor"
+                                        </tabs>
+                                        }
+                                    </tabs>
+                                    )
+                                </tabs>
+                                } );
+                            
+                               return Filme
+                            </tabs>
+                            }
+                        </js>
+                    </res>
+                </post-body>
+                </overlay>
+            </post-home>
+        </post>
+        <post>
+            <post-home>
+                <overlay>
+                <post-header>
+                    <t1>Exercício 4</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        Neste exemplo, temos o modelo de filme que tem um relacionamento muitos-para-muitos com o ator.
+                        <br>
+                        Queremos trazer todas as informações do filme com id junto com os atores que ele associou.
+                        <br>
+                        Para conseguir isso, devemos passar como segundo parâmetro do método findByPk um JSON com o atributo include. O atributo include será um array com a lista de todos os relacionamentos que queremos trazer associados ao filme, no nosso caso, apenas o relacionamento "atores".
+                        <br>
+                        Finalmente, imprimiremos dentro do método e, em seguida, um console.log que nos mostra os atores do filme: filme.atores.
+                        <br>
+                        Como o relacionamento é de muitos para muitos, o atributo de atores será do tipo de array.
+                    </p>
+                    <ul>
+                        <li>Você deve executar o método findByPk do model Filme, passando a ID 1 como o primeiro parâmetro: Filme.findByPk(1)</li>
+                        <li>O segundo parâmetro findByPk é um JSON com o atributo include</li>
+                        <li>O atributo include é um array com a lista de todos os relacionamentos: Filme.findByPk (1, {include: ['atores']})</li>
+                        <li>Você deve concatenar com o método findByPk o método then: Filme.findByPk().then (...)</li>
+                        <li>O método then receberá um parâmetro com o resultado do findByPk, você deve recuperar esse resultado e executar um console.log: then(filme => console.log(filme.atores))</li>
+                    </ul>
+                    <res>
+                        <js>
+                            const Filme = require('model/filme.js'); <br><br>
+
+                            Filme.findByPk(
+                                <tabs>
+                                1, <br>
+                                {
+                                    <tabs>
+                                    include: [ "atores" ]
+                                    </tabs>
+                                }
+                                </tabs>
+                            ).then( filme => console.log( filme.atores ) );
+                        </js>
+                    </res>
+                </post-body>
+                </overlay>
+            </post-home>
+        </post>
+        <post>
+            <post-home>
+                <overlay>
+                <post-header>
+                    <t1>Exercício 5</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        Ao criar o relacionamento do tipo belongsToMany entre a sequenciação Filme e Ator, fornecemos os métodos setAtores, que permitem vincular um filme a um ou mais atores.
+                        <br>
+                        Neste exemplo, já temos uma instância de filme. O que faremos na instância do filme, execute o método setAtores, passando como parâmetro um array com os IDs dos atores que queremos vincular. Isso gerará automaticamente os registros na tabela dinâmica.
+                        <br>
+                        Link atores 3, 5 e 8
+                    </p>
+                    <ul>
+                        <li>Você deve executar o método setAtores do model Filme</li>
+                        <li>Você deve passar como parâmetro um array com os IDs dos atores para vincular: [3, 5, 8]</li>
+                    </ul>
+                    <res>
+                        <js>
+                            const Filme = require('model/filme.js'); <br><br>
+
+                            Filme.findByPk(1).then(filme => {
+                            <tabs>
+                                filme.setAtores( 
+                                <tabs>
+                                    [ 3, 5, 8 ]
+                                </tabs>
+                                );
+                            </tabs>
+                            });
+                        </js>
+                    </res>
+                </post-body>
+                </overlay>
+            </post-home>
+        </post>
+    </home-page>
+
+</body>
+</html>

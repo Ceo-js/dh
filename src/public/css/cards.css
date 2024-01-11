@@ -1,0 +1,10 @@
+
+
+card {
+    margin: 1em;
+    padding: 1em 2em;
+    border-radius: .5em;
+    box-shadow: #0005 0 0 18px 0px;
+    user-select: none;
+    color: #000;
+}

@@ -1,0 +1,165 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+</head>
+<body>
+    <app-bar></app-bar>
+    <side-bar></side-bar>
+    <home-page>
+        <post>
+            <post-home>
+            <overlay>
+                <post-header>
+                    <t1>Create</t1>
+                </post-header>
+                <post-body>
+                    Assim como acontece com as instruções do MySQL, com o método create() poderemos adicionar novos registros às nossas tabelas de banco de dados. Lembrando sempre que como argumento, este método recebe um objeto literal com os dados a serem armazenados.
+                    <br><br>
+                    Este é talvez um dos métodos mais fáceis de usar no Sequelize, porque na verdade tudo o que você precisa fazer é passar o argumento necessário e pronto.
+                    <br><br>
+                    Porém, como é lógico pensar, este método estará atrelado ao que foi definido no modelo, pois é assim que podemos manter a integridade dos dados que estão armazenados no BD.
+                    <br><br>
+                    Sem mais delongas então, vamos ver como o método create() é implementado no Sequelize.
+                    <video src="05 - Sequelize - Manipulação de dados/02 - Create/Create.mp4"></video>    
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="05 - Sequelize - Manipulação de dados/02 - Create/pdf-create.html"display frameborder="0"></iframe>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-header>
+                    <t1>Exercício 01</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        Suponha que tenhamos um model de Sequelize chamado Usuário. Este modelo possui três atributos: nome, email, senha, todos eles do tipo string.
+                        <br><br>
+                        O que devemos fazer é, a partir desse modelo, inserir um usuário no banco de dados indicando um valor para cada atributo.
+                        <br><br>
+                        Para resolver isso, lembre-se de que você deve usar o método create do seu modelo.
+                    </p>
+                    <ul>
+                        <li>Você deve usar o método create do model de usuário: User.create (...)</li>
+                        <li>Você deve passar como parâmetro do método create um objeto que possui como atributo nome, e-mail, senha e cujos valores de atributo são aqueles que você deseja inserir na base.</li>
+                    </ul>
+                    <res>
+                        <js>
+                            const Usuario = require('model/usuario.js'); <br>
+                            Usuario.create( {
+                                <tabs>
+                                    nome: "Noely Oliveira Gangello", <br>
+                                    email: "noely.gangello@gmail.com", <br>
+                                    senha: "111111"
+                                </tabs>
+                            } );
+                        </js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-header>
+                    <t1>Exercício 2</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        Em certas situações, precisamos fazer mais de um registro no banco de dados. Embora possamos usar o método create várias vezes, a sequenciação facilita essa tarefa com o método bulkCreate. Este método recebe um array, em que cada posição é um objeto com as mesmas características do objeto que o método create recebe. Em outras palavras, o método bulkCreate é como o método create, mas com a vantagem de permitir a inserção de vários registros ao mesmo tempo.
+                        <br><br>
+                        Neste exemplo, temos o model de filme. Nosso objetivo é inserir dois filmes usando o método bulkCreate. Cada filme a ser inserido deve ter um título e um gênero (para os nomes dos atributos, use "titulo" e "genero" sem acentos).
+                    </p>
+                    <ul>
+                        <li>Você deve usar o método bulkCreate do model Filme: Filme.bulkCreate (...)</li>
+                        <li>Você deve passar um array de objetos como um parâmetro para o método bulkCreate.</li>
+                        <li>Cada objeto no array deve ter como atributo titulo e genero com os valores que você deseja inserir na base.</li>
+                    </ul>
+                    <res>
+                        <js>
+                            const Filme = require('model/filme.js');
+                            <br><br>
+                            Filme.bulkCreate( [
+                            <tabs>
+                                {
+                                    <tabs>
+                                        titulo: "Titanic", <br>
+                                        genero: "Romance"
+                                    </tabs>
+                                },
+                            </tabs>
+                            <tabs>
+                                {
+                                    <tabs>
+                                        titulo: "Avatar", <br>
+                                        genero: "Ficção"
+                                    </tabs>
+                                }
+                            </tabs>
+                            ] );
+                        </js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-header>
+                    <t1>Exercício 3</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        Neste exemplo, temos o controller produtoController que possui o método create. Ao mesmo tempo, existe um formulário com os campos nome e preço e que envia esses dados para o nosso controlador, através de uma solicitação do tipo POST.
+                        <br><br>
+                        A ideia do exercício é poder recuperar os dois campos e usar o model do produto e inseri-los em nosso banco de dados.
+                        <br><br>
+                        Para isso, será necessário usar o método create do modelo do produto. Como parâmetro do método, devemos passar um JSON com os atributos nome e preco (sem acentos). Teremos que recuperar os valores para esses atributos a partir da requisição.
+                    </p>
+                    <ul>
+                        <li>Você deve usar o método create do model Product: Product.create (...).</li>
+                        <li>Você deve passar um JSON com os atributos nome e preco como um parâmetro do método</li>
+                        <li>O valor para cada atributo deve ser recuperado a partir do request, req.body.nome e req.body.preco</li>
+                    </ul>
+                    <res>
+                        <js>
+                            const Produto = require('model/produto.js'); <br><br>
+
+                            const produtoController = {
+                                <tabs>
+                                    create: (req, res) => {
+                                        <tabs>
+                                            Produto.create( {
+                                                <tabs>
+                                                    nome: req.body.nome, <br>
+                                                    preco: req.body.preco
+                                                </tabs>
+                                            } );
+                                        </tabs>
+                                    }  
+                                </tabs>
+                            }
+
+                        </js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+    </home-page>
+
+</body>
+</html>

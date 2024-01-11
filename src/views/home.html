@@ -1,0 +1,156 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Guia Playground</title>
+        
+        <link rel="icon" href="src/favicon.ico" type="svg+xml">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../public/css/globals.css">
+        <script src="../public/script/global.js" defer></script>
+    <style>
+        
+    </style>
+</head>
+
+<body index>
+    <page-header></page-header>
+    <sidebar>
+        <sidebar-home>
+            <menu modulos>
+                <li>
+                    <banner>
+                        <icon>
+                            <img src="src/favicon.ico" alt="">
+                        </icon>
+                        <txt>Lógica de programação</txt>
+                    </banner>
+                    <menu></menu>
+                </li>
+                <li>
+                    <banner>
+                        <icon>
+                            <img src="" alt="">
+                        </icon>
+                        <txt>Node e javascript</txt>
+                    </banner>
+                    <menu></menu>
+                </li>
+                <li>
+                    <banner>
+                        <icon>
+                            <img src="" alt="">
+                        </icon>
+                        <txt>Metodologias de desenvolvimento</txt>
+                    </banner>
+                    <menu></menu>
+                </li>
+                <li>
+                    <banner>
+                        <icon>
+                            <img src="" alt="">
+                        </icon>
+                        <txt>html & css</txt>
+                    </banner>
+                    <menu></menu>
+                </li>
+                <li>
+                    <banner>
+                        <icon>
+                            <img src="" alt="">
+                        </icon>
+                        <txt>Javascript front</txt>
+                    </banner>
+                    <menu></menu>
+                </li>
+                <li>
+                    <banner>
+                        <icon>
+                            <img src="" alt="">
+                        </icon>
+                        <txt>Express</txt>
+                    </banner>
+                    <menu>
+                        <li slink src="Módulo 6 - Express/0 - Padrões MVC/MVC.html">Padrões MVC</li>
+                        <li slink src="">Views com EJS</li>   
+                        <li slink src="Módulo 6 - Express/03 - CRUD - uploade de arquivos com multer/Multer.html">Multer</txt>
+                            <li slink src="Módulo 6 - Express/04 - Middlewares/middlewares.html">Middlewares</txt>
+                                <li slink src="Módulo 6 - Express/05 - Sessions & Cookies/sessions&cookies.html">Sessions e Cookies</txt>
+                                </menu>
+                            </li>
+                            <li>
+                    <banner>
+                        <icon>
+                            <img src="" alt="">
+                        </icon>
+                        <txt>Banco de dados</txt>
+                    </banner>
+                    <menu>
+                        <li slink src="Módulo 7 - Banco de Dados/Concepção-e-definição-de-tabelas.html">Tabelas</li>   
+                    </menu>
+                </li>
+                <li>
+                    <banner>
+                        <icon>
+                            <img src="" alt="">
+                        </icon>
+                        <txt>Api</txt>
+                    </banner>
+                    <menu></menu>
+                </li>
+                <li>
+                    <banner>
+                        <icon>
+                            <img src="" alt="">
+                        </icon>
+                        <txt>React</txt>
+                    </banner>
+                    <menu></menu>
+                </li>
+                <li>
+                    <banner>
+                        <icon>
+                            <img src="" alt="">
+                        </icon>
+                        <txt>Projeto integrador</txt>
+                    </banner>
+                    <menu></menu>
+                </li>
+            </menu>
+        </sidebar-home>
+    </sidebar>
+    
+    <main>
+        <home-page style="padding: 45px; background: #f5f5f5;">
+            <card>card</card>
+            <card color="#27f">card</card>
+            <card color="#27f">card azul pixel #27f</card>
+        </home-page>
+    </main>
+
+    <script>
+        // window.addEventListener( "load", ev => {
+        //     var galeria = document.querySelector( "galeria" );
+
+        //     var dirName = "directory",
+        //         subDir = currentDirHandle.getDirectoryHandle( dirName, { create: true } );
+            
+            
+
+        // } );
+        "use strict";
+        const $ = v => document.querySelector( v ),
+              $$ = v => document.querySelectorAll( v );
+
+        let colors = $$( "[color]" );
+
+        window.addEventListener( "load", ev => {
+            colors.forEach( cl => cl.style.color = cl.getAttribute( "color" ) );
+        } );
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+    <script src='../../src/public/script/includes/appbar.js' defer></script>
+    <script src='../../src/public/script/includes/sidebar.js' defer></script>
+</head>
+<body>
+    <page-header></page-header>
+    <page-sidebar></page-sidebar>
+    <home-page>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="#27f">Funções de agregação</titulo>
+                    <p>
+                        Dentro da grande quantidade de funcionalidades que o MySQL traz consigo, as funções de agregação são ferramentas que nos permitem fazer com que o resultado das consultas mostrem informações como: quantidade de registros, média, o total de uma determinada informação armazenada em uma coluna, entre outras coisas.
+                        <br><br>
+                        As funções de agregação mais comuns, e a que veremos nesta aula, são:
+                    </p>
+                    <ul>
+                        <li>
+                            <p>COUNT</p>
+                        </li>
+                        <li>
+                            <p>AVG, SUM</p>
+                        </li>
+                        <li>
+                            <p>MIN, MAX</p>
+                        </li>
+                    </ul>
+                    <p>
+                        Como podem notar, o próprio nome das funções nos dá um spoiler do que elas são capazes de fazer, e qual resultado obteremos ao usá-las. Vamos ver então como implementá-las, na prática!
+                    </p>
+                    <video src="03 - Funções de agregação e consulta avançada/05 - Funções de agregação/Funções de MySQL II.mp4"></video>
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="03 - Funções de agregação e consulta avançada/05 - Funções de agregação/ppt.pdf" display frameborder="0"></iframe>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="#456">Questionário</titulo>
+                    <sub-titulo cor="#654">01: Duração dos Álbuns</sub-titulo>
+                    <ol>
+                        <li>
+                            <p>
+                                No site da MusicMundos, queremos melhorar as visualizações de nossos produtos, colocando a duração média das músicas de um álbum. Vamos pegar a banda do AC / DC como exemplo e verificar o banco de dados do álbum 'Let There Be Rock', determinar a duração média das músicas neste álbum.
+                            </p>
+                        </li>
+                    </ol>
+                    <p>Qual a consulta correta para obter esse resultado?</p>
+                    <res>
+                        <js>SELECT a.nome, AVG(m.duracao) FROM musicas m INNER JOIN albuns a ON m.album_id = a.id WHERE a.nome = 'Let There Be Rock';</js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+    </home-page>
+</body>
+</html>

@@ -1,0 +1,10 @@
+
+
+/* [ animations ]
+================================================================= */
+@keyframes hovering {
+    0% { filter: drop-shadow( #27f 0 0 5px ); }
+    70% { filter: drop-shadow( #ffab00 0 0 5px ); }
+    100% { filter: drop-shadow( #905 0 0 5px ); }
+}
+

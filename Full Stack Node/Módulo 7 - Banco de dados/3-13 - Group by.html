@@ -1,0 +1,64 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+    <script src='../../src/public/script/includes/appbar.js' defer></script>
+    <script src='../../src/public/script/includes/sidebar.js' defer></script>
+</head>
+<body>
+    <page-header></page-header>
+    <page-sidebar></page-sidebar>
+    <home-page>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="#684">Group by</titulo>
+                    <p>
+                        Continuamos com o cenário em que o líder técnico de sua equipe chega para fazer solicitações que você tem que resolver. Desta vez, ele pede um relatório do número de carros agrupados por marca. Em outras palavras, você quer ver quantos carros estão em estoque da Chevrolet, Fiat, Renault e marcas semelhantes.
+                        <br><br>
+                        E antes de começar a soltar sua cabeça, deixe-nos dizer que a solução (como é comum no MySQL) é mais simples do que você pensa.
+                        <br><br>
+                        Bem, com a diretiva Group by, você poderá agrupar os registros da tabela resultantes de uma consulta por uma ou mais colunas, conforme necessário.
+                        <br><br>
+                        Portanto, vamos ver toda a magia que o Group by traz consigo para que, desta forma, o seu líder técnico continue a ver os grandes potenciais que estão em você.
+                    </p>
+                    <video src="03 - Funções de agregação e consulta avançada/04 - Group By/GroupBy.mp4"></video>
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="03 - Funções de agregação e consulta avançada/04 - Group By/ppt.pdf" display frameborder="0"></iframe>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="#789">Questionário</titulo>
+                    <sub-titulo cor="#684">01: Variedade Musical</sub-titulo>
+                    <ol>
+                        <li>
+                            <p>
+                                Na MusicMundo (gravadora) estamos preparando os próximos anúncios nas ruas e queremos lançar uma campanha onde demonstramos que nossa plataforma é a que possui maior variedade de músicas. Faça uma consulta a nossa base de dados que retorne as canções (tabela musicas coluna musicas) com seus gêneros (tabela musicas coluna generos) e agrupadas por gênero.
+                            </p>
+                        </li>
+                    </ol>
+                    <p>Qual consulta ao banco você faria? </p>
+                    <res>
+                        <js>SELECT musicas, generos FROM musicas GROUP BY generos</js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>    
+    </home-page>
+</body>
+</html>

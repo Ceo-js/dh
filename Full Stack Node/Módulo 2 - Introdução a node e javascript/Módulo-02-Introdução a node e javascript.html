@@ -1,0 +1,1837 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <title></title>
+      
+      <link rel="icon" href="src/pix/logo.svg" type="svg+xml">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://globals.onrender.com/global-dh.css">
+      <script src="https://globals.onrender.com/global-dh.js" defer></script>
+   </head>
+   <body>
+
+      <top-bar>
+         Módulo:  2 - Introdução a Node e Javascript
+      </top-bar>
+
+      <modulo n="2">
+
+         <revisao-de-functions-condicionais-e-arrays>
+            
+            <variaveis>
+               <h3>variaveis</h3>
+               <display>
+                  <h1>variaveis</h1>
+                  Neste módulo, vamos relembrar um pouco sobre as variáveis. Como vimos anteriormente, as variáveis nos permite armazenar dados com múltiplos intuitos.
+
+   Em complemento com o que foi visto no nivelamento, vamos ver os tipos distintos de variáveis que temos e como podemos utilizá-las.
+
+   Vamos lá!
+
+                  <video src="./Assets/Variáveis - let, const, var.mp4" controls="controls"></video>
+               
+                  <iframe src="./Assets/Variáveis - let, const, var.html" frameborder="0"></iframe>
+               
+                  Boas práticas
+
+                  Variáveis
+   As boas práticas, embora não sejam obrigatórias para que nosso código funcione, facilitarão a sua leitura e manutenção.
+
+               </display>
+               
+               <exercicio n="1">
+                  <h2>Exercício  1</h2>
+                  A seguir, temos uma função expressa, que retorna uma String. Mas ela precisa de um nome. Sua tarefa é preencher os espaços com a declaração de variável e dar à ela o nome de exemplo.
+                  <co-de>
+                     var exemplo = function () {
+                        return 'Oi, eu sou uma função expressa';
+                  }
+                  </co-de>
+               </exercicio>
+               
+               <exercicio n="2">
+                  <h2>Exercício  2</h2>
+                  Agora pense nesse exemplo, temos que validar algumas pessoas pelas suas idades. Nosso critério será 18 anos como idade miníma e 99 como idade máxima. Ninguém pode mudar essas definições. Para isso acontecer, iremos escrever constantes. Vale dizer que, por questões de boas práticas,  é comum utilizar nome com letras maiúsculas na hora de definir uma constante.﻿﻿
+
+   Bom agora, você deve criar um constante chamada IDADE_MINIMA, e outra chamada IDADE_MAXIMA. Que por sua vez, devem ter os valores 18 e 99 respectivamente
+                  <co-de>
+                     const IDADE_MINIMA = 18;
+   const IDADE_MAXIMA = 99;
+                  </co-de>
+               </exercicio>
+            </variaveis>
+
+            <tipos-de-dados>
+               <h3>Tipos de Dados</h3>
+               <display>
+                  <h1>Tipos de Dados</h1>
+
+                  Como vimos anteriormente, o JavaScript lida com diferentes tipos de dados que são muito importantes e que vale a pena termos em mente.
+
+   Por isso, vamos dedicar um tempo para analisá-los, pois eles serão fundamentais a partir de agora. Cada tipo de dado tem suas próprias características e particularidades que lhes permitem definir um contexto correto dentro do qual ele pode ser utilizado.
+
+                  <iframe src="./Assets/Tipos de dados.html" frameborder="0"></iframe>
+
+                  Boas práticas
+
+                  Quais são as boas práticas na escrita de códigos e por que elas são importantes?
+   Vamos imaginar por um segundo que quando você compra um aparelho, ele não vem com seu guia de instruções e manual do usuário. Dentro deste cenário, é provável que aqueles que não estão familiarizados com seu funcionamento se sintam um pouco frustrados e confusos, pois sentirão que não podem fazer pleno uso do produto.
+
+   Algo semelhante acontece na programação, porque algo fundamental no processo de escrever código é levar em conta que, em algum momento, outras pessoas vão interagir com o código que estamos escrevendo. É por isso que é importante ter uma série de diretrizes e parâmetros que nos permitam ler o código de qualquer outra pessoa da maneira mais simples e compreensível.
+
+   Por causa disso, as boas práticas de escrita são uma parte fundamental do processo de programação. Elas nos permitem gerar um contexto dentro do qual nós e todos que interagem com o código podemos facilmente entender o propósito para o qual ele foi
+
+
+   Uma das boas práticas é o uso do feedback. Isto nos permite gerar uma pequena
+   história do porquê de você estar criando estes blocos de código.
+
+   Um comentário é uma característica da linguagem de programação que se destina
+   a inserir anotações descritivas a respeito do código escrito e se destina a qualquer
+   pessoa que se relacione com esse código.
+
+   Estas anotações são ignoradas pelos compiladores e intérpretes de código e são
+   destinadas apenas a pessoas. Seu propósito é tornar o código mais fácil de enten-
+   der, tendo em mente a manutenção ou a sua reutilização futura.
+
+
+                  <video src="./Assets/Tipos de dados.mp4" controls="controls"></video>
+               </display>
+
+               <exercicio>
+                  Exercício
+   Para este exercício, solicitamos que você declare 4 variáveis ​​usando o let com os nomes: verdadeiro, nada, texto e numero. Para cada um deles, você deve atribuir o tipo de dados que sugere seu nome, conforme apropriado.
+
+                  <co-de>
+                     let verdadeiro = true
+   let nada = null
+   let texto = "string"
+   let numero = 10
+                  </co-de>
+               </exercicio>
+            </tipos-de-dados>
+
+            <operadores>
+               <h3>Operadores</h3>
+
+               <display>
+                  <h1>Operadores</h1>
+                  Dentro do nivelamento, vimos como adicionar dois valores numéricos, comparar duas cadeias de texto (strings) entre si e juntar uma cadeia de texto com um valor numérico para gerar uma única saída de texto. Agora vamos retomar estes conceitos, pois os operadores nos permitem manipular não apenas o valor das variáveis, mas também realizar operações aritméticas, entre muitas outras coisas.
+
+   No vídeo a seguir, vamos ver quais operadores existem e para que cada um deles é utilizado.
+
+                  <iframe src="./Assets/Operadores.html" frameborder="0"></iframe>
+                  
+                  <video src="./Assets/Operadores.mp4" controls></vide>
+               </display>
+            </operadores>
+
+            <revisao-de-functions>
+               <h3>Revisão de Funções</h3>
+               <display>
+                  <h1>Revisão de Funções</h1>
+
+                  Todos adoram pizza, mas, se tivéssemos que fazer uma pizza todos os dias? Fazer a massa se tornaria um processo muito cansativo e repetitivo. Diríamos provavelmente "como seria bom ter uma máquina para fazer massa de pizza" e tornar o processo de preparação um pouco mais agradável e rápido.
+
+   É sob um contexto semelhante que as funções em JavaScript são utilizadas. Uma função é um bloco de código que definimos uma vez e que podemos executar quantas vezes forem necessárias. Embora possa realizar uma ou mais tarefas específicas, é importante notar que SEMPRE devolverá um único valor (a máquina de massa de pizza é apenas para isso, não para fazer café).
+
+   As funções no JavaScript nos permitem agrupar um ou vários blocos de código, que podemos reutilizar muitas vezes.
+
+   É importante diferenciar dois momentos:
+                  1 O momento de definir o que a função fará;
+                  2 O momento da execução da função.
+
+   No primeiro momento, a função e toda sua lógica interna estão armadas. Isto é, onde definimos o que queremos que ela faça. Enquanto o segundo momento se refere a quando a função é utilizada, ou seja, é o momento exato em que precisamos colocá-la em movimento.
+
+   Para ver tudo isso mais claramente e para refrescar um pouco o que vimos no nivelamento, compartilhamos o seguinte vídeo, que certamente esclarecerá as suas dúvidas.
+
+
+                  <iframe src="./Assets/Revisão de funções.html" frameborder="0"></iframe>
+                  <video src="./Assets/Revisão de funções.mp4" controls></video>
+
+
+               </display>
+            </revisao-de-functions>
+
+            <condicionais>
+               <h3>Condicionais</h3>
+               <display>
+                  <h1>Condicionais</h1>
+
+                  O que acontece se a energia acaba em casa e não podemos mais assistir àquele capítulo novo da nossa série no Netflix? Pegamos um livro para ler ou fazemos uma pausa e vamos para a cozinha pegar um lanchinho?
+
+   Esses tipos de decisões também podem ser tomadas quando se escreve um código de programação. Para isso, utilizamos mecanismos de controle de fluxo, também chamados de "condicionais", pois nos permitem avaliar as condições e realizar diferentes ações de acordo com o resultado dessa avaliação.
+
+   <video src="./Assets/Condicionais (If).mp4" controls></video>
+   <iframe src="./Assets/Condicionais (If).html" frameborder="0"></iframe>
+
+   Boas práticas
+   É uma boa prática iniciar a variável com o tipo de dados que vamos armazenar. Dessa forma, fica mais claro para que vai ser usado.
+
+               </display>
+
+               
+               <exercicio>
+                  Com este exercício, vamos conseguir fazer um simples "if"."
+      
+
+                        Declare uma variável com o nome dado e atribua um valor booleano.
+                        Então você deve fazer um  if para avaliar essa variável: se for true imprimir "É verdadeiro!", caso contrário "É falso!".
+                  <co-de>
+                     var dado = true
+
+                     if(dado == true){
+                     console.log("É verdadeiro!")
+                     }else{
+                        console.log("É falso!")
+                     }
+                  </co-de>
+               </exercicio>
+               
+               <exercicio>
+                  Exercício II
+                  Vamos trabalhar com condicionais agora, fazendo comparações rigorosas/estritas.
+
+                        Neste exercício te damos uma variável chamada linguagem, que tem uma String atribuída. Seu trabalho agora é construir uma condicional if / else para que, se a variável contém "javascript" imprima no console o texto "Estou aprendendo", se não imprima"Vou aprender mais pra frente".
+                  <co-de>
+                     let linguagem = "javascript";
+                     if(linguagem === "javascript"){;
+                     console.log("Estou aprendendo");
+                     }else{
+                     console.log("Vou aprender mais pra frente");
+                     }
+                  </co-de>
+               </exercicio>
+            </condicionais>
+
+            <arrays>
+               <h3>Arrays</h3>
+               <display>
+                  <h1>Arrays</h1>
+
+                  Como podemos agrupar muitas informações em uma única variável? Para isso, temos um tipo de dado um pouco mais estruturado, denominado array, também conhecido como lista.
+
+                  Sempre que tiver um grupo de informações para guardar, utilize Array. Vamos ao exemplo: para guardar uma lista de hobbies favoritos, podemos criar uma variável hobbiesFavoritos e atribuir um array, separando os itens com vírgulas:
+               
+                        let hobbiesFavoritos = [‘Leitura’, ‘Games’, ‘Arco e flecha’, ‘Cozinhas’]
+                  
+                  <video src="./Assets/Arrays.mp4" controls></video>
+                  <iframe src="./Assets/Arrays.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     JS_ARRAYS_Questionario
+
+                     1 Um array nos permite
+
+                        gerar uma coleção de dados ordenados
+
+                        armazenar diferentes tipos de dados
+
+                        >> ambas as opções estão corretas
+
+                     2 O primeiro índice de uma array é sempre
+                        >> 0
+
+                        1
+
+                        Depende do comprimento da array
+
+                     3 Para indicar o inicio e fim de um array usamos
+
+                        Chaves {}
+
+                        >> Colchetes []
+
+
+                  </quiz>
+               </display>
+            </arrays>
+
+            <metodos-de-arrays-i>
+               <h3>Métodos de Arrays I</h3>
+               <display>
+                  <h1>Métodos de Arrays I</h1>
+
+                  Agora que sabemos que um array é uma coleção de dados ordenados:
+
+                  Como podemos manipular os dados em um array? E se, por exemplo, quisermos adicionar ou extrair dados para outro array existente?
+                  
+                  Os arrays em JS têm muitas funções chamadas métodos, que nos permitem modificar ou reutilizar os valores em um array.
+
+                  <video src="./Assets/Métodos de arrays.mp4" controls="controls"></video>
+                  <iframe src="./Assets/Métodos de arrays.html" frameborder="0"></iframe>
+
+               </display>
+
+               <exercicio>
+                  Exercício
+                  Vejamos como encontrar elementos dentro de um array.
+                  
+                  Para este exercício contamos com o array alunos. Queremos saber onde estão guardados os nomes de "João" e "Francisco". Utilize um dos métodos de array.
+      
+                     Declare as variáveis  indiceJoao, indiceFrancisco e armazene a posição correspondente de cada um.
+               
+                  <co-de>
+                     let alunos = ["João", "Pedro", "Jorge", "Francisco"]
+   
+   let indiceJoao = alunos.indexOf("João");
+   let indiceFrancisco = alunos.indexOf("Francisco");
+
+
+                  </co-de>
+               </exercicio>
+            </metodos-de-arrays-i>
+
+            <storytelling>
+               <h3>Storytelling</h3>
+               <display>
+                  <h1>Storytelling - A Proposta</h1>
+
+                  <video src="./Assets/Storytelling - A Proposta.mp4" controls="controls"></video>
+               
+                  <h1>Ecode Software Development</h1>
+                  <video src="./Assets/Ecode Software Development.mp4" controls="controls"></video>
+               </display>
+            </storytelling>
+
+            <revisao-de-functions-condicionais-e-arrays-ao-vivo>
+               <h3>Revisão de funções, condicionais e Arrays [ao Vivo]</h3>
+               <display>
+                  <h1>Revisão de funções, condicionais e Arrays [ao Vivo]</h1>
+
+                  <iframe src="./Assets/Revisão de funções condicionais e Arrays.html" frameborder="0"></iframe>
+                  <iframe src="./Assets/Atividade - CineHouse.pdf" frameborder="0"></iframe>
+                  <iframe src="./Assets/Atividade - Prática integradora - Projeto Calculadora.pdf" frameborder="0"></iframe>
+               </display>
+            </revisao-de-functions-condicionais-e-arrays-ao-vivo>
+         
+         </revisao-de-functions-condicionais-e-arrays>
+      
+         <Uso-de-ferramentas>
+
+            <uso-de-ferramentas >
+               <h3>Uso de ferramentas</h3>
+               <display>
+                  <h1>Uso de ferramentas</h1>
+
+                  <p>
+                     Estamos aqui para aprender uma nova profissão: a de Desenvolvedor Web.
+Assim como um marceneiro utiliza dezenas de ferramentas no seu trabalho, desenvolvedores também tem as suas. No caso, essas ferramentas são PROGRAMAS que os auxiliam na missão de construir sistemas.      
+                  </p>
+                  <p>
+                     Para nossa sorte, a totalidade dos programas que utilizaremos são gratuitos ou possuem uma versão gratuita!
+                  </p>
+                  <p>
+                     Preparamos um guia de instalação para cada um dos programas que utilizaremos na nossa jornada. E aí? Você usa Windows, Mac ou Linux? Não importa! Escolha o guia referente ao seu sistema operacional e instale as suas novas ferramentas de trabalho!
+                  </p>
+
+                  <h2>Guia de Instalação Windows</h2>
+                  <iframe src="./Assets/Guia de Instalação Windows.html" frameborder="0"></iframe>
+                  
+                  
+                  <h2>Guia de Instalação Mac</h2>
+                  <iframe src="./Assets/Guia de Instalação Mac.html" frameborder="0"></iframe>
+                  
+                  
+                  <h2>Guia de Instalação Linux</h2>
+                  <iframe src="./Assets/Guia de Instalação Linux.html" frameborder="0"></iframe>
+                  
+                  
+                  <h2>Uso de ferramentas</h2>
+                  <iframe src="./Assets/Uso de ferramentas.html" frameborder="0"></iframe>
+                  
+                  
+               </display>
+            </uso-de-ferramentas>
+
+            <material-para-download>
+               <h3>Material para download</h3>
+               <display>
+                  <h1>Material para download</h1>
+
+                  <iframe src="./Assets/Nossa metodologia.pdf" frameborder="0"></iframe>
+               </display>
+            </material-para-download>
+
+         </Uso-de-ferramentas>
+
+         <introducao-a-nodejs>
+            <introducao-a-nodejs>
+               <h3>Introdução a NodeJS</h3>
+               <display>
+                  <h1>Introdução a Node.js + Roadmap</h1>
+
+                  <p>
+                     Até o momento vimos o javascript, tanto na nossa revisão quanto durante o Módulo 0, para desenvolvimento de pequenos sistemas como objetivos pontuais ou apenas em nossas plataformas de testes, mas este não é o seu principal uso. O conteúdo abaixo nos ajudará a compreender um pouco mais sobre o seu poder e como podemos potencializar o seu uso com o Node.js.
+                  </p>
+                  <hr>
+                  <h2>Nesta aula, vamos ver os seguintes tópicos:</h2>
+                  <ul>
+                     <li>
+                        <p>
+                           Introdução a Node.js - entender como diferenciar os componentes que formam um ecossistema Node e explorar suas funcionalidades.
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                           NPM - conhecer a utilidade do NPM e como podemos incorporar suas bibliotecas em nossos projetos.
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                           Sistema de módulos - compreender como utilizar diferentes módulos (exportar e importar) dentro dos nossos blocos de código.
+                        </p>
+                     </li>
+                  </ul>
+
+                  <iframe src="https://view.genial.ly/629f7a1177c2a800185a890a" frameborder="0"></iframe>
+
+                  <hr>
+
+                  <h2>Texto Introdutório</h2>
+                  <p>
+                     Agora chegou o momento de explorarmos sobre o Node e as suas funcionalidades e entender sobre o seu ecossistema.
+                  </p>
+                  <p>Vamos lá!</p>
+
+                  <hr>
+
+                  <h2>Introdução a Node</h2>
+                  <iframe src="./Assets/Introdução a Node.html" frameborder="0"></iframe>
+
+                  <hr>
+
+                  <h2>Como instalar o nodejs</h2>
+                  <video src="./Assets/Como instalar o nodejs.mp4" controls="controls"></video>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>NODE_intro_node_questionario_v0.1</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">O NodeJS é...</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>um navegador</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>um ambiente de execução para Javascript</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>um software</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Mandou Bem!</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">
+                              Qual dos seguintes comandos nos devolve a versão instalada do NodeJS em nossa máquina? (somente uma resposta correta)
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>node --version</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>node -- version</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>node -v</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>todas as opções estão corretas</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>a primeira e a terceira opção são corretas</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>a segunda e a primeira opção são corretas</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Mandou Bem!</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">
+                              Para executar o código de um arquivo JavaScript (arquivo.js) temos que escrever no terminal:
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>node</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>node seguido do arquivo que queremos testar: (node arquivo.js)</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>o nome do arquivo que queremos testar seguido da palavra node (arquivo.js node)</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Mandou Bem!</p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </introducao-a-nodejs>
+            
+            <npm>
+               <h3>NPM </h3>
+               <display>
+                  <h1>NPM </h1>
+
+                  <sub>
+                     <p>
+                        Pense como seria legal se em todo projeto que você precisasse validar um CPF bastasse instalar um validador e pronto! Só começar a usar!
+                     </p>
+                     <p>
+                        Bem vindo ao mundo do Node.JS!
+                     </p>
+                     <p>
+                        O NPM (Node Package Manager) é um gerenciador de pacotes que nos permite incorporar bibliotecas (também conhecidas como dependências) para as mais diversas funcionalidades aos nossos projetos. É uma ferramenta fundamental dentro do Node, pois ela age como um repositório online de pacotes node, nos permitindo escolher, instalar e atualizar pacotes. Por isso, é necessário saber utilizá-lo para encarar um projeto de forma profissional.
+                     </p>
+                  </sub>
+
+                  <h2>NPM </h2>
+                  <iframe src="./Assets/NPM.html" frameborder="0"></iframe>
+
+                  <h2>NPM </h2>
+                  <video src="./Assets/NPM.mp4" controls="controls"></video>
+
+                  <h2>Dica Extra</h2>
+                  <sub>
+                     NPM é um gerenciador de pacotes do Node, que nos permite baixar e instalar diversas
+bibliotecas para incorporar ao nosso projeto.
+                  </sub>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>NODE_npm_questionario_com_validacao_v0.2</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Quando executo npm init -y quais informações NÃO aparecem no package.json?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>name</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>version</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="checkbox" checked>
+                              <t>dependencies</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>main</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="checkbox" checked>
+                              <t>os</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="checkbox" checked>
+                              <t>folder</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>license</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>scripts</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Ótimo! Você passou no questionário com sucesso!</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Escreva o comando que nos permite atualizar todas as dependências que já temos instaladas.</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>npm install</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Escreva o comando que nos permite instalar uma biblioteca chamada "axios".</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>npm install axios</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="4">
+                              Às vezes, acontece de instalarmos uma dependência, mas erramos o nome ou então já não precisamos mais da mesma ou ainda talvez queremos substituí-la por outra melhor. Escreva o comando que nos permite desinstalar uma biblioteca chamada "jquery".
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>npm uninstall jquery</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="5">Escreva o comando que retorna a versão do NPM instalada.</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>npm --version</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+
+
+               </display>
+            </npm>
+            
+            <Sistema-de-modulos>
+               <h3>Sistema de módulos </h3>
+               <display>
+                  <h1>Ponto de partida</h1>
+
+                  <p>
+                     Uma grande parte da programação é como encarar um problema grande e difícil, dividindo-o em pequenos e simples. Os módulos são uma das ferramentas que nos permitirão alcançar a solução!
+                  </p>
+                  <p>
+                     Vamos conhecê-los!
+                  </p>
+
+                  <banner>
+                     São <b>estruturas</b> de <b>código</b> que, juntas, constituem a <b>totalidade</b> de nossa aplicação e configuram sua usabilidade.
+                  </banner>
+
+                  <h2>Sistema de Modulos</h2>
+                  <video src="./Assets/Sistema de Modulos.mp4" controls="controls"></video>
+                  
+                  
+                  <h2>Sistema de Modulos</h2>
+                  <iframe src="./Assets/Sistema de Modulos.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <h2>Exercício 1</h2>
+                     <h4>Vamos praticar a importação de módulos, algo que usaremos com frequência.</h4>
+                     <p>
+                        Seu objetivo será criar 3 variáveis: "moduloNativo", "moduloInstalado" e "moduloProprio", onde cada uma armazenará um módulo distinto. A primeira deve requisitar o módulo http, a segunda o módulo axios e a terceira um módulo local exportado do arquivo minhaFuncao.js. Este arquivo se encontra na mesma pasta que o arquivo index.js.
+                     </p>
+                     
+                     
+                     <co-de>
+                        let moduloNativo = require('http'); <br>
+                        let moduloInstalado = require('axios'); <br>
+                        let moduloProprio = require('./minhaFuncao');
+                     </co-de>
+                  </exercicio>
+                  <exercicio>
+                     <h2>Exercício 2</h2>
+                     <p>Temos alguns dados do cachorro Scooby armazenados na variável cachorro, o qual queremos usar em outros módulos. Seu trabalho é exportar essa variável, para ser usada em outros pontos do nosso código.</p>
+                     
+                     <co-de>
+                        let cachorro = { <br>
+                           nome: 'Scooby', <br>
+                           idade: 7, <br>
+                           gostaDeComer: true <br>
+                       } <br>
+                        <br>
+                       module.exports = cachorro;
+                       
+                     </co-de>
+                  </exercicio>
+               </display>
+            </Sistema-de-modulos>
+            
+            <Storytelling>
+               <h3>Storytelling </h3>
+               <display>
+                  <h1>Storytelling - A Proposta</h1>
+
+                  <video src="./Assets/Storytelling - A Proposta.mp4" controls="controls"></video>
+               </display>
+            </Storytelling>
+            
+            <Introducao-a-NodeJS-ao-vivo>
+               <h3>Introdução a NodeJS [ao vivo]</h3>
+               <display>
+                  <h1>Introdução a NodeJS [ao vivo]</h1>
+            
+                  <h2>Full Stack NodeJS Introdução a NodeJS</h2>
+                  <iframe src="./Assets/Full Stack NodeJS Introdução a NodeJS.html" frameborder="0"></iframe>
+                  
+                  <h2>ATIVIDADE - CineHouse - NodeJS</h2>
+                  <iframe src="./Assets/ATIVIDADE - CineHouse - NodeJS.pdf" frameborder="0"></iframe>
+               </display>
+            </Introducao-a-NodeJS-ao-vivo>
+            
+         </introducao-a-nodejs>
+
+         <JSON-mais-condicionais-e-ciclos>
+            <div>
+               <h3>JSON </h3>
+               <display>
+                  <h1>JSON </h1>
+
+                  <p>
+                     Na web, a maioria das solicitações e suas respostas viajam como texto simples, ou seja, texto sem codificações especiais. Vamos conhecer uma das maneiras pela qual os sistemas podem ser interconectados.
+                  </p>
+                  <p>
+                     Isso será essencial nas próximas aulas. Vamos começar!
+                  </p>
+
+                  <h2>JSON </h2>
+                  <video src="./Assets/JSON.mp4" controls="controls"></video>
+
+                  <h2>JSON</h2>
+                  <iframe src="./Assets/JSON.html" frameborder="0"></iframe>
+
+                  <h2>Estrutura de um JSON</h2>
+
+                  <co-de>
+                     // Estrutura JSON genérica <br>
+                     { <br>
+                         "propriedade1" : "valor", <br>
+                         "propriedade2" : "valor" <br>
+                     } <br>
+                     // Exemplo de estrutura JSON simples <br>
+                     { <br>
+                         "id": 1, <br>
+                         "nome": "Luke", <br>
+                         "sobrenome": "Skywalker", <br>
+                         "idade": 19 <br>
+                     } <br>
+                     // Exemplo de estrutura JSON mais avançada <br>
+                     { <br>
+                         "estados": [ <br>
+                             { <br>
+                                 "nome": "Bahia", <br>
+                                 "sigla": "BA", <br>
+                                 "capital": { <br>
+                                             "nome": "Salvador", <br>
+                                             "pop": 2.677.000 <br>
+                                              } <br>
+                                       }, <br>
+                                { <br>
+                                 "nome": "São Paulo", <br>
+                                 "sigla": "SP", <br>
+                                 "capital": { <br>
+                                             "nome": "São Paulo", <br>
+                                             "pop": 12.180.000 <br>
+                                              } <br>
+                                       } <br>
+                         ], <br>
+                         "parametros": { <br>
+                                     "acao":"1", <br>
+                                     "log": 15641 <br>
+                             } <br>
+                     } <br>
+                     // Array de elementos em formato JSON <br>
+                     [ <br>
+                         { <br>
+                             "id": 1, <br>
+                             "nome": "Luke", <br>
+                             "sobrenome": "Skywalker", <br>
+                             "idade": 19, <br>
+                        "password":"$2y$10$Hd35v8sCXuej8T5j6yNmgWWJSWJowevq" <br>
+                         }, <br>
+                         { <br>
+                             "id": 2, <br>
+                             "nome": "Leia", <br>
+                             "sobrenome": "Organa", <br>
+                             "idade": 19, <br>
+                             "password": "$2y$104cpJu59QggCNdterkHjdYn2.ThIPtVKWuiHy" <br>
+                         } <br>
+                     ] <br>
+                  </co-de>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>JSON</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">O que significa a sigla JSON? </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Java Single Object Notation</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>JavaScript Object Notation</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>JavaScript Object Notice</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>O grande vilão da desta-feira 13</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">O JSON é utilizado para… </p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>Servir de linguagem para comunicação entre sistemas.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Transformar um texto em um objeto.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Para declarar funções locais.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>A resposta correta é "Servir de linguagem para comunicação entre sistemas".</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Para que posso utilizar o método JSON.stringify? </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Para transformar uma string em um objeto.</t>
+                           </label>
+                           <label choice="correta">
+                              <input type="radio" checked>
+                              <t>Para transformar um objeto em uma string.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>A resposta correta é "Para transformar um objeto em uma string".</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="4">Para que posso utilizar o método JSON.parse?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Para transformar um número em um objeto.</t>
+                           </label>
+                           <label choice="correta">
+                              <input type="radio" checked>
+                              <t>Para transformar uma string em um objeto.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Para transformar um objeto em uma string.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Resposta correta</p>
+                        </res>
+                     </home>
+                  </quiz>
+
+               </display>
+            </div>
+            
+            <div>
+               <h3>Métodos de Strings</h3>
+               <display>
+                  <h1>Métodos de Strings</h1>
+
+                  <p>
+                     Antes de nos aprofundarmos nos métodos de string, lembre-se de que, em JavaScript, uma string nada mais é do que um array de caracteres. Aquelas sequências de texto que parecem simples, mas com alto potencial. No vídeo a seguir, você verá que pode fazer muito mais com uma string do que gerar textos.
+                  </p>
+
+                  <h2>Métodos de Strings</h2>
+                  <video src="./Assets/Métodos de string.mp4" controls="controls"></video>
+                  
+                  <h2>Métodos de Strings</h2>
+                  <iframe src="./Assets/Métodos de Strings.html" frameborder="0"></iframe>
+               </display>
+               <exercicio>
+                  <h2>Exercício </h2>
+                  <p>
+                     Sabemos que todo site tem uma URL e precisamos passar sempre o protocolo HTTP antes. Acontece que alguém cadastrou uma lista de sites sem o protocolo e agora precisamos consertar isso.
+                  </p>
+                  <p>
+                     Para isso, vamos criar uma função chamada dominio. Essa função vai receber um parâmetro URL (pode ser qualquer nome), que é uma string. O retorno dessa função é a própria URL, mas com http:// no começo.
+                  </p>
+                  <p>
+                     Por exemplo:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>
+                           Se alguém tentar usar o site twitter.com, a função deve retornar http://twitter.com
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                           Se alguém tentar usar o site gov.br, a função deve retornar http://gov.br
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                           Se alguém tentar usar o site digitalhouse.com, a função deve retornar http://digitalhouse.com
+                        </p>
+                     </li>
+                  </ul>
+                  <p>
+                     Lembre-se que esses são exemplos, a função deve ser genérica para adicionar esse texto a qualquer site, não só esses.
+                  </p>
+                  <co-de>
+                     function dominio( url ) { <br>
+                       if( url ) <br>
+                         return `http://${ url }`; <br>
+                       else <br>
+                         console.log( `${ url } não informada` ); <br>
+                     } <br>
+                      <br>
+                     dominio( "br.digitalhouse.com" ); <br>
+                     dominio( "9gag.com" ); <br>
+                  </co-de>
+               </exercicio>
+            </div>
+            
+            <div>
+               <h3>Objetos Literais</h3>
+               <display>
+                  <h1>Objetos Literais</h1>
+
+                  <p>
+                     Variáveis podem guardar informações. Isso por si só já é muito bom!
+Vimos que os arrays podem guardar vários valores posicionados em uma determinada ordem.
+                  </p>
+                  <p>
+                     Agora, vamos ver uma estrutura poderosa e simples do JavaScript. São os objetos literais. Pense que eles vão servir para organizar as informações ou funções de uma forma muito intuitiva. Fique com a gente!
+                  </p>
+
+                  <h2>Objetos Literais</h2>
+                  <video src="./Assets/Objetos Literais.mp4" controls="controls"></video>
+
+                  <h2>Objetos Literais</h2>
+                  <iframe src="./Assets/Objetos Literias.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Objetos literais</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Um objeto literal pode ter…</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>No máximo uma propriedade.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>No máximo 3 propriedades.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Depende da versão do javascript que está sendo utilizada.</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>Quantas propriedades você quiser.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Fantástico! Objetos literais são extremamente úteis!</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">As propriedades de um objeto literal podem armazenar:</p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>Qualquer tipo de dado.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Qualquer tipo de dado, menos funções.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Somente strings e números.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Correta</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Selecione a sintaxe correta para executar o método de um objeto:</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>objeto.metodo</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>objeto.metodo()</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>objeto.metodo()</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="4">Para separar as propriedades dentro de um objeto literal…</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Usamos o caractere ponto “.”</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>Usamos o caractere vírgula “,”</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Não utilizamos nenhum caractere visível. Basta quebrar a linha.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Usamos o caractere vírgula “,”</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="5">Quando definimos uma função construtora, podemos…</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Criar somente uma instância desse objeto.</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>Instanciar quantos objetos quisermos, passando os parâmetros que forem necessários.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Instanciar quantos objetos quisermos, passando os parâmetros que forem necessários.</p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </div>
+            
+            <div>
+               <h3>Arrow Functions</h3>
+               <display>
+                  <h1>Arrow Functions</h1>
+
+                  <p>
+                     Como vimos anteriormente, uma função é um bloco de código que podemos utilizar quantas vezes for necessário. Isso porque, com elas, você pode executar uma tarefa específica ou uma que retorne um valor.
+                  </p>
+                  <p>
+                     “Ok, isso eu já tinha entendido na classe anterior. Por que estamos falando disso novamente?”.
+                  </p>
+                  <p>
+                     Voltamos no assunto por ser um dos conceitos que será mais utilizado dentro do mundo da programação. Dentro deste contexto, é importante conhecermos as arrow functions, que nos permitem escrever funções com uma sintaxe mais compacta que o modelo que estamos acostumados.
+                  </p>
+                  <p>
+                     Agora vamos ver como essas funções funcionam.
+                  </p>
+
+                  <h2>Arrow Functions</h2>
+                  <video src="./Assets/Arrow Functions.mp4" controls="controls"></video>
+
+                  <h2>Arrow Functions</h2>
+                  <iframe src="./Assets/Arrow Functions.html" frameborder="0"></iframe>
+
+                  <h2>Estrutura de uma Arrow Functions</h2>
+                  <co-de>
+                     // Função convencional  <br>
+                     function somar(n1,n2) { <br>
+                         return n1 + n2 <br>
+                     } <br>
+                     // Arrow function  <br>
+                     let somar = (n1, n2) => n1 + n2  <br>
+                  </co-de>
+
+               </display>
+               <exercicio>
+                  <h2>Exercício </h2>
+                  <h4>
+                     Vamos começar a praticar a sintaxe de uma arrow function que não recebe nenhum parâmetro. Todas as variáveis precisam ser declaradas com let.
+                  </h4>
+                  <p>
+                     Para este exercício vamos dar três funções definidas Seu trabalho será alterá-las para que sejam arrow functions.
+                  </p>
+                  <co-de>
+                     let cincoNumeros = () => [1,2,3,4,5]; <br>
+                     <br>
+                     let multiplicarPorDois = () =>  123 * 2 ; <br>
+                      <br>
+                     let mostrarNome = () => "Meu nome é Ryan Dahl"; <br>
+                  </co-de>
+               </exercicio>
+            </div>
+            
+            <div>
+               <h3>Condicionais If Ternário / Switch</h3>
+               <display>
+                  <h1>Condicionais If Ternário / Switch</h1>
+
+                  <p>É muito comum que o nosso sistema precise tomar decisões durante a sua execução</p>
+                  <ul>
+                     <li>
+                        <p>Se a idade de um usuário é menor que 18, não mostrar propaganda de bebidas.</p>
+                     </li>
+                     <li>
+                        <p>Se o endereço do usuário estiver na cidade de Salvador, exibir os produtos com desconto.</p>
+                     </li>
+                     <li>
+                        <p>Se a bateria do dispositivo estiver abaixo de 15%, exibir mensagem de alerta.</p>
+                     </li>
+                  </ul>
+
+                  <p>
+                     Para programar os nossos sistemas para tomar esse tipo de decisão, utilizamos uma estrutura chamada de if.Pense, por exemplo, que uma variável chamada idade guarda quantos anos um usuário possui. Podemos definir alguma ação específica caso o usuário tenha menos de 12 anos. Em Javascript, ficaria assim:
+                  </p>
+
+                  <co-de>
+                     if(idade < 12){ <br>
+                        // Fazer alguma coisa <br>
+                     }    <br>
+                  </co-de>
+
+                  <p>O que será feito caso a variável idade esteja guardando um número menor do que 12? Vai da vontade do programador! Vamos ver mais exemplos.</p>
+               
+                  <h2>Condicionais</h2>
+                  <video src="./Assets/Condicionais (if ternário - switch).mp4" controls="controls"></video>
+
+                  <h2>As condicionais  IF ternário SWITCH</h2>
+                  <iframe src="./Assets/As condicionais  IF ternário SWITCH.html" frameborder="0"></iframe>
+
+               </display>
+               <exercicios>
+                  <exercicio>
+                     <h2>Exercício 1</h2>
+                     <p>Com este exercício, vamos conseguir fazer um simples "if"."</p>
+                     <p>
+                        Declare uma variável com o nome dado e atribua um valor booleano.
+Então você deve fazer um  if para avaliar essa variável: se for true imprimir "É verdadeiro!", caso contrário "É falso!".
+                     </p>
+                     <co-de>
+                        var dado = true; <br>
+                        if(dado == true){ <br>
+                        console.log("É verdadeiro!") <br>
+                        }else{console.log("É falso!")} <br>
+                     </co-de>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 2</h2>
+                     <p>O objetivo deste exercício é imprimir um texto na tela, que será condicionado da seguinte maneira.</p>
+                     <p>
+                        Usando "switch" você deve avaliar se a variável "dia" é segunda, quarta ou sexta-feira e, nesse caso, você deve imprimir o texto " você tem aulas!".Para qualquer outro caso, você deve imprimir "você não tem aulas".
+                     </p>
+                     <co-de>
+                        let dia = "sabado"; <br>
+                        <br>
+                        function fimDeSemana(dia){ <br>
+                           switch(dia){ <br>
+                              case "segunda": console.log("você tem aulas!"); <br>
+                              break; <br>
+                              case "quarta": console.log("você tem aulas!"); <br>
+                              break; <br>
+                              case "sexta": console.log("você tem aulas!"); <br>
+                              break;  <br>
+                              default: console.log("você não tem aulas"); <br>
+                           } <br>
+                        } <br>
+                         <br>
+                        fimDeSemana(dia)
+                     </co-de>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 3</h2>
+                     <p>O objetivo deste exercício é imprimir no console um texto que varia de acordo com o dia que contém na variável dia. Para isso, já apresentamos um código feito com if / else que você precisará modificá-lo para testar as diferentes mensagem.</p>
+                     <co-de>
+                        let dia = 'segunda-feira' <br>
+                        <br>
+                        function fimDeSemana(dia) { <br>
+                         <br>
+                            switch(dia){ <br>
+                                case "sexta-feira": console.log('Bom fim de semana!'); <br>
+                                break; <br>
+                         <br>
+                                case "segunda-feira": console.log('Boa semana!'); <br>
+                                break; <br>
+                         <br>
+                                default: console.log('Bom dia!'); <br>
+                            } <br>
+                        }
+                     </co-de>
+                  </exercicio>
+                  
+               </exercicios>
+            </div>
+            
+            <div>
+               <h3>Ciclo For</h3>
+               <display>
+                  <h1>Ciclo For</h1>
+
+                  <p>
+                     Nós humanos somos maravilhosos! Criamos coisas fantásticas do nada. Entre tantas maravilhas, sentimos o que nos rodeia e agimos com base nesses sentidos. Mas, se existe algo que os humanos não são bons é em realizar tarefas repetitivas. Para isso, criamos as máquinas! Em nosso caso específico, programamos máquinas. E quando se trata de mandar uma máquina repetir uma ação, temos uma estrutura imbatível: o for!
+                  </p>
+                  <p>
+                     A comunicação entre seres humanos e máquinas nem sempre é muito fácil. Podemos entender que programar é a forma que nós, seres pensantes, temos para dizer a uma máquina o que ela deve fazer. Pois bem, para que ela entenda a nossa intenção, precisamos ser diretos, explicando só e exatamente o que ela precisa fazer. No caso, para descrever uma repetição utilizamos três informações:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>De onde começar;</p>
+                     </li>
+                     <li>
+                        <p>O tamanho do passo;</p>
+                     </li>
+                     <li>
+                        <p>A condição de parada.</p>
+                     </li>
+                  </ul>
+                  <p>
+                     Sim! Podemos fazer uma analogia com uma caminhada sobre uma linha de números! Cada passo na linha representa uma repetição. Se quisermos dizer para a máquina que ela deve sair do número 0 ao número 20 andando de 1 em 1, temos as seguintes informações:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>De onde começar: 0;</p>
+                     </li>
+                     <li>
+                        <p>Tamanho do passo: 1;</p>
+                     </li>
+                     <li>
+                        <p>Condição de parada: posição deve ser menor que 21.</p>
+                     </li>
+                  </ul>
+                  <p>Em Javascript, ficaria assim:</p>
+
+                  <co-de>
+                     for(let i = 0; i < 21; i = i + 1){ <br>
+                        // Uma ou mais ações a realizar <br>
+                     }
+                  </co-de>
+
+                  <p>
+                     No trecho de código acima, let i = 0 estabelece o valor inicial da 
+                     variável i (no caso, zero). 
+                     Essa variável existe para marcar a posição na caminhada. 
+                     O trecho i &lt; 21 define a condição de parada. Enquanto i for menor que 21, as ações a repetir serão realizadas e mais um passo na linha dos números será dado. Por fim, i = i + 1 determina o tamanho do passo: no caso 1. Muito complicado? Quem sabe, um vídeo ajude. Vamos a ele!
+                  </p>
+
+                  <h2>Ciclos for</h2>
+                  <video src="./Assets/Ciclos (for).mp4" controls="controls"></video>
+                  
+                  <h2>Ciclos for</h2>
+                  <iframe src="./Assets/Ciclos for.html" frameborder="0"></iframe>
+                  
+               </display>
+               <exercicio>
+                  <h2>Exercício </h2>
+                  <p>
+                     Vamos programar uma função que se comporte como um papagaio. Sim, Tudo o que "ouve", repete!
+                  </p>
+                  <p>
+                     A função se chama papagaio e deve receber como parâmetro um texto e repetir 5 vezes no console.
+                  </p>
+                  <p>
+                     Você só precisa declarar a função. Não há necessidade de chamar após a declaração, pois isso vai causar um erro!
+                  </p>
+                  <co-de>
+                     function papagaio(texto){ <br>
+                        for(i = 1; i <= 5; i++){ <br>
+                    console.log(texto) <br>
+                        } <br>
+                    }
+                  </co-de>
+               </exercicio>
+            </div>
+            
+            <Storytelling>
+               <h3>Storytelling</h3>
+               <display>
+                  <h1>Bem-vindo ao Ecode</h1>
+
+                  <video src="./Assets/Bem-vindo ao Ecode.mp4" controls="controls"></video>
+               </display>
+            </Storytelling>
+            
+            <div>
+               <h3>JSON, e mais condicionais [ao vivo]</h3>
+               <display>
+                  <h1>JSON, e mais condicionais</h1>
+                  <iframe src="./Assets/JSON, mais condicionais e ciclos.html" frameborder="0"></iframe>
+
+                  <h2>Continuação prática CineHouse</h2>
+                  <iframe src="./Assets/Continuação prática CineHouse.pdf" frameborder="0"></iframe>
+               </display>
+            </div>
+            
+         </JSON-mais-condicionais-e-ciclos>
+
+         <Callback-mais-ciclos-e-novos-metodos>
+            <Callbacks>
+               <h3>Callbacks</h3>
+               <display>
+                  <h1>Callbacks</h1>
+
+                  <p>
+                     Em Javascript, as funções são um tipo de dado e podemos armazená-las dentro de variáveis ou recebê-las como argumento de uma função (como acontece com os dados numéricos, arrays ou qualquer outro). Isso nos permite fazer coisas interessantes e poderosas, podendo aproveitar, por exemplo, o uso de callbacks.
+                  </p>
+                  <p>
+                     Callbacks permitem passar uma função como parâmetro (argumento) de outra e por consequência executá-la. Mas… você sabe como isso acontece?
+                  </p>
+                  <p>
+                     No vídeo abaixo vamos descobrir como isso é possível.
+                  </p>
+
+                  <h2>Callbacks</h2>
+                  <video src="./Assets/Callbacks.mp4" controls="controls"></video>
+
+                  <hr>
+
+                  <iframe src="./Assets/Callbacks.html" frameborder="0"></iframe>
+
+               </display>
+               <exercicios>
+                  <exercicio>
+                     <h2>Exercício 1</h2>
+                     <p>Vamos criar três funções e ver como iniciar a trabalhar com os callbacks.</p>
+                     <ul>
+                        <li>
+                           <p>
+                              A primeira função se chamará dobro que receberá um número e retornará o dobro.
+                           </p>
+                        </li>
+                        <li>
+                           <p>
+                              A segunda função se chamará triplo que recebera um número e retornará o triplo.
+                           </p>
+                        </li>
+                        <li>
+                           <p>
+                              A terceira função será chamada de aplicar e receberá um valor e o nome de uma função como parâmetro. Ela retornará o valor da aplicação da referida função ao valor recebido.
+                           </p>
+                        </li>
+                     </ul>
+
+                     <h4>Exemplo:</h4>
+                     <ul>
+                        <li>
+                           <p>aplicar(2, dobro); // 4</p>
+                        </li>
+                        <li>
+                           <p>aplicar(4, triplo); // 12</p>
+                        </li>
+                     </ul>
+                     
+                     <co-de>
+                        function dobro(numero){return numero * 2} <br>
+                        function triplo(numero){return numero * 3} <br>
+                        function aplicar(valor, funcao){ <br>
+                          return funcao (valor) <br>
+                        }
+                     </co-de>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 2</h2>
+                     <h4>
+                        Agora vamos ver como podemos criar uma função que funcione como uma calculadora. Começaremos com algo simples.
+                     </h4>
+                     <p>Criaremos quatro funções que executarão as principais operações de uma calculadora: seu trabalho será definir as funções somar, subtrair, multiplicar e dividir. Cada uma delas receberá dois parâmetros e deve executar a operação matemática correspondente. Por exemplo, a função somar deve retornar a soma de ambos os parâmetros, a função subtrair a subtração de ambos os parâmetros e assim por diante</p>
+                     <p>
+                        Agora, com as funções já definidas, criaremos a função calculadora. Esta função receberá dois parâmetros numéricos e o nome de uma função, que será nosso callback.
+                     </p>
+
+                     
+                     <co-de>
+                        function somar( numero1, numero2 ) { <br>
+                           return numero1 + numero2; <br>
+                       } <br>
+                        <br>
+                       function subtrair( numero1, numero2 ) { <br>
+                           return numero1 - numero2; <br>
+                       } <br>
+                        <br>
+                       function multiplicar( numero1, numero2 ){ <br>
+                           return numero1 * numero2; <br>
+                       } <br>
+                        <br>
+                       function calculadora(numero1, numero2, funcao){ <br>
+                       return funcao(numero1, numero2) <br>
+                       } <br>
+                       
+                        <br>
+                       function dividir( numero1, numero2 ){ <br>
+                           return numero1 / numero2; <br>
+                       }
+                     </co-de>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 3</h2>
+                     <h4>
+                        Sua tarefa agora é criar duas funções.
+                     </h4>
+                     <p>A primeira função deverá se chamar adicionarHttp , a mesma, receberá por parâmetro uma URL que será concatenada com a String "http://" no começo da URL e em seguida retornará esse valor. A segunda função se chamará processar  e receberá uma lista de sites web e uma função. A função processar  retornará um array contendo todos os resultados aplicando a função que foi passada.</p>
+                     
+                     
+                     <co-de>
+                        function adicionarHttp(url) { <br>
+                           return "http://" + url <br>
+                       } <br>
+                        <br>
+                       function processar(lista, callback){ <br>
+                           return lista.map( i => callback( i ) ); <br>
+                       }
+                     </co-de>
+                  </exercicio>
+                  
+               </exercicios>
+            </Callbacks>
+            
+            <div>
+               <h3>Métodos de Arrays II</h3>
+               <display>
+                  <h1>Métodos de Arrays II</h1>
+
+                  <p>
+                     O JavaScript nos fornece vários métodos (funções) de arrays, proporcionando uma gama de ferramentas para trabalhar com eles.
+                  </p>
+                  <p>
+                     Antes de conhecer estes métodos, é necessário entender a definição de callback. Como acabamos de descobrir, as funções podem receber um ou mais parâmetros. Estes podem ser, entre outros: um número, uma string, um booleano ou também outra função. E a estas funções passadas como parâmetro de outra que chamamos de callback.
+                  </p>
+                  <p>
+                     E por que estamos dizendo tudo isso? Porque, diferente dos primeiros métodos de array que você viu há pouco tempo, esses precisam de callbacks, funções que serão executadas dentro dos métodos de arrays.
+                  </p>
+                  <p>
+                     Parece confuso? Então vamos entender melhor esses métodos!
+                  </p>
+
+                  <h2>Métodos de Arrays II</h2>
+                  <video src="./Assets/Metodos de Arrays II.mp4" controls="controls"></video>
+                  
+                  <hr>
+                  <iframe src="./Assets/Métodos de Arrays II.html" frameborder="0"></iframe>
+               </display>
+               <exercicio>
+                  <h2>Exercício </h2>
+                  <h4>
+                     Vamos começar com um mais simples.
+                  </h4>
+                  <p>Temos um array com numeros definidos e queremos filtrar aqueles que são maiores de 18.</p>
+                  <p>
+                     Seu trabalho será definir a variável maiores e armazenar nela os números que cumpram com essa condição, utilizando o método filter.
+                  </p>
+                  
+                  <co-de>
+                     let numeros = [12, 34, 22, 46, 18, 29, 44, 43, 39]; <br>
+                     let maiores = []; <br>
+                      <br>
+                     maiores = numeros.filter( i => { <br>
+                         return i > 18; <br>
+                     } )
+                  </co-de>
+               </exercicio>
+            </div>
+            
+            <div>
+               <h3>Ciclos II ( for in / for of)</h3>
+               <display>
+                  <h1>Ciclos II ( for in / for of)</h1>
+
+                  <p>
+                     Em uma de nossas primeiras aulas, mostramos que os ciclos nos permitem repetir instruções de maneira simples. Podemos repeti-los por uma determinada quantidade de vezes ou enquanto se cumpre uma certa condição. Agora, vamos descobrir novas formas de como utilizar for, além das que já conhecemos, com o uso do for…in e for…of.
+                  </p>
+                  <p>
+                     Curioso para ver como funciona? Vamos descobrir mais sobre eles no vídeo abaixo.
+                  </p>
+
+                  <h2>Ciclos II (for in/for of)</h2>
+                  <video src="./Assets/For in For of.mp4" controls="controls"></video>
+                  
+                  <hr>
+                  <iframe src="./Assets/for in - for of.html" frameborder="0"></iframe>
+               </display>
+               <exercicios>
+                  <exercicio>
+                     <h2>Exercício 1</h2>
+                     <h4>Considere os valores.</h4>
+                     <p>
+                        Para este exercício considere a variável bart, que armazena um objeto literal com diferentes propriedades e valores. Queremos que, utilizando um for in, imprima no console os valores de cada propriedade desse objeto.
+                     </p>
+                     
+                     <co-de>
+                        let bart = { <br>
+                           mae: "Marge", <br>
+                           pai: "Homer", <br>
+                           hobbie: "Skate", <br>
+                           corCamiseta: "Laranja" <br>
+                       };   <br>
+                        <br>
+                       for( let propriedade in bart ) { <br>
+                           console.log( bart[propriedade] ); <br>
+                       }
+                     </co-de>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 2</h2>
+                     <h4>Da horizontal para a vertical.</h4>
+                     <ul>
+                        <li>
+                           <p>Temos uma frase declarada e queremos experimentar um pouco.</p>
+                        </li>
+                        <li>
+                           <p>Imprima no console cada letra para que a frase seja escrita na vertical.</p>
+                        </li>
+                        <li>
+                           <p>Já sabe qual sentença você vai usar desta vez?</p>
+                        </li>
+                     </ul>
+                     
+                     <co-de>
+                        let frase = "Essa semana vou no colearning"; <br>
+ <br>
+                        for( let vert of frase ) { <br>
+                            console.log( vert ); <br>
+                        }
+                     </co-de>
+                  </exercicio>
+                  
+               </exercicios>
+            </div>
+            
+            <div>
+               <h3>Objeto Date</h3>
+               <display>
+                  <h1>Objeto Date</h1>
+
+                  <p>
+                     Você já notou que alguns sites mostram a data e a hora do momento exato em que o visitamos. Mas como é possível fazer isso? Será preciso fazer download de alguma aplicação? Nada disso! O Javascript tem, nativamente, uma maneira de acessar essas informações pelo objeto date.
+                  </p>
+                  <p>
+                     Para continuarmos, é importante lembrarmos que um objeto é a representação em código de um elemento da vida real, assim sendo conseguimos informações detalhadas além de um simples horário, tais como: mês, ano, milisegundos. Vem com a gente entender mais sobre o objeto date.
+                  </p>
+
+                  <h2>Objeto date</h2>
+                  <video src="./Assets/Objeto Date.mp4" controls="controls"></video>
+                  <hr>
+                  <iframe src="./Assets/Objeto date.html" frameborder="0"></iframe>
+               </display>
+               <exercicio>
+                  <h2>Exercício</h2>
+                  <h4>Date: uma classe para lidar com o tempo.</h4>
+                  <ul>
+                     <li>
+                        <p>
+                           Você vai criar agora a sua primeira data com  Date... a que você quiser!
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                           Para começar, você deve criar uma variável data e armazenar nela uma instancia de Date.
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                           Depois, você terá que configurar a data utilizando os métodos setFullYear, setMonth e setDate, passando a eles os argumentos correspondentes a cada um.
+                        </p>
+                     </li>
+                  </ul>
+                  <co-de>
+                     let data = new Date; <br>
+ <br>
+                     data.setFullYear( 2022 ); <br>
+                     data.setMonth( 08 ); <br>
+                     data.setDate( 11 ); <br>
+                  </co-de>
+               </exercicio>
+            </div>
+            
+            <Destructuring>
+               <h3>Destructuring</h3>
+               <display>
+                  <h1>Destructuring</h1>
+                  
+                  <p>
+                     Mas o que seria desestruturação? Se procurarmos sua definição, vamos encontrar: A sintaxe de atribuição por desestruturação é uma expressão que permite a extração de dados, tanto de arrays como de propriedades de objetos, em diferentes variáveis.
+                  </p>
+                  <p>
+                     Mas como podemos usá-la e como funciona? Vamos ao vídeo para entender melhor.
+                  </p>
+
+                  <h2>Destructuring</h2>
+                  <video src="./Assets/Destructuring.mp4" controls="controls"></video>
+                  <hr>
+                  <iframe src="./Assets/Destructuring.html" frameborder="0"></iframe>
+               </display>
+               <exercicio>
+                  <h2>Exercício </h2>
+                  <h4>Desestruturando..</h4>
+                  <p>
+                     Para este exercício, já temos uma array de destinos mundiais.
+                  </p>
+                  <p>
+                     Queremos que, usando a desestruturação, você defina as variáveis ​​bariloche e china e extraia apenas os destinos "Bariloche" e "China" da array.
+                  </p>
+                  
+                  <co-de>
+                     let destinosIncriveis = ['Marrocos', 'Bariloche', 'Barcelona', 'China', 'Grecia'] <br>
+ <br>
+                     let [ , bariloche, , china ] = destinosIncriveis; <br>
+                  </co-de>
+               </exercicio>
+            </Destructuring>
+            
+            <div>
+               <h3>Spread Operator</h3>
+               <display>
+                  <h1>Spread Operator</h1>
+
+                  <p>
+                     Vamos compreender o funcionamento do spread operator. Mas, para que ele serve? Ele nos possibilita combinar os valores de um array com os de um outro array.
+                  </p>
+                  <p>Para que possamos entendê-lo melhor, é necessário ter o conceito de array bem assimilado.</p>
+                  <p>
+                     Vamos ao vídeo!
+                  </p>
+
+                  <h2>Spread Operator</h2>
+                  <video src="./Assets/Spread operator _ Rest Parameter.mp4" controls="controls"></video>
+                  <hr>
+                  <iframe src="./Assets/Spread Operator Rest Parameter.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>JS_operador_spread_questionario</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">O operador Spread serve para...</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>criar arrays dinâmicos</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>copiar ou mover dados de um array para a outro</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <teliminar dados de um elemento iterável</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Podemos usar o operador spread...</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>somente com funções</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>unicamente em arrays e objetos</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>sobre qualquer elemento iterável</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>A resposta correta: "sobre qualquer elemento iterável"</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Podemos usar o operador spread para definir funções?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Sim</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Não</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>Sim, mas nesse contexto chamamos de Parâmetro Rest</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="4">Implementando o parâmetro rest podemos...</p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>Definir uma função que aceite qualquer número de parâmetros</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Definir uma função que aceite um número definido de parâmetros</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="5">O parâmetro rest se escreve sempre...</p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>...no final como último parâmetro.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>... no início</t>
+                           </label>
+                        </choices>
+                        <res>
+
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+                  <hr>
+                  <h2>Storytelling - Você recebeu uma mensagem</h2>
+                  <img src="./Assets/slack1.jpg" width="100%" alt="">
+               </display>
+            </div>
+            
+            <Callback-mais-ciclos-e-novos-metodos-ao-vivo>
+               <h3>Callback, mais ciclos e novos métodos [ao Vivo]</h3>
+               <display>
+                  <h1>Callback, mais ciclos e novos métodos</h1>
+
+                  <iframe src="./Assets/Callback, mais ciclos e novos métodos.html" frameborder="0"></iframe>
+                  <hr>
+                  <iframe src="./Assets/Atividade - CineHouse - Callback, mais ciclos e novos métodos.pdf" frameborder="0"></iframe>
+               </display>
+            </Callback-mais-ciclos-e-novos-metodos-ao-vivo>
+            
+            <div>
+               <h3>Material para download</h3>
+               <display>
+                  <h1>Material para download</h1>
+
+                  <iframe src="./Assets/M02 - Introdução a Node - material para  download.pdf" frameborder="0"></iframe>
+               </display>
+            </div>
+            
+         </Callback-mais-ciclos-e-novos-metodos>
+
+<!-- (div>h3+display>h1^^{})*4 -->
+  
+<!-- quiz>header>h2{Quiz}+question>h4^^home>header>p[n]^choices>label[choice]>input[type="radio"]+t^^res>p -->
+      </modulo>
+
+   </body>
+</html>
+
+<style>
+</style>

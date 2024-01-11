@@ -1,0 +1,5 @@
+Links dos documentos
+
+https://developer.mozilla.org/es/docs/Web/API/Window
+https://developer.mozilla.org/pt-BR/docs/Web/API/Document
+https://developer.mozilla.org/pt-BR/docs/Web/API/Window

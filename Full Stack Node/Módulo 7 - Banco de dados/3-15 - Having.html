@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+    <script src='../../src/public/script/includes/appbar.js' defer></script>
+    <script src='../../src/public/script/includes/sidebar.js' defer></script>
+</head>
+<body>
+    <page-header></page-header>
+    <page-sidebar></page-sidebar>
+    <home-page>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="var(--amber)">Having</titulo>
+                    <p>
+                        Muitas vezes, quando estamos implementando as funções de agregação, queremos filtrar os resultados obtidos e com certeza a coisa mais rápida que pode vir à mente é usar um WHERE. E embora esse conceito não seja nada ruim, as funções de agregação não são muito amigáveis ao uso de WHERE.
+                        <br><br>
+                        É por esta razão que a diretiva HAVING cumpre a mesma função, mas veja bem! Ele só pode ser usado em conjunto com funções de agregação para filtrar dados agregados. É importante levar isso em conta, pois para qualquer outro cenário, o WHERE será a ferramenta que teremos que utilizar.
+                        <br><br>
+                        Vejamos então como funciona o HAVING.
+                    </p>
+                    <video src="03 - Funções de agregação e consulta avançada/06 - Having/Having.mp4"></video>
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="03 - Funções de agregação e consulta avançada/06 - Having/ppt.pdf" display frameborder="0"></iframe>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="var(--purple)">Questionário</titulo>
+                    <sub-titulo cor="var(--purple-light)">busca por duracao</sub-titulo>
+                    <ol>
+                        <li>
+                            <p>
+                                Na área de desenvolvimento de MusicMundo eles estão criando a nova funcionalidade do buscador avançado de músicas, que pode buscar canções que tenham pelo menos uma certa quantidade de minutos. Faça uma consulta ao banco de dados e tente trazer todas as músicas (tabela musica) que tenham o gênero (coluna genero) blues agrupadas por álbum (coluna album) e que sua duração (coluna duracao) seja superior a 200000 milissegundos.
+                            </p>
+                        </li>
+                    </ol>
+                    <res>
+                        <js>SELECT * FROM musica WHERE genero = 'blues' GROUP BY album HAVING duracao > 200000</js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+    </home-page>
+</body>
+</html>

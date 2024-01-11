@@ -1,0 +1,35 @@
+
+
+/* [ appbar ]
+================================================================= */
+app-bar, appbar, page-header {
+    display: block;
+    width: 100%;
+    height: 81px;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 9;
+    background: var( --dark0 );
+    filter: var( --appbar-filter-shadow );
+}
+appbar-home {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    width: clamp( 100px, 100%, 1230px );
+    height: 81px;
+}
+
+appbar-menu {
+    display: grid;
+    place-items: center;
+    font-size: 2.7em;
+    font-weight: bold;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 5rem;
+    background: #0000;
+    cursor: pointer;
+    user-select: none;
+    transition: .3s ease;
+}
+

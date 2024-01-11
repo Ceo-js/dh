@@ -1,0 +1,115 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+</head>
+<body>
+    <app-bar></app-bar>
+    <side-bar></side-bar>
+    <home-page>
+        <post>
+            <post-home>
+            <overlay>
+                <post-header>
+                    <t1>Order e Limit</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        Vamos arrumar o quarto!
+                        <br><br>
+                        É hora de trazer o top 3 das músicas mais ouvidas do aplicativo de música mais popular e ordená-las por número de reproduções, da mais alta para a mais baixa. Você consegue? Mãos à obra!
+                        <br><br>
+                        Isso pode facilmente ser um pedido do líder de projeto de qualquer equipe de desenvolvimento e é muito bom, pois se pedíssemos todas as músicas sem pensar em um determinado filtro e ordem, a consulta poderia demorar muito ou até trazer muitas informações que você teria que ordenar, e isso não seria o ideal.
+                        <br><br>
+                        Por esse motivo, o Sequelize traz uma forma simples e eficiente de poder gerar este tipo de consultas.
+                        <br><br>
+                        Vamos então saber mais sobre Ordem e Limite no Sequelize.
+                    </p>
+                    <video src="04 - Sequelize - Introdução,models e consultas/09 - Order e limit/Order e Limit.mp4"></video>
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="04 - Sequelize - Introdução,models e consultas/09 - Order e limit/pdf-Order e Limit.html"display frameborder="0"></iframe>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <t2>Exercício 01</t2>
+                    <p>
+                        Neste exercício o objetivo será trazer todos os produtos ordenados por preço, do menor para o maior.
+<br><br>
+Lembre-se que dentro do método findAll você pode passar um JSON que tenha como chave a palavra order e cujo valor é um array de array indicando em qual coluna ou colunas iremos ordenar e qual tipo de ordenação terá: ASC ou DESC.
+                    </p>
+                    <ul>
+                        <li>O método findAll espera receber um array como parâmetro.</li>
+                        <li>O JSON deve ter uma chave chamada order e que tenha como valor um array: { order: [...] }</li>
+                        <li>Dentro do array podemos ter um ou mais arrays, uma para cada coluna que vamos ordenar. Na primeira posição deve ir o nome da coluna e na segunda o tipo de ordem: { order: [['preco', 'ASC']] }</li>
+                    </ul>
+                    <res>
+                        <js>
+                            const Producto = require('model/produtos.js');
+                            <br><br>
+                            Producto.findAll({
+                                <tabs>
+                                    order: [
+                                    <tabs>
+                                        ['preco', 'ASC']
+                                    </tabs>
+                                    ]
+                                </tabs>
+                            }).then(produtos => {
+                                <tabs>
+                                    console.log(produtos)
+                                </tabs>
+                            });
+                        </js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <t2>Exercício 02</t2>
+                    <p>
+                        Quando devolvemos ao usuário uma lista de registros é aconselhável que os resultados sejam paginados, para trazer tanta informação junta da base de dados.
+<br><br>
+Neste exercício, temos a função findAll aplicado ao model Produto.
+<br><br>
+O objetivo da vez é passar um parâmetro para o método findAll para executar um limit e trazer apenas os 5 primeiros produtos.
+                    </p>
+                    <ul>
+                        <li>O método findAll espera receber um JSON como parâmetro.</li>
+                        <li>O JSON deve ter uma chave chamada limit e cujo valor seja a quantidade de registros que queremos trazer da base de dados: {limit: 5}</li>
+                    </ul>
+                    <res>
+                        <js>
+                            const Produto = require('model/produtos.js');
+                            <br><br>
+                            Produto.findAll({
+                                <tabs>
+                                    limit: 5
+                                </tabs>
+                            }).then(produtos => {
+                                <tabs>
+                                    console.log(produtos)
+                                </tabs>
+                            });
+                        </js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+    </home-page>
+
+</body>
+</html>

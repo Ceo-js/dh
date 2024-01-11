@@ -1,0 +1,97 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+    <script src='../../src/public/script/includes/appbar.js' defer></script>
+    <script src='../../src/public/script/includes/sidebar.js' defer></script>
+</head>
+<body>
+    <page-header></page-header>
+    <page-sidebar></page-sidebar>
+    <home-page>
+        <post>
+            <post-home id="Manipulação-de-dados-e-consulta">
+                <overlay>
+                <post-body>
+                    <titulo cor="#27f">Manipulação de dados e consulta</titulo>
+                    <sub-titulo cor="var( --red )">O que veremos nesta aula?</sub-titulo>
+                    <p>
+                        Ao longo desta aula, continuaremos a mergulhar no mundo dos bancos de dados relacionais e, em particular, aprenderemos:
+                    </p>
+                    <ul>
+                        <li><p>Como fazer consultas que nos permitem inserir, atualizar e excluir registros de uma tabela.</p></li>
+                        <li><p>Obter dados de uma tabela de uma forma geral.</p></li>
+                        <li><p>Obter dados de uma tabela por meio da aplicação de vários filtros de pesquisa.</p></li>
+                        <li><p>Como limitar a quantidade de resultados gerados por uma determinada pesquisa (algo que é muito bom, se o nosso interesse é fazer um motor de busca com sistema de paging).</p></li>
+                        <li><p>Para usar algumas funções nativas do MySQL, permitindo filtrar e organizar os dados obtidos de uma forma muito mais eficiente.</p></li>
+                    </ul>
+                    <p>
+                        Concluindo, é uma aula onde aprenderemos os principais segredos do trabalho com banco de dados. Portanto, mãos à obra e preste muita atenção aos conceitos apresentados aqui.
+                    </p>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+        <post>
+            <post-home id="Insert-Update-e-Delete">
+                <overlay>
+                <post-header>
+                    <titulo cor="var(--green)">
+                        Insert, Update e Delete
+                    </titulo>
+                </post-header>
+                <post-body>
+                    <p>
+                        Quando trabalhamos com tabelas, inevitavelmente precisaremos inserir, atualizar ou excluir algum dado. Estas três funções são realizadas graças às três principais diretrizes que o MySQL tem para este fim:
+                    </p>
+                    <ul>
+                        <li>
+                            <p><strong>Insert</strong> nos permite <strong>adicionar</strong> dados;</p>
+                        </li>
+                        <li>
+                            <p><strong>Delete</strong> nos permite <strong>excluir</strong> dados;</p>
+                        </li>
+                        <li>
+                            <p><strong>Update</strong> nos permite <strong>modificar</strong> dados;</p>
+                        </li>
+                    </ul>
+                    <p>
+                        Vamos agora entender como podemos trabalhar com essas funções.
+                    </p>
+                    <video src="02 - Manipulação de dados e consulta/2 - Insert, Update, Delete/Insert, Update e Delete.mp4" controls></video>
+                    
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="02 - Manipulação de dados e consulta/2 - Insert, Update, Delete/ppt.pdf" display frameborder="0"></iframe>
+            <post-home id="questionario">
+                <overlay>
+                <t2 cor="#daa250">Questionário</t2>
+                <h4>Questionário Novos Gêneros Musicais</h4>
+                <ol>
+                    <li>
+                        <p>Do setor comercial da Musimundos, nos informam que vão agregar um novo gênero musical à nossa plataforma. Eles precisam de nós para ajudá-los a carregá-lo em nosso banco de dados. Vamos inserir o id 26 e o ??nome Cumbia na tabela de gênero.
+                            Insira sua consulta em maiúsculas.</p>
+                    </li>
+                </ol>
+                <res>
+                    <js>
+                        INSERT INTO gênero (id, nome) <br>
+                        VALUES (26, Cumbia);
+                    </js>
+                </res>
+            </overlay>
+            </post-home>    
+        </post>
+    </home-page>
+</body>
+</html>

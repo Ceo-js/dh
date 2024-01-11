@@ -1,0 +1,87 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+    <script src='../../src/public/script/includes/appbar.js' defer></script>
+    <script src='../../src/public/script/includes/sidebar.js' defer></script>
+</head>
+<body>
+    <page-header></page-header>
+    <page-sidebar></page-sidebar>
+    <home-page>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="var(--red-light)">Limit e Offset</titulo>
+                    <p>
+                        Imagine que você entrou em um e-commerce de roupas e fez uma pesquisa para encontrar todas as camisas sociais que aquela loja tem disponível. Na aplicação dessa loja existem mais de 200 camisas cadastradas, porém, para não saturar o usuário (você) e o navegador com tantos resultados de uma vez só, a pesquisa exibe apenas 20 camisas por página.
+                        <br><br>
+                        Essa função também pode ser aplicada quando estamos realizando consultas em nossa base de dados, e é muito útil se precisamos manipular centenas de registros. Mas afinal, como podemos fazer isso na prática?
+                        <br><br>
+                        As diretrizes LIMIT e OFFSET nos permitem especificar a quantidade de resultados a serem exibidos e definir a partir de qual registro uma paginação começará. Para conhecer melhor essas duas ferramentas, vamos ao vídeo!
+                    </p>
+                    <video src="02 - Manipulação de dados e consulta/6 - Limit e Offset/Limit e Offset.mp4"></video>
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="02 - Manipulação de dados e consulta/6 - Limit e Offset/ppt.pdf" display frameborder="0"></iframe>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="var(--azul)">Questionário</titulo>
+                    <sub-titulo cor="var(--blue-light)">Questionário paginacao</sub-titulo>
+                    <ol>
+                        <li>
+                            Vamos trabalhar todo o conteúdo visto até agora?
+                            <br><br>
+                            A Equipe de Marketing abriu uma solicitação para que consulte na base de dados de sua empresa os 8 primeiros clientes (em ordem alfabética) que possuem mais de 18 anos de idade.
+                        </li>
+                        <p>Qual destas queries trará o resultado desejado?</p>
+                        <res>
+                            <js>
+                                SELECT *    <br>
+                                FROM clientes   <br>
+                                WHERE idade > 18    <br>
+                                ORDER BY nome ASC   <br>
+                                LIMIT 8     <br>
+                                OFFSET 0    <br>
+                            </js>
+                        </res>
+                    </ol>
+                </post-body>
+                <post-body>
+                    <sub-titulo cor="var(--blue-light)">Questionário paginacao_2</sub-titulo>
+                    <ol>
+                        <li>
+                            Uma equipe do Financeiro abriu uma nova solicitação para que consulte, na base de dados de sua empresa, as 10 últimas faturas emitidas para o Canadá. Qual destas queries trará o resultado desejado para essa consulta?
+                        </li>
+                        <res>
+                            <js>
+                                SELECT *    <br>
+                                FROM faturas    <br>
+                                WHERE pais_de_faturamento = 'Canada'    <br>
+                                ORDER BY id DESC    <br>
+                                LIMIT 10    <br>
+                                OFFSET 0;   <br>
+                            </js>
+                        </res>
+                    </ol>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+    </home-page>
+</body>
+</html>

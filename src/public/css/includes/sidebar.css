@@ -1,0 +1,155 @@
+
+
+/* [ appbar ]
+================================================================= */
+sidebar, side-bar {
+    display: grid;
+    grid-template-columns: var( --sidebar-width ) 256px;
+    width: var( --sidebar-width );
+    height: calc( 100% - var( --appbar-height ) );
+    height: 100dvh;
+    margin-top: var( --appbar-height );
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 6;
+    overflow-x: hidden;
+    background: var( --dark0 );
+}
+sidebar::-webkit-scrollbar, side-bar::-webkit-scrollbar { width: 0; }
+sidebar-home {
+    display: grid;
+    grid-template-columns: repeat( 1, 60px );
+    grid-template-rows: repeat( auto-fill, 62px );
+    justify-content: center;
+    gap: 8px;
+    padding-top: 18px;
+}
+icon {
+    display: grid;
+    grid-template-columns: repeat( 1, 80% );
+    grid-template-rows: 80% 20%;
+    justify-content: center;
+    place-items: center;
+    gap: 2%;
+    padding: 4px;
+    border-radius: 0.5em;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .2s ease;
+}
+icon:has( icon-img ):hover {
+    background: #0005;
+    border-left: #27f 2px solid;
+    color: #ffab00;
+    transition: all .2s ease;
+}
+icon-img {
+    display: grid !important;
+    place-items: center;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 5em;
+    background: #f5f5f510;
+}
+icon-name {
+    text-transform: capitalize;
+    font-size: x-small;
+}
+drawer {
+    display: block;
+    height: 100%;
+    background: var( --dark1 );
+}
+
+label[sidebar-toggle] {
+    cursor: pointer;
+} *[sidebar-toggle]:hover {
+    animation: hovering infinite 3s;
+    color: #ffab00;
+    transition: .3s ease;
+} *[sidebar-toggle] > input[type="checkbox"] {
+    display: none;
+} appbar:has( *[sidebar-toggle] > input[type="checkbox"]:checked ) ~ sidebar {
+    width: clamp( 100px, 50vw, 350px );
+}
+
+
+
+/* temps */
+/* sidebar {
+    display: flex;
+    flex-wrap: nowrap;
+    width: var( --sidebar-width );
+    height: calc( 100% - var( --appbar-height ) );
+    position: absolute;
+    top: var(--appbar-height);
+    left: 0;
+    background: var(--ceo0);
+    z-index: 6;
+    overflow-x: hidden;
+    transition: .2s all ease;
+    white-space: nowrap;
+} sidebar:hover {
+    width: clamp( 100px, 50vw, 350px );
+    transition: .2s cubic-bezier(1, -0.22, 0, 1.4);
+}
+
+sidebar-home {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    user-select: none;
+} sidebar::-webkit-scrollbar {
+    width: 0;
+}
+
+menu[modulos] {
+    display: flex; flex-direction: column;
+    padding: 0 8px;
+    white-space: nowrap;
+}
+menu[modulos] > li {
+    min-height: 62px;
+    border-radius: 1.3rem;
+    margin: 2px 0;
+    padding: 8px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+} menu[modulos] > li > banner {
+    display: flex;
+    align-items: center; justify-content: space-between;
+    white-space: nowrap;
+    width: 100%;
+    height: 46px;
+    overflow: hidden;
+    transition: .3s ease-in-out;
+} menu[modulos] > li > banner > icon {
+    display: grid; place-items: center;
+    width: 46px;
+    border-radius: 5rem;
+    aspect-ratio: 1 / 1;
+    background: #94d6f910;
+} menu[modulos] > li > banner > icon > img {
+    width: 46px;
+    border-radius: 5rem;
+} menu[modulos] > li > banner > txt {
+    display: flex;
+    align-items: center;
+    width: 100%; height: 46px;
+    padding-left: 8px;
+}
+menu[modulos] > li > menu {
+    display: block;
+    height: 0px;
+    margin: 2% 0 0;
+    background: var(--ceo5);
+    border-radius: 1.3rem;
+    transition: .3s ease-in-out;
+    overflow: hidden;
+}
+menu[modulos] > li > menu > li {
+}
+
+*[slink] {
+    cursor: pointer;
+} */

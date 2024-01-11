@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+    <script src='../../src/public/script/includes/appbar.js' defer></script>
+    <script src='../../src/public/script/includes/sidebar.js' defer></script>
+</head>
+<body>
+    <page-header></page-header>
+    <page-sidebar></page-sidebar>
+    <home-page>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo>Promises</titulo>
+                    <p>
+                        Na programação, como na vida real, podemos fazer promessas, mas nos domínios de programação elas funcionam um pouco diferente.
+                        <br><br>
+                        Eles procuram executar um bloco de código que levará um certo tempo e então, com base na resposta obtida, poderemos fazer uma certa coisa.
+                        <br><br>
+                        <h4>
+                            Vamos pensar da seguinte forma:
+                        </h4>
+                        <br><br>
+                        Digamos que você está com fome e decide ir numa pizzaria nova no seu bairro, chegando lá nota que existe uma fila grande no balcão de atendimento, mesmo assim decide esperar.
+                        <br><br>
+                        Vários minutos se passam e sua vez chega. Um atendente bem mal-humorado te atende com uma cara de tédio e anota o seu pedido, imediatamente dirige-se até a cozinha e deixa a comanda no painel de comandas para então retornar ao seu posto. Você decide sentar em uma mesa para aguardar, mas o atendente pede que fique aguardando na fila até o seu pedido ficar pronto (impedindo o próximo cliente de fazer o pedido). Durante algum tempo o atendente fica parado lá olhando para sua cara e você, ainda sem entender direito, mantém-se em pé de forma desconfortável bloqueando as requisições que vêm após a sua.
+                        <br><br>
+                        O cheiro que sai da cozinha parece muito bom, entretanto, em uma breve olhada para trás você percebe que a fila só aumenta e os clientes parecem cada vez mais insatisfeitos com a demora para que apenas uma pizza seja despachada.
+                        <br><br>
+                        Assim seria trabalhar apenas com programação síncrona no javascript, já que o mesmo é single thread cada requisição não instantânea se tornaria um pesadelo para o cliente que lotaria a fila de espera de novas requisições. É por isso que existem as promises, conseguem enviar múltiplas requisições de forma que você, cliente, possa sair da fila e sentar em uma mesa até que o seu pedido fique pronto, permitindo que outros possam fazer os seus pedidos nesse meio tempo.
+                        <br><br>
+                        <h4>
+                            Por que aprender sobre promises?
+                        </h4>
+                        <br><br>
+                        As promises são uma ferramenta constantemente utilizada dentro da linguagem JavaScript e muitas tecnologias escritas com JavaScript as utilizam. Sequelize é uma delas, e é por isso que é tão importante entender o que são as promises.
+                        <br><br>
+                        Sem mais demoras, convidamos você a dar uma olhada no vídeo a seguir para saber um pouco mais sobre as promessas em JavaScript.
+                    </p>
+                    <video src="04 - Sequelize - Introdução,models e consultas/02 - Promises/Entendendo as promises.mp4"></video>
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="04 - Sequelize - Introdução,models e consultas/02 - Promises/pdf-Promises.html" display frameborder="0"></iframe>
+            <post-home>
+            <overlay>
+                <p>
+                    Normalmente, em linguagens de programação (quando o código é enviado para ser executado), o programa não continua a sequência até que o código enviado para ser executado termine e dê uma resposta. Nesse sentido, é bom saber que o JavaScript nos dá a possibilidade de modificar esta operação. Ou seja, mesmo que algum código seja enviado para execução, o programa pode continuar executando outros processos. Isto é chamado de Promises, situações que não sabemos quando serão cumpridas. Com base nesta ideia, responda às seguintes perguntas do questionário.
+                </p>
+            </overlay>
+            </post-home>
+            <post-home>
+            <overlay>
+                <titulo>Para pensar</titulo>
+                <p>Vamos trabalhar com casos e colocar em prática o conceito de promises.</p>
+                <sub-titulo>Promises - Para pensar</sub-titulo>
+                <ol>
+                    <li>
+                        <p>As promises são funções que permitem:</p>
+                    </li>
+                        <res>
+                            <js>
+                                Executar o código assíncrono de forma eficiente.
+                            </js>
+                        </res>
+                    <li>
+                        <p>Às vezes precisamos de duas ou mais promises para realizar uma determinada ação. Para isso, utilizamos:</p>
+                    </li>
+                        <res>
+                            <js>Promise.all()</js>
+                        </res>
+                    <li>
+                        <p>No caso de não obter um resultado na execução de algum código, um erro é gerado. Para isso, utilizamos:</p>
+                    </li>
+                    <res>
+                        <js>.catch()</js>
+                    </res>
+                    <li>
+                        <p>Às vezes os .then() têm muitas promises neles. Para resolver isto, precisamos:</p>
+                    </li>
+                    <res>
+                        <js>Use outro .then()</js>
+                    </res>
+                    <li>
+                        <p>É uma função assíncrona que retornará um resultado, ou não. Também permite que o código continue a ser executado:</p>
+                    </li>
+                    <res>
+                        <js>.then()</js>
+                    </res>
+                </ol>
+            </overlay>
+            </post-home>
+        </post>
+    </home-page>
+</body>
+</html>

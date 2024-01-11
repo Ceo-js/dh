@@ -1,0 +1,492 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <title></title>
+      
+      <link rel="icon" href="src/pix/logo.svg" type="svg+xml">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://globals.onrender.com/global-dh.css">
+      <script src="https://globals.onrender.com/global-dh.js" defer></script>
+   </head>
+   <body>
+
+      <top-bar>
+         Módulo:  3 - Metodologias de Desenvolvimento
+      </top-bar>
+
+      <modulo n="3">
+         
+         <git>
+            <introducao-ao-git>
+               <display>
+                  <h1>Roadmap + Introdução ao GIT + O que é GIT?</h1>
+
+                  <iframe src="https://view.genial.ly/629f7b4b4e27380018cf3f1d" frameborder="0"></iframe>
+                  
+                  <h3>Introdução ao GIT</h3>
+                  <p>
+                     Você já imaginou como pode trabalhar sem precisar ficar criando arquivos para cada versão do projeto e ter acesso ao histórico das suas alterações? Isso é possível através do versionamento de código.
+                  </p>
+                  <p>
+                     No vídeo abaixo, iremos conhecer mais sobre uma ferramenta fundamental que nos possibilita gerenciar nossos projetos e suas diversas versões de forma rápida e fácil.
+                  </p>
+                  <p>Vamos lá?</p>
+                  <hr>
+
+                  <h2>O que é GIT?</h2>
+                  <p>
+                     Git é um sistema de controle de versão que registra as mudanças feitas em um arquivo ou conjunto de arquivos ao longo do tempo, possibilitando recuperar ou acessar versões específicas quando desejarmos. Além disso, é ideal para desenvolver projetos onde diversas pessoas podem contribuir simultaneamente, buscando evitar que suas alterações sejam sobrescritas.
+                  </p>
+
+                  <h2>Conhecendo o git</h2>
+                  <video src="./Assets/Conhecendo o git.mp4" controls="controls"></video>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Git Introdução PAD</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Git é:</p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>1 - Um software</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>2 - Uma forma rápida de trabalhar</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>3 - Um conjunto de regras para trabalhar em equipe</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Git me permite…</p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>1 - Ter um backup do meu projeto na nuvem</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>2 - Ter um backup do meu projeto em um pendrive</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">O Git permite que você mantenha um histórico de como o projeto foi sendo alterado?</p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>1 - Sim</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>2 - Não</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </introducao-ao-git>
+
+            <instalacao-do-git>
+               <display>
+                  <h1>Instalação do Git</h1>
+                  <p>Agora que já sabemos um pouco mais sobre o Git, precisamos instalá-lo em nossa máquina para começarmos a utilizá-lo em nossos projetos.</p>
+                  <p>
+                     Mas como sabemos se o <b>GIT</b> está instalado no nosso computador? E como funciona em outros sistemas operacionais?
+                  </p>
+                  <p>
+                     Caso você tenha <b>Mac</b> ou <b>Linux</b>, o processo de instalação é um pouquinho diferente. Veja mais informações neste <a href="https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git">link.</a>
+                  </p>
+                  <p>
+                     Se você usa Windows, nós lhe convidamos a instalar o <b>Git Bash</b>, caso você tenha dúvidas sobre como instalá-lo, você pode encontrar as instruções de instalação no "guia de instalação" deste módulo.
+                  </p>
+
+                  <h2>Instalação do GIT</h2>
+                  <video src="./Assets/Instalação do GIT.mp4" controls="controls"></video>
+               
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Git Instalação PaD</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Qual comando informa a versão instalado do Git?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>git</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>git -version</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>git --version</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Para verificar se a instalação foi bem-sucedida, abra um terminal e execute o comando git --version.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">
+                              Copie e cole a resposta executando com sucesso no terminal o comando que permite descobrir a versão do git instalado.
+                              <br><br>
+                              A resposta deve incluir o comando que você executou e o que o terminal mostra na tela.
+                           </p>
+                        </header>
+                        <choices>
+                           <co-de>
+                              $ git --version <br>
+                              git version 2.35.0.windows.1
+                           </co-de>
+                        </choices>
+                        <res>
+                           <p>Muito bom!</p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </instalacao-do-git>
+
+            <o-que-eh-github>
+               <display>
+                  <h1>O que é GitHub?</h1>
+
+                  <p>
+                     Mas o que seria o GitHub? É a mesma coisa que o Git?
+                  </p>
+                  <p>
+                     Você já imaginou como trabalhar em um ambiente profissional de forma colaborativa? De que maneira poderíamos compartilhar nossos documentos com nossa equipe de forma prática e de qualquer lugar precisando apenas de um acesso à internet? Podemos pensar em algumas opções como arquivos zip, Google Drive e outros tantos existentes.
+
+                  </p>
+                  <p>
+                     Apesar das ferramentas acima serem boas, elas não são necessariamente dinâmicas ou até mesmo adequadas quando estamos dentro de um ambiente de desenvolvimento. Mas qual seria a ferramenta mais adequada para compartilhar nossos códigos?
+                  </p>
+                  <p>
+                     Anteriormente, vimos sobre o Git e como ele funciona em relação ao gerenciamento de versões do nosso projeto, agora vamos lhe ensinar como acessar seu repositório na nuvem, onde você poderá baixá-lo e modificá-lo em qualquer computador do MUNDO.
+                  </p>
+                  <p>
+                     Vamos lá?
+                  </p>
+                  <p>
+                     O GitHub é uma plataforma criada para hospedar e controlar versões de projetos de programação na nuvem de forma gratuita, ou seja, você pode usá-lo para guardar seus projetos pessoais ou open source (projetos abertos a todos), possibilitando uma colaboração maior entre equipes de uma forma eficiente.
+                  </p>
+                  
+                  <h2>Como criar sua conta no Github</h2>
+                  <video src="./Assets/Como criar sua conta no Github.mp4" controls="controls"></video>
+                  
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>GIT_conta_repo_remoto_questionario</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Git e GitHub</p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>O Git é um sistema de versão e o GitHub, um sistema em nuvem que fornece esse serviço.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Git é um sistema na nuvem e github o mecanismo interno.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Git e GitHub são os mesmos, apenas que o git é uma maneira abreviada de mencionar o github.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>
+                              Muito bem! Embora eles tenham um nome semelhante, git é a tecnologia que mantém o sistema de versão. O GitHub é um provedor de serviços. Existem muitos outros como o GitLab ou o Bitbucket. Convido você a acessar os sites deles e ver o que eles oferecem.
+                           </p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Um repositório no GitHub é...</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Uma conta no Github</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>Um local na web onde posso armazenar projetos</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Você pode armazenar arquivos e projetos GRATUITAMENTE!</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Qual a diferença entre um repositório local e um repositório remoto?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Um repositório local é o encontrado no GitHub e o remoto é o do meu computador.</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>Um repositório local é o encontrado no meu computador e no GitHub, o remoto.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>
+                              Muito bem! Lembre-se de que é necessário criar um link entre os dois para manter atualizados os arquivos locais conectados a esse repositório na nuvem.
+                           </p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="4">Crie sua conta no github.com e cole o URL do usuário no campo a seguir.</p>
+                        </header>
+                        <co-de>https://github.com/NoelyGangello</co-de>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="5">Crie um repositório e insira a URL https do mesmo no campo a seguir.</p>
+                        </header>
+                        <co-de>https://github.com/NoelyGangello/novo-repositorio</co-de>
+                     </home>
+                  </quiz>
+               </display>
+            </o-que-eh-github>
+
+            <criando-seu-primeiro-repo>
+               <display>
+                  <h1>Criando seu primeiro repositório</h1>
+
+                  <p>
+                     Agora que já temos nossa conta criada no GitHub e conhecemos sobre o git, vamos por em prática nossas ferramentas criando nosso primeiro repositório local, além de configurar nossas credenciais para trabalharmos de forma profissional e colaborativa!
+                  </p>
+                  <p>Vamos nessa?</p>
+
+                  <h2>Como criar seu primeiro Repositório</h2>
+                  <video src="./Assets/Como criar seu primeiro Repositório.mp4" controls="controls"></video>
+                  <hr>
+                  <iframe src="./Assets/Repositório GIT.html" frameborder="0"></iframe>
+                  
+                  <h1>Repositórios</h1>
+                  <h4>Repositórios locais</h4>
+                  <p>
+                     Um repositório nada mais é do que uma pasta onde estão todos os arquivos do nosso projeto, incluindo nosso versionamento. Neste caso, o nosso repositório vai ser armazenado de forma local em nossa máquina, impossibilitando que outras pessoas tenham acesso.
+                  </p>
+                  <h4>Repositórios remotos</h4>
+                  <p>
+                     Um repositório remoto é criado em um local de hospedagem de repositórios Git, neste caso o GitHub, onde podemos armazenar uma cópia do nosso projeto na nuvem.
+                  </p>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>GIT_conta_repo_remoto_questionario</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Git e GitHub</p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>
+                                 O Git é um sistema de versão e o GitHub, um sistema em nuvem que fornece esse serviço.
+                              </t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>
+                                 Git é um sistema na nuvem e github o mecanismo interno.
+                              </t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Git e GitHub são os mesmos, apenas que o git é uma maneira abreviada de mencionar o github.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>
+                              Muito bem! Embora eles tenham um nome semelhante, git é a tecnologia que mantém o sistema de versão. O GitHub é um provedor de serviços. Existem muitos outros como o GitLab ou o Bitbucket. Convido você a acessar os sites deles e ver o que eles oferecem.
+                           </p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Um repositório no GitHub é...</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Uma conta no Github</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>Um local na web onde posso armazenar projetos</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Você pode armazenar arquivos e projetos GRATUITAMENTE!</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Qual a diferença entre um repositório local e um repositório remoto?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Um repositório local é o encontrado no GitHub e o remoto é o do meu computador.</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>Um repositório local é o encontrado no meu computador e no GitHub, o remoto.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>
+                              Muito bem! Lembre-se de que é necessário criar um link entre os dois para manter atualizados os arquivos locais conectados a esse repositório na nuvem.
+                           </p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="4">Crie sua conta no github.com e cole o URL do usuário no campo a seguir.</p>
+                        </header>
+                        <co-de>https://github.com/NoelyGangello</co-de>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="5">Crie um repositório e insira a URL https do mesmo no campo a seguir.</p>
+                        </header>
+                        <co-de>https://github.com/NoelyGangello/novo-repositorio</co-de>
+                     </home>
+                  </quiz>
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>GIT_primeiro_repositorio_local</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Com qual comando criamos um repositório local?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>git local</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>git init</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>git local init</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Copie e cole a resposta do seu terminal ao executar com sucesso o comando para criar um repositório. Lembre-se de incluir também o comando utilizado!</p>
+                        </header>
+                        <co-de>
+                           $ git init
+                           Initialized empty Git repository in C:/Users/Noley/Documents/Digital House/web-full-stack/playground/Módulo  3/git/.git/
+                        </co-de>
+                     </home>
+                  </quiz>
+               </display>
+            </criando-seu-primeiro-repo>
+
+            <confirmando-arquivos></confirmando-arquivos>
+
+            <adding-files></adding-files>
+
+            <pushing-files></pushing-files>
+
+            <pulling-files></pulling-files>
+
+            <guia-pratico></guia-pratico>
+
+            <git-ao-vivo></git-ao-vivo>
+
+         </git>
+         
+         <git-na-pratica>
+            <aula-pratica>
+               <display>
+                  <h1>
+                     Aula Prática
+                  </h1>
+                  <sub>
+                     O objetivo dessa aula é colocarmos em prática o que aprendemos nesse módulo!
+                  </sub>
+               </display>
+            </aula-pratica>
+         </git-na-pratica>
+         
+         <metodologias-ageis>
+            <o-que-iremos-conhecer></o-que-iremos-conhecer>
+            <antes-da-metodologia-agil></antes-da-metodologia-agil>
+            <metodologia-agil></metodologia-agil>
+            <scrum></scrum>
+            <metodologias-ageis-ao-vivo></metodologias-ageis-ao-vivo>
+         </metodologias-ageis>
+
+
+      </modulo>
+
+   </body>
+</html>
+
+<style>
+</style>

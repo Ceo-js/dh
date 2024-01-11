@@ -1,0 +1,66 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+    <script src='../../src/public/script/includes/appbar.js' defer></script>
+    <script src='../../src/public/script/includes/sidebar.js' defer></script>
+</head>
+<body>
+    <page-header></page-header>
+    <page-sidebar></page-sidebar>
+    <home-page>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="#789">Joins</titulo>
+                    <p>
+                        Imagine o seguinte cenário: você tem uma tabela que armazena os dados de uma pessoa, e sabe que essa tabela, por sua vez, está ligada à outra tabela que armazena as imagens que uma pessoa posta. Mas, nesta última tabela, o único dado que se tem para identificar a pessoa dona dessa imagem é o ID dela, ou seja, o ID que corresponde a essa pessoa na tabela de pessoas.
+                        <br><br>
+                        Sendo assim, como poderíamos trazer, em uma só consulta, as imagens que pertencem ao ID 5, por exemplo? Em outras palavras, como é possível trazer todas as imagens que pertencem a uma pessoa se essa informação está presente em tabela?
+                        <br><br>
+                        Pois bem, para alcançar isso, o MySQL fornece uma ferramenta chamada de JOINS. Os joins (ou junções), tal qual seu nome indica, não são nada mais que uniões entre tabelas diferentes, que têm algum tipo de relação entre si.
+                        <br><br>
+                        Agora, com isso em mente, vamos ver como funciona no próximo vídeo.
+                    </p>
+                    <video src="03 - Funções de agregação e consulta avançada/02 - Joins/Joins.mp4"></video>
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="03 - Funções de agregação e consulta avançada/02 - Joins/ppt1.pdf" display frameborder="0"></iframe>
+            <iframe src="03 - Funções de agregação e consulta avançada/02 - Joins/ppt2.pdf" display frameborder="0"></iframe>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="#753">Questionário</titulo>
+                    <sub-titulo cor="#357">Dia Mundial do Rock</sub-titulo>
+                    <ol>
+                        <li>
+                            <p>
+                                É a semana do rock ao nível mundial e nosso empresário da Musimundos nos pede para criar banners com músicas do gênero Rock. Faça uma consulta ao nosso banco de dados para retornar os nomes das músicas que possuem o gênero rock.
+                                <br><br>
+                                Lembrando que o ID do gênero Rock é 6.
+                            </p>
+                        </li>
+                    </ol>
+                    <res>
+                        <js>SELECT musica.nome, genero.nome FROM musica INNER JOIN genero ON musica.genero_id= genero.id WHERE genero.id = 6;</js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+    </home-page>
+</body>
+</html>

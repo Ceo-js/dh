@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Color Palette</title>
+    
+    <link rel="icon" href="src/pix/logo.svg" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel+Decorative:wght@400;700;900&family=Open+Sans:wght@500;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tangerine:wght@400;700&display=swap');
+
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        *[link] { cursor: pointer; }
+        *[link]:hover { color: #27f; transition: .3s ease-in-out; }
+        body {
+            min-height: 100vh;
+            padding-top: 81px;
+            background: #212329;
+            color: #e9e6e3;
+        font-family: 'Poppins';
+        }
+        ul, ol, menu {
+            margin: 1em 0;
+            padding-left: 40px;
+        }
+        menu { list-style-type: none; }
+        pre, dl {
+            margin: 1em 0;
+        }
+        dd {
+            margin-left: 40px;
+        }
+        blockquote {
+            margin: 1em 40px;
+        }
+        fieldset {
+            margin-left: 2px;
+            margin-right: 2px;
+            padding: 0.35em 0.625em 0.75em 0.75em;
+        }
+        legend {
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+        appbar {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            width: 100vw;
+            height: 81px;
+            position: absolute;
+            top: 0; left: 0;
+            z-index: 9;
+            background: #1b1d22;
+            filter: drop-shadow( #0009 0 0 5px );
+        }
+
+        color-palette {
+            display: grid;
+            place-items: center;
+        } color-palette :nth-child( n+1 ) {
+            margin: 1em;
+            padding: 1em 2em;
+            border-radius: .5em;
+        }
+    </style>
+</head>
+
+<body>
+    <appbar></appbar>
+
+    <color-palette x11>
+        <h2 color="#a020f0">Purple (X11)</h2>
+        <h2 color="#006400">Dark green (X11)</h2>
+        <h2 color="#b03060">Maroon (X11)</h2>
+        <h2 color="#bebebe">Gray (X11)</h2>
+        <h2 color="#a9a9a9">Dark gray (X11)</h2>
+        <h2 color=""></h2>
+    </color-palette>
+    
+    <script>
+        'use strict';
+        
+        /* [ properties ]
+        =================================== */
+        const $ = v => document.querySelector( v ),
+              $$ = v => document.querySelectorAll( v );
+        let links = $$( '*[link]' ),
+            colorTags = $$( "[color]" );
+
+        window.addEventListener( 'load', ev => {
+
+
+            /* [ events ]
+            =================================== */
+            links.forEach( link => link.addEventListener( 'click', ev => {
+                window.open( link.getAttribute( 'link' ), '_blank' );
+            } ) );
+
+            colorTags.forEach( cl => cl.style.backgroundColor = cl.getAttribute( "color" ) );
+        } );
+        
+    </script>
+</body>
+</html>

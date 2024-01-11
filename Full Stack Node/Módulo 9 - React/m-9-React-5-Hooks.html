@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <title></title>
+      
+      <link rel="icon" href="src/pix/logo.svg" type="svg+xml">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://globals.onrender.com/global-dh.css">
+      <script src="https://globals.onrender.com/global-dh.js" defer></script>
+   </head>
+   <body>
+      <!-- <AppBar>
+         <AppBar-Body>
+            <AppBar-Brand></AppBar-Brand>
+            <t1></t1>
+            <AppBar-Options></AppBar-Options>
+         </AppBar-Body>
+      </AppBar> -->
+
+      <top-bar>
+         Módulo:  9 - React Hooks
+      </top-bar>
+
+      <modulo n="9">
+         <rotas-hooks>
+            <banner>Rotas Hooks</banner>
+
+            <O-que-vamos-ver-na-aula>
+               <h3>O que vamos ver na aula?</h3>
+
+               <display>
+                  <h1>O que vamos ver nesta aula?</h1>
+                  <p>Neste ponto, já sabemos que dentro do React existem dois tipos de componentes: stateless e stateful. E certamente associamos cada um a um tipo particular de código. Por exemplo, se pensássemos em um componente statefull, provavelmente imaginaríamos um componente de classe. E embora isso esteja correto, veremos agora que componentes “tipo funções” também podem ter um estado.</p>
+                  <p>O React, em suas últimas versões, implementou a possibilidade de atribuir estados, ciclos de vida e outros, a um componente funcional, pois dessa forma busca quebrar o gap diferencial na implementação entre componentes stateful e stateless.</p>
+                  <p>Mas então, se um componente funcional pode ter estado, qual é o sentido de ter visto componentes de classe? Esta funcionalidade é relativamente nova, então alguns projetos React feitos com versões mais antigas podem ter componentes de classe. Nesse caso, devemos estar preparados para saber como lidar com eles.</p>
+                  <p>Portanto, pontualmente ao longo desta aula aprenderemos sobre:</p>
+                  <ul>
+                     <li>
+                        <p>O que são hooks e quais benefícios eles proporcionam na criação de componentes.</p>
+                     </li>
+                     <li>
+                        <p>Quais são os hooks mais importantes neste contexto.</p>
+                     </li>
+                     <li>
+                        <p>Como trabalhar com os hooks: useState(), useEffect() e useRef().</p>
+                     </li>
+                     <li>
+                        <p>Qual é a semelhança desses hook com relação às funcionalidades de um componente de classe.</p>
+                     </li>
+                  </ul>
+                  <p>Dito isso, vamos ao que interessa e começar esta aula.</p>
+               </display>
+            </O-que-vamos-ver-na-aula>
+            
+            <Introducao-a-Hooks>
+               <h3>Introdução a Hooks</h3>
+               <display>
+                  <h1>Introdução a Hooks</h1>
+
+                  <p>
+                     A primeira coisa que precisamos esclarecer é que
+                     <b> Hooks NÃO </b>
+                     funcionam dentro de um componente de classe. É isso que chama a atenção neles, pois com eles poderemos gerar muitas funcionalidades tradicionalmente associadas a esses componentes, mas dentro de um componente funcional.
+                  </p>
+                  <p>Então, o que são hooks?</p>
+                  <p>Hooks são basicamente funções JavaScript puras que nos permitirão "ligar" recursos —como ciclo de vida e estado— a componentes não-classe, ou seja, a componentes funcionais. De acordo com a documentação oficial do React: "...Hooks não funcionam dentro de um componente de classe. Eles devem ser usados ??sem Classes."</p>
+                  
+                  
+                  <h4>Por que devemos usar hooks?</h4>
+                  <p>Como dissemos antes, os hooks nos dão a capacidade de ter o ciclo de vida e o estado disponível dentro dos componentes funcionais. Graças a isso, não precisaremos gerar um componente de classe para usar esses recursos.</p>
+                  <p>Isso é tremendamente poderoso, pois, dessa forma, não importará mais em que tipo de componentes estamos, o importante aqui é saber que, se for necessário implementar um estado ou o ciclo de vida, será capaz de fazê-lo.</p>
+                  <p>Além disso, a partir de agora, quando quisermos implementar o estado, não precisaremos mais fazer isso a partir do construtor da classe, como fazíamos antes. E também se quisermos atualizá-lo, teremos que usar o método setState(). Como os hooks são funções puras, poderemos implementar esses processos com mais facilidade.</p>
+                  <p>Estas são as razões fundamentais pelas quais devemos usar hooks.</p>
+                  
+                  
+                  <h4>Desde quando os hooks são usados?</h4>
+                  <p>De acordo com a documentação oficial do React: "Hooks são uma nova adição desde a versão 16.8."</p>
+                  <p>Isso significa que se nossa aplicação for feita com React, de fevereiro de 2019 em diante, dentro dela você terá a possibilidade de implementar os hooks sem nenhum problema.</p>
+                  <p>Mas não vamos perder mais tempo com essa leitura e vamos ver como usar essa ótima funcionalidade que são os hooks.</p>
+               </display>               <!-- quiz>header>h2{Quiz}+question>h4^^home>header>p[n]^choices>label[choice]>input[type="radio"]+t^^res>p -->
+            </Introducao-a-Hooks>
+
+            <use-state>
+               <h3>useState()</h3>
+               <display>
+                  <h1>Hooks - useState()</h1>
+
+                  <p>Este é o hook mais famoso e aquele que traz consigo a funcionalidade mais clara para entender o que são os hooks.</p>
+                  <p>Vamos relembrar, por um momento, como o estado deve ser definido dentro de um componente de classe.</p>
+                  <p>
+                     Para isso, foi necessário utilizar o construtor da classe e até mesmo chamar o 
+                     <b> super() </b>
+                     para que tudo corresse conforme o esperado. Assim como quando quisermos atualizar o estado, foi necessário utilizar o
+                     <b> setState(), </b>
+                     pertencente à mesma classe.
+                  </p>
+                  <p>
+                     Agora com os hooks para obter o mesmo resultado, será muito mais fácil, pois basta usar 
+                     <b> useState() </b>
+                     e pronto. Isso é tudo.
+                  </p>
+                  <p>Bem mais simples né?</p>
+                  <p>Mas vamos ver isso em detalhes no próximo vídeo, para que possamos entender mais claramente como trabalhar com o estado do componente graças a este hook.</p>
+               
+                  <h3>Hook useState()</h3>
+                  <video src="./Módulo 9 - React/Hook useState().mp4" controls="controls"></video>
+                  
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>useState()</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Selecione a opção correta:</p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>Os Hooks não podem ser usados ??dentro de componentes de classe.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Os hooks devem ser colocados dentro do componente de classe.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Hooks não devem ser usados ??dentro de componentes de classe, mas useState é a exceção.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Resposta certa</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Para que serve o hook useState()?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>useState() é usado para definir qual componente será renderizado.</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>useState() é usado para manipular o estado de um componente.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Nenhuma das opções acima.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Resposta certa</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Selecione a opção correta:</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>O argumento para useState é o estado ao qual queremos chegar.</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>O único argumento para o useState() é o estado inicial.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Nenhuma das opções está correta.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Resposta certa</p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </use-state>
+
+            <use-effect>
+               <h3>useEffect()</h3>
+               <display>
+                  <h1>Hook - useEffect()</h1>
+                  
+                  <p>Este hook é tudo que precisamos para gerenciar o ciclo de vida de um componente.</p>
+                  <p>Nesta única função temos a capacidade de controlar o que acontece quando o componente é montado, atualizado ou desmontado. É super funcional e relativamente fácil de usar.</p>
+                  <p>Estando acostumado a fazer três coisas ao mesmo tempo, é importante entender como configurá-lo para fazer uma coisa ou outra, mas não será muito complicado. Justamente esse hook busca quebrar um pouco a lacuna de dificuldade que o ciclo de vida apresentou nos componentes de classe.</p>
+                  <p>Vamos ao vídeo para saber um pouco mais sobre seu uso.</p>
+                  
+                  <h3>Hook - useEffect() - 360</h3>
+                  <video src="./Módulo 9 - React/Hook useEffect() - 360.mp4" controls="controls"></video>
+
+               </display>
+               <quiz>
+                  <header>
+                     <h2>Quiz</h2>
+                     <question>
+                        <h4>useEffect()</h4>
+                     </question>
+                  </header>
+                  <home>
+                     <header>
+                        <p n="1">Anteriormente, os componentes em React, ao usar classe, eles permitiram que determinadas funcionalidades fossem executadas nas diferentes etapas que passavam durante seu ciclo de vida (ou seja, na fase de montagem, atualização e desmontagem). Agora, se usarmos Hooks, também podemos acessar esse ciclo de vida de forma mais clara e fácil. Qual Hook nos dá esse benefício?</p>
+                     </header>
+                     <choices>
+                        <label choice="">
+                           <input type="radio">
+                           <t>useState()</t>
+                        </label>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>useEffect()</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>useEffect e useState()</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta certa</p>
+                     </res>
+                  </home>
+                  <home>
+                     <header>
+                        <p n="2">Selecione a opção correta:</p>
+                     </header>
+                     <choices>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>useEffect() recebe dois argumentos. O primeiro será um callback e o segundo um array.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>useEffect() recebe dois argumentos. O primeiro será um array e o segundo um callback.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Nenhuma das opções acima.</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta certa</p>
+                     </res>
+                  </home>
+                  <home>
+                     <header>
+                        <p n="3">O que acontece se passarmos um array vazio como segundo argumento?</p>
+                     </header>
+                     <choices>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Dizemos ao Hook para rastrear a primeira dependência que encontrar e, portanto, será executada quando o componente for desmontado</t>
+                        </label>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>Dizemos ao Hook que não queremos que ele rastreie nenhuma dependência e, portanto, ele será executado apenas uma vez, ou seja, quando o componente estiver montado.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Dizemos ao Hook para acompanhar todas as dependências e, portanto, ele será executado quando o componente for montado.</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta certa</p>
+                     </res>
+                  </home>
+               </quiz>
+            </use-effect>
+            
+            <use-ref>
+               <h3>useRef()</h3>
+               <display>
+                  <h1>Hook - useRef()</h1>
+
+                  <p>Este hook permite selecionar elementos DOM de forma fácil e simples, assim como fizemos com o querySelector de JavaScript Vanilla.</p>
+                  <p>useRef() é realmente fácil de usar. Tudo o que precisamos fazer é executá-lo e armazenar seu valor de retorno em uma variável e, em seguida, usar essa variável na estrutura HTML do elemento que queremos capturar.</p>
+                  <p>Vamos ver seu funcionamento completo no vídeo a seguir.</p>
+
+                  <h3>Hook - useRef() - 360</h3>
+                  <video src="./Módulo 9 - React/Hook - useRef() - 360.mp4" controls="controls"></video>
+               </display>
+               <quiz>
+                  <header>
+                     <h2>Quiz</h2>
+                     <question>
+                        <h4>Vamos revisar useRef()</h4>
+                     </question>
+                  </header>
+                  <home>
+                     <header>
+                        <p n="1">
+                           Para que usamos o hook useRef?
+                           <br>
+                           <b>Descrição</b> (campo opcional): <br>
+                           <b>Feedback correto:</b> <br>
+                           <b>Feedback incorreto: </b> <br>
+                           <b>Opções: </b> 
+                           <ol>
+                              <li>
+                                 <p>Opção 1:</p>
+                              </li>
+                              <li>
+                                 <p>Opção 2:</p>
+                              </li>
+                           </ol>
+                        </p>
+                     </header>
+                     <choices>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>Permite selecionar um elemento do DOM.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Permite modificar o ciclo de vida do componente.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Permite acessar o estado do componente.</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta correta</p>
+                     </res>
+                  </home>
+                  <home>
+                     <header>
+                        <p n="2">Selecione a opção correta:</p>
+                     </header>
+                     <choices>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Usando o Hook useRef podemos realizar a mutação dos elementos DOM.</t>
+                        </label>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>Usar o hook useRef evita a mutação de elementos DOM.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Nenhuma das opções acima.</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta correta</p>
+                     </res>
+                  </home>
+               </quiz>
+            </use-ref>
+            
+            <ao-vivo>
+               <h3>Para a classe ao vivo</h3>
+               <display>
+                  <h1>Para a aula ao vivo</h1>
+
+                  <p>Feito! Oficialmente esta é a última aula virtual e a próxima será a última aula ao vivo.</p>
+                  <p>Em nossa próxima reunião estaremos aplicando tudo o que vimos relacionado a hooks. Por esse motivo, como de costume, deixamos a seguir uma lista de perguntas que servirão de termômetro para saber até que ponto foram consolidados.</p>
+                  <ul>
+                     <li>
+                        <p>Os hooks podem ser usados ??dentro de um componente de classe?</p>
+                     </li>
+                     <li>
+                        <p>O que o hook useState() retorna para nós quando executado?</p>
+                     </li>
+                     <li>
+                        <p>Qual funcionalidade dos componentes de classe o hook useEffect() substitui?</p>
+                     </li>
+                     <li>
+                        <p>Se quisermos que useEffect() seja executado apenas quando um determinado estado for atualizado, o que temos que fazer?</p>
+                     </li>
+                     <li>
+                        <p>Qual é a abordagem que devemos adotar se quisermos que useEffect() seja executado apenas quando um componente for desmontado?</p>
+                     </li>
+                     <li>
+                        <p>Qual é a principal funcionalidade fornecida pelo hook useRef()?</p>
+                     </li>
+                     <li>
+                        <p>Além de salvar o valor de retorno de useRef() em uma variável, o que mais precisamos fazer para relacioná-lo a um determinado elemento HTML?</p>
+                     </li>
+                  </ul>
+                  <p>Se conseguirmos chegar a todas as respostas sem muita dificuldade, podemos relaxar e aguardar a aula ao vivo. Se algumas perguntas foram difíceis, recomendamos dar uma olhada no material novamente para finalizar o esclarecimento desses conceitos.</p>
+                  <p>Estamos te esperando na aula!</p>
+                  
+                  <img src="./Módulo 9 - React/Metodos.webp" alt="" width="100%">
+               </display>
+            </ao-vivo>
+            
+            <hooks-ao-vivo>
+               <h3>Hooks ao vivo</h3>
+               <display>
+                  <h1>Ponto de partida</h1>
+
+                  <h4>Chegamos à última aula na React, onde poderemos ver Hooks e vamos procurar cumprir os seguintes objetivos:</h4>
+
+                  <ul>
+                     <li>
+                        <p>Entenda a diferença entre o estado de um componente de classe e o Hooks useState ().</p>
+                     </li>
+                     <li>
+                        <p>Entenda a diferença entre métodos de ciclo de vida e useEffect ().</p>
+                     </li>
+                     <li>
+                        <p>Entenda a diferença entre usar o querySelector () e o Hook useRef ().</p>
+                     </li>
+                     <li>
+                        <p>Entenda que estes 3 Hooks nos permitem ter todas as funcionalidades de um componente de classe, dentro de um componente funcional.</p>
+                     </li>
+                  </ul>
+
+                  <!-- <iframe src="https://docs.google.com/document/d/1qudOu9kqaWSWsfWTmnGAuzmesEjwmih_Ksyxvam_vd8/edit?usp=sharing" frameborder="0"></iframe> -->
+                  <iframe src="https://docs.google.com/document/d/e/2PACX-1vScJyC0vPje_vPhRJ5HsWHH-r-OW_o2KKz71XH6BkMaOY-KVOmYA85pVbxGgs_Jrgqs6Hxyw0T3iQDn/pub?embedded=true"></iframe>
+               </display>
+            </hooks-ao-vivo>
+
+            <Para-saber-mais>
+               <h3>Para saber mais</h3>
+               <display>
+                  <h1>Para saber mais</h1>
+                  
+                  
+                  <p>Para saber mais</p>
+
+                  <p>
+                     <a target="_blank" href="https://medium.com/@jmz12/entendiendo-los-ciclos-de-vida-8a70abb3b51a">
+                        O ciclo de vida componentes
+                     </a><br>
+                     <t>Um ótimo recurso para entender de onde vem o ciclo de vida dos componentes e as diferentes atualizações que ele teve.</t>
+                  </p>
+                  <p>
+                     <a target="_blank" href="https://react-bootstrap.github.io/">
+                        React bootstrap
+                     </a><br>
+                     <t>Uma excelente biblioteca React que gera componentes visuais baseados em Bootstrap.</t>
+                  </p>
+                  <p>
+                     <a target="_blank" href="https://material-ui.com/es/">
+                        Material de UI
+                     </a><br>
+                     <t>Outro ótimo recurso para gerar a UI de um projeto React através de componentes dinâmicos.</t>
+                  </p>
+                  <p>
+                     <a target="_blank" href="https://www.paradigmadigital.com/dev/hooks-como-utilizarlos-react/">
+                        Dominando Hooks no React
+                     </a><br>
+                     <t>Excelente recurso para se aprofundar um pouco mais nos Hooks que vimos no curso e aprender alguns novos.</t>
+                  </p>
+                  <p>
+                     <a target="_blank" href="https://es.redux.js.org/docs/basico/uso-con-react.html">
+                        React Redux
+                     </a><br>
+                     <t>Sem dúvida, uma funcionalidade que não devemos perder de vista. Algo não tão fácil de entender, mas que vale a pena conhecer.</t>
+                  </p>
+               </display>
+            </Para-saber-mais>
+            
+         </rotas-hooks>
+         
+         
+         
+         
+         <!-- quiz>header>h2{Quiz}+question>h4^^home>header>p[n]^choices>label[choice]>input[type="radio"]+t^^res>p -->
+      </modulo>
+
+   </body>
+</html>
+
+<style>
+</style>

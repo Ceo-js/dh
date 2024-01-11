@@ -1,0 +1,30 @@
+<iframe id="HTMLBlock-3fb10fbf-939b-4977-ac3f-9c875c667a79" srcdoc="
+<script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js&quot; integrity=&quot;sha512-W7EehcwtSbRF63FIQlXEOOd5mnq0Et0V0nUOvwcUvjnCKgOLLYbqriQxEQSp63sfrkryxIg/A/O8v8O18QwQCQ==&quot; crossorigin=&quot;anonymous&quot; referrerpolicy=&quot;no-referrer&quot;></script>
+<script>
+    window.onload = function() {
+        const iframe = window.parent.document.getElementById('HTMLBlock-3fb10fbf-939b-4977-ac3f-9c875c667a79')
+        const container = document.getElementById('HTMLBlockContent-3fb10fbf-939b-4977-ac3f-9c875c667a79')
+        const blocks = iframe.contentWindow.document.querySelectorAll('pre code')
+        blocks.forEach(block => {
+            if (block.className.includes('html')) {
+                block.innerHTML = block.innerHTML.replace(/</g, '&amp;lt;').replace(/>/g, '&amp;gt;').replace(/&quot;/g, '&amp;quot;').replace(/'/g, '&amp;#039;')
+            }
+            hljs.highlightElement(block)
+        })
+        const height = Math.max(
+            document.documentElement[&quot;clientHeight&quot;],
+            document.body[&quot;scrollHeight&quot;],
+            document.documentElement[&quot;scrollHeight&quot;],
+            document.body[&quot;offsetHeight&quot;],
+            document.documentElement[&quot;offsetHeight&quot;]
+        )
+        iframe.style.height = height + 'px'
+    }
+</script>
+<link type=&quot;text/css&quot; rel=&quot;Stylesheet&quot; href=&quot;https://prod-gbl-pg-lnf.digitalhouse.com/tenants/dh/playstrap/playstrap.css?v=1.46.5&quot; />
+<link type=&quot;text/css&quot; rel=&quot;Stylesheet&quot; href=&quot;https://prod-gbl-pg-lnf.digitalhouse.com/tenants/dh/ui/index.css?v=1.46.5 &quot; />
+<div id='HTMLBlockContent-3fb10fbf-939b-4977-ac3f-9c875c667a79' class='lesson__markdown__body'>
+   <div style=&quot;width: 100%;&quot;><div style=&quot;position: relative; padding-bottom: 136.72%; padding-top: 0; height: 0;&quot;>
+      <iframe frameborder=&quot;0&quot; width=&quot;1024&quot; height=&quot;1400&quot; style=&quot;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&quot; src=&quot;&quot; type=&quot;text/html&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; scrolling=&quot;yes&quot; allownetworking=&quot;all&quot;></iframe> </div></div>
+<base target='_blank' />
+" class="html-block-iframe" sandbox="allow-forms allow-scripts allow-same-origin allow-modals allow-popups allow-presentation allow-popups-to-escape-sandbox" scrolling="no" data-testid="playstrapIframe" style="height: 857px;"></iframe>

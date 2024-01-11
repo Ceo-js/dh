@@ -1,0 +1,192 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+</head>
+<body>
+    <app-bar></app-bar>
+    <side-bar></side-bar>
+    <home-page>
+        <post>
+            <post-home>
+                <overlay>
+                <post-header>
+                    <t1 cor="#905">Relações 1_N</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        "Um usuário tem muitas imagens e uma imagem pertence a um usuário".
+                        <br><br>
+                        A frase acima poderia ser usada como um modelo de negócios muito básico para o que agora conhecemos como Instagram. Dentro desse contexto, cada imagem ou fotografia que vemos nesta rede social foi postada por uma determinada pessoa e essa pessoa pode ter zero, uma ou muitas imagens associadas ao seu perfil.
+                        <br><br>
+                        Esta é uma relação que já deveria estar clara em nossas cabeças: a relação de um para muitos, ou tradicionalmente chamada de 1 para N.
+                        <br><br>
+                        Vejamos então como podemos, com a Sequelize, gerar este tipo de relacionamento presente em nosso banco de dados e, por sua vez, como podemos acessar os dados através deste relacionamento.
+                    </p>
+                    <video src="06 - Sequelize - Relacionamentos e CRUD completo/02 - Relações 1_N/Relações 1_N.mp4"></video>
+                </post-body>
+                </overlay>
+            </post-home>
+            <iframe src="06 - Sequelize - Relacionamentos e CRUD completo/02 - Relações 1_N/pdf-Relações 1_N.html"display frameborder="0"></iframe>
+        </post>
+        <post>
+            <post-home>
+                <overlay>
+                <post-header>
+                    <t1 cor="#905">Exercício 01</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        Vamos imaginar que já criamos um modelo para gênero e agora queremos criar um para um filme.
+                        <br><br>
+                        O objetivo será indicar a relação entre um filme e um gênero no modelo "Filme". Ou seja, um filme pertence a um gênero.
+                        <br><br>
+                        Para definir isso, após a declaração do model do filme, será necessário chamar o método belongsTo, passando o model "Genero" como o primeiro parâmetro. O segundo parâmetro do método belongsTo será um objeto com a configuração para o ForeignKey e o "as" (apelido para o nome da relação). No nosso caso, a ForeignKey será a coluna chamada "genero_id" e indicaremos como alias "genero".
+                    </p>
+                    <ul>
+                        <li>O primeiro parâmetro do método belongsTo é o model Genero. Algo como Filme.belongsTo(Genero, ...)</li>
+                        <li>O segundo parâmetro é um objeto com a configuração para a foreignKey e o apelido "as". Algo parecido com Filme.belongsTo(Genero, {foreignKey: "...", as: "..."})</li>
+                        <li>No nosso caso a ferignKey será "genero_id".</li>
+                        <li>Apelidaremos essa relação de "genero".</li>
+                    </ul>
+                    <res>
+                        <js>
+                            module.exports = (sequelize, DataTypes) => { <br><br>
+                                <tabs>
+                                    const Filme = sequelize.define( 'filmes', {
+                                        <tabs>
+                                            titulo: DataTypes.STRING, <br>
+                                            genero_id: DataTypes.INTEGER,
+                                        </tabs>
+                                    } ); <br><br>
+                                    
+                                    Filme.associate = function( modelos ) {
+                                        <tabs>
+                                            Filme.belongsTo(
+                                                <tabs>
+                                                    modelos.Genero, <br>
+                                                    {
+                                                        <tabs>
+                                                            foreignKey: "genero_id", <br>
+                                                            as: "genero"
+                                                        </tabs>
+                                                    }
+                                                </tabs>
+                                                );
+                                            </tabs>
+                                        } <br><br>
+                                        
+                                        return Filme;
+                                </tabs>
+                            }
+                        </js>
+                    </res>
+                </post-body>
+                </overlay>
+            </post-home>
+        </post>
+        <post>
+            <post-home>
+                <overlay>
+                <post-header>
+                    <t1 cor="#905">Exercício 02</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        Para este exercício, nosso objetivo será, após a definição do modelo Genero, vinculá-lo ao modelo Filme.
+                        <br><br>
+                        Nesse caso, um gênero tem muitos (has many) filmes. Para indicar isso, vamos usar o método hasMany do modelo Genero.
+                        <br><br>
+                        Para a configuração da relação, será utilizada a coluna "genero_id" como foreignKey. Indicaremos como apelido da relação (alias) "filmes".
+                    </p>
+                    <ul>
+                        <li>Você deve executar o método hasMany do modelo Genero</li>
+                        <li>O primeiro parâmetro do método hasMany deve ser o modelo Filme.</li>
+                        <li>O segundo parâmetro do método hasMany é um objeto com a configuração para a foreignKey e o "as". Algo como Genero.hasMany(models.Filme, {foreignKey: "...", as: "..."})</li>
+                        <li>No nosso caso a foreignKey será "genero_id"</li>
+                        <li>Chamaremos a relação de "filmes". (Apelido ou as)</li>
+                    </ul>
+                    <res>
+                        <js>
+                            module.exports = (sequelize, DataTypes) => {
+                                <tabs>
+                                    const Genero = sequelize.define('generos', {
+                                        <tabs>
+                                            nome: DataTypes.STRING,
+                                        </tabs>
+                                    }); <br><br>
+                                    
+                                    Genero.associate = function( modelos ) {
+                                        <tabs>
+                                            Genero.hasMany( modelos.Filme, {
+                                                <tabs>
+                                                    foreignKey: "genero_id", <br>
+                                                    as: "filmes"
+                                                </tabs>
+                                            } );
+                                        </tabs>
+                                    } <br><br>
+                                    
+                                    return Genero;
+                                </tabs>
+                            }
+                        </js>
+                    </res>
+                </post-body>
+                </overlay>
+            </post-home>
+        </post>
+        <post>
+            <post-home>
+                <overlay>
+                <post-header>
+                    <t1 cor="#905">Exercício 03</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        Nesse exemplo teremos um modelo Filme que tem já definida uma relação com o modelo gênero.
+                        <br><br>
+                        Queremos buscar o filme com id 1, e para isso podemos usar o método findByPk. É importante dizer que também queremos trazer o gênero do filme em nossos resultados.
+                        <br><br>
+                        Para conseguir isso, devemos passar como segundo parâmetro do método findByPk um objeto com o atributo include. O atributo include será um array com a lista de todos os relacionamentos que queremos trazer associados ao filme, no nosso caso, apenas o relacionamento genero.
+                        <br><br>
+                        E para nosso desafio se concluir, você deverá dar um console.log no atributo que contem o nome do gênero: filme.genero.nome
+                    </p>
+                    <ul>
+                        <li>Você deve executar o método findByPk do modelo Filme, passando a ID 1 como o primeiro parâmetro: Filme.findByPk (1)</li>
+                        <li>O segundo parâmetro do findByPk é um objeto com o atributo include</li>
+                        <li>O atributo include é uma matriz com a lista de todos os relacionamentos: Filme.findByPk (1, {include: ['genero']})</li>
+                    </ul>
+                    <res>
+                        <js>
+                            const Filme = require('model/Filme.js'); <br><br>
+
+                            Filme.findByPk(
+                                <tabs>
+                                    1, <br>
+                                    {
+                                        <tabs>
+                                            include: ['genero']
+                                        </tabs>
+                                    }
+                                </tabs>
+                            ).then( filme => console.log( filme.genero.nome ) );
+                        </js>
+                    </res>
+                </post-body>
+                </overlay>
+            </post-home>
+        </post>
+    </home-page>
+
+</body>
+</html>

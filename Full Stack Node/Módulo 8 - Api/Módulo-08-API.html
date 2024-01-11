@@ -1,0 +1,715 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <title></title>
+      
+      <link rel="icon" href="src/pix/logo.svg" type="svg+xml">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://globals.onrender.com/global-dh.css">
+      <script src="https://globals.onrender.com/global.js" defer></script>
+   </head>
+   <body>
+      <AppBar>
+         <AppBar-Body>
+            <AppBar-Brand></AppBar-Brand>
+            <t1></t1>
+            <AppBar-Options></AppBar-Options>
+         </AppBar-Body>
+      </AppBar>
+
+      <top-bar>
+         Módulo:  8 - API
+      </top-bar>
+
+      <modulo n="8">
+         <display>
+            <banner>Criando nossas próprias APIs</banner>
+            <h1>Introdução ao módulo: API</h1>
+
+            
+            <p>
+               Neste módulo, você vai aprender a criar sua própria API e também a consumir APIs de terceiros. Vamos trabalhar sobre os seguintes tópicos:
+            </p>
+            <ul>
+               <li>
+                  <p>Decomposição dos distintos componentes que formam um serviço REST;</p>
+               </li>
+               <li>
+                  <p>
+                     Construção de uma API;
+                  </p>
+               </li>
+               <li>
+                  <p>
+                     Teste de funcionamento de uma API;
+                  </p>
+               </li>
+               <li>
+                  <p>
+                     Middleware de segurança;
+                  </p>
+               </li>
+               <li>
+                  <p>
+                     Etapas envolvidas na implementação de segurança em uma API.
+                  </p>
+               </li>
+            </ul>    
+            <iframe src="https://view.genial.ly/62a0afbf6806170011ec2dd9" live frameborder="0"></iframe>  
+
+            <hr>
+            <iframe src="https://view.genial.ly/6049770d874b210da12604b9" frameborder="0"></iframe>
+         </display>
+
+         <display>
+            <h2>API</h2>
+            
+            <video src="./1 - Criando nossas próprias APIs/2 - API/Funcionamento de uma API.mp4" controls></video>
+            
+            <hr>
+
+            <questions>
+               <header>
+                  <h2>Quiz</h2>
+                  <question>
+                     <h4>Questionario_api_01</h4>
+                  </question>
+               </header>
+               <home>
+                  <header>
+                     <p n="1">Qual o significado de API?</p>
+                  </header>
+                  <choices>
+                     <label choice="">
+                        <input type="radio">
+                        <t>Asyncronous Paradox Image</t>
+                     </label>
+                     <label choice="">
+                        <input type="radio">
+                        <t>Array Proxy Interference</t>
+                     </label>
+                     <label choice="certa">
+                        <input type="radio" checked>
+                        <t certa>Application Programming Interface</>
+                     </label>
+                     <label choice="">
+                        <input type="radio">
+                        <t>Application Pragmatic Interface</t>
+                     </label>
+                  </choices>
+               </home>
+               
+               <home>
+                  <header>
+                     <p n="2">O advento das APIs ajudou em:</p>
+                  </header>
+                  <choices>
+                     <label choice>
+                        <input type="radio">
+                        <t>Replicar bases de dados de acordo com a necessidade.</t>
+                     </label>
+                     <label choice="certa">
+                        <input type="radio" checked>
+                        <t>Promover uma maior interação entre diferentes sistemas.</t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>Atualizações de frontend em tempo real.</t>
+                     </label>
+                  </choices>
+               </home>
+            </questions>
+         </display>
+            
+         <display>
+            <h1>REST</h1>
+            <p>
+               Hoje em dia, a maioria das empresas usa API REST para criar serviços. Vamos conhecer melhor sobre o porquê disso, para que serve e quais são os benefícios de uma API REST.
+            </p>
+            <iframe src="./1 - Criando nossas próprias APIs/3 - REST/Rest ppt.html" display width="100%" frameborder="0"></iframe>
+            
+               <hr>
+
+            <video src="./1 - Criando nossas próprias APIs/3 - REST/Rest.mp4" controls="controls"></video>
+
+            <hr>
+
+            <questions>
+               <header>
+                  <h2>Quiz</h2>
+                  
+                  <question>
+                     <h4>Questionario_REST_01</h4>
+                  </question>
+               </header>
+
+               <home>
+                  <header>
+                     <p n="1">O que são endpoints?</p>
+                  </header>
+                  <choices>
+                     <label choice>
+                        <input type="radio">
+                        <t>Uma arquitetura de serviços.</t>
+                     </label>
+                     <label choice="certa">
+                        <input type="radio">
+                        <t>Solicitações do cliente.</t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>Resposta do servidor.</t>
+                     </label>
+                  </choices>
+               </home>
+
+               <home>
+                  <header>
+                     <p n="2">Escolha todas as opções que indicam formatos válidos para envio de dados em uma API REST:</p>
+                  </header>
+                  <choices>
+                     <label choice="certa">
+                        <input type="checkbox" checked>
+                        <t>RAW</t>
+                     </label>
+                     <label choice="certa">
+                        <input type="checkbox" checked>
+                        <t>JSON</t>
+                     </label>
+                     <label choice>
+                        <input type="checkbox">
+                        <t>JPEG</t>
+                     </label>
+                     <label choice>
+                        <input type="checkbox">
+                        <t>TIFF</t>
+                     </label>
+                     <label choice="certa">
+                        <input type="checkbox" checked>
+                        <t>URL-encoded</t>
+                     </label>
+                  </choices>
+               </home>
+
+               <home>
+                  <header>
+                     <p n="3">O formato TEXT nos permite:</p>
+                  </header>
+                  <choices>
+                     <label choice>
+                        <input type="radio">
+                        <t>Enviar dados que estejam em formato JSON.</t>
+                     </label>
+                     <label choice>
+                        <input type="radio" checked>
+                        <t>Enviar dados que não estejam em formato JSON.</t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>Enviar somente dados que estejam em arquivo HTML.</t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>Enviar somente dados que estejam em arquivo CSS.</t>
+                     </label>
+                  </choices>
+               </home>
+            </questions>
+
+            <hr>
+            
+            <p>
+               Agora é hora de começar a olhar para frente, para a aula ao vivo. Como de costume, aqui estão algumas perguntas para testar e ver como você está indo com este conhecimento.
+            </p>
+            <ul>
+               <li>
+                  <p>
+                     Ao construir uma API, em que formato o servidor deve responder com as informações solicitadas?
+                  </p>
+               </li>
+               <li>
+                  <p>
+                     O que é um endpoint?
+                  </p>
+               </li>
+               <li>
+                  <p>
+                     Quais são os métodos mais comuns utilizados na construção de uma API?
+                  </p>
+               </li>
+               <li>
+                  <p>
+                     Qual é a vantagem de criar uma API REST?
+                  </p>
+               </li>
+               <li>
+                  <p>
+                     Que software normalmente se usa para testar os diferentes endpoints que nossa API tem?
+                  </p>
+               </li>
+               <li>
+                  <p>
+                     Se conseguir responder à maioria destas perguntas, seu conhecimento passou no teste e está mais do que pronto para enfrentar a aula ao vivo, onde construiremos uma API de filmes.
+                  </p>
+               </li>
+            </ul>
+            <p>
+               Se, por outro lado, tiver dúvidas ou incertezas, recomendamos a revisão do material para reforçar os conceitos nos quais está confuso.
+               <br></br>
+               Nos vemos na aula!
+            </p>
+         </display>
+
+         <display>
+            <h1>POSTMAN</h1>
+
+            <p>Postman é uma ferramenta que simplifica muitas das nossas tarefas na hora de testar o funcionamento de uma API sem ter o front end ou scripts feitos.</p>
+            <p>
+               Com ele nós podemos testar os endpoints da nossa aplicação e analisar alguns parâmetros como, por exemplo, a duração que cada request demora para ser feito.
+            </p>
+
+            <h3>Apresentação</h3>
+
+            <iframe src="./1 - Criando nossas próprias APIs/4 - POSTMAN/apresentação-postman.html" frameborder="0"></iframe>
+            <hr>
+            <video src="./1 - Criando nossas próprias APIs/4 - POSTMAN/POSTMAN.mp4" controls="controls"></video>   
+            <hr>
+
+            <h3>Entendendo a interface</h3>  
+            
+            <iframe src="https://view.genial.ly/6066753fb2064f0d447b006c" frameborder="0"></iframe>
+
+            <hr>
+
+            <questions>
+               <header>
+                  <h2>Quiz</h2>
+                  <question>
+                     <h4>Questionario_POSTMAN_01</h4>
+                  </question>
+               </header>
+               <home>
+                  <header>
+                     <p n="1">O código a seguir é um exemplo de:</p>
+                     <co-de h="150px">
+                        pm.test( ‘funcionando’, function() {
+
+                           pm.response.to.have.status( 200 );
+                        
+                        } );
+                     </co-de>
+                  </header>
+                  <choices>
+                     <label choice>
+                        <input type="radio">
+                        <t>Request</t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>Response</t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>Endpoint</t>
+                     </label>
+                     <label choice="certa">
+                        <input type="radio" checked>
+                        <t>Teste</t>
+                     </label>
+                  </choices>
+               </home>
+               <home>
+                  <header>
+                     <p n="2">Além de testar os endpoints da nossa API, com o Postman nós também podemos:</p>
+                  </header>
+                  <choices>
+                     <label choice>
+                        <input type="radio">
+                        <t>Ver quanto tempo levou para realizar o request.</t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>Modificar o formato em que a informação será visualizada.</t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>Saber o tamanho de um JSON.</t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>Acessar informações sobre Cookies.</t>
+                     </label>
+                     <label choice="certa">
+                        <input type="radio" checked>
+                        <t>Todas as opções acima.</t>
+                     </label>
+                  </choices>
+               </home>
+            </questions>
+         </display>
+
+         <display>
+            <h2>Criando API própria</h2>
+
+            <p>
+               Ufa, muito conceito novo, não é mesmo?! Sabe o que é bom para compreender melhor todos esses novos conceitos? Colocar a mão na massa, claro!
+            </p>
+            <p>
+               A seguir, vamos te ensinar a criar a sua própria API, não é demais?
+            </p>
+            <p>
+               Sigam-me os bons!
+            </p>
+
+            <iframe src="https://view.genial.ly/605e3797e44ee30d9ab71ba1" frameborder="0"></iframe>
+            
+            <hr>
+
+            <h4>Criando uma API - parte: 1</h4>
+            <video src="./1 - Criando nossas próprias APIs/5 - Criando uma API/criando uma API - parte 1.mp4" controls="controls"></video>
+            <h4>Criando uma API - parte: 2</h4>
+            <video src="./1 - Criando nossas próprias APIs/5 - Criando uma API/criando uma API - parte 2.mp4" controls="controls"></video>
+            <h4>Criando uma API - parte: 3</h4>
+            <video src="./1 - Criando nossas próprias APIs/5 - Criando uma API/criando uma API - parte 3.mp4" controls="controls"></video>
+            
+            <hr>
+            
+            <questions>
+               <header>
+                  <h2>Quiz</h2>
+                  <question>
+                     <h4>API própria REST 1</h4>
+                  </question>
+               </header>
+               <home>
+                  <header>
+                     <p n="1">Qual das opções abaixo é um endpoint que segue as boas práticas de uma API REST? </p>
+                  </header>
+                  <choices>
+                     <label choice="certa">
+                        <input type="radio" checked>
+                        <t>www.spotify.com/albuns/{id}</t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>www.spotify.com/bucarAlbum/{id}</t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>www.spotify.com/excluirAlbuns/{id}</t>
+                     </label>
+                  </choices>
+               </home>
+               <home>
+                  <header>
+                     <p n="2">
+                        Conseguimos um trabalho como freelancers para darmos manutenção em um sistema web. 
+                     </p>
+                     <p>
+                        O sistema possui o endpoint 
+                        <b>GET /artists/{id}</b> para obter informações sobre o artista identificado com o campo id.
+                     </p>
+                     <p>
+                        E também o endpoint 
+                        <b>PATCH /updateArtists/{id}</b> para atualizar parcialmente as informações do artista pelo preenchimento do campo id.
+                     </p>
+                     <p>O que podemos dizer pelo padrão adotado anteriormente no sistema?</p>
+                  </header>
+                  <choices>
+                     <label choice>
+                        <input type="radio">
+                        <t>
+                           Segue boas práticas já que para realizar diferentes ações eu tenho endpoints diferentes
+                        </t>
+                     </label>
+                     <label choice="certa">
+                        <input type="radio" checked>
+                        <t>
+                           Não segue boas práticas uma vez que possuem duas urls diferentes e o recurso é o mesmo.
+                        </t>
+                     </label>
+                  </choices>
+               </home>
+               <home>
+                  <header>
+                     <p n="3">
+                        Quais dessas opções NÃO é um método HTTP?
+                     </p>
+                  </header>
+                  <choices>
+                     <label choice>
+                        <input type="checkbox">
+                        <t>GET</t>
+                     </label>
+                     <label choice="certa">
+                        <input type="checkbox" checked>
+                        <t>UPGRADE</t>
+                     </label>
+                     <label choice>
+                        <input type="checkbox">
+                        <t>DELETE</t>
+                     </label>
+                     <label choice="certa">
+                        <input type="checkbox" checked>
+                        <t>ADD</t>
+                     </label>
+                     <label choice>
+                        <input type="checkbox">
+                        <t>POST</t>
+                     </label>
+                     <label choice>
+                        <input type="checkbox">
+                        <t>PATCH</t>
+                     </label>
+                  </choices>
+               </home>
+            </questions>
+         </display>
+
+         <display>
+            <h2>Criando nossas próprias APIs [ao Vivo]</h2>
+
+            <iframe src="./1 - Criando nossas próprias APIs/6 - Criando nossas próprias APIs [ao Vivo]/apresentação criando nossa própria API.html" frameborder="0"></iframe>
+            
+            <h4>Arquivos para a prática Criando API - zip</h4>
+
+            <p>
+               <a href="./1 - Criando nossas próprias APIs/6 - Criando nossas próprias APIs [ao Vivo]/Codigo Base - Projeto Livraria (1).zip" download="">
+                  Codigo Base - Projeto Livraria (1).zip
+               </a>
+            </p>
+         </display>
+
+         
+         <!-- Consumo de APIs próprias e de terceiros { -->
+         <display>
+            Consumindo API
+            <h1>Axios e Node Fetch</h1>
+
+            <p>
+               Você se lembra do axios? Ele voltou! Axios é uma biblioteca que podemos instalar com o NPM e usá-la tanto no front-end para o navegador quanto no back-end para comunicação entre servidores. O objetivo do Axios é fazer comunicação HTTP através de código, configurando solicitações como objetos Javascript.
+            </p>
+            <p>
+               Existe ainda uma segunda opção para essa tarefa, que é o Node Fetch. Funciona de forma semelhante ao Fetch API do Javascript, entretanto devemos alertar que esta biblioteca, assim como o Axios, não vem de maneira padrão no NodeJs, precisando fazer a instalação através do NPM.
+            </p>
+            <p>
+               E aí, se interessou pelo assunto? Então vamos mergulhar de cabeça no vídeo a seguir!
+            </p>
+
+            <h4>apresentação Axios</h4>
+            <iframe src="./2 - Consumo de APIs próprias e de terceiros/1 - Consumindo API/apresentação Axios.html" frameborder="0"></iframe>
+            
+            <h4>Axios / Node Fetch</h4>
+            <video src="./2 - Consumo de APIs próprias e de terceiros/1 - Consumindo API/Axios e Node Fetch.mp4" controls="controls"></video>
+         
+            <hr>
+
+            <questions>
+               <header>
+                  <h2>Quiz</h2>
+                  <question>
+                     <h4>Questionário: Sobre o AXIOS</h4>
+                  </question>
+               </header>
+               <Home>
+                  <header>
+                     <p n="1">Axios é uma biblioteca que serve para...?</p>
+                  </header>
+                  <choices>
+                     <label choice>
+                        <input type="radio">
+                        <t>Criar uma API</t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>Criar uma aplicação backend</t>
+                     </label>
+                     <label choice="certa">
+                        <input type="radio" checked>
+                        <t>Consumir uma api, fazendo comunicações HTTP</t>
+                     </label>
+                        <label choice>
+                        <input type="radio">
+                        <t>Ler objetos JS</t>
+                     </label>
+                  </choices>
+               </Home>
+
+               <Home>
+                  <header>
+                     <p n="2">Para que serve o parâmetro baseURL?</p>
+                  </header>
+                  <choices>
+                     <label choice="certa">
+                        <input type="radio" checked>
+                        <t>
+                           Com ele iremos definir qual a URL padrão da nossa APi, assim focamos só nos endpoints
+                        </t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>Ser para definir o endpoint principal</t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>Para dizer qual endpoint iremos consumir</t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>Para informar a rota padrão da nossa aplicação.</t>
+                     </label>
+                  </choices>
+               </Home>
+
+               <Home>
+                  <header>
+                     <p n="3">O axios trabalha de forma assíncrona!?</p>
+                  </header>
+                  <choices>
+                     <label choice="certa">
+                        <input type="radio" checked>
+                        <t>VERDADE</t>
+                     </label>
+                     <label choice>
+                        <input type="radio">
+                        <t>FALSO</t>
+                     </label>
+                  </choices>
+               </Home>
+            </questions>
+         </display>
+
+         <display>
+            <h1>Consumo de APIs próprias e de terceiros [ao Vivo]</h1>
+
+            <h3>Consumo de APIs Back-end</h3>
+            <iframe src="./2 - Consumo de APIs próprias e de terceiros/2 - Consumo de APIs próprias e de terceiros [ao vivo]/apresentação consumo de APIs back-end.html" frameborder="0"></iframe>
+            
+            <iframe src="./2 - Consumo de APIs próprias e de terceiros/2 - Consumo de APIs próprias e de terceiros [ao vivo]/Atividade  APIs - V2.pdf" frameborder="0"></iframe>
+         </display>
+         
+         <display>
+            Aplicação Prática
+            <h1>Aula Prática</h1>
+
+            <sub>
+               O objetivo dessa aula é colocarmos em prática o que aprendemos nesse módulo!
+            </sub>
+         </display>
+         
+         <!-- Sprint VII - Projeto Integrador { -->
+         <display>
+            Sprint VII - Projeto Integrador
+            <h1>Aula Prática</h1>
+
+            <sub>
+               O objetivo dessa aula é colocarmos em prática o que aprendemos nesse módulo!
+            </sub>
+         </display>
+      </modulo>
+
+   </body>
+</html>
+
+<style>
+   top-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: calc( 100% - 5rem );
+      height: 37px;
+      margin: 0 auto;
+      padding: 5px 2rem;
+      background: white;
+      border: 1px solid #d9d9d9;
+      border-radius: 7px;
+      font-size: 15px;
+   }
+   banner {
+      display: block;
+      background: var( --text-bg-dh );
+      padding: 1vw;
+      border-bottom-left-radius: 7px;
+   }
+   question {
+      display: block;
+      padding: 4vw;
+   }
+   iframe[live] {
+      aspect-ratio: 1 / 1.37;
+   }
+</style>
+
+<script co-de>
+   /* == [ code template ] == == == == == == == == == */
+   let codeTemplate = `
+   <style>
+      code {
+         display: block;
+         background: #212329;
+         position: relative;
+         min-height: calc( 36px + 48px );
+         overflow: hidden;
+         border-radius: 7px;
+      }
+      code > top-bar {
+         display: block;
+         background: #16181c;
+         position: absolute;
+         top: 0; left: 0;
+         width: 100%;
+         height: 36px;
+         padding: 2px;
+      }
+      code > side-bar {
+         display: block;
+         background: #1b1d22;
+         position: absolute;
+         top: calc( 36px + 4px ); left: 0;
+         width: 48px;
+         height: calc( 100% - 40px );
+         padding: 2px 4px;
+      }
+      code > bg {
+         display: block;
+         position: relative;
+         top: 36px; right: 0;
+         margin: 0 0 0 auto;
+         padding: 10px 0;
+         width: calc( 98% - 48px );
+         height: calc( 100% - 36px );
+         height: 100;
+         color: #eee;
+      }
+   </style>
+   <code>
+      <top-bar></top-bar>
+      <side-bar></side-bar>
+      <bg></bg>
+   </code>
+   `;
+
+   class Code extends HTMLElement {
+      constructor() {
+         super();
+         let code = document.createElement( "template" );
+         code.innerHTML = codeTemplate;
+         this.attachShadow( { mode: "open" } );
+         this.shadowRoot.append( code.content.cloneNode( true ) );
+         this.shadowRoot.querySelector( "bg" ).innerHTML = this.innerHTML;
+         this.shadowRoot.querySelector( "bg" ).style.height = this.getAttribute( "h" );
+
+      } 
+      connectedCallback() {
+         this.render();
+      }
+      render() {
+      }
+   }
+   window.customElements.define( "co-de", Code );
+</script>

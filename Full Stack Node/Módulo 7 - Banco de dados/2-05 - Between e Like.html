@@ -1,0 +1,79 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+    <script src='../../src/public/script/includes/appbar.js' defer></script>
+    <script src='../../src/public/script/includes/sidebar.js' defer></script>
+</head>
+<body>
+    <page-header></page-header>
+    <page-sidebar></page-sidebar>
+    <home-page>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="var(--purple)">Between e Like</titulo>
+                    <p>
+                        Para deixar nossa aplicação mais versátil, provavelmente vamos precisar aplicar algum tipo de filtro em nossas consultas à base de dados. Por exemplo: se quisermos buscar as faturas emitidas desde 2010, ou os filmes que começam com a palavra “Toy”.
+                        <br><br>
+                        As diretrizes Between e Like são fundamentais para podermos fazer esse tipo de consulta, entre outras coisas. Vamos ver como podemos utilizá-las?
+                    </p>
+                    <video src="02 - Manipulação de dados e consulta/5 - Between e Like/Between e Like.mp4"></video>
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="02 - Manipulação de dados e consulta/5 - Between e Like/ppt.pdf" display frameborder="0"></iframe>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="var(--green)">Exercício</titulo>
+                    <sub-titulo cor="var(--blue-light)">01: Compositores com A</sub-titulo>
+                    <ol>
+                        <li>Repassando o conteúdo que aprendemos sobre o uso do operador LIKE, como podemos realizar uma consulta para gerar uma lista de todas as canções cujos compositores começam com "A"? Assinale as alternativas que apresentam uma consulta correta com o uso do LIKE.</li>
+                    </ol>
+                    <p>Dica: não se preocupe com maiúsculas e minúsculas, pois LIKE não faz distinção entre elas. Como criaria essa query?</p>
+                    <res>
+                        <js>SELECT * FROM musicas WHERE nomeCompositores LIKE 'a%'</js>
+                        <js>SELECT * FROM musicas WHERE nomeCompositores LIKE 'A%'</js>
+                    </res>    
+                </post-body>
+                <post-body>
+                    <sub-titulo cor="var(--blue-light)">02: Lista especial de gêneros</sub-titulo>
+                    <ol>
+                        <li>Seguindo nossa sequência de consultas ao banco de dados da MusiMundos, agora precisamos de uma lista de gêneros que contenham em algum lugar no nome a sigla "ro". Com qual query conseguimos gerar essa lista?</li>
+                    </ol>
+                    <p>Dica: não se preocupe com maiúsculas e minúsculas, pois LIKE não faz distinção entre elas.</p>
+                    <res>
+                        <js>SELECT * FROM generosMusicais WHERE nomeGenero LIKE '%ro%'</js>
+                    </res>    
+                </post-body>
+                <post-body>
+                    <sub-titulo cor="var(--blue-light)">03: Seleção de canções</sub-titulo>
+                    <ol>
+                        <li>Você vem realizando um ótimo trabalho nas consultas solicitadas ao banco de dados da MusiMundo! 
+                            <br><br>
+                            Antes de finalizarmos essa etapa de consultas, precisamos fazer uma verificação das canções (tabela musicas). Para isso é necessário gerar uma lista das canções que tenham um id entre 10 e 20. Qual query pode gerar essa solicitação?
+                        </li>
+                    </ol>
+                    <res>
+                        <js>SELECT * FROM musicas WHERE id BETWEEN 10 AND 20</js>
+                    </res>    
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+    </home-page>
+</body>
+</html>

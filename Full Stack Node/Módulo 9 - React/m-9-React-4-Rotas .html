@@ -1,0 +1,858 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <title></title>
+      
+      <link rel="icon" href="src/pix/logo.svg" type="svg+xml">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://globals.onrender.com/global-dh.css">
+      <script src="https://globals.onrender.com/global-dh.js" defer></script>
+   </head>
+   <body>
+      <!-- <AppBar>
+         <AppBar-Body>
+            <AppBar-Brand></AppBar-Brand>
+            <t1></t1>
+            <AppBar-Options></AppBar-Options>
+         </AppBar-Body>
+      </AppBar> -->
+
+      <top-bar>
+         Módulo:  9 - React
+      </top-bar>
+
+      <modulo n="9">
+         <rotas-no-react>
+            <banner>Rotas no React</banner>
+
+            <O-que-vamos-ver-na-aula>
+               <h3>O que vamos ver na aula?</h3>
+               <display>
+                  <h1>O que vamos ver nesta aula?</h1>
+
+                  <p>É hora de colocar asas no carrinho e fazê-lo voar!</p>
+                  <p>
+                     Até agora, tudo o que construímos no React teve que ser renderizado no mesmo componente, mas se quiséssemos mostrar outro conteúdo, como poderíamos fazer isso?
+                  </p>
+                  <p>
+                     O que veremos a seguir nos ajudará nesse sentido. A biblioteca React Router nos dá a possibilidade de renderizar um ou outro componente dependendo do caminho que acessamos na barra de endereço do navegador.
+                  </p>
+                  <p>Ao final desta aula seremos capazes de:</p>
+                  <ul>
+                     <li>
+                        <p>Reconhecer a diferença entre as rotas React e as rotas da aplicação Express.</p>
+                     </li>
+                     <li>
+                        <p>
+                           Implementar um sistema de roteamento para um aplicativo React que permita a renderização de diferentes componentes.
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                           Gerar uma "404 not found" quando não houver componentes a serem exibidos em um determinado caminho.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Renderizar um componente dinamicamente a partir de um fluxo parametrizado.</p>
+                     </li>
+                  </ul>
+                  <h4>
+                     Embora o React não precise da biblioteca React Router para funcionar, é importante
+                     esclarecer que esta é uma das bibliotecas mais comumente usadas no ambiente de
+                     desenvolvimento de aplicativos front-end com React. Portanto, saber como funciona
+                     e como implementá-lo é um ponto positivo fundamental.
+                  </h4>
+               </display>
+            </O-que-vamos-ver-na-aula>
+
+            <spa>
+               <h3>SPA</h3>
+               <display>
+                  <h1>SPA, o que é isso?</h1>
+
+                  <p>
+                     SPA ou também chamado de Single Page Application é um aplicativo da web no qual há apenas um único ponto de entrada, geralmente um arquivo index.html.
+                  </p>
+                  <p>
+                     Em um SPA não há outro arquivo HTML que possa ser acessado separadamente, pois todo o conteúdo do aplicativo será carregado e processado no mesmo arquivo index.html.
+                  </p>
+                  <p>
+                     Dentro deste contexto, mesmo que tenhamos apenas um arquivo, ainda temos a possibilidade de termos várias views que serão trocadas em sua exibição, produzindo assim o efeito de que existem várias "páginas" ou "arquivos" de conteúdo dentro da aplicação, quando a realidade é que tudo está sendo mostrado a partir de um único arquivo.
+                  </p>
+                  <p>
+                     Um SPA oferece, por sua vez, uma experiência de usuário bastante agradável e fluida. Por não ter que fazer upload de um arquivo diferente, o upload do conteúdo será muito mais rápido. E é aqui que o React Virtual DOM assume um papel real, graças à sua existência será possível identificar quais os conteúdos da view que devem ser alterados e quais os que devem ser mantidos.
+                  </p>
+                  <p>
+                     O conceito de SPA é relativamente novo e pode ser implementado graças a bibliotecas como o React. E faz ainda mais sentido ter roteadores de aplicativos que permitem escolher dinamicamente qual componente deve ser exibido na tela de acordo com o caminho na barra de aplicativos do navegador.
+                  </p>
+
+                  <iframe src="https://view.genial.ly/622a34e0f552c700187c5574" frameborder="0"></iframe>
+               </display>
+            </spa>
+
+            <Instalando-React-Router-Dom>
+               <h3>Instalando React Router Dom</h3>
+               <display>
+                  <h1>Instalando React Router DOM</h1>
+
+                  <p>
+                     Para permitir que nosso aplicativo React se comporte como um SPA real, teremos que instalar uma biblioteca adicional que nos permite gerenciar o sistema de roteamento de forma otimizada e inteligente, e assim ser capaz de renderizar os componentes da aplicação seletivamente dependendo da rota presente na barra de endereços do navegador.
+                  </p>
+                  <p>Vamos ver no vídeo a seguir como realizar esse processo simples.</p>
+
+                  <img src="./Módulo 9 - React/Instalação-do-React-Router-DOM.jpg" width="100%" alt="">
+
+                  <hr>
+
+               <quiz>
+                  <header>
+                     <h2>Quiz</h2>
+                     <question>
+                        <h4>React_Router_Dom_01</h4>
+                     </question>
+                  </header>
+                  <home>
+                     <header>
+                        <p n="1"> O que é o react-router-dom? </p>
+                     </header>
+                     <choices>
+                        <label choice="">
+                           <input type="checkbox">
+                           <t>É a dependência do React que liga nossas páginas HTML de acordo com o link que foi clicado.</t>
+                        </label>
+                        <label choice="certa">
+                           <input type="checkbox" checked>
+                           <t>É a dependência do React que gerencia o processo de roteamento decidindo o que é renderizado de acordo com a rota chamada.</t>
+                        </label>
+                        <label choice="">
+                           <input type="checkbox">
+                           <t>
+                              É um plugin do VS Code que nos permite clicar em elementos marcados com a tag &lt;a&gt; e ser redirecionado para o componente correspondente.
+                           </t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Exatamente. Com ele, podemos criar caminhos que o usuário pode colocar na tela e o React vai exibir o componente correspondente.</p>
+                     </res>
+                  </home>
+                  <home>
+                     <header>
+                        <p n="2">Como se instala o react router dom?</p>
+                     </header>
+                     <choices>
+                        <label choice="">
+                           <input type="checkbox">
+                           <t>npm install router-dom</t>
+                        </label>
+                        <label choice="">
+                           <input type="checkbox">
+                           <t>npm install react-dom-router</t>
+                        </label>
+                        <label choice="certa">
+                           <input type="checkbox" checked>
+                           <t>npm install react-router-dom</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>E assim você terá o pacote que gerencia rotas no React instalado no seu projeto!</p>
+                     </res>
+                  </home>
+               </quiz>
+                  
+
+               </display>
+            </Instalando-React-Router-Dom>
+
+            <Que-componentes-o-React-Router-nos-prove>
+               <h3>Quais componentes o React Router nos provê</h3>
+               <display>
+                  <h1>Quais componentes o React Router nos provê</h1>
+
+                  <p>No momento de instalação da biblioteca React Router, ela nos dá acesso a conjunto de componentes super interessantes para poder trabalhar e gerar nossos SPAs.</p>
+                  <p>No vídeo abaixo saberemos quais são os componentes com os quais vamos trabalhar e a importância de cada um.</p>
+                  <p>Vamos começar!</p>
+
+                  <h3>Componentes de React Router DOM</h3>
+                  <iframe src="./Módulo 9 - React/Componentes de React Router DOM.html" frameborder="0"></iframe>
+                  
+               <quiz>
+                  <header>
+                     <h2>Quiz</h2>
+                     <question>
+                        <h4>Componentes do React Router DOM</h4>
+                     </question>
+                  </header>
+                  <home>
+                     <header>
+                        <p n="1">Quais dos componentes a seguir são fornecidos pelo React Router DOM?</p>
+                     </header>
+                     <choices>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>BrowserRouter, Link, Route, Switch.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Roteador, Principal, BrowserLink.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>MainRouter, RouteSwitch, Link.</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta correta</p>
+                     </res>
+                  </home>
+                  <home>
+                     <header>
+                        <p n="2">Para que usamos o BrowserRouter?</p>
+                     </header>
+                     <choices>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>É como uma cápsula de roteamento para nosso projeto.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Permite renderizar apenas um link.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Mapear rotas com componentes.</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Muito bom, BrowserRouter é o roteador geral, é necessário para gerenciar as rotas de nosso projeto.</p>
+                     </res>
+                  </home>
+                  <home>
+                     <header>
+                        <p n="3">Para que usamos o componente Link?</p>
+                     </header>
+                     <choices>
+                        <label choice="">
+                           <input type="radio">
+                           <t>É como uma cápsula de roteamento para nosso projeto.</t>
+                        </label>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>Permite indicar uma rota para a qual queremos navegar.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>nenhuma das opções está correta.</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta correta</p>
+                     </res>
+                  </home>
+                  <home>
+                     <header>
+                        <p n="4">
+                           Para que usamos o componente Rota?</p>
+                     </header>
+                     <choices>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Mostrar o conteúdo do componente pai.</t>
+                        </label>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>Permite indicar qual componente será renderizado, dependendo do caminho.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Indica que o React Router DOM será usado no aplicativo.</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta correta</p>
+                     </res>
+                  </home>
+                  <home>
+                     <header>
+                        <p n="5">Para que usamos o componente Switch?</p>
+                     </header>
+                     <choices>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>Permite renderizar para o primeiro filho Route que corresponda ao local.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Permite indicar qual caminho será renderizado a partir do componente pai.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>nenhuma das opções está correta.</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta correta</p>
+                     </res>
+                  </home>
+               </quiz>
+
+               </display>
+            </Que-componentes-o-React-Router-nos-prove>
+
+            <componente-especifico>
+               <h3>componente específico</h3>
+               <display>
+                  <h1>Criando a primeira rota e renderizando o componente específico</h1>
+
+                  <p>Quando estávamos aprendendo sobre o Express, começamos a ver o que eram as rotas e para que serviam.</p>
+                  <p>Esses conceitos nos serviram muito e agora voltaremos também a alguns deles, pois com o React Router o processo de roteamento é um tanto parecido, já que esta biblioteca se propõe a renderizar um componente dependendo da rota presente na barra de endereços do navegador.</p>
+                  <p>Isso é conseguido graças a alguns componentes que a biblioteca já nos fornece e que nos permitem gerir esta tarefa.</p>
+                  <p>Mas vamos deixar a leitura de lado e ir ao vídeo para ver isso de uma forma mais prática.</p>
+
+                  <h3>Criando a primeira rota</h3>
+                  <iframe src="./Módulo 9 - React/apresentação criando a primeira rota.html" frameborder="0"></iframe>
+                  
+               <quiz>
+                  <header>
+                     <h2>Quiz</h2>
+                     <question>
+                        <h4>Criação da primeira rota e renderização do componente específico</h4>
+                     </question>
+                  </header>
+                  <home>
+                     <header>
+                        <p n="1">Selecione a opção correta:</p>
+                     </header>
+                     <choices>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>Route permite definir qual componente será renderizado de acordo com a rota especificada e para implementá-la devemos importá-la previamente.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Route permite definir qual componente será renderizado e não é necessário importá-lo para poder utilizá-lo.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Route nos permite definir qual componente será renderizado sem especificar uma rota e para implementá-la não é necessário importá-la.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Nenhuma das anteriores.</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta certa</p>
+                     </res>
+                  </home>
+                  <home>
+                     <header>
+                        <p n="2">Se quisermos que o componente denominado "Login" seja renderizado, dentro das props "component", o que devemos colocar?</p>
+                     </header>
+                     <choices>
+                        <label choice="">
+                           <input type="radio">
+                           <t>component={*}</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>component="/login"</t>
+                        </label>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>component={Login}</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta certa</p>
+                     </res>
+                  </home>
+                  <home>
+                     <header>
+                        <p n="3"> O que devemos colocar em Route para que ele renderize exatamente uma rota particular e deixe de ser genérico?</p>
+                     </header>
+                     <choices>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>exact</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>sensitive</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>strict</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta certa</p>
+                     </res>
+                  </home>
+                  <home>
+                     <header>
+                        <p n="4">Link cria um hiperlink que nos permite navegar em nosso aplicativo. Se quisermos navegar para "/about", como devemos configurar o Link?</p>
+                     </header>
+                     <choices>
+                        <label choice="">
+                           <input type="radio">
+                           <t>
+                              &lt;Link href="/about"&gt;About&lt;/Link&gt;
+                           </t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>
+                              &lt;Link path="/about"&gt;About&lt;/Link&gt;
+                           </t>
+                        </label>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>
+                              &lt;Link to="/about"&gt;About&lt;/Link&gt;
+                           </t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta certa</p>
+                     </res>
+                  </home>
+               </quiz>
+               </display>
+            </componente-especifico>
+
+
+            <switch-de-rotas-e-componentes>
+               <h3>Como fazer switch de rotas e componentes</h3>
+               <display>
+                  <h1>Como fazer switch de rotas e componentes</h1>
+
+                  <p>Até agora, entendemos como podemos gerar um sistema de roteamento básico dentro do React graças à biblioteca do React Router, mas certamente ainda falta um pequeno ajuste para que tudo funcione conforme o esperado.</p>
+                  <p>Neste vídeo, vamos saber como fazer um "switch" de componentes dependendo da rota e adicionalmente como renderizar um componente "404 not found" para quando a rota inserida por uma pessoa que visita nosso aplicativo não corresponder a nenhuma das rotas geradas dentro do aplicativo.</p>
+                  <p>Comecemos!</p>
+
+                  <h3>Switch de rotas e componentes</h3>
+                  <iframe src="./Módulo 9 - React/apresentação Switch de rotas e componentes.html" frameborder="0"></iframe>
+                  
+
+
+               <quiz>
+                  <header>
+                     <h2>Quiz</h2>
+                     <question>
+                        <h4>Como fazer switch de rotas e componentes</h4>
+                     </question>
+                  </header>
+                  <home>
+                     <header>
+                        <p n="1">Selecione a opção correta:</p>
+                     </header>
+                     <choices>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Switch nos permite renderizar apenas todas as rotas que correspondem ao local ou URL atual.</t>
+                        </label>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>Switch nos permite renderizar apenas o primeiro filho de rota que corresponda ao local ou URL atual.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>nenhuma das anteriores.</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta certa</p>
+                     </res>
+                  </home>
+                  <home>
+                     <header>
+                        <p n="2">Selecione a opção correta:</p>
+                     </header>
+                     <choices>
+                        <label choice="">
+                           <input type="radio">
+                           <t>Caso não utilizemos o Switch, devemos utilizar o Browser Router.</t>
+                        </label>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>Caso não utilize Switch, todas as rotas que atendam à condição são renderizadas.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>nenhuma das anteriores.</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta certa</p>
+                     </res>
+                  </home>
+               </quiz>
+               </display>
+            </switch-de-rotas-e-componentes>
+
+            <rotas-parametrizadas>
+               <h3>Como trabalhar com rotas parametrizadas</h3>
+               <display>
+                  <h1>Como trabalhar com rotas parametrizadas</h1>
+
+                  <p>Como em um ambiente Express, dentro de React ( graças ao React Router) é possível gerar rotas parametrizadas para que com elas possamos carregar o mesmo componente, mas de forma dinâmica.</p>
+                  <p>De forma dinâmica? Como?</p>
+                  <p>Vamos imaginar que temos um componente que possui uma matriz de produtos dentro e que queremos mostrar um produto específico dependendo do id que é passado para nós através do caminho na barra de endereços do navegador.</p>
+                  <p>Certamente, neste cenário, desejamos encontrar uma forma de capturar o id da rota e, a partir dela, escolhermos qual produto exibir.</p>
+                  <p>Bem, é isso que o React Router nos permitirá fazer através das rotas parametrizadas. Mas não vamos conversar mais e ver em ação como esse processo pode ser realizado.</p>
+
+                  <h3>Rotas parametrizadas</h3>
+                  <iframe src="./Módulo 9 - React/apresentação Rotas parametrizadas.html" frameborder="0"></iframe>
+                  
+
+
+               <quiz>
+                  <header>
+                     <h2>Quiz</h2>
+                     <question>
+                        <h4>Como trabalhar com rotas parametrizadas</h4>
+                     </question>
+                  </header>
+                  <home>
+                     <header>
+                        <p n="1">Selecione a opção correta:</p>
+                     </header>
+                     <choices>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>match é um objeto literal que possui várias propriedades.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>match permite que você compare URLs lógicas com físicos.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>nenhuma das anteriores.</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta certa</p>
+                     </res>
+                  </home>
+                  <home>
+                     <header>
+                        <p n="2">Selecione a opção correta:</p>
+                     </header>
+                     <choices>
+                        <label choice="certa">
+                           <input type="radio" checked>
+                           <t>A propriedade params dentro de match conterá todos e cada um dos parâmetros enviados na rota.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>A propriedade patch dentro de match nos dará todos e cada um dos parâmetros enviados na rota.</t>
+                        </label>
+                        <label choice="">
+                           <input type="radio">
+                           <t>nenhuma das anteriores.</t>
+                        </label>
+                     </choices>
+                     <res>
+                        <p>Resposta certa</p>
+                     </res>
+                  </home>
+               </quiz>
+               </display>
+            </rotas-parametrizadas>
+
+            <ao-vivo>
+               <h3>Para classe ao vivo</h3>
+               <display>
+                  <h1>Para a aula ao vivo</h1>
+
+                  <p>Outra classe que nos leva mais perto do final do curso.</p>
+                  <p>Desta vez, aprendemos uma das muitas bibliotecas que o React possui para trabalhar com processos "naturais", como implementar um SPA com seu sistema de roteamento correspondente.</p>
+                  <p>Para verificar se tudo foi entendido da melhor maneira possível, vamos nos colocar à prova com as seguintes questões:</p>
+                  <ul>
+                     <li>
+                        <p>Quais as vantagens de se criar um SPA?</p>
+                     </li>
+                     <li>
+                        <p>Quais são os componentes que a biblioteca React Router nos oferece?</p>
+                     </li>
+                     <li>
+                        <p>Onde no aplicativo é recomendado implementar o componente BrowserRouter?</p>
+                     </li>
+                     <li>
+                        <p>Por qual componente uma rota pode ser gerada com o React Router?</p>
+                     </li>
+                     <li>
+                        <p>Qual é o objetivo de usar o componente ?</p>
+                     </li>
+                     <li>
+                        <p>De qual propriedade dos props podemos acessar os parâmetros que são passados ??de uma rota parametrizada?</p>
+                     </li>
+                  </ul>
+                  <p>Se pudermos chegar facilmente às respostas corretas, podemos relaxar e esperar pela aula ao vivo. Mas se tivermos alguma dúvida, recomendamos reler o material para esclarecer essas incógnitas.</p>
+                  <p>Nos vemos na aula!</p>
+                  
+                  <h3>React Router</h3>
+                  <iframe src="./Módulo 9 - React/09.03. Para a aula ao vivo.pdf" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Desafio - React Router</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Para permitir que nosso aplicativo React se comporte como um SPA real, teremos que instalar uma biblioteca adicional que nos permite gerenciar o sistema de roteamento de forma otimizada e inteligente. Qual deve ser o pacote a ser instalado? </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>npm install nodemon</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>npm init react-app mi-proyecto</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>npm install react-router-dom</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>import ReactDom from “react-dom”;</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Excelente. É essencial que você sempre tenha em mente que react-router-dom é um pacote que devemos instalar a partir do gerenciador de pacotes Node.js.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">O que devemos fazer para implementar os componentes que o módulo react-router-dom traz?</p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>import Reaimport React from ‘reactct from ‘react</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>import App from ‘./components/App’;</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>import NavBar from ‘./components/NavBar’;</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Parabéns. Você deve ter em mente que no componente a ser criado, você pode importar os componentes react-router-dom que deseja usar.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Qual dos seguintes componentes do roteador geral é necessário para gerenciar as rotas de nosso projeto?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>&lt;Link&gt;</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>&lt;Route&gt;</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>&lt;Switch&gt;</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>&lt;BrowserRouter&gt;</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bom. É como um wrapper necessário para gerenciar as rotas de nosso projeto.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="4">Qual das seguintes linhas de código é correta para configurar qual componente deve ser processado com base no caminho que está sendo acessado? </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>import React from “./components/Contact”;</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>&lt;Route path="/contact" exact={true} component={Contact}/&gt;</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>&lt;Link to = “/contact”&gt;Contact&lt;/Link&gt;</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>import { Route } from 'react-router-dom';</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>
+                              Parabéns. Como você já sabe, o componente 
+                              &lt;Route /&gt; 
+                              tem dois atributos: path = ”” e component = {}. Ambos nos ajudam a configurar quais componentes devem ser renderizados com base no caminho que está sendo acessado. Além disso, o atributo exact permite que você identifique totalmente o componente exato que está sendo acessado.
+                           </p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="5">Qual é o componente que nos permite hospedar todos os componentes &lt;Route /&gt;  que definimos e também nos oferece uma maneira muito simples de controlar quando queremos acessar uma rota desconhecida?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>
+                                 &lt;Link&gt;
+                              </t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>
+                                 &lt;Route&gt;
+                              </t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>
+                                 &lt;BrowserRouter&gt;
+                              </t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>
+                                 &lt;Switch&gt;
+                              </t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Excelente. É claro que você tem muita clareza sobre as responsabilidades de cada um dos componentes do pacote react-router-dom.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="6">Quando queremos começar a trabalhar com rotas parametrizadas, a primeira coisa que temos que fazer é defini-las. Com base nisso, qual das seguintes rotas parametrizadas está definida corretamente?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>
+                                 &lt;Link to = “/product”>Product&lt;/Link&gt;
+                              </t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>
+                                 &lt;Route path="/product" exact={true} component={Product}/&gt;
+                              </t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>
+                                 &lt;Route path="/product/:id" component={Product /&gt;
+                              </t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>
+                                 Route.get(“/productos/:id”, controllersProduct.detail);
+                              </t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Perfeito. Como sabemos, com as rotas parametrizadas usam dois pontos (:) e o nome dos dados. É aqui que você vai perceber que todo o conhecimento já aprendido é muito útil, porque, como você pode ver, o comportamento de definição das rotas parametrizadas no React é semelhante ao que você viu no Node.js.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="7">Como fazemos se quisermos armazenar ou acessar o valor que percorre por uma rota parametrizada? </p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>const id = props.match.params.id;</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>const id from “./components/id”;</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>const id = req.body.id;</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>const id = req.params.id</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>
+                              Parabéns. Você nunca deve esquecer que o React Router nos fornece props que contêm informações sobre a rota que estabelecemos no componente
+                              &lt;Route /&gt; 
+                              . Com os props, encontramos a .match,propriedade que nos oferece a propriedade .params. e contém as informações que trafegam pela rota parametrizada.
+                           </p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>   
+            </ao-vivo>
+
+            <Ligando-os-componentes-da-aplicacao-ao-Vivo>
+               <h3>Ligando os componentes da aplicação [ao Vivo]</h3>
+               <display>
+                  <h1>Ponto de Partida</h1>
+
+                  <p>Nesta aula, continuaremos trabalhando com o dashboard para aplicar o que estávamos aprendendo sobre React.</p>
+                  <p>Que objetivos queremos atingir?</p>
+                  <ul>
+                     <li>
+                        <p>Aprenda a instalar a biblioteca React Router DOM.</p>
+                     </li>
+                     <li>
+                        <p>Entenda como podemos usar o React Router DOM para renderizar nossos componentes.</p>
+                     </li>
+                     <li>
+                        <p>Diferencie os diferentes componentes e seus usos fornecidos pela biblioteca React Router DOM.</p>
+                     </li>
+                  </ul>
+                  
+                  
+                  <h3>Ligando os componentes da aplicação</h3>
+                  <iframe src="./Módulo 9 - React/04.03. Exercicio - Ligando os componentes da aplicação.pdf" frameborder="0"></iframe>
+               </display>
+            </Ligando-os-componentes-da-aplicacao-ao-Vivo>
+
+
+         </rotas-no-react>
+
+         
+
+            
+            <!-- quiz>header>h2{Quiz}+question>h4^^home>header>p[n]^choices>label[choice]>input[type="radio"]+t^^res>p -->
+      </modulo>
+
+   </body>
+</html>
+
+<style>
+</style>

@@ -1,0 +1,106 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+    <script src='../../src/public/script/includes/appbar.js' defer></script>
+    <script src='../../src/public/script/includes/sidebar.js' defer></script>
+</head>
+<body>
+    <page-header></page-header>
+    <page-sidebar></page-sidebar>
+    <home-page>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo>Usando Promises</titulo>
+                    <p>
+                        Agora que já entendemos todo o ciclo de uma promise, desde sua criação até o seu consumo, está na hora de abordarmos algumas novas features para enriquecer esta funcionalidade.
+                        <br><br>
+                        Falaremos um pouco mais sobre o promise all, discutiremos uma nova estratégia para executar promises, chamada async/await e teremos mais exercícios para fixar os conceitos.
+                    </p>
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="04 - Sequelize - Introdução,models e consultas/04 - Usando Promises/pdf-Async_await.html" display frameborder="0"></iframe>
+            <post-home>
+            <overlay>
+                <sub-titulo>Promise All</sub-titulo>
+                <p>
+                    Já falamos sobre a função Promise.all() há alguns tópicos, mas existe um outro método semelhante a este, que ainda não tivemos a oportunidade de abordar. Este é chamado Promise.allSettled().
+                    <br><br>
+                    Ambos os métodos recebem um array de promises para resolver, entretanto, a resolução destes difere um pouco. Enquanto o primeiro, caso uma das promises do array falhe, irá descartar as demais (resolvidas ou não) e lançar um erro, o segundo retornará um array de objetos contendo status e valor de cada uma das promises e, mesmo que alguma falhe, não implicará na perda das demais.
+                    <br><br>
+                    Legal né? Mas não se esqueça, ambas as funções são úteis em diferentes cenários, portanto o importante é avaliar bem a necessidade de cada momento.
+                </p>
+            </overlay>
+            </post-home>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo>Questionário</titulo>
+                    <sub-titulo>Questionário _ Async_Await_01</sub-titulo>
+                    <ol>
+                        <li>
+                            <p>Qual a palavra reservada que utilizamos para criar uma função assíncrona?</p>
+                            <res>
+                                <js>async</js>
+                            </res>
+                        </li>
+                        <li>
+                            <p>O que não pode faltar dentro de uma função assíncrona?</p>
+                            <res>
+                                <js>try/catch</js>
+                            </res>
+                        </li>
+                        <li>
+                            <p>Qual a função que retorna um vetor contendo objetos com status das promises e os valores retornados?</p>
+                            <res>
+                                <js>promise.allSettled()</js>
+                            </res>
+                        </li>
+                    </ol>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo>Exercício</titulo>
+                    <p>
+                        Existe uma promise chamada calculoComplexo, que foi criada para realizar alguns cálculos relacionados ao sistema que a sua equipe está trabalhando.
+                        <br><br>
+                        Esta promise é um pouco diferente, só vai ser resolvida quando o then for chamado. Isso quer dizer que, diferente das promises tradicionais, ela já foi executada e está armazenada na constante calculoComplexo. Sua tarefa é anexar o then à essa constante e depois, passar o callback.
+                    </p>
+                    <ol>
+                        <li>Lembre-se que para utilizar o retorno de uma promise é nessessário utilizar o .then()</li>
+                        <li>O then recebe um callback</li>
+                        <li>Não é necessário executar a função calculoComplexo, isso resultará em erro</li>
+                    </ol>
+                    <res>
+                        <js>
+                            calculoComplexo
+                            .then(<var-s>res</var-s> => console.log(<var-s>res</var-s>));
+                        </js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="https://view.genial.ly/6062a3986ce0f90d4e236a94" display frameborder="0"></iframe>
+        </post>
+    </home-page>
+</body>
+</html>

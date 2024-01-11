@@ -1,0 +1,57 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+    <script src='../../src/public/script/includes/appbar.js' defer></script>
+    <script src='../../src/public/script/includes/sidebar.js' defer></script>
+</head>
+<body>
+    <page-header></page-header>
+    <page-sidebar></page-sidebar>
+    <home-page>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="var(--green)">Alias</titulo>
+                    <p>
+                        Imagine que estamos trabalhando com uma base de dados cujas colunas das tabelas estão em inglês. Mas foi solicitado que os resultados e consultas tragam o nome dessas colunas em português. Como podemos resolver isso?
+                        <br><br>
+                        A diretriz ALIAS nos permite dar apelidos para as colunas e tabelas do nosso banco de dados. Vamos ver como ela funciona?
+                    </p>
+                    <video src="02 - Manipulação de dados e consulta/7 - Alias/Alias.mp4"></video>
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="02 - Manipulação de dados e consulta/7 - Alias/ppt.pdf" display frameborder="0"></iframe>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="var(--red)">Questionário</titulo>
+                    <sub-titulo cor="var(--red-light)">Tipos de Midia - v2.0</sub-titulo>
+                    <ol>
+                        <li>
+                            A empresa Musimundo decidiu usar o nome original "nome" para a coluna que listava os tipos de mídia (da tabela musicas) no relatório mensal da empresa. Porém, decidiram alterar esse nome e agora foi solicitado que a coluna dos tipos de mídias seja renomeada temporariamente com o seguinte nome: nome_midias. Qual query executa essa ação?
+                        </li>
+                    </ol>
+                    <res>
+                        <js>SELECT nome as nome_midias FROM musicas</js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+    </home-page>
+</body>
+</html>

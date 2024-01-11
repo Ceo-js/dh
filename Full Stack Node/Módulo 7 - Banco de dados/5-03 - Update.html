@@ -1,0 +1,113 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+</head>
+<body>
+    <app-bar></app-bar>
+    <side-bar></side-bar>
+    <home-page>
+        <post>
+            <post-home>
+            <overlay>
+                <post-header>
+                    <t1>Update</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        Com o método update() você poderá editar os registros existentes nas tabelas do banco de dados que você está manipulando através do Sequelize.
+                        <br><br>
+                        Este método não possui realmente nenhum segredo em si, a única coisa a saber é que necessita como argumento não apenas a informação a ser atualizada, mas também o filtro através do qual a informação de um determinado registro existente será atualizada.
+                        <br><br>
+                        Vamos ver a implementação desse método em um projeto Express.
+                    </p>
+                    <video src="05 - Sequelize - Manipulação de dados/03 - Update/Update.mp4"></video>
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="05 - Sequelize - Manipulação de dados/03 - Update/pdf-Update.html"display frameborder="0"></iframe>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-header>
+                    <t1>Exercício 01</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        Em nossa base temos um produto chamado "Smartphone x5 MEGA PRO".  O id dele é 1.  Nosso objetivo aqui é atualizar seu preço  para o valor de 899 devido a uma promoção.
+                        <br><br>
+                        Para esse desafio iremos usar um modelo  já definido  chamado Produto. Como vimos, o método update altera os dados em uma tabela. Este método, recebe como parâmetro dois objetos: o primeiro contendo as informações que iremos atualizar. O segundo com as condições para selecionarmos qual registro queremos alterar.
+                    </p>
+                    <ul>
+                        <li>Você deve usar o método update do modelo produto: Produto.update(...)</li>
+                        <li>Deve passar como primeiro parâmetro do método update um objeto que contenha o atributo preco com o valor 899.</li>
+                        <li>Não se esqueça de usar o where para selecionar o produto com id 1.</li>
+                    </ul>
+                    <res>
+                        <js>
+                            const Produto = require('model/Produto.js'); <br><br>
+
+                            Produto.update( {
+                                <tabs>
+                                    preco: 899
+                                </tabs>
+                            }, {
+                                <tabs>
+                                    where: { id: 1 }
+                                </tabs>
+                            } );
+                        </js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-header>
+                    <t1>Exercício 02</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        Em determinadas circunstâncias podemos usar o método update para atualizar mais de um registro em nossa base de dados. Nesse próximo desafio queremos mudar os valores da coluna genero  de todas as séries cujo o gênero seja comédia para sitcom.
+                        <br><br>
+                        A ideia por aqui é semelhante do nosso primeiro desafio, porém dessa vez, no nosso objeto de configuração ou query, devemos fazer um where pela coluna genero (sem acento!).
+                    </p>
+                    <ul>
+                        <li>Hey, não se esqueça de usar o método update do modelo Serie.</li>
+                        <li>Lembre-se que dentro do método update passamos dois objetos como parâmetro. O primeiro contem irá conter as informações que usaremos para substituir. Já o segundo em qual registro iremos fazer isso usando o atributo where.</li>
+                    </ul>
+                    <res>
+                        <js>
+                            const Serie = require('model/Serie.js'); <br><br>
+
+                            Serie.update( {
+                                <tabs>
+                                    genero: "sitcom"
+                                </tabs>
+                            }, {
+                                <tabs>
+                                    where: { genero: "comédia" }
+                                </tabs>
+                            } );
+                        </js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+    </home-page>
+
+</body>
+</html>

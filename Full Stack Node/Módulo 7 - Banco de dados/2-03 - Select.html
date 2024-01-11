@@ -1,0 +1,72 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+    <script src='../../src/public/script/includes/appbar.js' defer></script>
+    <script src='../../src/public/script/includes/sidebar.js' defer></script>
+</head>
+<body>
+    <page-header></page-header>
+    <page-sidebar></page-sidebar>
+    <home-page>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="var(--azul)">Select</titulo>
+                    <p>Quando armazenamos informações em um banco de dados, um dos nossos objetivos futuros é poder consultá-las sempre que necessário. Para atingir este resultado, existe a diretiva select que nos permitirá, como o próprio nome indica, selecionar colunas de uma tabela para acessar as informações nela presentes.</p>
+                    <p>No próximo vídeo, veremos como consultar o banco de dados através do select, ítem fundamental para poder trabalhar com bancos de dados.</p>
+                    <video src="02 - Manipulação de dados e consulta/3 - Select/Select.mp4"></video>    
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="02 - Manipulação de dados e consulta/3 - Select/ppt.pdf" display frameborder="0"></iframe>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="var(--purple)">Questionário</titulo>
+                    <sub-titulo cor="var(--amber)">Questionário Que álbum temos? v2.0</sub-titulo>
+                    <ol>
+                        <li>O gerente de uma gravadora musical, a  MusicMundo, pediu para que organizasse o inventário de discos e um relatório com todos os álbuns (tabela albuns) que a empresa possui.</li>
+                        <p>Qual modelo de consulta (query) devolverá todos os álbuns? </p>
+                    </ol>
+                    <res>
+                        <js>SELECT * FROM albuns</js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+        <post>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <titulo cor="var(--purple)">Exercício</titulo>
+                    <sub-titulo cor="var(--amber)">Exercício: Controle de vendas</sub-titulo>
+                    <ol>
+                        <li>Para realizar o controle de vendas, o representante da Musicmundo pede que seja projetado um sistema que guarde o nome e telefone de todos os seus clientes.
+                            *** A tabela clientes já existe, do mesmo modo que os campos nome e telefone.</li>
+                        <p>Como você faria para consultar essas informações uma vez que foram gravadas na base de dados? </p>
+                    </ol>
+                    <res>
+                        <js>SELECT nome, telefone FROM clientes</js>
+                        <js>SELECT * FROM clientes</js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+    </home-page>
+</body>
+</html>

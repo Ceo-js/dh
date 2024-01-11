@@ -1,0 +1,127 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Playground Digital House</title>
+    
+    <link rel="icon" href="../../src/public/img/favicon.ico" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/public/css/globals.css">
+    <script src='../../src/public/script/global.js' defer></script>
+</head>
+<body>
+    <app-bar></app-bar>
+    <side-bar></side-bar>
+    <home-page>
+        <post>
+            <post-home>
+            <overlay>
+                <post-header>
+                    <t1>Where e operadores</t1>
+                </post-header>
+                <post-body>
+                    <p>
+                        Queremos encontrar na base de dados os filmes que tenham uma classificação igual ou superior a 7. Você se lembra de como fazer essa consulta? É provável que a primeira coisa que vem em mente é um ótimo ONDE, não?
+                        <br><br>
+                        Bem, este e outros tipos de filtros são possíveis de aplicar diretamente no Sequelize, embora aqui você tenha que fazer isso de uma maneira um pouco diferente, mas isso não significa que seja impossível.
+                        <br><br>
+                        Em seguida, você verá os operadores no Sequelize, o que permitirá que você filtre as informações que está consultando de diferentes maneiras.
+                    </p>
+                    <video src="04 - Sequelize - Introdução,models e consultas/08 - Where e operadores/Where e Operadores.mp4"></video>
+                </post-body>
+            </overlay>
+            </post-home>
+            <iframe src="04 - Sequelize - Introdução,models e consultas/08 - Where e operadores/pdf-Where e operadores.html" display frameborder="0"></iframe>
+            <post-home>
+            <overlay>
+                <post-body>
+                    <t2>Exercício 01</t2>
+                    <p>
+                        O método findAll nos traz todas as linhas de registros que temos em nossa base. Se precisarmos filtrar o resultado, podemos passar um JSON como parâmetro do métodos com uma query dentro.
+                        <br><br>
+                        Neste exercício, temos o model Auto. Nosso objetivo será trazer todos os carros cujas coluna de marcas correspondam ao valor "Fiat".
+                    </p>
+                    <ul>
+                        <li>O método findAll() espera receber um JSON</li>
+                        <li>O JSON precisa ter uma chave chamada where e ela precisa ter como valor um outro JSON: {where: { ... }}</li>
+                        <li>O JSON contido dentro de where terá como chave o nome da coluna que queremos consultar e receberá de valor a palavra usada para filtrar as pesquisa: {where: {marca: 'Fiat'}}</li>
+                    </ul>
+                    <res>
+                        <js>
+                            const Auto = require('model/autos.js');
+                            <br><br>
+                            Auto.findAll(
+                                <tabs>
+                                    {
+                                        <tabs>
+                                            where: {
+                                                <tabs>
+                                                    marca: "Fiat"
+                                                </tabs>
+                                            }
+                                        </tabs>
+                                    }
+                                </tabs>
+                            ).then(autos => {
+                                <tabs>
+                                    console.log(autos)
+                                </tabs>
+                            });
+                        </js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>    
+            <post-home>
+            <overlay>
+                <post-body>
+                    <t2>Exercício 02</t2>
+                    <p>
+                        Neste exercício, vamos buscar todos os usuários que possuem uma conta Gmail. Para fazer isso, vamos precisar perguntar dentro do findAll se os valores contidos coluna email terminam com a string de texto "@gmail.com".
+Até agora o where esperava um JSON cuja chave era a coluna a ser pesquisada e valor era o que queríamos pesquisar. Isto nos trouxe combinações idênticas, é como usar o mesmo operador do MySQL. Mas agora vamos precisar usar um operador similar, ou seja, vamos ter que recriar com sequelizar esta consulta MySQL: 'SELECT * FROM users WHERE email LIKE "%gmail"''.
+<br><br>
+Para isso, dentro do where onde vamos passar um JSON com o nome da coluna e cujo valor é um novo JSON: { [Op.like]: '%gmail.com'}
+                    </p>
+                    <ul>
+                        <li>O método findAll espera receber um JSON</li>
+                        <li>O JSON deve ter uma chave chamada 'where' que terá como valor um outro JSON: {where: {...}}</li>
+                        <li>O JSON dentro de 'where' terá como chave o nome da coluna que queremos fazer a busca e como valor teremos a expressão para like: {where: { [Op.like]: '%gmail.com'}}</li>
+                    </ul>
+                    <res>
+                        <js>
+                            const Sequelize = require('sequelize'),
+                            <tabs>
+                                Usuario = require('model/usuarios.js'), <br>
+                                Op = Sequelize.Op
+                            </tabs> <br><br>
+
+                            Usuario.findAll({
+                                <tabs>
+                                    where: {
+                                        <tabs>
+                                            email: {
+                                                <tabs>
+                                                    [Op.like]: "%gmail.com"
+                                                </tabs>
+                                            }
+                                        </tabs>
+                                    }
+                                </tabs>
+                            }).then(usuarios => {
+                                <tabs>
+                                    console.log(usuarios)
+                                </tabs>
+                            });
+                        </js>
+                    </res>
+                </post-body>
+            </overlay>
+            </post-home>
+        </post>
+    </home-page>
+
+</body>
+</html>

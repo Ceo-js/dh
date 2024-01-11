@@ -1,0 +1,54 @@
+
+
+post {
+    display: flex; 
+    flex-direction: column;
+    gap: 3rem 0;
+    flex: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 90px 0;
+    filter: drop-shadow( #0009 0 0 12px );
+}
+post-home {
+    display: block;
+    padding: 4px;
+    position: relative;
+    border-radius: 6px;
+    background: linear-gradient( 45deg, #905, #ffab00 );
+    clip-path: polygon( 0 33px, 33px 0, 100% 0, 100% calc( 100% - 33px ), calc( 100% - 33px ) 100%, 0 100% );
+}
+post-home > overlay {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: relative;
+    border-radius: 6px;
+    background: #212329;
+    clip-path: polygon( 0 33px, 33px 0, 100% 0, 100% calc( 100% - 33px ), calc( 100% - 33px ) 100%, 0 100% );
+}
+post-home > post-header,
+overlay > post-header,
+overlay > header  {
+    display: block;
+    padding: 70px 95px;
+}
+post-home:has( post-header ) post-body {
+    padding-top: 0;
+}
+post-body {
+    display: block;
+    padding: 70px 95px;
+}
+post-home:has( post-footer ) post-body {
+    padding-bottom: 0;
+}
+post-footer {
+    display: block;
+    padding: 40px 95px;
+}
+
+/* titulo:nth-child(1) { color: var(--dh-r); } */
+titulo :nth-child(n+1) { color: var(--green); }
+titulo :nth-child(even) { color: var(--azul); }
+titulo :nth-child(4) { color: var(--amber); }
