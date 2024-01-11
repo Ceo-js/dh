@@ -63,6 +63,22 @@ https://view.genial.ly/6049aa033b77f00d7e90e246
 ordenar os passos
 https://view.genial.ly/620280908770f00018be0a86
 
+Ordene as etapas para construir um processo de login completo
+https://view.genial.ly/6063ef71aecacf0d77313f87
+
+== [ 7 ] ==
+Objetivos do módulo
+https://view.genial.ly/62a0af1c954955001139d6cc
+
+Inner Join
+https://view.genial.ly/604fdb5bd92f5e0d2a065cd1
+
+Promisses
+https://view.genial.ly/6062a3986ce0f90d4e236a94
+
+CRUD com SQL
+https://view.genial.ly/605d48dfb628210cfd6cbcf2
+
 
 
 
