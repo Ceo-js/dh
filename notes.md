@@ -68,7 +68,7 @@ https://view.genial.ly/6063ef71aecacf0d77313f87
 
 == [ 7 ] ==
 Objetivos do módulo
-https://view.genial.ly/62a0af1c954955001139d6cc
+<!-- https://view.genial.ly/62a0af1c954955001139d6cc -->
 
 Inner Join
 https://view.genial.ly/604fdb5bd92f5e0d2a065cd1
