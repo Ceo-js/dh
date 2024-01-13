@@ -107,11 +107,1770 @@
                   <iframe src="./Assets/Guia de instalação - Mac.html" frameborder="0"></iframe>
                </display>
             </introducao>
+
+            <O-que-vamos-ver-nesse-modulo>
+               <h2>O que vamos ver nesse módulo</h2>
+               <display>
+                  <h1>O que vamos ver nesta aula?</h1>
+                  <p>
+                     Enfim, é hora de entrar no mundo dos bancos de dados. Particularmente desta vez, veremos um banco de dados SQL relacional.
+                  </p>
+                  <p>
+                     Este tipo de banco de dados nos permite armazenar informações de forma mais consistente e ordenada, daí sua popularidade.
+                  </p>
+                  <p>
+                     Entre os tópicos que veremos nesta aula, estão os seguintes:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>Introdução aos bancos de dados</p>
+                     </li>
+                     <li>
+                        <p>O que é uma tabela</p>
+                     </li>
+                     <li>
+                        <p>O que são relacionamentos</p>
+                     </li>
+                     <li>
+                        <p>Tipo de dados</p>
+                     </li>
+                     <li>
+                        <p>Restrições ou constraints</p>
+                     </li>
+                     <li>
+                        <p>Crie, elimine, altere as diretrizes</p>
+                     </li>
+                     <li>
+                        <p>Chaves estrangeiras</p>
+                     </li>
+                  </ul>
+                  <sub>Não vamos esquecer de instalar as ferramentas necessárias para a aula.</sub>
+                  <hr>
+                  <h2>Como vamos trabalhar?</h2>
+                  <p>
+                     Nesta aula, trabalharemos com um banco de dados que teremos que baixar para praticar. Em cada questionário, iremos propor uma tarefa que implica trabalhar com o Workbench e a base de dados baixada, e a seguir copiar e colar os resultados que obtivemos nos questionários Playground.
+                  </p>
+                  <hr>
+                  <h2>Mensagem importante</h2>
+                  <sub>
+                     Para dar prosseguimento neste módulo, é de extrema importância a instalação do
+MySQL. Caso ainda haja alguma dúvida de como fazer a instalação, no tópico ante-
+rior existem tutoriais disponíveis para todos os sistemas operacionais, não hesite
+em consultá-los.
+                  </sub>
+                  <hr>
+                  <h2>Como Vamos Trabalhar</h2>
+                  <p>
+                     Estamos entrando agora no nosso módulo de banco de dados, e para este módulo utilizaremos as seguintes ferramentas:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>MySQL</p>
+                     </li>
+                     <li>
+                        <p>Mysql Workbench</p>
+                     </li>
+                     <li>
+                        <p>O arquivo musimundos.sql</p>
+                     </li>
+                  </ul>
+                  <p>
+                     É muito importante que você faça a instalação dessas duas ferramentas e baixe o arquivo para conseguir continuar acompanhando os conteúdos da melhor forma possível!
+                  </p>
+                  <h2>Arquivo Provisorio</h2>
+                  <p>
+                     <a href="./Assets/musimundos.sql" download="musimundos.sql">musimundos.sql</a>
+                  </p>
+               </display>
+            </O-que-vamos-ver-nesse-modulo>
+
+            <Introducao-a-Banco-de-Dados>
+               <h2>Introdução a Banco de Dados</h2>
+               <display>
+                  <h1>Introdução a Banco de Dados</h1>
+                  <p>Bancos de dados aqui, bancos de dados ali, mas o que é um banco de dados?</p>
+                  <p>
+                     Podemos dizer que é um conjunto de dados pertencentes a um mesmo contexto organizado para uma finalidade específica. Um banco de dados nos permite:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>Armazenar (adicionar, modificar, excluir) dados</p>
+                     </li>
+                     <li>
+                        <p>Acessar os dados</p>
+                     </li>
+                     <li>
+                        <p>Manipular dados e combiná-los</p>
+                     </li>
+                     <li>
+                        <p>Analisar dados</p>
+                     </li>
+                     <li>
+                        <p>Entre outras coisas</p>
+                     </li>
+                  </ul>
+                  <p>
+                     Existem dois tipos de bancos de dados: relacionais e não relacionais. Em particular, aprenderemos sobre um banco de dados relacional, pois nos permite entender em profundidade como os bancos de dados funcionam.
+                  </p>
+                  <p>
+                     Por sua vez, dentro do mundo dos bancos de dados relacionais, existem várias opções pelas quais podemos escolher. No momento, veremos MySQL, já que é um dos bancos de dados mais populares do mundo e também é fácil de usar.
+                  </p>
+                  <p>
+                     Vamos ver o que esse banco de dados pode fazer por nós.
+                  </p>
+                  <h2>Introdução a Banco de Dados</h2>
+                  <video src="./Assets/Introdução a Banco de Dados.mp4" controls="controls"></video>
+                  <hr>
+                  <iframe src="./Assets/Introdução a Banco de Dados.html" frameborder="0"></iframe>
+                  <h2></h2>
+                  <p>Os bancos de dados são hospedados em um servidor diferente da nossa aplicação web, ou seja, a porta em que vivem é diferente. Isso ocorre desta forma porque um banco de dados nem sempre é consumido por uma aplicação web, pois poderia ser facilmente consumido por outro tipo de serviço.</p>
+                  <p>
+                     Ao instalar o MySQL no computador e iniciar o servidor, ele geralmente é habilitado na porta 3306. No entanto, nem sempre é esse o caso. Dependendo de como o MySQL foi instalado, a porta pode ser diferente.
+                  </p>
+                  <p>
+                     Algo que vale a pena esclarecer é que um banco de dados não é em si um arquivo que podemos manipular, mas sim um conjunto de dados que se relacionam entre si e que fazem parte de um todo.
+                  </p>
+                  <hr>
+                  <iframe src="./Assets/Guia de instalação e uso do Workbench.pdf" frameborder="0"></iframe>
+                  <sub>
+                     Os passos a seguir são necessários para importar o arquivo SQL, que você baixou
+no tópico anterior, dentro do MySQL Workbench e utilizá-lo normalmente.
+                  </sub>
+                  <h3>Iniciando</h3>
+                  <p>
+                     Após a instalação do Workbench, abra e faça a conexão inicial, fornecendo o usuário e senha configurados.
+                  </p>
+                  <p>
+                     Se você fez a instalação usando o XAMPP, o usuário é root e o campo senha pode ser deixado em branco.
+                  </p>
+
+
+                  <h3>Importando o arquivo</h3>
+
+                  <p>Após entrar no Workbench, ele terá a seguinte aparência:</p>
+                  <img src="./Assets/Importando o arquivo/01-Workbench_inicial.jpg" alt="">
+
+                  <p>O próximo passo no botão File e depois em Open SQL Script.</p>
+                  <img src="./Assets/Importando o arquivo/02-workbench_menu_file.jpg" alt="">
+
+                  <p>
+                     Em seguida, escolha o arquivo musimundos.sql no local onde foi baixado (geralmente, é a pasta Downloads), que você baixou no tópico anterior. A seguinte tela aparecerá.
+                  </p>
+                  <img src="./Assets/Importando o arquivo/03-Workbench_abertura_script.jpg" alt="">
+
+                  <p>
+                     Então, para executar o arquivo SQL, basta clicar no botão Execute (que tem o ícone de um raio), conforme a imagem abaixo.
+                  </p>
+                  <img src="./Assets/Importando o arquivo/04-Workbench_executa_script.jpg" alt="">
+
+                  <p>
+                     Na parte debaixo dessa tela, no campo 'Output', você verá um log da execução do script. Se você tiver uma saída parecida com a que está no próximo print, então o banco de dados estará criado e pronto pra ser utilizado!
+                  </p>
+                  <img src="./Assets/Importando o arquivo/05-Workbench_saida.jpg" alt="">
+
+                  <h3>Finalizando</h3>
+                  <p>
+                     Incentivamos que você busque pela internet mais conteúdos sobre o MySQL Workbench e como usamos essa poderosa ferramenta no dia a dia!
+                  </p>
+                  <p>Agora, pode seguir para o próximo tópico de aula!</p>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Introdução a Banco de Dados</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Quais das seguintes informações precisamos para conectar a um banco de dados?</p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="checkbox" checked>
+                              <t>Nome do banco de dados</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>Tabelas do banco de dados</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="checkbox" checked>
+                              <t>Hospedagem</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>Tipo do Sistema Operacional do Servidor</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="checkbox" checked>
+                              <t>Usuário e Senha</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Em um banco de dados a linguagem SQL permite: </p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="checkbox" checked>
+                              <t>Criação de estruturas no banco de dados</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="checkbox" checked>
+                              <t>Consultar informações</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>Criar o front-end (visual) do banco de dados</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="checkbox" checked>
+                              <t>Atualizar informações</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">O que é uma chave-primária?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Permite que um registro tenha uma tabela único</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>Permite que um registro tenha um identificador único</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Permite que um dado seja nulo</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Não permite que um dado seja apagado</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="4">Uma chave primária pode ser formada por:</p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="checkbox" checked>
+                              <t>Um dado único</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="checkbox" checked>
+                              <t>Um conjunto de dados</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+
+               <tabelas>
+                  <h2>Tabelas</h2>
+                  <display>
+                     <h1>Tabelas</h1>
+                     <p>
+                        Certamente, em algum momento, já tivemos contato com uma planilha do Excel. Ela é composta por folhas, e em cada folha encontramos linhas, colunas e células.
+                     </p>
+                     <p>
+                        Bem, uma tabela dentro de um banco de dados pode ser comparada a uma planilha em um arquivo Excel. Como qualquer tabela que se respeite, possui colunas e cada coluna tem a finalidade de definir um dado particular que será armazenado na referida tabela.
+                     </p>
+                     <p>
+                        Ao criar uma tabela em nosso banco de dados, devemos ter em mente as informações que desejamos salvar e cuidar para que haja correlação. Por exemplo, se quisermos criar uma tabela para armazenar os dados pessoais de uma pessoa, o mais seguro é que a referida tabela tenha as colunas: nome, email, idade e senha, entre outros. E não seria muito lógico que a coluna "preço" existisse nesta tabela, pois esses dados não têm uma relação direta com as informações mencionadas acima.
+                     </p>
+                     <p>
+                        Concluindo, uma tabela em um banco de dados busca armazenar as informações que fazem parte de um conjunto de dados. E busca, por sua vez, que todos os registros presentes na referida tabela tenham a mesma estrutura de dados, garantindo assim sua homogeneidade.
+                     </p>
+                     <hr>
+                     <video src="./Assets/Tabelas.mp4" controls="controls"></video>  
+                     <hr>
+                     <iframe src="./Assets/Tabelas 1.html" frameborder="0"></iframe>
+                     <iframe src="./Assets/Tabelas 2.html" frameborder="0"></iframe>   
+                     
+                     <quiz>
+                        <header>
+                           <h2>Quiz</h2>
+                           <question>
+                              <h4>Questionário Tabelas</h4>
+                           </question>
+                        </header>
+                        <home>
+                           <header>
+                              <p n="1">Que é um diagrama relacional? </p>
+                           </header>
+                           <choices>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>Uma abstração do negócio</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="radio" checked>
+                                 <t>A representação da tabela do banco de dados</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>É a tabela física da base de dados</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p>Isso mesmo! Representamos as tabela de um banco de dados no diagrama.</p>
+                           </res>
+                        </home>
+                        <home>
+                           <header>
+                              <p n="2">Dado o seguinte diagrama:</p>
+                              <img src="" alt="">
+                              <p>Podemos interpretar que: </p>
+                           </header>
+                           <choices>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>Há 3 colunas chamadas "Gênero", "Artista", "Banda".</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="radio" checked>
+                                 <t>Há 3 tabelas chamadas "Gênero", "Artista", "Banda".</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>Há 3 linhas chamadas "Gênero", "Artista", "Banda".</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p></p>
+                           </res>
+                        </home>
+                        <home>
+                           <header>
+                              <p n="3">João deseja adicionar ao seu sistema de banco de dados informações relacionadas com artistas.</p>
+                              <p>
+                                 Assim, deseja armazenar:
+                                 <ul>
+                                    <li>
+                                       <b>nome fantasia</b>
+                                    </li>
+                                    <li>
+                                       <b>nome</b>
+                                    </li>
+                                    <li>
+                                       <b>ranking</b>
+                                    </li>
+                                    <li>
+                                       <b>idade</b>
+                                    </li>
+                                 </ul>
+                              </p>   
+                              <p>Dado o seguinte diagrama</p>
+                              <img src="./Assets/tabela-pg.png" alt="">
+                              <p>Quais campos ainda faltam?</p>
+                           </header>
+                           <choices>
+                              <label choice="certa">
+                                 <input type="checkbox" checked>
+                                 <t>nome fantasia</t>
+                              </label>
+                              <label choice="">
+                                 <input type="checkbox">
+                                 <t>nome</t>
+                              </label>
+                              <label choice="">
+                                 <input type="checkbox">
+                                 <t>ranking</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="checkbox" checked>
+                                 <t>idade</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="checkbox" checked>
+                                 <t>id (pk)</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p>Precisamos que o id seja pk para ser o identificador único da tabela</p>
+                           </res>
+                        </home>
+                     </quiz>
+                  </display>
+               </tabelas>
+
+               <Relacionamentos>
+                  <h2>Relacionamentos</h2>
+                  <display>
+                     <h1>Relacionamentos</h1>
+                     <p>
+                        Em um sistema de banco de dados, é normal termos tabelas relacionadas umas às outras.
+                     </p>
+                     <p>
+                        Por exemplo, poderíamos ter uma tabela que armazena os dados de uma pessoa e outra tabela que armazena as postagens que uma pessoa gostou.
+                     </p>
+                     <p>
+                        Como podemos perceber, a tabela que armazena os "likes" não precisa necessariamente dos dados da pessoa. Você só precisará de um pedaço de informação que identifique a pessoa que deu o "like".
+                     </p>
+                     <p>
+                        Nesse cenário, essas duas tabelas estão relacionadas entre si, pois uma precisa de um dado particular da outra para poder armazenar os registros de forma satisfatória.
+                     </p>
+                     <p>
+                        Chamamos isso de RELACIONAMENTOS e vale esclarecer que existem vários tipos. Vamos então conhecer um pouco mais sobre estes.
+                     </p>
+
+                     <video src="./Assets/Relacionamentos.mp4" controls="controls"></video>
+                     <iframe src="./Assets/Relacionamentos.html" frameborder="0"></iframe>
+
+                     <quiz>
+                        <header>
+                           <h2>Quiz</h2>
+                           <question>
+                              <h4>QuestionárIo: Relacionamentos</h4>
+                           </question>
+                        </header>
+                        <home>
+                           <header>
+                              <p n="1">Que tipos de relações existem em um banco de dados relacional?</p>
+                           </header>
+                           <choices>
+                              <label choice="certa">
+                                 <input type="radio" checked>
+                                 <t>um para um</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>alguns para muitos</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="radio" checked>
+                                 <t>um para muitos</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>pouco para muitos</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>um para poucos</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="radio" checked>
+                                 <t>muitos para muitos</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p>
+                                 um para um é um relacionamento válido! <br>
+                                 um para muitos é um relacionamento válido! <br>
+                                 muitos para muitos é um relacionamento válido!
+                              </p>
+                           </res>
+                        </home>
+                        <home>
+                           <header>
+                              <p n="2">
+                                 Utilizando como guia o seguinte modelo, se quisermos modelar que uma pessoa pode ter muitos pets, mas que cada pet tem apenas um dono:
+                              </p>
+                              <img src="./Assets/tabelas pessoas pets.png" alt="">
+                              <p>Que ação você propõe para solucionar o problema?</p>
+                           </header>
+                           <choices>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>Adicionar uma tabela intermediária</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="radio" checked>
+                                 <t>Adicionar a coluna pessoa_id na tabela Pets</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>Adicionar a columa pet_id na tabela Pessoas</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p>Dessa forma, será possível identificar qual o tutor do Pet</p>
+                           </res>
+                        </home>
+                        <home>
+                           <header>
+                              <p n="3">O que é uma foreign key (fk) ?</p>
+                           </header>
+                           <choices>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>Um sinônimo para primary key</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>Um campo que deve ser único</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>Um campo que esclarece sua importância para garantir o desempenho</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="radio" checked>
+                                 <t>Uma referência a primary key de outra tabela</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p></p>
+                           </res>
+                        </home>
+                        <home>
+                           <header>
+                              <p n="4">
+                                 Imagine que estamos trabalhando no sistema de reservas de um hotel.
+                                 <br>
+                                 E neste mesmo sistema temos o modelo Quartos e o modelo Hóspedes.
+                                 <br>
+                                 Agora queremos adicionar a relação de que um hóspede pode reservar vários quartos e que um quarto pode ser reservado por vários hóspedes.
+                              </p>
+                              <p>Utilizando como base os seguintes modelos:</p>
+                              <img src="./Assets/tabelas hospedes quartos.png" alt="">
+                              <p>Que mudanças você propõe?</p>
+                           </header>
+                           <choices>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>Adicionar a coluna quartos_id em Hospedes</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>Adicionar a coluna hospede_id em Quartos</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>Adicionar ambas colunas mencionadas acima</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>Criar tabela intermediária</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p>Lembre-se que quando temos um relacionamento de muitos para muitos a solução é SEMPRE criar uma tabela intermediária</p>
+                           </res>
+                        </home>
+                        <home>
+                           <header>
+                              <p n="5">Como se interpreta a seguinte relação (mais de uma opção correta):</p>
+                              <img src="./Assets/tabelas equipes jogadores.png" alt="">
+                           </header>
+                           <choices>
+                              <label choice="">
+                                 <input type="checkbox">
+                                 <t>Um jogador está relacionado com muitas equipes</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="checkbox" checked>
+                                 <t>Um jogador está relacionado com uma equipe</t>
+                              </label>
+                              <label choice="">
+                                 <input type="checkbox">
+                                 <t>Uma equipe está relacionada com um jogador</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="checkbox" checked>
+                                 <t>Uma equipe está relacionada com muitos jogadores</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p></p>
+                           </res>
+                        </home>
+                     </quiz>
+                  </display>
+               </Relacionamentos>
+
+               <Tipos-de-Dados>
+                  <h2>Tipos de Dados</h2>
+                  <display>
+                     <h1>Tipos de Dados</h1>
+                     <p>
+                        Como nas linguagens de programação, os bancos de dados podem definir os dados que uma determinada coluna armazenará.
+                     </p>
+                     <p>
+                        Por exemplo, se quisermos armazenar a idade de uma pessoa, o mais lógico é que essa coluna apenas nos permita salvar números, mas se quisermos armazenar um e-mail, é mais provável que a coluna tenha a capacidade de salvar informações alfanuméricas.
+                     </p>
+                     <p>
+                        Os tipos de dados em um banco de dados não diferem muito daqueles que já conhecemos, mas existem alguns que são um tanto especiais, então o vídeo a seguir explicará um pouco mais sobre isso.
+                     </p>
+                     <video src="./Assets/Tipos de dados.mp4" controls="controls"></video>
+                     <iframe src="./Assets/Tipos de dados.html" frameborder="0"></iframe>
+
+                     <quiz>
+                        <header>
+                           <h2>Quiz</h2>
+                           <question>
+                              <h4>Questionario_tipos_de_dados</h4>
+                           </question>
+                        </header>
+                        <home>
+                           <header>
+                              <p n="1">Qual desses tipos de dados que não pertence ao MySQL?</p>
+                           </header>
+                           <choices>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>INTEGER</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="radio" checked>
+                                 <t>STRING</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>DATE</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p>Isso aí! String não pertence aos tipos de dados do MySQL</p>
+                           </res>
+                        </home>
+                        <home>
+                           <header>
+                              <p n="2">Qual será o resultado se tentarmos entrar com o seguinte horário: 25:00:00?</p>
+                           </header>
+                           <choices>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>Ocorrerá um erro do tipo MALFORMED_TIME.</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="radio" checked>
+                                 <t>Será inserido sem problemas.</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>Ocorrerá um truncamento do horário para 23:59:59.</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p></p>
+                           </res>
+                        </home>
+                        <home>
+                           <header>
+                              <p n="3">O que ocorrerá se, em um campo do tipo VARCHAR(15), for passada uma string com 17 caracteres?</p>
+                           </header>
+                           <choices>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>Devido à flexibilidade do varchar o MySQL vai permitir a entrada de dados acima do especificado.</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>O MySQL irá truncar o dado para caber no campo.</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="radio" checked>
+                                 <t>Ocorrerá um erro.</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p></p>
+                           </res>
+                        </home>
+                     </quiz>
+                  </display>
+               </Tipos-de-Dados>
+
+               <Constraints>
+                  <h2>Constraints</h2>
+                  <display>
+                     <h1>Constraints</h1>
+                     <p>
+                        A tradução literal para o português da palavra constraint é: RESTRIÇÃO.
+                     </p>
+                     <p>
+                        As constraint ou restrições dentro de uma tabela de banco de dados nos permitem gerar um esquema de informações muito mais estável e funcional aos olhos de nossa aplicação.
+                     </p>
+                     <p>
+                        Por exemplo, uma das restrições mais comuns em uma tabela de pessoas é que as informações armazenadas na coluna de e-mail NÃO PODEM ser repetidas. Algo lógico, certo? Do contrário, o que aconteceria, por exemplo, se várias pessoas pudessem se cadastrar no Instagram com o mesmo e-mail? Seria um tanto complexo identificar quem é quem, não acham?
+                     </p>
+                     <p>
+                        É por isso que as constraints são tão importantes. Elas nos permitem definir regras que devem ser atendidas para que os dados possam ser armazenados, onde estarão intimamente ligados à nossa lógica de negócios.
+                     </p>
+                     <video src="./Assets/Constraints.mp4" controls="controls"></video>
+                     <iframe src="./Assets/Constraints.html" frameborder="0"></iframe>
+
+                     <quiz>
+                        <header>
+                           <h2>Quiz</h2>
+                           <question>
+                              <h4>Questionario_constraints</h4>
+                           </question>
+                        </header>
+                        <home>
+                           <header>
+                              <p n="1">
+                                 Supondo que você está desenvolvendo um sistema cujo nome de usuário deve ser único, qual a constraint correta a se utilizar?
+                              </p>
+                           </header>
+                           <choices>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>ONLY</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>SPECIAL_FIELD</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="radio" checked>
+                                 <t>UNIQUE</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>UNIT</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p></p>
+                           </res>
+                        </home>
+                        <home>
+                           <header>
+                              <p n="2">Quais dessas não são Constraints? (mais de uma opção correta)</p>
+                           </header>
+                           <choices>
+                              <label choice="">
+                                 <input type="checkbox">
+                                 <t>DEFAULT</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="checkbox" checked>
+                                 <t>PATTERN</t>
+                              </label>
+                              <label choice="">
+                                 <input type="checkbox">
+                                 <t>PRIMARY KEY</t>
+                              </label>
+                              <label choice="">
+                                 <input type="checkbox">
+                                 <t>NOT NULL</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="checkbox" checked>
+                                 <t>AUTO_DECREMENT</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p></p>
+                           </res>
+                        </home>
+                        <home>
+                           <header>
+                              <p n="3">Qual é o problema da tabela a seguir?</p>
+                              <co-de>
+                                 CREATE TABLE employee(<br>
+                                 <br>
+                                       id INT PRIMARY KEY AUTO_INCREMENT,<br>
+                                 <br>
+                                       nome VARCHAR(100),<br>
+                                 <br>
+                                       salary DECIMAL(8,2)<br>
+                                 <br>
+                                 )
+                              </co-de>
+                           </header>
+                           <choices>
+                              <label choice="">
+                                 <input type="checkbox">
+                                 <t>Deve ser inserido um valor DEFAULT para o nome do funcionário</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="checkbox" checked>
+                                 <t>Deve ser inserida uma constraint NOT NULL para o nome do funcionário</t>
+                              </label>
+                              <label choice="">
+                                 <input type="checkbox">
+                                 <t>Deve atribuir o salário do funcionário como AUTO_INCREMENT</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="checkbox" checked>
+                                 <t>Deve atribuir a constraint NOT NULL para o salário do funcionário</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p></p>
+                           </res>
+                        </home>
+                     </quiz>
+                  </display>
+               </Constraints>
+
+               <Create-Drop-Alter>
+                  <h2>Create, Drop, Alter</h2>
+                  <display>
+                     <h1>Create, Drop, Alter</h1>
+                     <p>
+                        Como criamos uma tabela com instruções SQL? E se queremos eliminá-la, como podemos fazer? Além disso, será possível modificar uma tabela existente?
+                     </p>
+                     <p>
+                        As diretrizes Create, Drop e Alter nos permitirão realizar cada uma dessas ações que, vale a pena mencionar, são bastante comuns no processo de trabalho com bancos de dados.
+                     </p>
+                     <video src="./Assets/Create, Drop e Alter.mp4" controls="controls"></video>
+                     <iframe src="./Assets/Create, Drop e Alter.html" frameborder="0"></iframe>
+
+                     <quiz>
+                        <header>
+                           <h2>Quiz</h2>
+                           <question>
+                              <h4>Questionario_create_drop_alter</h4>
+                           </question>
+                        </header>
+                        <home>
+                           <header>
+                              <p n="1">
+                                 Supondo que você precisa criar uma tabela de carros para uma locadora, o comando mais correto para isso é:
+                              </p>
+                           </header>
+                           <choices>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>CREATE carros(...)</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>DROP carros(...)</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="radio" checked>
+                                 <t>CREATE TABLE carros(...)</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>GENERATE carros(...)</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p></p>
+                           </res>
+                        </home>
+                        <home>
+                           <header>
+                              <p n="2">Para que serve o comando ALTER?</p>
+                           </header>
+                           <choices>
+                              <label choice="certa">
+                                 <input type="checkbox" checked>
+                                 <t>Adicionar nova coluna</t>
+                              </label>
+                              <label choice="">
+                                 <input type="checkbox">
+                                 <t>Adicionar novos registros à tabela</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="checkbox" checked>
+                                 <t>Excluir colunas da tabela</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="checkbox" checked>
+                                 <t>Modificar colunas da tabela</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p></p>
+                           </res>
+                        </home>
+                        <home>
+                           <header>
+                              <p n="3">
+                                 Após finalizar a implementação de um projeto, ficou claro para a equipe que a tabela pontuação não era necessária no final das contas. Qual o comando correto para darmos fim a esta tabela?
+                              </p>
+                           </header>
+                           <choices>
+                              <label choice="certa">
+                                 <input type="radio" checked>
+                                 <t>DROP TABLE pontuacao</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>DELETE TABLE pontuacao</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>DROP table.pontuacao</t>
+                              </label>
+                              <label choice="">
+                                 <input type="radio">
+                                 <t>DELETE table.pontuacao</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p></p>
+                           </res>
+                        </home>
+                     </quiz>
+                  </display>
+               </Create-Drop-Alter>
+
+               <Foreign-Key>
+                  <h2>Foreign Key</h2>
+                  <display>
+                     <h1>Foreign Key ( Chave estrangeira )</h1>
+
+                     <p>
+                        Foreign key, também conhecida como FK ou chave estrangeira, é um tipo de constraint (restrição) que pode ser atribuída a uma coluna de uma tabela. Isso permite que essa coluna armazene como valor um dado particular que se refere aos dados armazenados em uma coluna de outra tabela, daí seu nome: "estrangeiro", por ser "de fora".
+                     </p>
+                     <p>
+                        As chaves estrangeiras ou FKs permitem relacionar tabelas entre si e o objetivo desta particularidade é conceder maior desempenho na busca de algum dado particular.
+                     </p>
+                     <p>
+                        Vamos ver um pouco mais sobre esse importante conceito então.
+                     </p>
+                     <iframe src="./Assets/Foreign Key.html" frameborder="0"></iframe>
+
+                     <quiz>
+                        <header>
+                           <h2>Quiz</h2>
+                           <question>
+                              <h4>Questionario_foreign_key</h4>
+                           </question>
+                        </header>
+                        <home>
+                           <header>
+                              <p n="1">Dada as tabelas abaixo marque as opções verdadeiras</p>
+                              <p>
+                                 <b>SESSÕES</b>
+                                 <img src="" alt="">
+                              </p>
+                              <p>
+                                 <b>FILMES</b>
+                                 <img src="" alt="">
+                              </p>
+                           </header>
+                           <choices>
+                              <label choice="">
+                                 <input type="checkbox">
+                                 <t>A sessão 1 vai passar o filme 2</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="checkbox" checked>
+                                 <t>A sessão 3 vai passar o filme 3</t>
+                              </label>
+                              <label choice="">
+                                 <input type="checkbox">
+                                 <t>A sessão 2 vai passar o filme 1</t>
+                              </label>
+                              <label choice="">
+                                 <input type="checkbox">
+                                 <t>A sessão 1 vai passar o filme 3</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="checkbox" checked>
+                                 <t>A sessão 2 vai passar o filme 2</t>
+                              </label>
+                              <label choice="certa">
+                                 <input type="checkbox" checked>
+                                 <t>A sessão 1 vai passar o filme 4</t>
+                              </label>
+                           </choices>
+                           <res>
+                              <p></p>
+                           </res>
+                        </home>
+                     </quiz>
+                  </display>
+               </Foreign-Key>
+
+               <Diagrama-de-relacionamentos-ao-vivo>
+                  <h2>Diagrama de relacionamentos [ao Vivo]</h2>
+                  <display>
+                     <h1>Diagrama de relacionamentos [ao Vivo]</h1>
+                     <p>
+                        Acabamos de completar a primeira aula sobre base de dados MySQL. Como sempre, antes da aula ao vivo, recomendamos que você faça uma lista de verificação pessoal das seguintes perguntas para definir o quão claro certos conceitos estão:
+                     </p>
+                     <ul>
+                        <li>
+                           <p>MySQL: é uma base de dados relacional ou não relacional?</p>
+                        </li>
+                        <li>
+                           <p>Por que o MySQL está sendo executado em um servidor diferente da nossa aplicação web?</p>
+                        </li>
+                        <li>
+                           <p>Com que outro elemento podemos fazer a analogia de uma tabela numa base de dados?</p>
+                        </li>
+                        <li>
+                           <p>Quantas tabelas podem existir numa base de dados?</p>
+                        </li>
+                        <li>
+                           <p>Existe um limite para o número de colunas numa tabela?</p>
+                        </li>
+                        <li>
+                           <p>Quais são os tipos de dados mais comuns de uma base de dados?</p>
+                        </li>
+                        <li>
+                           <p>Como podemos relacionar duas tabelas, uma com a outra?</p>
+                        </li>
+                        <li>
+                           <p>O que são restrições e o que elas nos permitem fazer?</p>
+                        </li>
+                        <li>
+                           <p>A Foreign Key é um constraint (restrição)?</p>
+                        </li>
+                     </ul>
+                     <p>
+                        Se conseguirmos responder a todas as perguntas acima, estamos preparados para enfrentar a aula ao vivo que se aproxima. Se, por outro lado, algumas das questões foram difíceis de responder, recomendamos que você volte a rever o material para terminar de reforçar os conceitos.
+                     </p>
+                     <p>
+                        Sem mais demora, nos vemos na aula!
+                     </p>
+                     <hr>
+                     <p>
+                        É o momento de colocar em prática tudo o que aprendemos antes, mas como sempre mencionamos, antes de entrar no código, é bom fazer uma pausa e pensar um pouco sobre o que vamos construir.
+                     </p>
+                     <p>
+                        Portanto, propomos pensar na arquitetura que a base de dados terá, não a partir de declarações SQL, mas a um nível estrutural, lógico e relacional, a partir da sua conceitualização num diagrama Entidade Relacionamento (ER).
+                     </p>
+                     <p>
+                        Estes tipos de diagramas são a pedra fundamental de qualquer sistema que procure armazenar informação numa base de dados. Assim, lápis e papel, ou melhor, teclado e mouse, para realizar os desafios que iremos propor a seguir.
+                     </p>
+                     <p>
+                        É importante lembrar que, uma vez gerado o diagrama ER, podemos ir diretamente para as declarações MySQL e criar a base de dados como planejamos.
+                     </p>
+                     <h5>Sucesso!</h5>
+
+                     <iframe src="./Assets/Desenho e definição de tabelas.html" frameborder="0"></iframe>
+                     <hr>
+                     <iframe src="./Assets/Diagrama de relacionamento.html" frameborder="0"></iframe>
+                     <hr>
+                     <iframe src="./Assets/Desenho e definição de tabelas - Prática integradora.pdf" frameborder="0"></iframe>
+                     <hr>
+                  </display>
+               </Diagrama-de-relacionamentos-ao-vivo>
+            </Introducao-a-Banco-de-Dados>
          </concepcao-e-definicao-de-tabelas>
 
-         <manipulacao-de-dados-de-consulta></manipulacao-de-dados-de-consulta>
+         <manipulacao-de-dados-de-consulta>
 
-         <funcoes-de-agregacao-e-consulta-avancada></funcoes-de-agregacao-e-consulta-avancada>
+            <Introducao>
+               <h2>Introdução</h2>
+               <display>
+                  <h1>O que veremos nesta aula?</h1>
+                  <p>
+                     Ao longo desta aula, continuaremos a mergulhar no mundo dos bancos de dados relacionais e, em particular, aprenderemos:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>Como fazer consultas que nos permitem inserir, atualizar e excluir registros de uma tabela.</p>
+                     </li>
+                     <li>
+                        <p>Obter dados de uma tabela de uma forma geral.</p>
+                     </li>
+                     <li>
+                        <p>Obter dados de uma tabela por meio da aplicação de vários filtros de pesquisa.</p>
+                     </li>
+                     <li>
+                        <p>Como limitar a quantidade de resultados gerados por uma determinada pesquisa (algo que é muito bom, se o nosso interesse é fazer um motor de busca com sistema de paging).</p>
+                     </li>
+                     <li>
+                        <p>Para usar algumas funções nativas do MySQL, permitindo filtrar e organizar os dados obtidos de uma forma muito mais eficiente.</p>
+                     </li>
+                  </ul>
+                  <p>
+                     Concluindo, é uma aula onde aprenderemos os principais segredos do trabalho com banco de dados. Portanto, mãos à obra e preste muita atenção aos conceitos apresentados aqui.
+                  </p>
+               </display>
+            </Introducao>
+
+            <Insert-update-e-delete>
+               <h2>Insert, update e delete</h2>
+               <display>
+                  <h1>Insert, update e delete</h1>
+                  <p>
+                     Quando trabalhamos com tabelas, inevitavelmente precisaremos inserir, atualizar ou excluir algum dado. Estas três funções são realizadas graças às três principais diretrizes que o MySQL tem para este fim:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>
+                           <b>Insert </b>
+                           <t>nos permite </t>
+                           <b>adicionar </b>
+                           <t>dados;</t>
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                           <b>Delete </b>
+                           <t> nos permite </t>
+                           <b> excluir </b>
+                           <t>dados;</t>
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                           <b>Update </b>
+                           <t> nos permite </t>
+                           <b>modificar </b>
+                           <t>dados;</t>
+                        </p>
+                     </li>
+                  </ul>
+                  <p>Vamos agora entender como podemos trabalhar com essas funções.</p>
+
+                  <video src="./Assets/Insert, Update e Delete.mp4" controls="controls"></video>
+                  <iframe src="./Assets/Insert, Update e Delete.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Questionário Novos Gêneros Musicais</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              Do setor comercial da Musimundos, nos informam que vão agregar um novo gênero musical à nossa plataforma. Eles precisam de nós para ajudá-los a carregá-lo em nosso banco de dados. Vamos inserir o id 26 e o ??nome Cumbia na tabela de gênero.
+
+                              Insira sua consulta em maiúsculas.
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <co-de>
+                                 INSERT INTO gênero (id, nome) <br>
+                                 VALUES (26, Cumbia);
+                              </co-de>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </Insert-update-e-delete>
+
+            <Select>
+               <h2>Select</h2>
+               <display>
+                  <h1>Select</h1>
+                  <p>
+                     Quando armazenamos informações em um banco de dados, um dos nossos objetivos futuros é poder consultá-las sempre que necessário. Para atingir este resultado, existe a diretiva select que nos permitirá, como o próprio nome indica, selecionar colunas de uma tabela para acessar as informações nela presentes.
+                  </p>
+                  <p>
+                     No próximo vídeo, veremos como consultar o banco de dados através do select, ítem fundamental para poder trabalhar com bancos de dados.
+                  </p>
+                  <video src="./Assets/Select.mp4" controls="controls"></video>
+                  <iframe src="./Assets/Select.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Questionário Que álbum temos? v2.0</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              O gerente de uma gravadora musical, a  MusicMundo, pediu para que organizasse o inventário de discos e um relatório com todos os álbuns (tabela albuns) que a empresa possui.
+                           </p>
+                           <p>Qual modelo de consulta (query) devolverá todos os álbuns? </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT todos FROM albuns</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>SELECT * FROM albuns</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT ALL FROM albuns</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>
+                              Muito bem! O comando correto para trazer na consulta ao banco de dados todos os os campos contidos em uma determinada tabela é representado pelo sinal asterisco ( * ).
+                           </p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">
+                              Para realizar o controle de vendas, o representante da Musicmundo pede que seja projetado um sistema que guarde o nome e telefone de todos os seus clientes.
+                              <br>
+                              *** A tabela clientes já existe, do mesmo modo que os campos nome e telefone.
+                           </p>
+                           <p>
+                              Como você faria para consultar essas informações uma vez que foram gravadas na base de dados?
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="checkbox" checked>
+                              <t>SELECT nome, telefone FROM clientes</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="checkbox" checked>
+                              <t>SELECT * FROM clientes</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>SELECT nome FROM clientes</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Boa resposta! Podemos especificar campo a campo que queremos selecionar ou pedir todos os campos da tabela.</p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </Select>
+
+            <Where-e-Order-by>
+               <h2>Where e Order by</h2>
+               <display>
+                  <h1>Where e Order by</h1>
+                  <p>
+                     A essa altura, já sabemos que uma tabela em um banco de dados armazena muitas informações. E muitas vezes precisaremos de dados específicos e não de todos os registros existentes naquela tabela.
+                  </p>
+                  <p>
+                     Por exemplo, em uma tabela de filmes, talvez tivéssemos interesse em ver os lançados a partir de 2015.
+                  </p>
+                  <p>
+                     Bem, para filtrar os dados dessa maneira, o MySQL tem algumas diretrizes específicas que nos permitem filtrar esses dados e obter apenas o que estamos procurando.
+                  </p>
+                  <video src="./Assets/Where e Order by.mp4" controls="controls"></video>
+                  <iframe src="./Assets/Where e Order by.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Exercício: Clientes</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              Imagine que precise organizar todos os registros de vendas de intercâmbio (tabela vendas), organizando-os começando pelos que mais deram lucro (coluna valorPago). 
+                           </p>
+                           <p>Qual query te ajudaria a resolver isso? </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM compras ORDER BY valorPago DESC</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT FROM vendas ORDER BY valorPago DESC</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM compras ORDER BY valorPago ASC</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM vendas ORDER BY valorPago ASC</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>SELECT * FROM vendas ORDER BY valorPago DESCMuito bem! Você escolheu a tabela certa ordenando do maior valor para o menor (DESC).</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">
+                              URGENTE! Uma banda argentina acabou de lançar um álbum e nos pediu uma lista de clientes hispanófonos (falantes de espanhol) para poder divulgar seu produto. Pedimos que você obtenha uma lista de clientes (tabela clientes)cujo país de origem (coluna paisOrigem) seja Espanha ou Argentina.
+                           </p>
+                           <p>Qual consulta ao banco de dados usaria? </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM clientes WHERE paisOrigem = 'Espanha' AND paisOrigem = 'Argentina'</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM cliente WHERE paisOrigem =&gt; 'Espanha' OR paisOrigem &lt;= 'Argentina'</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>SELECT * FROM clientes WHERE paisOrigem = 'Espanha' OR paisOrigem = 'Argentina'</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM cliente WHERE paisOrigem = 'Espanha' OR paisOrigem = 'Argentina'</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">
+                              Os gerentes estão muito satisfeitos com o seu trabalho! Mas as tarefas todavia não terminam. Agora eles precisam de uma lista com apenas os nomes (coluna nome) dos clientes (tabela clientes) da MusicMundos, ordenada por pais de origem (coluna paisOrigem) e por cidade (coluna cidade) (ambos em em ordem decrescente). Está pronto?
+                           </p>
+                           <p>Qual query permite que essa consulta seja realizada com sucesso?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM clientes ORDER BY paisOrigem DESC AND cidade DESC</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT nome FROM clientes ORDER BY paisOrigem DESC AND cidade DESC</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM clientes ORDER BY paisOrigem DESC, cidade DESC</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>SELECT nome FROM clientes ORDER BY paisOrigem DESC, cidade DESC</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem, era importante selecionar apenas o campo nome da tabela além de separar as maneiras de ordenar os resultados por vírgula.</p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </Where-e-Order-by>
+
+            <Between-e-Like>
+               <h2>Between e Like</h2>
+               <display>
+                  <h1>Between e Like</h1>
+                  <p>
+                     Para deixar nossa aplicação mais versátil, provavelmente vamos precisar aplicar algum tipo de filtro em nossas consultas à base de dados. Por exemplo: se quisermos buscar as faturas emitidas desde 2010, ou os filmes que começam com a palavra “Toy”.
+                  </p>
+                  <p>
+                     As diretrizes Between e Like são fundamentais para podermos fazer esse tipo de consulta, entre outras coisas. Vamos ver como podemos utilizá-las?
+                  </p>
+                  <video src="./Assets/Between e Like.mp4" controls="controls"></video>
+                  <iframe src="./Assets/Between e Like.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Exercícios</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              Repassando o conteúdo que aprendemos sobre o uso do operador LIKE, como podemos realizar uma consulta para gerar uma lista de todas as canções cujos compositores começam com "A"? Assinale as alternativas que apresentam uma consulta correta com o uso do LIKE.
+                           </p>
+                           <p>
+                              Dica: não se preocupe com maiúsculas e minúsculas, pois LIKE não faz distinção entre elas. Como criaria essa query?
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>SELECT * FROM musicas WHERE nomeCompositores LIKE 'a%'</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>SELECT * FROM musicas WHERE nomeCompositores LIKE 'A%'</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem! As duas primeiras opções estão corretas porque o LIKE não faz distinção entre letras maiúsculas ou minúsculas.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">
+                              Seguindo nossa sequência de consultas ao banco de dados da MusiMundos, agora precisamos de uma lista de gêneros que contenham em algum lugar no nome a sigla "ro". Com qual query conseguimos gerar essa lista?
+                           </p>
+                           <p>Dica: não se preocupe com maiúsculas e minúsculas, pois LIKE não faz distinção entre elas. </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM generosMusicais WHERE nomeGenero LIKE '%ro'</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>SELECT * FROM generosMusicais WHERE nomeGenero LIKE '%ro%'</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM generosMusicais WHERE nomeGenero LIKE 'ro%'</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Isso mesmo! % antes e depois de um termo significa que buscamos aqueles caracteres nos valores dos campos.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">
+                              Você vem realizando um ótimo trabalho nas consultas solicitadas ao banco de dados da MusiMundo! 
+                           </p>
+                           <p>
+                              Antes de finalizarmos essa etapa de consultas, precisamos fazer uma verificação das canções (tabela musicas). Para isso é necessário gerar uma lista das canções que tenham um id entre 10 e 20. Qual query pode gerar essa solicitação?
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM musicas WHERE id BETWEEN 9 AND 21</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM musicas WHERE id BETWEEN 10 TO 20</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>SELECT * FROM musicas WHERE id BETWEEN 10 AND 20</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM musicas WHERE id BETWEEN 9 TO 21</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem! O correto é separar os valores com a palavra AND. Além disso, devem começar e terminar com os números que queremos incluir nos resultados consultados.</p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </Between-e-Like>
+
+            <Limit-e-Offset>
+               <h2>Limit e Offset</h2>
+               <display>
+                  <h1>Limit e Offset</h1>
+                  <p>
+                     Imagine que você entrou em um e-commerce de roupas e fez uma pesquisa para encontrar todas as camisas sociais que aquela loja tem disponível. Na aplicação dessa loja existem mais de 200 camisas cadastradas, porém, para não saturar o usuário (você) e o navegador com tantos resultados de uma vez só, a pesquisa exibe apenas 20 camisas por página.
+                  </p>
+                  <p>
+                     Essa função também pode ser aplicada quando estamos realizando consultas em nossa base de dados, e é muito útil se precisamos manipular centenas de registros. Mas afinal, como podemos fazer isso na prática?
+                  </p>
+                  <p>
+                     As diretrizes LIMIT e OFFSET nos permitem especificar a quantidade de resultados a serem exibidos e definir a partir de qual registro uma paginação começará. Para conhecer melhor essas duas ferramentas, vamos ao vídeo!
+                  </p>
+                  <video src="./Assets/Limit e Offset.mp4" controls="controls"></video>
+                  <iframe src="./Assets/Limit e Offset.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Exercícios </h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              Vamos trabalhar todo o conteúdo visto até agora?
+                           </p>
+                           <p>
+                              A Equipe de Marketing abriu uma solicitação para que consulte na base de dados de sua empresa os 8 primeiros clientes (em ordem alfabética) que possuem mais de 18 anos de idade.
+                           </p>
+                           <p>Qual destas queries trará o resultado desejado? </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM clientes WHERE idade>18 LIMIT 8 ORDER BY nome ASC OFFSET 0</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM clientes ORDER BY nome ASC LIMIT 8 OFFSET 0</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>SELECT * FROM clientes WHERE idade>18 ORDER BY nome ASC LIMIT 8 OFFSET 0</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM clientes WHERE idade>18 ORDER BY nome ASC LIMIT 18 OFFSET 0</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM clientes WHERE idade>18 ORDER BY nome DESC LIMIT 8 OFFSET 0</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem! Você conseguiu definir qual a query correta para essa consulta!</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">
+                              Uma equipe do Financeiro abriu uma nova solicitação para que consulte, na base de dados de sua empresa, as 10 últimas faturas emitidas para o Canadá. Qual destas queries trará o resultado desejado para essa consulta?
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM faturas WHERE pais_de_faturamento = 'Canada' ORDER BY data_fatura DESC LIMIT 10 OFFSET 0;</t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>SELECT * FROM faturas WHERE pais_de_faturamento = 'Canada' ORDER BY id DESC LIMIT 10 OFFSET 0;</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM faturas WHERE pais_de_faturamento = 'Canada' ORDER BY data_fatura ASC LIMIT 10 OFFSET 0;</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM faturas WHERE pais_de_faturamento = 'Canada' ORDER BY id ASC LIMIT 10 OFFSET 0;</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem! Você conseguiu definir qual a query correta para essa consulta!</p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </Limit-e-Offset>
+
+            <Alias>
+               <h2>Alias</h2>
+               <display>
+                  <h1>Alias</h1>
+                  <p>
+                     Imagine que estamos trabalhando com uma base de dados cujas colunas das tabelas estão em inglês. Mas foi solicitado que os resultados e consultas tragam o nome dessas colunas em português. Como podemos resolver isso?
+                  </p>
+                  <p>
+                     A diretriz ALIAS nos permite dar apelidos para as colunas e tabelas do nosso banco de dados. Vamos ver como ela funciona?
+                  </p>
+                  <video src="./Assets/Alias.mp4" controls="controls"></video>
+                  <iframe src="./Assets/Alias.html" frameborder="0"></iframe>
+                  
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Tipos de Midia - v2.0</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              A empresa Musimundo decidiu usar o nome original "nome" para a coluna que listava os tipos de mídia (da tabela musicas) no relatório mensal da empresa. Porém, decidiram alterar esse nome e agora foi solicitado que a coluna dos tipos de mídias seja renomeada temporariamente com o seguinte nome: nome_midias. Qual query executa essa ação?
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>SELECT nome as nome_midias FROM musicas</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT musicas FROM nome as nome_midias</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT nome FROM musicas as nome_midias</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem! Você selecionou a query correta para renomear a coluna temporariamente no banco de dados.</p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </Alias>
+
+            Funçõ<es-de-alteracao>
+               <h2>Funções de alteração</h2>
+               <display>
+                  <h1>Funções de alteração</h1>
+                  <p>
+                     Em muitas ocasiões, precisaremos que a nossa consulta traga não somente os dados solicitados, mas também que sejam realizadas algumas operações especiais com esses dados. Por exemplo: unificar os dados das colunas em uma só, ou colocar algum valor padrão a todos os registros que tiverem um valor nulo.
+                  </p>
+                  <p>
+                     As funções de MySQL nos permitem dinamizar e manipular o resultado da nossa consulta. Mas é importante lembrar que elas nunca alteram os dados originais da base de dados.
+                  </p>
+                  <p>
+                     Algumas das funções de alteração mais comuns, e as que veremos nesta aula, são:
+                  </p>
+                  <video src="./Assets/Funções de alteração.mp4" controls="controls"></video>
+                  <iframe src="./Assets/Funções de alteração.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Questionário Consumo</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              Agora praticando o que aprendemos nas funções de alteração vamos verificar como anda o consumo dos clientes em uma plataforma online. Precisamos utilizar uma função para uma consulta ao banco de dados que considere:
+                              <ul>
+                                 <li>
+                                    <p>Clientes que consumiram menos de R$5,00 tiveram consumo baixo;</p>
+                                 </li>
+                                 <li>
+                                    <p>Clientes que consumiram entre R$5,00 e R$10,00 tiveram consumo moderado;</p>
+                                 </li>
+                                 <li>
+                                    <p>Clientes que consumiram acima de 10,00 tiveram consumo alto.</p>
+                                 </li>
+                              </ul>
+                              <br>
+                              <t>Qual das querys abaixo nos dá a resposta para essa consulta?</t>
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>
+                                 SELECT id, data_fatura, total, CASE WHEN total &gt; 5 THEN 'Baixo' WHEN total &lt; 10 THEN 'Médio' ELSE 'caro' END AS categoria_preco FROM faturas;
+                              </t>
+                           </label>
+                           <label choice="certa">
+                              <input type="radio" checked>
+                              <t>
+                                 SELECT id, data_fatura, total, CASE WHEN total &lt; 5 THEN 'Baixo' WHEN total &lt; 10 THEN 'Médio' ELSE 'caro' END AS categoria_preco FROM faturas;
+                              </t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>
+                                 SELECT id, data_fatura, total, CASE WHEN total &gt; 5 THEN 'Baixo' WHEN total &lt; 10 THEN 'Médio' ELSE ‘médio’ END AS categoria_preco FROM boletos;
+                              </t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem! Você utilizou a função Case criando uma avaliação das condições solicitadas que retornarão as informações da tabela do nosso banco de dados.</p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </es-de-alteracao>
+
+            <Manipulacao-de-dados-e-consulta-ao-vivo>
+               <h2>Manipulação de dados e consulta [ao vi o]</h2>
+               <display>
+                  <h1>Para aula ao vivo</h1>
+                  <p>
+                     É tempo de nos prepararmos para a aula ao vivo, onde, como habitualmente, aplicamos todos os conhecimentos aprendidos nesta aula.
+                  </p>
+                  <p>
+                     No entanto, para estabelecer uma boa expectativa e aproveitar ao máximo tudo o que preparamos para a aula, deixamos abaixo esta lista de perguntas para testar os conceitos vistos:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>Numa consulta do tipo SELECT, como podemos seleccionar TODAS as colunas de uma tabela?</p>
+                     </li>
+                     <li>
+                        <p>Qual dos seguintes operadores não trabalharia numa consulta WHERE: LIKE, =, BETWEEN, &lt;&gt;, ON.</p>
+                     </li>
+                     <li>
+                        <p>Quais são os valores possíveis ao implementar a cláusula ORDER BY?</p>
+                     </li>
+                     <li>
+                        <p>O que não devemos esquecer de colocar no WHERE quando estamos fazendo um UPDATE ou DELETE?</p>
+                     </li>
+                     <li>
+                        <p>Para que serve a função de alteração EXTRACT?</p>
+                     </li>
+                     <li>
+                        <p>É obrigatório utilizar o pseudônimo ao realizar uma consulta SELECT?</p>
+                     </li>
+                  </ul>
+                  <p>
+                     Se conseguirmos responder às perguntas acima sem problemas, podemos relaxar e esperar pela aula ao vivo. Se, por outro lado, tivermos algumas dúvidas nas respostas, recomendamos a revisão dos vídeos para reforçar os conceitos.
+                  </p>
+                  <p>Nos vemos na aula, até lá!</p>
+
+                  <iframe src="./Assets/Manipulação de dados e consulta.html" frameborder="0"></iframe>
+                  <hr>
+                  <iframe src="./Assets/Manipulação de dados e consulta - Prática integradora.pdf" frameborder="0"></iframe>
+                  <hr>
+                  <iframe src="./Assets/Atividade banco de dados - p1.pdf" frameborder="0"></iframe>
+                  <hr>
+                  <iframe src="./Assets/Atividade banco de dados - ao vivo.pdf" frameborder="0"></iframe>
+                  <hr>
+                  <iframe src="./Assets/Atividade banco de dados - p3.pdf" frameborder="0"></iframe>
+                  <hr>
+                  <h2>Arquivo escola-db para atividade extra</h2>
+                  <p>
+                     <a href="./Assets/11.  EXTRA - escola_db.sql" download></a>
+                  </p>
+               </display>
+            </Manipulacao-de-dados-e-consulta-ao-vivo>
+
+         </manipulacao-de-dados-de-consulta>
+
+         <funcoes-de-agregacao-e-consulta-avancada>
+
+            <Intro>
+               <h2>Introdução</h2>
+               <display>
+                  <h1>O que vamos ver nesta aula?</h1>
+                  <p>
+                     É possível que em alguns momentos, seja necessário unirmos tabelas para conseguir trazer os dados que queremos; visto que nossa base de dados é relacional, muitas tabelas se relacionam entre si.
+                  </p>
+                  <p>
+                     Além disso, também vão existir situações em que vamos precisar unificar registros para ver todos aqueles que se repetem constantemente em uma mesma tabela.
+                  </p>
+                  <p>
+                     Portanto, quando concluir esta aula, você será capaz de:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>Unir tabelas para trazer os dados que se relacionam entre elas;</p>
+                     </li>
+                     <li>
+                        <p>Gerar resultados em que os dados que se repetem se unifiquem;</p>
+                     </li>
+                     <li>
+                        <p>Agrupar dados por um determinado nome de coluna;</p>
+                     </li>
+                     <li>
+                        <p>Implementar as funções de MySQL que permitem identificar:</p>
+                     </li>
+                     <li>
+                        <p>Médias;</p>
+                     </li>
+                     <li>
+                        <p>Mínimos;</p>
+                     </li>
+                     <li>
+                        <p>Máximos;</p>
+                     </li>
+                     <li>
+                        <p>Contagem total de dados.</p>
+                     </li>
+                  </ul>
+                  <p>Então, vamos conhecer mais de perto essas ferramentas?</p>
+               </display>
+            </Intro>
+         </funcoes-de-agregacao-e-consulta-avancada>
 
          <sprint-v-pi></sprint-v-pi>
 
@@ -124,12 +1883,11 @@
          <sprint-vi-pi></sprint-vi-pi>
 
 
-<!-- (div>h3+display>h1^^{})*4 -->
-<!-- quiz>header>h2{Quiz}+question>h4^^home>header>p[n]^choices>label[choice]>input[type="radio"]+t^^res>p -->
       </modulo>
 
    </body>
 </html>
 
 <style>
+   img { width: 100%; }
 </style>
