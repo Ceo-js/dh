@@ -1870,6 +1870,139 @@ no tópico anterior, dentro do MySQL Workbench e utilizá-lo normalmente.
                   <p>Então, vamos conhecer mais de perto essas ferramentas?</p>
                </display>
             </Intro>
+
+            <joins>
+               <h2>Joins</h2>
+               <display>
+                  <h1>Joins</h1>
+
+                  <p>
+                     Imagine o seguinte cenário: você tem uma tabela que armazena os dados de uma pessoa, e sabe que essa tabela, por sua vez, está ligada à outra tabela que armazena as imagens que uma pessoa posta. Mas, nesta última tabela, o único dado que se tem para identificar a pessoa dona dessa imagem é o ID dela, ou seja, o ID que corresponde a essa pessoa na tabela de pessoas.
+                  </p>
+                  <p>
+                     Sendo assim, como poderíamos trazer, em uma só consulta, as imagens que pertencem ao ID 5, por exemplo? Em outras palavras, como é possível trazer todas as imagens que pertencem a uma pessoa se essa informação está presente em tabela?
+                  </p>
+                  <p>
+                     Pois bem, para alcançar isso, o MySQL fornece uma ferramenta chamada de JOINS. Os joins (ou junções), tal qual seu nome indica, não são nada mais que uniões entre tabelas diferentes, que têm algum tipo de relação entre si.
+                  </p>
+                  <p>
+                     Agora, com isso em mente, vamos ver como funciona no próximo vídeo.
+                  </p>
+                  <video src="./Assets/Joins.mp4"></video>
+                  <iframe src="./Assets/Joins.html" frameborder="0"></iframe>
+                  
+                  <h2>Inner Join</h2>
+                  <iframe src="https://view.genial.ly/604fdb5bd92f5e0d2a065cd1" frameborder="0"></iframe>
+
+                  <iframe src="./Assets/Inner Join.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Dia Mundial do Rock</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              É a semana do rock ao nível mundial e nosso empresário da Musimundos nos pede para criar banners com músicas do gênero Rock. Faça uma consulta ao nosso banco de dados para retornar os nomes das músicas que possuem o gênero rock.
+                           </p>
+                           <p>Lembrando que o ID do gênero Rock é 6.</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT musica.nome, genero.nome FROM musica INNER JOIN genero ON musica.genero_id= genero.id = 6;</t>
+                           </label>
+                           <label choice="1">
+                              <input type="radio">
+                              <t>SELECT musica.nome, genero.nome FROM musica INNER JOIN genero ON musica.genero_id= genero.id WHERE genero.id = 6;</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT musica.nome, genero.nome FROM musica LEFT JOIN genero ON musica.genero_id= genero.id WHERE genero.id = "Rock";</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </joins>
+            
+            <Distincts>
+               <h2>Distincts</h2>
+               <display>
+                  <h1>Distincts</h1>
+
+                  <video src="./Assets/Distincts.mp4"></video>
+                  <iframe src="./Assets/Distincts.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Funcionários</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              O setor de recursos humanos de MusicMundos está solicitando uma lista de todos os cargos que os funcionários têm, faça uma consulta ao nosso banco de dados que nos dá o título dos cargos que todos os funcionários têm, sem repetir registros!
+                              <h5>Escolha a query correta</h5>
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="d">
+                              <input type="radio">
+                              <t>SELECT DISTINCT funcionario.cargo FROM funcionarios</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT DISTINTC funcionario.cargo FROM funcionarios</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT funcionario.cargo FROM DISTINCT funcionarios</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Viu? o Distinct é bem simples.</p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </Distincts>
+            
+            <group-by>
+               <h2></h2>
+               <display>
+                  <h1></h1>
+               </display>
+            </group-by>
+            
+            <funcoes-de-agregacao>
+               <h2></h2>
+               <display>
+                  <h1></h1>
+               </display>
+            </funcoes-de-agregacao>
+            
+            <having>
+               <h2></h2>
+               <display>
+                  <h1></h1>
+               </display>
+            </having>
+            
+            <ao-vivo>
+               <h2></h2>
+               <display>
+                  <h1></h1>
+               </display>
+            </ao-vivo>
          </funcoes-de-agregacao-e-consulta-avancada>
 
          <sprint-v-pi></sprint-v-pi>
@@ -1888,6 +2021,29 @@ no tópico anterior, dentro do MySQL Workbench e utilizá-lo normalmente.
    </body>
 </html>
 
-<style>
+<!-- <style>
    img { width: 100%; }
 </style>
+
+<script>
+   addEventListener( "load", ev => {
+
+      let 
+         rightAnswers = $$( "[choice]" ),
+         videoTags = $$( "video" )
+      ;
+
+      rightAnswers.forEach( ra => {
+         if( ra.getAttribute( "choice" ) != "" ) {
+            ra.querySelector( "input" ).setAttribute( "checked", "checked" );
+            ra.setAttribute( "choice", "certa" );
+            _( "checked" );
+         }
+      } );
+
+      videoTags.forEach( vt => {
+         vt.setAttribute( "controls", "controls" );
+      } );
+
+   } );
+</script> -->
