@@ -1977,37 +1977,663 @@ no tópico anterior, dentro do MySQL Workbench e utilizá-lo normalmente.
             </Distincts>
             
             <group-by>
-               <h2></h2>
+               <h2>Group by</h2>
                <display>
-                  <h1></h1>
+                  <h1>Group by</h1>
+
+                  <p>
+                     Continuamos com o cenário em que o líder técnico de sua equipe chega para fazer solicitações que você tem que resolver. Desta vez, ele pede um relatório do número de carros agrupados por marca. Em outras palavras, você quer ver quantos carros estão em estoque da Chevrolet, Fiat, Renault e marcas semelhantes.
+                  </p>
+                  <p>
+                     E antes de começar a soltar sua cabeça, deixe-nos dizer que a solução (como é comum no MySQL) é mais simples do que você pensa.
+                  </p>
+                  <p>
+                     Bem, com a diretiva Group by, você poderá agrupar os registros da tabela resultantes de uma consulta por uma ou mais colunas, conforme necessário.
+                  </p>
+                  <p>
+                     Portanto, vamos ver toda a magia que o Group by traz consigo para que, desta forma, o seu líder técnico continue a ver os grandes potenciais que estão em você.
+                  </p>
+                  <video src="./Assets/Group by.mp4"></video>
+                  <iframe src="./Assets/Group by.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Exercício: Variedade Musical</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              Na MusicMundo (gravadora) estamos preparando os próximos anúncios nas ruas e queremos lançar uma campanha onde demonstramos que nossa plataforma é a que possui maior variedade de músicas. Faça uma consulta a nossa base de dados que retorne as canções (tabela musicas coluna musicas) com seus gêneros (tabela musicas coluna generos) e agrupadas por gênero.
+                           </p>
+                           <h5>Qual consulta ao banco você faria? </h5>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT musicas, generos FROM musicas, generos GROUP BY generos</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT musicas, generos FROM musicas, generos GROUP BY musicas</t>
+                           </label>
+                           <label choice="sd">
+                              <input type="radio">
+                              <t>SELECT musicas, generos FROM musicas GROUP BY generos</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT musicas, generos FROM musicas GROUP BY musicas,generos</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Quando utilizamos o GROUP BY temos de passar as coluna no SELECT e a tabela com o comando FROM</p>
+                        </res>
+                     </home>
+                  </quiz>
                </display>
             </group-by>
             
             <funcoes-de-agregacao>
-               <h2></h2>
+               <h2>Funções de agregação</h2>
                <display>
-                  <h1></h1>
+                  <h1>Funções de agregação</h1>
+
+                  <p>
+                     Dentro da grande quantidade de funcionalidades que o MySQL traz consigo, as funções de agregação são ferramentas que nos permitem fazer com que o resultado das consultas mostrem informações como: quantidade de registros, média, o total de uma determinada informação armazenada em uma coluna, entre outras coisas.
+                  </p>
+                  <p>
+                     As funções de agregação mais comuns, e a que veremos nesta aula, são:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>COUNT</p>
+                     </li>
+                     <li>
+                        <p>AVG, SUM</p>
+                     </li>
+                     <li>
+                        <p>MIN, MAX</p>
+                     </li>
+                  </ul>
+                  <p>
+                     Como podem notar, o próprio nome das funções nos dá um spoiler do que elas são capazes de fazer, e qual resultado obteremos ao usá-las. Vamos ver então como implementá-las, na prática!
+                  </p>
+                  <video src="./Assets/Funções de agregação.mp4"></video>
+                  <iframe src="./Assets/Funções de agregação.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Exercício: Duração dos Álbuns</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              No site da MusicMundos, queremos melhorar as visualizações de nossos produtos, colocando a duração média das músicas de um álbum. Vamos pegar a banda do AC / DC como exemplo e verificar o banco de dados do álbum 'Let There Be Rock', determinar a duração média das músicas neste álbum.
+                           </p>
+                           <h5>Qual a consulta correta para obter esse resultado?</h5>
+                        </header>
+                        <choices>
+                           <label choice="dsg">
+                              <input type="radio">
+                              <t>SELECT a.nome, AVG(m.duracao) FROM musicas m INNER JOIN albuns a ON m.album_id=a.id WHERE a.nome='Let There Be Rock';</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT a.nome, m.duracao FROM musicas m INNER JOIN albuns a ON m.album_id=a.id WHERE a.nome='Let There Be Rock';</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT a.nome, SUM(m.duracao) FROM musicas m INNER JOIN albuns a ON m.album_id=a.id WHERE a.nome='Let There Be Rock';</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT a.nome, COUNT(*) FROM musicas m INNER JOIN albuns a ON m.album_id=a.id WHERE a.nome='Let There Be Rock';Let There Be Rock';</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
                </display>
             </funcoes-de-agregacao>
             
             <having>
-               <h2></h2>
+               <h2>Having</h2>
                <display>
-                  <h1></h1>
+                  <h1>Having</h1>
+
+                  <p>
+                     Muitas vezes, quando estamos implementando as funções de agregação, queremos filtrar os resultados obtidos e com certeza a coisa mais rápida que pode vir à mente é usar um WHERE. E embora esse conceito não seja nada ruim, as funções de agregação não são muito amigáveis ao uso de WHERE.
+                  </p>
+                  <p>
+                     É por esta razão que a diretiva HAVING cumpre a mesma função, mas veja bem! Ele só pode ser usado em conjunto com funções de agregação para filtrar dados agregados. É importante levar isso em conta, pois para qualquer outro cenário, o WHERE será a ferramenta que teremos que utilizar.
+                  </p>
+                  <p>Vejamos então como funciona o HAVING.</p>
+                  <video src="./Assets/Having.mp4"></video>
+                  <iframe src="./Assets/Having.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>busca por duracao</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              Na área de desenvolvimento de MusicMundo eles estão criando a nova funcionalidade do buscador avançado de músicas, que pode buscar canções que tenham pelo menos uma certa quantidade de minutos. Faça uma consulta ao banco de dados e tente trazer todas as músicas (tabela musica) que tenham o gênero (coluna genero) blues agrupadas por álbum (coluna album) e que sua duração (coluna duracao) seja superior a 200000 milissegundos.
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM musica GROUP BY album HAVING duracao >= 200000</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM album GROUP BY musica HAVING duracao > 200000</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>SELECT * FROM musica GROUP BY album HAVE duracao > 200000</t>
+                           </label>
+                           <label choice="sdg">
+                              <input type="radio">
+                              <t>SELECT * FROM musica WHERE genero = 'blues' GROUP BY album HAVING duracao > 200000</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
                </display>
             </having>
             
             <ao-vivo>
-               <h2></h2>
+               <h2>Funções de Agregação e consulta avançada [ao Vivo]</h2>
                <display>
-                  <h1></h1>
+                  <h1>Para a aula ao vivo</h1>
+
+                  <p>
+                     Como de costume, chegou o momento de introspecção, olhar para dentro e responder com sensatez para descobrir o quanto aprendemos sobre estes tópicos.
+                  </p>
+                  <p>
+                     É por isso que antes de nos prepararmos para a aula presencial, propomos esta pequena lista de perguntas que nos permitirá saber o quão claros os conceitos em que iremos trabalhar na nossa aula presencial estão para você.
+                  </p>
+                  <ul>
+                     <li>
+                        <p>Quais são as três diretrizes do MySQL para inserir, atualizar e apagar registros numa tabela?</p>
+                     </li>
+                     <li>
+                        <p>Com que diretriz MySQL podemos ir buscar registros em uma tabela filtrando por uma determinada condição?</p>
+                     </li>
+                     <li>
+                        <p>Se fizéssemos um mecanismo de busca de página, quais são as duas coisas no MySQL que não podem faltar nas nossas consultas?</p>
+                     </li>
+                     <li>
+                        <p>Para fazer uso do sistema relacional, como podemos unir as tabelas?</p>
+                     </li>
+                     <li>
+                        <p>Para que serve a cláusula de filtragem DISTINCT?</p>
+                     </li>
+                     <li>
+                        <p>Podemos nomear pelo menos 3 funções de agregação?</p>
+                     </li>
+                  </ul>
+                  <p>Se conseguirmos responder satisfatoriamente a todas as perguntas, estamos prontos para a aula ao vivo. Por outro lado, se achamos algumas questões difíceis, seria melhor rever o conteúdo e esclarecer estes conceitos.</p>
+                  <p>Nos vemos na aula! Até lá!</p>
+                  <iframe src="./Assets/Funções de Agregação e consulta avançada.html" frameborder="0"></iframe>
+                  <iframe src="./Assets/União e funções de agregação - Prática integradora.pdf" frameborder="0"></iframe>
+                  <iframe src="./Assets/Atividade banco de dados - ao vivo.pdf" frameborder="0"></iframe>
+                  <iframe src="./Assets/Avaliação prática - Prática avaliativa.pdf" frameborder="0"></iframe>
+                  <h3>Base de dados para exercícios</h3>
+                  <p>
+                     <a href="./Assets/atualizacoes_escola_db.sql" download="">atualizacoes_escola_db.sql</a>
+                  </p>
                </display>
             </ao-vivo>
          </funcoes-de-agregacao-e-consulta-avancada>
 
-         <sprint-v-pi></sprint-v-pi>
+         <sprint-v-pi>
+            <h1>Sprint V - Projeto Integrador</h1>
+            <aula-pratica>
+               <h2>Aula Prática</h2>
+               <display>
+                  <h1>Aula Prática</h1>
+                  <sub>
+                     O objetivo dessa aula é colocarmos em prática o que aprendemos nesse módulo!
+                  </sub>
+               </display>
+            </aula-pratica>
+         </sprint-v-pi>
 
-         <sequelize-introducao-models-e-consultas></sequelize-introducao-models-e-consultas>
+         <sequelize-introducao-models-e-consultas>
+            <h1>Sequelize - Introdução,models e consultas</h1>
+
+            <Introducao-a-Sequelize>
+               <h2>Introdução a Sequelize</h2>
+               <display>
+                  <h1>O que vamos ver nessa aula</h1>
+
+                  <p>
+                     Até agora, te apresentamos ao mundo dos bancos de dados relacionais, fazendo as coisas na mão com MySQL. Agora, é chegado o momento de usar todos esses conceitos que você adquiriu e implementá-los diretamente em um projeto com Express.
+                  </p>
+                  <p>
+                     No entanto, para que o trabalho com MySQL e Express seja muito mais simples, vamos te mostrar uma ferramenta magnífica chamada Sequelize, que é um ORM para Express e que manipula bancos de dados relacionais.
+                  </p>
+                  <p>
+                     Mas, o que é um ORM? Pois bem, um ORM é o que conhecemos como Object Relational Mapping, que é uma ferramenta de programação que permite "transformar" as tabelas de um banco de dados em uma série de entidades que simplificam as tarefas básicas de acesso aos dados. Essas entidades, quando recebidas em nosso programa, tem um formato de Objeto Literal, e como desde muito tempo a linguagem mais utilizada para trabalhar com banco de dados é o SQL, esses tipos de ferramenta já tem bastante suporte e são muito bem recebidas por parte das pessoas que trabalham na área de desenvolvimento e programação.
+                  </p>
+                  <p>
+                     Para que fique um pouco mais fácil de entender o que faz um ORM, este diagrama talvez te ajude.
+                  </p>
+                  <p>
+                     Em uma tabela do MySQL:
+                  </p>
+
+                  <table border="1px">
+                     <thead>
+                       <tr>
+                         <td class="bold">id</td>
+                         <td class="bold">name</td>
+                         <td class="bold">price</td>
+                         <td class="bold">stock</td>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                         <td>1</td>
+                         <td>Nike shoes</td>
+                         <td>123.45</td>
+                         <td>35</td>
+                       </tr>
+                       <tr>
+                         <td>2</td>
+                         <td>Reebok sneakers</td>
+                         <td>110.34</td>
+                         <td>45</td>
+                       </tr>
+                     </tbody>
+                   </table>
+                   <p>Depois de passar pelo ORM</p>
+
+                   <co-de>
+                     [  <br>
+                        {  <br>
+                        id: 1,   <br>
+                        name: 'Nike shoes',  <br>
+                        price: 123.45, <br>
+                        stock: 35   <br>
+                        }, <br>
+                        {  <br>
+                        id: 3,   <br>
+                        name: 'Reebok sneakers',   <br>
+                        price: 110.34, <br>
+                        stock: 45   <br>
+                        },
+                     ]
+                   </co-de>
+
+                   <p>
+                     Assim, fica mais fácil de entender o que é um ORM. O que você vai ver nesta aula é:
+                   </p>
+                   <ul>
+                     <li>
+                        <p>Como instalar e começar a usar o ORM Sequelize;</p>
+                     </li>
+                     <li>
+                        <p>O que são os modelos dentro do ORM;</p>
+                     </li>
+                     <li>
+                        <p>Quais são os métodos do Sequelize que permitem fazer consultas do tipo: trazer todos, encontrar um, encontrar um por sua chave primária;</p>
+                     </li>
+                     <li>
+                        <p>Como implementar operação de filtros tipo where, order by e limit.</p>
+                     </li>
+                   </ul>
+               </display>
+            </Introducao-a-Sequelize>
+
+            <Promises>
+               <h2>Promises</h2>
+               <display>
+                  <h1>Promises</h1>
+
+                  <p>
+                     Na programação, como na vida real, podemos fazer promessas, mas nos domínios de programação elas funcionam um pouco diferente.
+                  </p>
+                  <p>
+                     Eles procuram executar um bloco de código que levará um certo tempo e então, com base na resposta obtida, poderemos fazer uma certa coisa.
+                  </p>
+                  <h5>Vamos pensar da seguinte forma:</h5>
+                  <p>
+                     Digamos que você está com fome e decide ir numa pizzaria nova no seu bairro, chegando lá nota que existe uma fila grande no balcão de atendimento, mesmo assim decide esperar.
+                  </p>
+                  <p>
+                     Vários minutos se passam e sua vez chega. Um atendente bem mal-humorado te atende com uma cara de tédio e anota o seu pedido, imediatamente dirige-se até a cozinha e deixa a comanda no painel de comandas para então retornar ao seu posto. Você decide sentar em uma mesa para aguardar, mas o atendente pede que fique aguardando na fila até o seu pedido ficar pronto (impedindo o próximo cliente de fazer o pedido). Durante algum tempo o atendente fica parado lá olhando para sua cara e você, ainda sem entender direito, mantém-se em pé de forma desconfortável bloqueando as requisições que vêm após a sua.
+                  </p>
+                  <p>
+                     O cheiro que sai da cozinha parece muito bom, entretanto, em uma breve olhada para trás você percebe que a fila só aumenta e os clientes parecem cada vez mais insatisfeitos com a demora para que apenas uma pizza seja despachada.
+                  </p>
+                  <p>
+                     Assim seria trabalhar apenas com programação síncrona no javascript, já que o mesmo é single thread cada requisição não instantânea se tornaria um pesadelo para o cliente que lotaria a fila de espera de novas requisições. É por isso que existem as promises, conseguem enviar múltiplas requisições de forma que você, cliente, possa sair da fila e sentar em uma mesa até que o seu pedido fique pronto, permitindo que outros possam fazer os seus pedidos nesse meio tempo.
+                  </p>
+                  <h5>Por que aprender sobre promises?</h5>
+                  <p>
+                     As promises são uma ferramenta constantemente utilizada dentro da linguagem JavaScript e muitas tecnologias escritas com JavaScript as utilizam. Sequelize é uma delas, e é por isso que é tão importante entender o que são as promises.
+                  </p>
+                  <p>
+                     Sem mais demoras, convidamos você a dar uma olhada no vídeo a seguir para saber um pouco mais sobre as promessas em JavaScript.
+                  </p>
+                  <video src="./Assets/Entendendo Promises.mp4"></video>
+                  <iframe src="./Assets/Promises.html" frameborder="0"></iframe>
+                  <sub>
+                     Normalmente, em linguagens de programação (quando o código é enviado para ser executado), o programa não continua a sequência até que o código enviado para ser executado termine e dê uma resposta. Nesse sentido, é bom saber que o JavaScript nos dá a possibilidade de modificar esta operação. Ou seja, mesmo que algum código seja enviado para execução, o programa pode continuar executando outros processos. Isto é chamado de Promises, situações que não sabemos quando serão cumpridas. Com base nesta ideia, responda às seguintes perguntas do questionário.
+                  </sub>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Promises - Para pensar</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">As promises são funções que permitem:</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Executar o código de forma síncrona.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Retornar uma resposta.</t>
+                           </label>
+                           <label choice="fs">
+                              <input type="radio">
+                              <t>Executar o código assíncrono de forma eficiente.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Executar o código imperativamente.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Excelente. Ao executar uma promise, não temos ideia de quando receberemos os resultados.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">
+                              Às vezes precisamos de duas ou mais promises para realizar uma determinada ação. Para isso, utilizamos:
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>.then()</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>.catch()</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>.require()</t>
+                           </label>
+                           <label choice="sgds">
+                              <input type="radio">
+                              <t>Promise.all()</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bom, você conseguiu esclarecer um caso muito comum quando trabalhamos com promises e exigimos informações de vários modelos.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">No caso de não obter um resultado na execução de algum código, um erro é gerado. Para isso, utilizamos:</p>
+                        </header>
+                        <choices>
+                           <label choice="gsd">
+                              <input type="radio">
+                              <t>.catch()</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>.then()</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Promise.all()</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>console.log()</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Parabéns. Ao executar uma promise, pode ser que esta nos devolva algum erro, nós o pegamos por meio do método de .catch.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="4">Às vezes os .then() têm muitas promises neles. Para resolver isto, precisamos:</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Criar um console.log()</t>
+                           </label>
+                           <label choice="ggx>
+                              <input type="radio">
+                              <t>Use outro .then()</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Use um .catch()</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>.require()</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Excelente. Precisamos usar outro .then para obter o resultado de um promise para outro.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="5">É uma função assíncrona que retornará um resultado, ou não. Também permite que o código continue a ser executado:</p>
+                        </header>
+                        <choices>
+                           <label choice="agf">
+                              <input type="radio">
+                              <t>.then()</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Promise.all()</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>.catch()</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>callback</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Parabéns.</p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </Promises>
+            
+            <criando-e-resolvendo-promises>
+               <h2>Criando e resolvendo Promises</h2>
+               <display>
+                  <h1>Criando e Resolvendo Promises</h1>
+
+                  <p>
+                     Como já vimos, Promises são de grande importância no ecossistema do Javascript. Utilizamos esta funcionalidade com grande frequência para resolver problemas ligados ao sincronismo das instruções com os dados recebidos e enviados.
+                  </p>
+                  <p>
+                     Nesta etapa, vamos um pouco mais fundo, deixaremos de ser apenas usuários de Promises para começarmos a entender a sua anatomia. Vamos começar a criar nossas próprias Promises!
+                  </p>
+                  <p>
+                     Então, sem mais delongas, vamos ao conteúdo!
+                  </p>
+                  <iframe src="./Assets/Criando Promises.html" frameborder="0"></iframe>
+
+                  <video src="./Assets/Criando e Resolvendo Promises - Criação.mp4"></video>
+                  <video src="./Assets/Criando e Resolvendo Promises - Resolução.mp4"></video>
+                  <video src="./Assets/usando then e async await.mp4"></video>
+                  
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Questionário _ Promises_02</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Marque a sintaxe correta para a criação de uma Promise.</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>const new Promise(resolve, reject){...}</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>const new Promise((resolve, reject) => {...})</t>
+                           </label>
+                           <label choice="fsa">
+                              <input type="radio">
+                              <t>const promise = new Promise((resolve, reject) => {...})</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem! Agora que você já sabe fazer promessas, lembre-se de cumpri-las!</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Como passamos parâmetros ao criar uma Promise?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>const promise = new Promise((resolve, reject, arg) => {...})</t>
+                           </label>
+                           <label choice="f">
+                              <input type="radio">
+                              <t>const promise = (arg) => new Promise((resolve, reject) => {...})</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>const promise = new Promise((resolve, reject)(arg) => {...})</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">
+                              Quais os dois métodos que podem ser concatenados com promises na sua execução?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>resolve, reject</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>req, res</t>
+                           </label>
+                           <label choice="fs">
+                              <input type="radio">
+                              <t>then, catch</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>try, catch</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </criando-e-resolvendo-promises>
+            
+            <usando-promises>
+               <h2>Usando Promises</h2>
+               <display>
+                  <h1></h1>
+               </display>
+            </usando-promises>
+            
+            <sequelize-e-config>
+               <h2>Sequelize e configurações</h2>
+               <display>
+                  <h1></h1>
+               </display>
+            </sequelize-e-config>
+            
+            <modelos>
+               <h2>Modelos</h2>
+               <display>
+                  <h1></h1>
+               </display>
+            </modelos>
+            
+            <funcoes-basicas>
+               <h2>Funções básicas</h2>
+               <display>
+                  <h1></h1>
+               </display>
+            </funcoes-basicas>
+            
+            <where-e-operadores>
+               <h2>Where e operadores</h2>
+               <display>
+                  <h1></h1>
+               </display>
+            </where-e-operadores>
+            
+            <order-e-limit>
+               <h2>Order e Limit</h2>
+               <display>
+                  <h1></h1>
+               </display>
+            </order-e-limit>
+            
+            <Sequelize-ao-Vivo>
+               <h2>Sequelize - Introdução, models e consultas [ao Vivo]</h2>
+               <display>
+                  <h1></h1>
+               </display>
+            </Sequelize-ao-Vivo>
+         </sequelize-introducao-models-e-consultas>
 
          <sequelize-manipulacao-de-dados></sequelize-manipulacao-de-dados>
 
