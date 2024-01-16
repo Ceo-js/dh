@@ -727,8 +727,672 @@ const series = [
                </display>
             </padroes-mvc-ao-vivo>
             
-
          </padroes-mvc>
+         
+         <Views-com-ejs>
+            
+            <introducao-a-template-engine>
+               <h4>O que vamos ver nessa aula</h4>
+               <display>
+                  <h1>O que vamos ver nessa aula</h1>
+                  <p>
+                     Nesta aula, aprenderemos como podemos gerar as views do seu projeto Express.
+                  </p>
+                  <p>
+                     Trabalharemos pontualmente com um mecanismo de template chamado EJS (Embedded JavaScript). Não se assuste, o nome pode parecer estranho, mas é basicamente o mesmo que HTML... apenas um HTML mais poderoso.
+                  </p>
+                  <p>
+                     Ao longo desta aula, aprenderemos:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>O que é um template engine e para que ele serve.</p>
+                     </li>
+                     <li>
+                        <p>Por que escolhemos trabalhar com o EJS.</p>
+                     </li>
+                     <li>
+                        <p>Como instalar o EJS em nosso projeto Express.</p>
+                     </li>
+                     <li>
+                        <p>Como criar views e fazer com que apareçam no navegador.</p>
+                     </li>
+                     <li>
+                        <p>Como obter o máximo das ferramentas que o EJS nos oferece.</p>
+                     </li>
+                     <li>
+                        <p>Como passar dados do controller para a view.</p>
+                     </li>
+                     <li>
+                        <p>Como particionar essas partes do código HTML que frequentemente se repetem em todo o site.</p>
+                     </li>
+                  </ul>
+                  <p>Então, sem mais demora, vamos ver este mundo interessante do EJS.</p>
+                  <hr>
+                  <h1>Introdução a Template Engine</h1>
+                  <p>
+                     O que é mecanismo de modelos? O que é um modelo?
+                  </p>
+                  <p>
+                     Vamos por partes. Um modelo (ou um template) é um arquivo que possui uma estrutura HTML pré-definida, o que nos ajuda a gerar vários outros arquivos a partir desse original.
+                  </p>
+                  <p>
+                     Por outro lado, um mecanismo de modelos (ou template engine) é aquele que nos permite gerar um template em si mesmo, para que nossa aplicação possa usá-la.
+                  </p>
+                  <p>
+                     Existem vários templates engines, mas particularmente nessa aula, veremos o EJS, já que seu uso e implementação são realmente bem simples (mas isso não quer dizer que seja menos poderoso).
+                  </p>
+                  <p>
+                     Outra característica de um template engine é que ele nos permite gerar arquivos dinâmicos, que contenham informação vinda dos controllers.
+                  </p>
+                  <p>
+                     Graças a essa característica, e com apenas alguns arquivos, vamos poder mostrar toda aquela informação armazenada no nosso banco de dados.
+                  </p>
+                  <p>Vamos lá?</p>
+                  <video src="./Assets/Introdução a Template Engine.mp4"></video>
+                  <iframe src="./Assets/Introdução a Template Engine.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Questionário: Introdução a Template Engine</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              O que um template engine permite?  
+                              <br>
+                              (mais de uma alternativa podem estar corretas)
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="sd">
+                              <input type="checkbox">
+                              <t>Que os arquivos HTML sejam dinâmicos</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>Ter múltiplos arquivos HTML para a mesma view</t>
+                           </label>
+                           <label choice="sd">
+                              <input type="checkbox">
+                              <t>Reutilizar código HTML</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>Reutilizar o código do modelo MVC</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Qual extensão os arquivos HTML devem ter para que o EJS consiga processa-los?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>.html</t>
+                           </label>
+                           <label choice="fsassd">
+                              <input type="radio">
+                              <t>.ejs</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>.htmlejs</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>.ejshtml</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </introducao-a-template-engine>
+            
+            <installation-e-implementacao>
+               <h4>Instalação e Implementação</h4>
+               <display>
+                  <h1>Instalação e Implementação</h1>
+                  <p>
+                     Agora que entendemos o que é um mecanismo de modelos e as vantagens de trabalhar com um dentro de nossos projetos, vamos nos aprofundar um pouco mais sobre e entender como é simples o processo de instalação e implementação do mesmo.
+                  </p>
+                  <p>
+                     Um par de linhas no console, e outro par de linhas nos arquivos Javascript e pronto: tudo estará funcionando!
+                  </p>
+                  <video src="./Assets/Instalação e Implementação.mp4"></video>
+                  <iframe src="./Assets/Instalação e Implementação.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Questionário: Introdução a Template Engine</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              O que um template engine permite?  
+                              <br>
+                              (mais de uma alternativa podem estar corretas)
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="ds">
+                              <input type="checkbox">
+                              <t>Que os arquivos HTML sejam dinâmicos</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>Ter múltiplos arquivos HTML para a mesma view</t>
+                           </label>
+                           <label choice="ds">
+                              <input type="checkbox">
+                              <t>Reutilizar código HTML</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>Reutilizar o código do modelo MVC</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </installation-e-implementacao>
+            
+            <primeira-view>
+               <h4>Primeira View</h4>
+               <display>
+                  <h1>Primeira View</h1>
+                  <p>
+                     Você se lembra como funciona o fluxo MVC? Não? Vamos revisar um pouquinho…
+                  </p>
+                  <p>
+                     As views se comunicam com os controllers e recebem a informação por eles recebida das models.
+                  </p>
+                  <p>
+                     Para poder mostrar uma view no navegador, é importante declarar ao controller qual é a view que desejamos enviar. Esse processo é conhecido como renderização da view.
+                  </p>
+                  <p>
+                     Agora que repassamos um pouco esses conceitos, vamos então aprender como um controller pode renderizar uma determinada view.
+                  </p>
+                  <video src="./Assets/Primeira View.mp4"></video>
+                  <iframe src="./Assets/EJS - Renderizando Views.html" frameborder="0"></iframe>
+
+                  <iframe src="./Assets/Minha primeira View com EJS.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <h2>Exercício </h2>
+                     <p>Para este exercício pedimos que complete o controlador do usuário fazendo com que ao invocar o loginUser o mesmo renderize com EJS a view login.</p>
+                     <co-de>
+                        let userController = {
+                           loginUser: function (req,res){
+                               res.render('login');
+                           }
+                       }
+                     </co-de>
+                  </exercicio>
+               </display>
+            </primeira-view>
+            
+            <tags-em-ejs>
+               <h4>Tags em EJS</h4>
+               <display>
+                  <h1>Tags em EJS</h1>
+                  <p>
+                     Bom. Se chegamos até aqui, já sabemos o que é EJS, como instalá-lo em nosso projeto e como se dá o processo de renderização das vistas. Mas se o EJS parece ser a mesma coisa que o HTML, por que decidimos usar EJS então?
+                  </p>
+                  <p>
+                     É chegada a horal de descobrir o incrível potencial que o EJS tem e o porquê, seguramente, de agora em diante, não irá querer voltar ao HTML básico e tradicional. No vídeo a seguir, veremos as tags próprias de EJS.
+                  </p>
+                  <p>
+                     Estas tags são um conjunto de funcionalidades que nos vão permitir fazer coisas como uma iteração de um array dentro de um bloco de código HTML. Surpreendente, não?
+                  </p>
+                  <p>
+                     Não vamos perder mais tempo, vamos ver como podemos, então, alcançar estes magníficos resultados.
+                  </p>
+                  <video src="./Assets/Tags em EJS.mp4"></video>
+                  <iframe src="./Assets/Tags do EJS.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Questionário: Tags Template Engine</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">O que permite a tag &lt;% ?</p>
+                        </header>
+                        <choices>
+                           <label choice="asf">
+                              <input type="radio">
+                              <t>Agregar código e funcionalidades de JS no código HTML.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Agregar código e funcionalidades de HTML no código JS</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">
+                              Em um arquivo .ejs. Onde devo adicionar a tag &lt;% e %&gt; para que o for seja executado corretamente:
+
+                              for (var i=0; i &lt;  umArray.length; i++) {
+                              
+                                        &lt;p&gt; item i &lt;/p&gt;
+                              
+                              }
+                           </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Não preciso colocar a tag!</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Adicionaria a tag no começo do for e depois de termina-lo</t>
+                           </label>
+                           <label choice="faf">
+                              <input type="radio">
+                              <t>Adicionaria a tag para cada linha de código JS.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Qual a função da tag &lt;%= ?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>É igual a tag &lt;% porém escrita de outra foram</t>
+                           </label>
+                           <label choice="asfa">
+                              <input type="radio">
+                              <t>Permite imprimir um valor dinâmico</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Permite utilizar o código HTML de outro arquivo</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </tags-em-ejs>
+            
+            <parametros-compartilhados>
+               <h4>Parâmetros Compartilhados</h4>
+               <display>
+                  <h1>Parâmetros Compartilhados</h1>
+                  <p>
+                     Uma das melhores funcionalidades de uma view, é que temos a possibilidade de consumir informações fornecidas diretamente pelo controlador.
+                  </p>
+                  <p>
+                     A esta funcionalidade damos o nome de parâmetros compartilhados. Basicamente, a partir do controlador, podemos compartilhar com a view qualquer tipo de dado existente no JavaScript. Objetos, arrays e funções. Sim, você leu bem: até funções podem ser compartilhadas do controlador para a view.
+                  </p>
+                  <p>
+                     Vejamos, então, qual é o processo que temos que seguir para alcançar este tipo de resultado tão genial!
+                  </p>
+                  <video src="./Assets/Parâmetros compartilhados.mp4"></video>
+                  <iframe src="./Assets/Parâmetros compartilhados.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <h2>Exercício</h2>
+                     <p>
+                        Analisando o HTML  abaixo, escreva o código necessário no controller para que o mesmo possa enviar ao template engine as variáveis necessárias para poder executar o código.
+                        <br>
+                        Ah, o nome da nossa view é checkout.
+                        <br>
+                        Código HTML:
+                     </p>
+                     <code>
+                        &lt;% for(let i =0; i &lt; itens.length; i++) {
+                           &lt;li&gt;
+                              &lt;%= itens[i] %&gt;
+                           &lt;/li&gt;
+                        &lt;% } %&gt;
+                     </code>
+                     <co-de>
+                        let produtos = ['Sorvete 250g', 'Bolacha de Chocolate', 'Maçã 500g'];
+                        let carrinhoController = {
+                           checkout: function (req,res){
+                              res.render( "checkout", {itens: produtos} );
+                           }
+                        }
+                     </co-de>
+                  </exercicio>
+               </display>
+            </parametros-compartilhados>
+            
+            <partial-files>
+               <h4>Partial files</h4>
+               <display>
+                  <h1>Partial files</h1>
+                  <p>
+                     Quando desenvolvemos um site, é bastante comum existirem certos elementos visuais que costumam se repetir. Por exemplo, uma barra de navegação ou o rodapé da página são de uso comum e quase sempre são o mesmo em todas as views. Será que o EJS poderia nos dar uma ajudinha com isso?
+                  </p>
+                  <p>
+                     A resposta para essa pergunta é sim. O EJS nos dá uma maneira de modularizar nossa estrutura HTML e gerar blocos de código repetidos, o quais podem ser facilmente integrados no resto das views.
+                  </p>
+                  <p>
+                     Isso vai simplificar muitíssimo o trabalho de desenvolvimento e programação do nosso projeto web.
+                  </p>
+                  <p>Então, vamos ver como podemos alcançar esse objetivo.</p>
+                  <video src="./Assets/Partial files.mp4"></video>
+                  <iframe src="./Assets/Partial files.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Questionário: Custom Template</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Por questões de boas práticas, onde colocamos nossas views fragmentadas?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Na pasta fragment</t>
+                           </label>
+                           <label choice="dfsd">
+                              <input type="radio">
+                              <t>Na pasta partials</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Na pasta view</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Estando dentro do arquivo checkout.ejs, como posso adicionar a partial que representa o cabeçalho  que está no arquivo head.ejs?</p>
+                        </header>
+                        <choices>
+                           <label choice="asfa">
+                              <input type="radio">
+                              <t>
+                                 Acima de todo o arquivo insira o código &lt;%- include('./partials/head')%&gt;
+                              </t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>
+                                 Acima de todo o arquivo insira o código
+                                 &lt;%- include('./partials/head')%&gt;
+                              </t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Abaixo de todo o arquivo insira o código
+                                 &lt;%- include('./partials/head')%&gt;
+                              </t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Abaixo de todo o arquivo insira o código
+                                 &lt;%- include('./partials/head')%&gt;
+                              </t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </partial-files>
+            
+            <storytelling>
+               <h4>Storytelling</h4>
+               <display>
+                  <h1>Você recebeu uma mensagem da Camila</h1>
+                  <h3>De: Camila</h3>
+                  <p>
+                     Vou direto ao ponto, porque é extenso, e a Ana vai explodir minha cabeça com os deadlines.
+                  </p>
+                  <p>
+                     MVC não é: ”mas vai colar”, é um design pattern que significa Model, View, Controller, é largamente implementado e tem muita aceitação no ambiente de desenvolvimento.
+                  </p>
+                  <p>
+                     No MVC, o M refere-se à model, que é a parte do programa que tem acesso à informação armazenada no banco de dados. Pode-se dizer que é o “armazém” no qual a Wikipedia tem guardada toda a sua informação.
+                  </p>
+                  <p>
+                     O V refere-se à view, que é a parte visual do sistema na qual o usuário interage, é como a caixa de texto onde você escreve aquilo que quer pesquisar na Wikipedia
+                  </p>
+                  <p>
+                     O C refere-se à controller, que é a ponte entre uma view e um model.
+                  </p>
+                  <p>
+                     É quem requer ao model parte de sua informação e repassa essa informação à view. É como um robozinho, que sabe o que você está procurando, pede o que procura a alguém (model) e entrega o que conseguiu a outra alguém (view), para que você possa ver.
+                  </p>
+                  <hr>
+                  <h2>Vistas dinâmicas em EJS</h2>
+                  <p>
+                     Uma view é a parte visual da nossa aplicação, em outras palavras, é o HTML e o CSS do nosso sistema. Recorde-se: EJS significa Embedded JavaScript. É um template engine que torna o HTML realmente dinâmico.
+                  </p>
+                  <p>
+                     Tenha em mente que qualquer coisa que faça em EJS tem que ser previamente interpretada pelo servidor para que possa ser enviada ao navegador em formato plain HTML.
+                  </p>
+                  <p>
+                     Com EJS você pode usar porções de JavaScript entre blocos de HTML, para gerar um conteúdo muito mais dinâmico e funcional, sem ter que repetir mil vezes o mesmo HTML plano.
+                  </p>
+                  <p>
+                     EJS é como um HTML com super poderes.
+                  </p>
+                  <p>Vou tomar um café, você vem?</p>
+               </display>
+            </storytelling>
+            
+            <ao-vivo>
+               <h4>Para a aula ao vivo</h4>
+               <display>
+                  <h1>Para a aula ao vivo</h1>
+                  <p>Tudo bem, chegamos ao final desta grande aula.</p>
+                  <p>
+                     Para verificar os conhecimentos adquiridos de forma pessoal, podemos tentar resolver as seguintes questões:
+                  </p>
+                  <ol>
+                     <li>
+                        <p>O que são template engines?</p>
+                     </li>
+                     <li>
+                        <p>Para que usamos template engines?</p>
+                     </li>
+                     <li>
+                        <p>Por que usamos o EJS como mecanismo de template?</p>
+                     </li>
+                     <li>
+                        <p>O que significa o conceito de "renderização de views"?</p>
+                     </li>
+                     <li>
+                        <p>O que as tags próprias do EJS nos ajudam a resolver?</p>
+                     </li>
+                     <li>
+                        <p>Como podemos passar informações do controller para a view?</p>
+                     </li>
+                     <li>
+                        <p>Como a modularização da view nos ajuda?</p>
+                     </li>
+                  </ol>
+                  <p>
+                     Se pudermos responder a essas perguntas de forma simples e contundente, teremos todos os conceitos prontos para nos encontrarmos na aula ao vivo. Se, ao contrário, sentimos que estamos hesitantes em algumas perguntas, o ideal seria rever os tópicos do vídeo novamente. Assim, poderemos encontrar a resposta correta para essas pequenas dúvidas.
+                  </p>
+                  <p>Nos vemos na aula!</p>
+               </display>
+            </ao-vivo>
+            
+            <views-com-ejs-ao-vivo>
+               <h4>Views com EJS [ao Vivo]</h4>
+               <display>
+                  <h1>Views com EJS [ao Vivo]</h1>
+                  <p>Chegou a hora de colocar à prova os conhecimentos que adquirimos na aula virtual e, para isso, vamos brincar um pouco com o EJS nesta aula ao vivo.</p>
+                  <p>Nossos principais objetivos desta aula são:</p>
+                  <ul>
+                     <li>
+                        <p>Esclarecer quaisquer dúvidas sobre o que são os templates engines.</p>
+                     </li>
+                     <li>
+                        <p>Compreender completamente o que é uma view em si.</p>
+                     </li>
+                     <li>
+                        <p>Processar o conceito de "renderização de views".</p>
+                     </li>
+                     <li>
+                        <p>Migrar um pequeno projeto de HTML para EJS.</p>
+                     </li>
+                     <li>
+                        <p>Aprenda a enviar dados do controller para a view.</p>
+                     </li>
+                     <li>
+                        <p>Modularizar nossos arquivos EJS.</p>
+                     </li>
+                  </ul>
+                  <p>Sem mais delongas, vamos ao arquivo de exercícios e ver o desafio que ele representa para nós neste momento.</p>
+                  <iframe src="./Assets/Views com EJS.html" frameborder="0"></iframe>
+                  <hr>
+                  <iframe src="./Assets/Vistas dinamicas com EJS - Prática integradora.pdf" frameborder="0"></iframe>
+
+                  <h2>Arquivos para a prática MVC - zip</h2>
+                  <p><a href="./Assets/arquivos_para_a_pratica.zip" download="">arquivos_para_a_pratica.zip</a></p>
+                  <h2>Prática resolvida EJS - zip</h2>
+                  <p><a href="./Assets/pimenta-sal.zip" download="">pimenta-sal.zip</a></p>
+               </display>
+            </views-com-ejs-ao-vivo>
+            
+         </Views-com-ejs>
+
+         <crud-upload-de-arquivos-multer>
+            <small>CRUD-upload de arquivos/multer</small>
+            <intro>
+               <h4>O que vamos ver nessa aula?</h4>
+               <display>
+                  <h1>O que vamos ver nessa aula?</h1>
+                  <p>
+                     Até agora, estávamos salvando nada mais que informação de texto em nosso servidor, por meio dos diferentes métodos de HTTP, como GET, POST, PUT e DELETE.
+                  </p>
+                  <p>
+                     Mas, como podemos fazer upload de arquivos para serem armazenados no servidor?
+                  </p>
+                  <p>
+                     Pensemos por um momento em uma loja virtual, onde qualquer pessoa usuária do sistema possa publicar produtos. Seria bastante entediante se estas publicações não tivessem uma imagem sequer para mostrar, não?
+                  </p>
+                  <p>
+                     Por isso, ao longo dessa aula, seremos apresentados ao mágico mundo do upload de arquivos no servidor. Um processo que não é tão complexo, mas que também não é tão trivial.
+                  </p>
+                  <p>
+                     Ao finalizar esta aula, seremos capazes de:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>
+                           Entender o passo a passo obrigatório para o processamento de arquivos do lado do servidor
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                           Manipular a biblioteca mais utilizada para esta funcionalidade, chamada Multer
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                           Implementar o lugar dentro do servidor onde queremos que sejam armazenados os arquivos
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                           Criar uma nomenclatura correta de arquivos para que os mesmos sejam consistentes ao longo de toda a aplicação
+                        </p>
+                     </li>
+                  </ul>
+                  <p>Assim, vamos com tudo mergulhar nesse conteúdo!</p>
+               </display>
+            </intro>
+            
+            <multer-apresentacao-e-installation>
+               <h4></h4>
+               <display>
+                  <h1></h1>
+               </display>
+            </multer-apresentacao-e-installation>
+            
+            <multer-subindo-arquivos>
+               <h4></h4>
+               <display>
+                  <h1></h1>
+               </display>
+            </multer-subindo-arquivos>
+            
+            <multer-validacao>
+               <h4></h4>
+               <display>
+                  <h1></h1>
+               </display>
+            </multer-validacao>
+            
+            <ao-vivo>
+               <h4></h4>
+               <display>
+                  <h1></h1>
+               </display>
+            </ao-vivo>
+            
+            <crud-2>
+               <h4></h4>
+               <display>
+                  <h1></h1>
+               </display>
+            </crud-2>
+            
+            <ponto-de-partida>
+               <h4></h4>
+               <display>
+                  <h1></h1>
+               </display>
+            </ponto-de-partida>
+            
+            <crud-2-ao-vivo>
+               <h4></h4>
+               <display>
+                  <h1></h1>
+               </display>
+            </crud-2-ao-vivo>
+            
+         </crud-upload-de-arquivos-multer>
 
       </modulo>
 
