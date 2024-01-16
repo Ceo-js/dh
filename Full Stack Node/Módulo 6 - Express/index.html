@@ -1344,25 +1344,790 @@ const series = [
             </intro>
             
             <multer-apresentacao-e-installation>
-               <h4></h4>
+               <h4>Apresentando o Multer</h4>
                <display>
-                  <h1></h1>
+                  <h1>Apresentando o Multer</h1>
+                  <p>
+                     Nenhum sistema que se preze pode ser considerado 100% pronto se não implementar um processo que permita o envio de arquivos para o servidor. E é justamente aqui onde a biblioteca Multer se encaixa com perfeição.
+                  </p>
+                  <p>
+                     Multer é um pacote do npm para processar arquivos do lado do servidor. Este pacote é usado em geral como um middleware e não só nos permite enviar arquivos para servidor, como também nos permite escolher um que local do servidor queremos que sejam armazenados estes arquivos, além do nome que cada um deles terá.
+                  </p>
+                  <p>
+                     Esta biblioteca tem uma implementação simples, mas exige bastante atenção para cada um dos passos de sua configuração porque, se não o fizermos direito, seguramente não teremos o resultado esperado.
+                  </p>
+                  <p>
+                     Então, sem mais delongas, vamos ver com detalhes como podemos implementar o Multer dentro dos nossos projetos com Express.
+                  </p>
+                  <video src="./Assets/Multer - introdução e instalação.mp4"></video>
+                  <hr>
+                  <iframe src="https://view.genial.ly/62139804293ca70011d84aac" frameborder="0"></iframe>
                </display>
             </multer-apresentacao-e-installation>
             
             <multer-subindo-arquivos>
-               <h4></h4>
+               <h4>Multer: subindo arquivos</h4>
                <display>
-                  <h1></h1>
+                  <h1>Multer: subindo arquivos</h1>
+                  <p>
+                     Vimos anteriormente o processo necessário para configurar o pacote Multer em nossos projetos Express. Agora vamos nos aprofundar um pouco mais neste processo.
+                  </p>
+                  <p>
+                     Chegou a hora de conhecer e entender como ocorre o processo de finalmente poder armazenar arquivos em nosso servidor.
+                  </p>
+                  <p>
+                     Tarefa relativamente simples, mas que exige (como tudo no campo do desenvolvimento) de muitos neurônios a atenção para evitar passos em falso.
+                  </p>
+                  <p>Então, vamos ver como podemos realizar esse processo maravilhoso.</p>
+                  <video src="./Assets/Multer subindo arquivos.mp4"></video>
+                  <iframe src="./Assets/Subindo arquivos com Multer.html" frameborder="0"></iframe>
+
+                  <exercicios>
+                     <exercicio>
+                        <h3>Exercício 1</h3>
+                        <h2>Preparando formulários para subir arquivos</h2>
+                        <p>
+                           Ao carregar arquivos através do formulário, não apenas precisamos configurar nosso código no Node, mas também devemos adicionar uma configuração extra na tag form.
+                           <br>
+                           <br>
+                           Dado o seguinte formulário, adicione o atributo enctype com o valor correspondente para permitir o envio de arquivos.
+                        </p>
+                        <co-de>
+                           &lt;html&gt;
+                              &lt;head&gt;
+                                &lt;title&gt;Upload de Imagens&lt;/title&gt;
+                              &lt;/head&gt;
+                              &lt;body&gt;
+                                &lt;form action="upload" method="POST" enctype="multipart/form-data"&gt;
+                                &lt;input type="file" name="files"&gt;
+                                &lt;/form&gt;
+                              &lt;/body&gt;
+                            &lt;/html&gt;
+                        </co-de>
+                     </exercicio>
+                     
+                     <exercicio>
+                        <h3>Exercício 2</h3>
+                        <h2>Usando Multer para subir arquivos</h2>
+                        <p>
+                           No Node, para fazer upload de arquivos, podemos usar ferramentas como multer. É simplesmente necessário adicioná-lo ao arquivo de rota onde nossa rota ou rotas são responsáveis ​​pelo upload de arquivos (imagens, documentos, etc.).
+                           <br></br>
+                           Neste exemplo, adicionaremos multer ao arquivo de routes user.js para permitir que os usuários anexem uma imagem durante o registro.
+                           <br></br>Para isso, será necessário requisitar o módulo multer, criar o armazenamento, inicializar a variável de upload e adicionar a rota que já temos definidas a expressão upload.any() como segundo parâmetro.
+                           <br></br>
+                           Para ver a configuração que a multer precisa para funcionar, consulte a documentação oficial:
+                           <br></br>
+                           <a href="https://www.npmjs.com/package/multer#diskstorage">https://www.npmjs.com/package/multer#diskstorage.</a>
+                        </p>
+                        <co-de>
+                           const express = require('express');
+                           const router = express.Router();
+                           const multer = require( "multer" );
+                           const path = require( "path" );
+                           
+                           const storage = multer.diskStorage({
+                             destination: function (req, file, cb) {
+                               cb(null, '/tmp/my-uploads')
+                             },
+                             filename: function (req, file, cb) {
+                               const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+                               cb(null, file.fieldname + '-' + uniqueSuffix)
+                             }
+                           })
+                           
+                           const upload = multer({ storage: storage })
+                           
+                           router.post('/register', upload.any(), usersController.save);
+                        </co-de>
+                     </exercicio>
+                     
+                  </exercicios>
                </display>
             </multer-subindo-arquivos>
             
             <multer-validacao>
+               <h4>Multer: validação</h4>
+               <display>
+                  <h1>Multer: validação</h1>
+                  <p>
+                     Vamos pensar por um segundo sobre nosso processo de registro de usuário.
+                  </p>
+                  <p>
+                     Com certeza já percebemos que cada pessoa que se cadastrar deve preencher certas informações como nome, e-mail e outras. E, possivelmente, dentro desta informação decidimos dar a possibilidade da pessoa carregar uma imagem de perfil para o servidor.
+                  </p>
+                  <p>
+                     Agora, o que aconteceria se nosso sistema estivesse esperando para receber uma imagem de cada usuário, mas outra pessoa carregasse um arquivo Excel?
+
+                  </p>
+                  <p>
+                     Certamente nosso sistema não pareceria muito bom, certo?
+                  </p>
+                  <p>
+                     Por isso o processo de validação é algo da maior importância e nada trivial, pois nos permitirá evitar este tipo de erro e garantir que a informação que se armazena no nosso servidor seja a que realmente queremos e esperamos.
+
+                  </p>
+                  <p>Vamos ver como o Multer nos permite validar os arquivos que queremos armazenar no lado do servidor.</p>
+                  <video src="./Assets/Multer validação básica.mp4"></video>
+                  <iframe src="./Assets/Validando arquivos com o Multer.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <h4>Exercício 1</h4>
+                     <h2>Validação</h2>
+                     <p>Precisamos enviar um formulário, mas antes precisamos verificar se todos os inputs foram devidamente preenchidos!</p>
+                     <small>HTML </small>
+                     <co-de>
+                        &lt;html&gt;
+                           &lt;form id="formulario"&gt;
+                               &lt;div class="input-group"&gt;
+                                   &lt;label for="name"&gt;*Nome&lt;/label&gt;
+                                   &lt;input type="text" id="name"/&gt;
+                               &lt;/div&gt;
+                               &lt;div class="input-group"&gt;
+                                   &lt;label for="email"&gt;*Email&lt;/label&gt;
+                                   &lt;input type="email" id="email"/&gt;
+                               &lt;/div&gt;
+                               &lt;div class="input-group"&gt;
+                                   &lt;label for="password"&gt;*Senha&lt;/label&gt;
+                                   &lt;input type="password" id="password"/&gt;
+                               &lt;/div&gt;
+                               &lt;button&gt;Enviar&lt;/button&gt;
+                           &lt;/form&gt;
+                           &lt;ul id="errors"&gt;&lt;/ul&gt;
+                       &lt;/html&gt;
+                     </co-de>
+                     <small>script</small>
+                     <co-de>
+                        window.addEventListener('load', () => {
+                           const formulario = document.getElementById('formulario')
+                           const msgSucesso = document.getElementById('name')
+                           const emailInput = document.getElementById('email')
+                           const senhaInput = document.getElementById('password')
+                           const errosContainer = document.getElementById('errors')
+                       
+                           const erros = []
+                       
+                           formulario.addEventListener( 'submit', event => {
+                               event.preventDefault();
+                       
+                               if( msgSucesso != '' || emailInput != '' || senhaInput != '' ){}
+                           } )
+                       })
+                     </co-de>
+                  </exercicio>
+               </display>
+            </multer-validacao>
+            
+            <ao-vivo>
+               <h4>Para a aula ao vivo</h4>
+               <display>
+                  <h1>Para a aula ao vivo</h1>
+                  <p>
+                     No live meeting está por vir, trabalharemos e implementaremos o pacote Multer, com o objetivo de nossos sistemas passarem a ter a possibilidade de processamento de arquivos.
+                  </p>
+                  <p>
+                     Por isso, antes da aula e, para ter certeza de que temos todas as informações prontas, vamos dedicar alguns minutos para pensar nas seguintes questões:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>Qual é a configuração básica, mas necessária para que o Multer funcione conforme o esperado?</p>
+                     </li>
+                     <li>
+                        <p>Multer: é um middleware de aplicativo ou é um middleware de rota?</p>
+                     </li>
+                     <li>
+                        <p>Quais são os atributos necessários no formulário HTML para que o Express possa entender que você deseja enviar arquivos para o servidor?</p>
+                     </li>
+                     <li>
+                        <p>Como podemos gerar o nome do arquivo que se deseja salvar, de modo que esse nome seja único e não ambíguo? Caso o que queiramos enviar seja uma imagem ou um arquivo Excel, o Multer tem a possibilidade de validá-los?</p>
+                     </li>
+                  </ul>
+                  <p>
+                     Se pudéssemos encontrar as respostas a essas perguntas por conta própria, estaríamos mais do que bem. "Keep calm and" pelo encontro ao vivo.
+                  </p>
+                  <p>
+                     Se, por outro lado, não conseguimos chegar à solução de algumas, ou da maioria, das respostas para essas questões, o ideal seria revisar os vídeos novamente e prestar muita atenção aos processos ali citados, pois assim estaremos capazes de ter tudo pronto para o nosso próximo encontro.
+                  </p>
+                  <p>Até a próxima aula!</p>
+               </display>
+            </ao-vivo>
+            
+            <crud-2>
+               <h4>CRUD II</h4>
+               <display>
+                  <h1>CRUD II</h1>
+                  <iframe src="./Assets/Multer.html" frameborder="0"></iframe>
+               </display>
+            </crud-2>
+            
+            <ponto-de-partida>
+               <h4>Ponto de partida</h4>
+               <display>
+                  <h1>Ponto de partida</h1>
+                  <p>Nesta aula buscaremos atingir os seguintes objetivos:</p>
+                  <ul>
+                     <li>
+                        <p>Revisar as diferentes solicitações que podemos fazer ao servidor.</p>
+                     </li>
+                     <li>
+                        <p>Conhecer mais sobre as diferenças entre os métodos HTTP para poder realizar um CRUD.</p>
+                     </li>
+                     <li>
+                        <p>Carregar arquivo de exercício usando multer.</p>
+                     </li>
+                     <li>
+                        <p>Revisar o path e fs.</p>
+                     </li>
+                  </ul>
+                  <p>Para isso, deixamos para você o seguinte exercício.</p>
+               </display>
+            </ponto-de-partida>
+            
+            <crud-2-ao-vivo>
+               <h4>CRUD II [ao Vivo]</h4>
+               <display>
+                  <h1>CRUD II [ao Vivo]</h1>
+                  <iframe src="./Assets/CRUD episódio II - Prática integradora.pdf" frameborder="0"></iframe>
+               </display>
+            </crud-2-ao-vivo>
+            
+         </crud-upload-de-arquivos-multer>
+
+         <sprint-3-pi></sprint-3-pi>
+
+         <middlewares>
+            <small>Middlewares</small>
+
+            <intro>
+               <h4>O que vamos ver nesta aula?</h4>
+               <display>
+                  <h1>O que vamos ver nesta aula?</h1>
+                  <p>
+                     Nesta aula, vamos entrar em detalhes dos conceitos chaves do que exatamente venha a ser um middleware, porque, alerta de spoiler, muitas coisas dentro do ambiente Express são middlewares. Então, o que vamos aprender agora é:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>O que é exatamente um middleware</p>
+                     </li>
+                     <li>
+                        <p>Como podemos aplicar um middleware e suas diversas formas de aplicação</p>
+                     </li>
+                     <li>
+                        <p>A diferença entre um middleware de aplicação global e um middleware de rota</p>
+                     </li>
+                  </ul>
+                  <p>
+                     Adicionalmente, vamos trabalhar com um pacote do npm chamado express-validator, que nos permite validar os dados que nossa aplicação recebe do front-end, garantindo que nosso banco de dados possa salvar a informação de maneira limpa e consistente.
+                  </p>
+               </display>
+            </intro>
+            
+            <teoria>
+               <h4>Middlewares: teoria</h4>
+               <display>
+                  <h1>Middlewares: teoria</h1>
+                  <p>
+                     Como realmente o Express funciona por dentro?
+                  </p>
+                  <p>A seguir, vamos ver o que acontece por debaixo dos "panos", para que finalmente possamos visualizar que toda essa "magia" que se cria com as rotas, models e controllers. Não são tão mágicas assim, na verdade têm algumas boas doses de lógica e outras de processamento imperativo.</p>
+                  <p>
+                     Um middleware, em palavras simples, não é nada mais que um intermediário de processamento lógico, entre o request e o response. Uma função no “meio”.
+                  </p>
+                  <video src="./Assets/Middlewares - teoria.mp4"></video>
+                  <hr>
+                  <iframe src="./Assets/Middlewares.html" frameborder="0"></iframe>
+                  <hr>
+                  <h2>Características dos middlewares</h2>
+                  <ol>
+                     <li>
+                        <p>O Express trata o request e o response como objetos. Recebe um pedido, o processa e devolve um objeto como resposta.</p>
+                     </li>
+                     <li>
+                        <p>Todo pedido exige uma série de passos para ser processado. O Express divide essas responsabilidades em funções denominadas middlewares.</p>
+                     </li>
+                     <li>
+                        <p>Os middlewares são funções executadas entre a execução do pedido do cliente e a resposta ao mesmo.</p>
+                     </li>
+                     <li>
+                        <p>As rotas que precisam de middlewares -além do request e do response- devem receber um terceiro parâmetro: a função next.</p>
+                     </li>
+                     <li>
+                        <p>next permite a execução em cadeia de todas as funções necessárias que devem ser executadas antes de enviar a resposta ao cliente.</p>
+                     </li>
+                     <li>
+                        <p>Com os middlewares, podemos isolar código que nos permita resolver um cenário particular e implementá-lo onde seja necessário, evitando assim repetir código.</p>
+                     </li>
+                     <li>
+                        <p>Estas funções adicionam um nível de segurança. Se a função que definimos como middleware não retorna o esperado, ela interrompe a execução em cadeia e devolverá a resposta definida para esses casos.</p>
+                     </li>
+                  </ol>
+                  <hr>
+                  <h2>Departamentos Digital House</h2>
+                  <h4>Departamento de desenvolvimento profissional e graduados</h4>
+                  <p>
+                     Nossa missão é melhorar o desenvolvimento profissional de nossos alunos, acompanhando-os e orientando-os na realização de seus objetivos profissionais. Na metade do curso, lhe daremos acesso ao curso de desenvolvimento profissional para que você possa acessar conteúdos relevantes que lhe permitirão criar seu perfil digital profissional, ganhar visibilidade em redes profissionais e trabalhar em suas habilidades profissionais para melhorar sua empregabilidade. Além disso, você poderá ter acesso a sessões de coaching com profissionais da equipe.
+                  </p>
+                  <h4>Departamento de pedagogia</h4>
+                  <p>
+                     Nossa equipe docente é constantemente acompanhada pela equipe pedagógica. É uma equipe interdisciplinar de profissionais responsáveis por elaborar, juntamente com a equipe acadêmica, as melhores propostas de ensino para alcançar caminhos de aprendizagem bem sucedidos.
+                  </p>
+                  <h4>O Departamento de alunos</h4>
+                  <p>
+                     No departamento estudantil, nossa missão é acompanhá-lo durante todo o curso para que você tenha a melhor experiência na Digital House. Estamos disponíveis para responder às suas perguntas, acompanharmos seu atendimento, entregas individuais, trabalho em grupo e desempenho em geral.
+                  </p>
+                  <p>
+                     A partir deste momento, estamos aqui para acompanhá-lo em sua jornada para torná-la uma experiência de aprendizado inesquecível!
+                  </p>
+                  <sub>
+                     Se você tiver alguma dúvida, não hesite em entrar em contato 
+                     <a href="malito:alumnos@digitalhouse.com">malito:alumnos@digitalhouse.com</a>
+                  </sub>
+                  <p>Vamos começar.</p>
+                  <hr>
+
+               </display>
+            </teoria>
+            
+            <aplicacao-global>
+               <h4>Middlewares: aplicação global</h4>
+               <display>
+                  <h1>Middlewares: aplicação global</h1>
+                  <p>
+                     Como mencionamos nos blocos anteriores, um middleware é um bloco de código que vai ser executado no "meio" de uma determinada solicitação e, em algumas ocasiões, certamente precisaremos que esse código seja executado em toda a aplicação. É aí que os middlewares de aplicativos globais assumem um papel especial. Eles SEMPRE estarão presentes e SEMPRE rodarão, não importa para onde o visitante vá em nosso aplicativo.
+                  </p>
+                  <p>
+                     Neste ponto, podemos ter implementado a pasta de recursos estáticos, certo? Bem, isso sem dúvida é um middleware global. Nesse caso particular, nosso interesse é disponibilizar os arquivos ali presentes para que qualquer view possa utilizá-los.
+                  </p>
+                  <p>
+                     Portanto, vamos entrar neste conceito específico de middleware de aplicativo global.
+                  </p>
+                  <video src="./Assets/Middlewares aplicação global.mp4"></video>
+                  <hr>
+                  <iframe src="./Assets/Middlewares em nível global.html" frameborder="0"></iframe>
+                  <hr>
+
+                  <exercicios>
+                     
+                     <exercicio>
+                        <h4>Exercício 1</h4>
+                        <h2>Adicionando o middleware express.json()</h2>
+                        <p>
+                           Nós já temos a nossa rota de registro. O que precisamos fazer agora é adicionar uma validação para que o campo de e-mail seja do tipo email e a senha tenha, pelo menos, 6 caracteres.
+                           <br></br>
+                           Para conseguir isso, vamos requerer o módulo de express-validator e, usando o destructuring, vamos inicializar três constantes: check, validationResult e body.
+                           <br>
+                           (PS: Por limitações, é aconselhado que dê um alias para o método check, mudando o nome para ‘checar’).
+                           <br></br>
+                           Em nossa rota, adicionaremos como segundo parâmetro um array. Ele terá apenas duas posições, uma para validar a entrada de dados no input "email" e outra para validar a entrada em "password".
+                           <br></br>
+                           Em cada posição do array, usaremos a função check, passando como parâmetro o input a ser validado e concatenamos à execução desta função uma segunda função, que será a regra que queremos que nosso input atenda, por exemplo, isEmail.
+                        </p>
+                        <co-de>
+                           const express = require('express');
+
+                           const router = express.Router();
+                           
+                           const UsuarioController = require('../controllers/UsuarioController');
+                           
+                           const {check: checar, validationResult, body} = require( "express-validator" );
+                           
+                           router.post('/cadastro', [checar('password').isLength({min: 6}), checar('email').isEmail()],  UsuarioController.registro);
+                        </co-de>
+                     </exercicio>
+                     
+                     <exercicio>
+                        <h4>Exercício 2</h4>
+                        <h2>Site em manutenção</h2>
+                        <p>
+                           Aproveitando a capacidade dos middleware, vamos criar um código que podemos informar se o site esta em manutenção e mostra uma view personalizada informando o usuário, independente da rota que ele esteja acessando.
+                           <br></br>
+                           Neste exemplo temos criada uma variável chamada "emManutencao" configurada por padrão com o valor false.
+                           <br></br>
+                           Nós vamos ter que, usando o método use de app, criar uma função que avalia o valor da variável "emManutencao". Se a variável tiver o valor false devemos executar a função next do middleware para que o fluxo da aplicação continue normalmente. Mas se a variável tiver o valor true vamos devolver a view 'em-manutencao', usando o objeto response para isso.
+                        </p>
+                        <co-de>
+                           const express = require('express');
+                           const app = express();
+                           let emManutencao = false;
+                           
+                           app.use( ( req, res, next ) => {
+                               res.render( "em-manutencao" );
+                               next();
+                           } );
+                        </co-de>
+                     </exercicio>
+                     
+                  </exercicios>
+               </display>
+            </aplicacao-global>
+            
+            <aplicacao-por-rota>
+               <h4>Middlewares: aplicação ao nível de rota</h4>
+               <display>
+                  <h1>Middlewares: aplicação ao nível de rota</h1>
+                  <p>
+                     Anteriormente, vimos que o Express nos permite aplicar middlewares para TODA nossa aplicação, mas o que acontece com aquele código que desejamos ser executado somente para uma das rotas ou para um grupo de rotas específicas?
+                  </p>
+                  <p>
+                     É justamente sobre isso que trata o conceito de middleware no nível de rota, com a particularidade de podermos especificar em que rota desejamos implementar um determinado middleware.
+                  </p>
+                  <sub>
+                     Lembre-se: os middlewares no nível de rota são aqueles que são executados única e
+exclusivamente ao entrar naquelas rotas que definimos previamente.
+                  </sub>
+                  <video src="./Assets/Middlewares aplicação por rota.mp4"></video>
+                  <hr>
+                  <iframe src="./Assets/Middlewares em nível de rotas.html" frameborder="0"></iframe>
+
+                  <exercicios>
+                     <exercicio>
+                        <h4>Exercício 1</h4>
+                        <h2>Adicionando middleware à rota "upload-file"</h2>
+                        <p>
+                           Ao contrário do middleware de aplicação que roda para todas as rotas, os middlewares de rotas permite que você aplique o middleware em uma ou mais rotas selecionadas.
+                           <br></br>
+                           Um exemplo disso é o middleware multer que é adicionado apenas às rotas responsáveis pelo upload de arquivos. (Lembre-se que multer é um pacote node que permite o upload de arquivos para o servidor).
+                           <br></br>
+                           Para este exemplo já temos a configuração do multer pronto, mas precisamos adicionar o middleware no caminho "upload-file".
+                           <br></br>
+                           Para isso, teremos que passar como segundo parâmetro o arquivo de rota de upload do middleware upload.any().
+                        </p>
+                        <co-de>
+                           const express = require('express');
+                           const router = express.Router();
+                           const multer = require('multer');
+                           
+                           const storage = multer.diskStorage({
+                             destination: function (req, file, cb) {
+                               cb(null, '/tmp/my-uploads')
+                             },
+                             filename: function (req, file, cb) {
+                               cb(null, file.fieldname + '-' + Date.now())
+                             }
+                           });
+                            
+                           const upload = multer({ storage: storage });
+                           
+                           router.post('/upload-file', upload.any(), fileController.upload);
+                        </co-de>
+                     </exercicio>
+                     
+                     <exercicio>
+                        <h4>Exercício 2</h4>
+                        <h2>Contabilizando Acessos</h2>
+                        <p>
+                           Vamos imaginar que temos um controller chamado "estatisticasController" que tem um método "contarAcesso". Este método recebe um request e adiciona, em nossa base de dados, um novo acesso à url do request.
+                           <br></br>
+                           Gostaríamos de contar os acessos do nosso site, mas não de todas as urls. Por exemplo, não queremos contar as visitas à rotas acessadas por post e algumas rotas get, como login e painel de usuário.
+                           <br></br>
+                           Nosso objetivo será criar uma função chamada visitasMiddleware que recebe como parâmetros req, res e next. Dentro desta função vamos executar o método contarAcesso de estatisticasController, e vamos passar o objeto pedido como parâmetro para o método: estatisticasController.contarAcesso(req). No final da nossa função vamos executar o callback next().
+                           <br></br>
+                           Por fim, vamos adicionar nossa função "visitasMiddleware" como o segundo parâmetro da rota '/home' que já está definida no código.
+                        </p>
+                        <co-de>
+                           const express = require('express'),
+                           router = express.Router(),
+                           homeController = require('../controllers/homeController'),
+                           estatisticasController = require('../controllers/estatisticasController');
+                       
+                       function visitasMiddleware (req, res, next) {
+                           estatisticasController.contarAcesso(req);
+                           next();
+                       }
+                       
+                       router.get('/home', visitasMiddleware, homeController.index);
+                        </co-de>
+                     </exercicio>
+                     
+                     <exercicio>
+                        <h4>Exercício 3</h4>
+                        <h2>Redirecionando para Página Inicial</h2>
+                        <p>
+                           Algumas rotas em nosso site foram descontinuadas e não temos mais conteúdo para exibir. Gostaríamos de garantir que quando um usuário tente entrar em qualquer uma dessas rotas, ele seja redirecionado para a página inicial.
+                           <br></br>
+                           Para isso vamos criar uma função chamada "redirecionar", que vai ser usada como middleware e deve receber três parâmetros: req, res e next.
+                           <br></br>
+                           Dentro da nossa função vamos chamar o método redirect do objeto response e vamos redirecioná-lo para a url '/'. Para este caso em particular, não é necessário chamarmos o callback next, já que a idéia deste redirecionamento é cortar a execução dos possíveis middlewares subsequentes.
+                           <br></br>
+                           Finalmente só temos que adicionar a função "redirecionar" como segundo parâmetro da rota '/rota-em-desuso'.
+                        </p>
+                        <co-de>
+                           const express = require('express');
+                           const router = express.Router();
+                           const OldController = require('../controllers/OldController');
+                           
+                           function redirecionar( req, res, next ) {
+                               res.redirect( "/" );
+                           }
+                           
+                           router.get('/rota-em-desuso', redirecionar, OldController.index);
+                        </co-de>
+                     </exercicio>
+                     
+                  </exercicios>
+               </display>
+            </aplicacao-por-rota>
+            
+            <express-validator>
+               <h4>Introdução ao Express Validator</h4>
+               <display>
+                  <h1>Introdução ao Express Validator</h1>
+                  <p>
+                     O que aconteceria se, em nosso banco de dados, no campo onde esperamos salvar um e-mail, um número de telefone fosse salvo? Certamente isso apresentaria sérios problemas de consistência em nossos dados e talvez o sistema começasse a apresentar algum outro problema.
+                  </p>
+                  <p>
+                     É justamente esse tipo de inconveniente, e outros, que pacotes Node.js como o Express Validator, que nos ajudam a validar os dados, vêm solucionar.
+                  </p>
+                  <p>
+                     Express Validator é um pacote Node.js que já vem preparado com uma série de regras e lógicas, o que nos permitirá validar o formato das informações que queremos armazenar no banco de dados de nossa aplicação.
+                  </p>
+                  <p>
+                     Este pacote é usado como middleware e ainda nos fornece a lista de erros que ocorreram no envio das informações do front-end para o back-end.
+
+                  </p>
+                  <p>Mas não vamos perder mais tempo, vamos ver o que esse pacote pode fazer.</p>
+                  <video src="./Assets/Express Validator - introdução.mp4"></video>
+                  <hr>
+                  <iframe src="./Assets/Express Validator - introdução.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <h4>Exercício 1</h4>
+                     <h2>Validando campos de cadastro</h2>
+                     <p>
+                        Nós já temos a nossa rota de registro. O que precisamos fazer agora é adicionar uma validação para que o campo de e-mail seja do tipo email e a senha tenha, pelo menos, 6 caracteres.
+                        <br></br>
+                        Para conseguir isso, vamos requerer o módulo de express-validator e, usando o destructuring, vamos inicializar três constantes: check, validationResult e body.
+                        <br>
+                        (PS: Por limitações, é aconselhado que dê um alias para o método check, mudando o nome para ‘checar’).
+                        <br></br>
+                        Em nossa rota, adicionaremos como segundo parâmetro um array. Ele terá apenas duas posições, uma para validar a entrada de dados no input "email" e outra para validar a entrada em "password".
+                        <br></br>
+                        Em cada posição do array, usaremos a função check, passando como parâmetro o input a ser validado e concatenamos à execução desta função uma segunda função, que será a regra que queremos que nosso input atenda, por exemplo, isEmail.
+                     </p>
+                     <co-de>
+                        const express = require('express');
+
+                        const router = express.Router();
+                        
+                        const UsuarioController = require('../controllers/UsuarioController');
+                        
+                        const { check: checar, validationResult, body } = require( "express-validator" );
+                        
+                        
+                        router.post('/cadastro', [ checar( "email" ).isEmail(), checar( "password" ).isLength( { min: 6 } ) ],  UsuarioController.registro);
+                     </co-de>
+                  </exercicio>
+               </display>
+            </express-validator>
+            
+            <express-validator-avancado>
+               <h4>Express Validator avançado</h4>
+               <display>
+                  <h1>Express Validator avançado</h1>
+                  <p>Agora que sabemos o que é o Express Validator e tivemos nossa primeira abordagem com este pacote, é hora de ir mais longe e aproveitar ao máximo essa ótima ferramenta para nossos desenvolvimentos.</p>
+                  <video src="./Assets/Express Validator avançado.mp4"></video>
+                  <hr>
+                  <iframe src="./Assets/Express Validator avançado.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <h2>Exercício </h2>
+                     <p>
+                        Neste exercício, temos um controlador com um método de login. Devemos reformular este método, adicionando um IF (condição) para verificar se há erros de validação. No caso de haver erros, devemos redirecionar o usuário à tela de login com os erros encontrados. 
+                        <br></br>
+                        Para fazer isso, precisaremos criar uma constante chamada erros e vamos atribuí-la à execução da função de validationResult.
+                        <br></br>
+                        Então em um IF chamaremos o método isEmpty do objeto erros.
+                        <br></br>
+                        Caso o método retorne false (saberemos que não está vazio porque contém erros), devemos retornar a visualização de login com os erros.
+                        <br></br>
+                        Para retornar a visualização de login você deve usar o método render do objeto response. Lembre-se que para recuperar os erros você deve usar o método array do objeto erros.
+                     </p>
+                     <co-de>
+                        const express = require('express');
+                        const router = express.Router();
+                        const { validationResult } = require('express-validator');
+                        
+                        const userController = {
+                          login: (req, res) => {
+                            const erros = validationResult(req);
+                        
+                            if( !erros.isEmpty() ) {
+                              res.render( "login", { erros: erros.array() } );
+                            }
+                        
+                            if (req.body.name == 'admin' && req.body.pass == 123) {
+                               res.redirect('/dashboard');
+                            }
+                          }  
+                        }
+                     </co-de>
+                  </exercicio>
+               </display>
+            </express-validator-avancado>
+            
+            <Validacao-completa-com-express-validator>
+               <h4>Validação completa com express validator</h4>
+               <display>
+                  <h1>Validação completa com express validator</h1>
+                  <p>
+                     Como vimos, o processo de validação de dados não é algo supérfluo e banal, mas também não é uma ciência espacial.
+                  </p>
+                  <p>
+                     Porém, para que todo esse processo fique o mais resolvido possível e para que cada uma de suas etapas seja compreendida, deixamos este capítulo de vídeo no qual faremos passo a passo, manualmente, todo o processo de validação de dados, do início ao fim.
+                  </p>
+                  <p>
+                     Recomendamos replicar as etapas que estamos vendo no capítulo em um projeto de teste que temos para que, dessa forma, possamos assimilar muito melhor esses conceitos.
+                  </p>
+                  <iframe src="https://view.genial.ly/6049aa033b77f00d7e90e246" frameborder="0"></iframe>
+                  <hr>
+                  <video src="./Assets/Validação completa com express validator - Parte 1.mp4"></video>
+                  <hr>
+                  <video src="./Assets/Validação completa com express validator - Parte 2.mp4"></video>
+                  <hr>
+                  <iframe src="https://view.genial.ly/620280908770f00018be0a86" frameborder="0"></iframe>
+               </display>
+            </Validacao-completa-com-express-validator>
+            
+            <ao-vivo>
+               <h4>Para a aula ao vivo</h4>
+               <display>
+                  <h1>Para a aula ao vivo</h1>
+                  <p>
+                     Ao longo desta aula trabalhamos os conceitos-chave de middlewares e também os implementamos no nível global e no nível da rota. Além disso, tomamos conhecimento do pacote express-validator e de como ele nos permite validar os dados que serão armazenados em nosso banco de dados.
+                  </p>
+                  <p>Com isto em mente, deixamos as seguintes perguntas como um auto-exame:</p>
+                  <ul>
+                     <li>
+                        <p>
+                           Entendendo que um middleware é uma função, além dos parâmetros que representam o request e o response, que outro parâmetro deve estar presente?
+                        </p>
+                     </li>
+                     <li>
+                        <p>
+                           Para a pasta de recursos estáticos, onde as imagens e as folhas de estilo de visualização são armazenadas, deve ser utilizado um middleware global ou um middleware de rota?
+                        </p>
+                     </li>
+                     <li>
+                        <p>Qual é a vantagem de usar middlewares de rota?</p>
+                     </li>
+                     <li>
+                        <p>Para usar o express-validator, ele tem que ser instalado ou vem por padrão com o Express?</p>
+                     </li>
+                     <li>
+                        <p>
+                           Quais são os dois principais lugares onde o express-validator deve ser usado para validar os dados da nossa aplicação?
+                        </p>
+                     </li>
+                     <li>
+                        <p>Como enviar os erros gerados na validação para que eles sejam exibidos na visualização?</p>
+                     </li>
+                     <li>
+                        <p>Na view, os erros de validação estarão sempre presentes?</p>
+                     </li>
+                  </ul>
+                  <p>
+                     Se conseguirmos responder a todas as perguntas sem nenhum problema, estamos mais do que bem preparados para a aula sincrônica.
+                  </p>
+                  <p>
+                     Se, por outro lado, tivermos dúvidas sobre qualquer uma das perguntas, recomendamos que você olhe novamente o material para esclarecer qualquer dúvida.
+                  </p>
+                  <p>Vejo você na aula.</p>
+                  <iframe src="./Assets/Validação com Express Validator - guia passo a passo.pdf" frameborder="0"></iframe>
+               </display>
+            </ao-vivo>
+
+            <middlewares-ao-vivo>
+               <h4>Middlewares [ao Vivo]</h4>
+               <display>
+                  <h1>Ponto de partida</h1>
+                  <p>Como programadores, é importante aprendermos a utilizar middlewares, já que eles nos permitem projetar aplicações de forma mais eficiente.</p>
+                  <h2>Quais são os objetivos dessa aula?</h2>
+                  <ul>
+                     <li>
+                        <p>Compreender o que é e quando se utiliza um middleware.</p>
+                     </li>
+                     <li>
+                        <p>Desenvolver um middleware.</p>
+                     </li>
+                  </ul>
+                  <hr>
+                  <iframe src="./Assets/Middlewares - prática integradora - traduzido.pdf" frameborder="0"></iframe>
+                  <hr>
+                  <h2>Arquivos para a prática middlewares - zip</h2>
+                  <p><a href="./Assets/materiais-aula-middlewares (1).zip" download="">materiais-aula-middlewares (1).zip</a></p>
+                  <h2>Prática resolvida middleware - zip</h2>
+                  <p><a href="./Assets/exercicio-resolvido-middleware.zip" download="">exercicio-resolvido-middleware.zip</a></p>
+               </display>
+            </middlewares-ao-vivo>
+            
+         </middlewares>
+
+         <sessions-e-cookies>
+            <small>Sessions e Cookies</small>
+            <intro>
+               <h4>O que vamos ver nesta aula?</h4>
+               <display>
+                  <h1>O que vamos ver nesta aula?</h1>
+                  <p>
+                     Ao longo de nossas aulas, trabalhamos com um sistema que registra pessoas e armazena suas informações em um banco de dados do tipo JSON.
+                  </p>
+                  <p>
+                     No entanto, até agora não pensamos no processo de login de uma pessoa que se cadastrou anteriormente. É exatamente nisso que vamos trabalhar nesta aula.
+                  </p>
+                  <p>Vamos aprender:</p>
+                  <ul>
+                     <li>
+                        <p>O que é session e como podemos usá-lo.</p>
+                     </li>
+                     <li>
+                        <p>O que são cookies e para que servem em nosso aplicativo.</p>
+                     </li>
+                     <li>
+                        <p>Como criptografar informações confidenciais (como a senha) por meio de um processo de hashing.</p>
+                     </li>
+                     <li>
+                        <p>Como construir um processo de login completo em nosso aplicativo.</p>
+                     </li>
+                  </ul>
+                  <p>Com isso em mente, vamos mergulhar no maravilhoso mundo dos cookies e da session.</p>
+                  <p>Vamos lá!</p>
+               </display>
+            </intro>
+            
+            <Session>
+               <h4>Session</h4>
+               <display>
+                  <h1>Session</h1>
+                  
+               </display>
+            </Session>
+            
+            <Cookies>
                <h4></h4>
                <display>
                   <h1></h1>
                </display>
-            </multer-validacao>
+            </Cookies>
+            
+            <Hashing>
+               <h4></h4>
+               <display>
+                  <h1></h1>
+               </display>
+            </Hashing>
+            
+            <processo-de-login-completo>
+               <h4></h4>
+               <display>
+                  <h1></h1>
+               </display>
+            </processo-de-login-completo>
+            
+            <Storytelling>
+               <h4></h4>
+               <display>
+                  <h1></h1>
+               </display>
+            </Storytelling>
             
             <ao-vivo>
                <h4></h4>
@@ -1371,29 +2136,22 @@ const series = [
                </display>
             </ao-vivo>
             
-            <crud-2>
+            <material-para-download>
                <h4></h4>
                <display>
                   <h1></h1>
                </display>
-            </crud-2>
+            </material-para-download>
             
-            <ponto-de-partida>
+            <Sessions-e-Cookies-ao-vivo>
                <h4></h4>
                <display>
                   <h1></h1>
                </display>
-            </ponto-de-partida>
+            </Sessions-e-Cookies-ao-vivo>
             
-            <crud-2-ao-vivo>
-               <h4></h4>
-               <display>
-                  <h1></h1>
-               </display>
-            </crud-2-ao-vivo>
-            
-         </crud-upload-de-arquivos-multer>
-
+         </sessions-e-cookies>
+         
       </modulo>
 
    </body>
