@@ -66,6 +66,14 @@ https://view.genial.ly/620280908770f00018be0a86
 Ordene as etapas para construir um processo de login completo
 https://view.genial.ly/6063ef71aecacf0d77313f87
 
+
+
+
+
+
+
+
+
 == [ 7 ] ==
 Objetivos do módulo
 <!-- https://view.genial.ly/62a0af1c954955001139d6cc -->

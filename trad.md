@@ -2,6 +2,9 @@
 
 <!--  -->
 (div>h3+display>h1^^{})*4
+>h4{}+display>h1^^{}+
+
+(exercicio>display>h2{Exercício $}+p*2+co-de^^{})
 
 <!-- quiz -->
 quiz>header>h2{Quiz}+question>h4^^home>header>p[n]^choices>label[choice]>input[type="radio"]+t^^res>p

@@ -1,0 +1,737 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <title></title>
+      
+      <link rel="icon" href="src/pix/logo.svg" type="svg+xml">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://globals.onrender.com/global-dh.css">
+      <script src="https://globals.onrender.com/global-dh.js" defer></script>
+   </head>
+   <body>
+
+      <top-bar>
+         Módulo:  6 - Express
+      </top-bar>
+
+      <modulo n="6">
+
+         <padroes-mvc>
+
+            <introducao>
+               <h4>Introdução ao Módulo</h4>
+               <display>
+                  <h1>Introdução ao Módulo</h1>
+                  <p>
+                     Até agora, vimos uma pequena introdução ao mundo do Express quando cobrimos HTML e CSS, mas agora é a hora de nos aprofundarmos nesse universo.
+                  </p>
+                  <p>
+                     Neste novo módulo, vamos entender todo o potencial que o Express tem para oferecer e vamos trabalhar com um padrão de desenho conhecido como MVC. Isso nos permitirá organizar nosso trabalho de uma forma muito mais lógica e funcional.
+                  </p>
+                  <p>
+                     Vamos estudar o esquema que um servidor usa ao receber uma solicitação, bem como cada um dos componentes que fazem dos arquivos back-end um sistema completo, forte e robusto, capaz de suportar toda a lógica de nossos sistemas web.
+                  </p>
+                  <iframe src="https://view.genial.ly/62a0adceb32b620010a661bb" frameborder="0"></iframe>
+                  <hr>
+                  <h2>O que vamos ver nesta aula</h2>
+                  <p>
+                     Essa aula é uma daquelas que são pilares fundamentais do curso, pois vamos começar entendendo o que é o padrão MVC. Isso nos dará a base para entrar nos controladores, que são uma parte fundamental do padrão MVC.
+                  </p>
+                  <p>
+                     Da mesma forma, e com o único objetivo de modularizar muito mais a nossa aplicação, vamos voltar aos conceitos de rotas, entendendo bem o que são rotas parametrizadas. Ao mesmo tempo, vamos estruturar um sistema de roteamento completo, para que nossa aplicação seja construída de forma perfeita.
+
+                  </p>
+                  <p></p>
+                  <p>E como cereja do bolo, finalizamos esta aula com uma ótima ferramenta (opcional) chamada express-generator, que nos permitirá gerar a estrutura de nossa aplicação de uma forma muito mais rápida e organizada.</p>
+                  <p>
+                     Portanto, sem mais nada a dizer, vamos entrar neste mundo!
+                  </p>
+               </display>
+            </introducao>
+            
+            <introducao-ao-mvc>
+               <h4>Introdução ao MVC</h4>
+               <display>
+                  <h1>Você está aqui!</h1>
+                  <img src="./Assets/Introdução ao MVC - Você está aqui.jpg" alt="">
+                  <p>
+                     O Controlador (ou Controller) é o que conhecemos tradicionalmente como: a ponte entre a View e a Model.
+                  </p>
+                  <p>
+                     Este se encarregará de atender os pedidos feitos pelo cliente através da View, de estabelecer uma comunicação direta com a Model para solicitar informações armazenadas no banco de dados e de voltar com a informação, mandando-a diretamente para a View, para que esta última possa mostrá-la facilmente para a pessoa que visita nossa aplicação web.
+                  </p>
+                  <p>
+                     Embora no padrão MVC os três componentes sejam de suma importância, o Controller é quem toma um protagonismo importante. Só ele sabe atender aos pedidos, solicitar informação ao banco de dados (se for necessário), definir qual será a resposta que tem que dar ante um determinado pedido.
+                  </p>
+                  <video src="./Assets/Introdução ao MVC.mp4"></video>
+                  <iframe src="./Assets/Introdução ao MVC.html" frameborder="0"></iframe>
+
+                  <sub>
+                     Os design patterns propõem uma forma de trabalhar na solução de problemas
+específicos. Eles são usados ??como uma boa prática que facilita o trabalho em
+equipe, permitindo que critérios e abordagens sejam unificados.
+                  </sub>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>EXPRESS_intro_a_MVC</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">O que é o Design Pattern?</p>
+                        </header>
+                        <choices>
+                           <label choice="gs">
+                              <input type="radio">
+                              <t>Conjunto de regra que definem a arquitetura de um sistema.</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Conjunto de bibliotecas que definem a arquitetura de um sistema</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Conjunto de elementos separados que definem um sistema</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem! Como você disse, eles são um conjunto de regras. Podem ser vistos como uma proposta de trabalho, um esquema sugerido.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">MVC significa...</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Model-Value-Control</t>
+                           </label>
+                           <label choice="gsd">
+                              <input type="radio">
+                              <t>Model-View-Controller</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Missing-Value-Coder</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Massive-View-Contrller</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Model-View-Controller</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">No MVC</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>O model fala com a view e a view com o controller</t>
+                           </label>
+                           <label choice="fgds">
+                              <input type="radio">
+                              <t>A view fala com o controller e o controller com o model</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>O controller fala com a view e a view com o model</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Isso aí! Vamos para o próximo!</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="4">Quais das seguintes frases estão corretas?</p>
+                        </header>
+                        <choices>
+                           <label choice="gd">
+                              <input type="checkbox">
+                              <t>A view representa a interface gráfica, parte vista pelo usuário</t>
+                           </label>
+                           <label choice="gd">
+                              <input type="checkbox">
+                              <t>O model representa os dados ou entidades do meu sistema</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>A view representa uma forma de acessar o model</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>O controller controla os dados.</t>
+                           </label>
+                           <label choice="gd">
+                              <input type="checkbox">
+                              <t>O model contém a lógica do negócio</t>
+                           </label>
+                           <label choice="gd">
+                              <input type="checkbox">
+                              <t>O controller passa informações para a view</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bom!</p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </introducao-ao-mvc>
+            
+            <controllers>
+               <h4>Controllers</h4>
+               <display>
+                  <h1>Controllers</h1>
+                  <img src="./Assets/Introdução ao MVC - Você está aqui.jpg" alt="">
+                  <p>
+                     O Controlador (ou Controller) é o que conhecemos tradicionalmente como: a ponte entre a View e a Model.
+                  </p>
+                  <p>Este se encarregará de atender os pedidos feitos pelo cliente através da View, de estabelecer uma comunicação direta com a Model para solicitar informações armazenadas no banco de dados e de voltar com a informação, mandando-a diretamente para a View, para que esta última possa mostrá-la facilmente para a pessoa que visita nossa aplicação web.</p>
+                  <p>
+                     Embora dentro do padrão MVC os três componentes sejam de suma importância, o Controller é quem toma um protagonismo importante. Só ele sabe atender aos pedidos, solicitar informação ao banco de dados (se for necessário), definir qual será a resposta que tem que dar ante um determinado pedido.
+                  </p>
+                  <video src="./Assets/Controllers.mp4"></video>
+                  <iframe src="./Assets/Os Controladores.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>EXPRESS_controllers</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">O que é um controller?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>É quem cuida da visualização dos dados</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>É a parte do sistema que acessa o banco de dados</t>
+                           </label>
+                           <label choice="gs">
+                              <input type="radio">
+                              <t>É a parte do sistema que mantém a lógica do negócio</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Justamente isso! O controller é quem mantém a loja de negício.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Tratando-se de controller, qual das frases seguintes são corretas?</p>
+                        </header>
+                        <choices>
+                           <label choice="gsdfs">
+                              <input type="checkbox">
+                              <t>Manda informações para a view</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>Não mantem relação com a view</t>
+                           </label>
+                           <label choice="gsdfs">
+                              <input type="checkbox">
+                              <t>Utiliza models para levantar informações</t>
+                           </label>
+                           <label choice="">
+                              <input type="checkbox">
+                              <t>Não tem nenhuma relação com os models</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem :). Podemos ver o controller como um intermediário, um interlocutor entre a view e os models.</p>
+                        </res>
+                     </home>
+                  </quiz>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Express_MVC_controllers_análise_de_caso</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              Recebemos um pedido para projetar um sistema que permita gerenciar o estoque de um quiosque.
+                              <br>
+                              Decidimos aplicar nosso conhecimento no NODE e abordar o projeto usando essa tecnologia. Eles nos informaram que devemos manter um registro dos clientes como se fossem usuários. Devemos registrar dados como nome, ID e produtos que compraram. Também devemos manter os detalhes dos produtos como preços, estoque e registrar as vendas destes produtos aos clientes.
+                                 <br>
+                              Quando configuramos o sistema, começamos a nos perguntar de quais controllers acreditamos ser necessários.
+                           </p>
+                           <p>Vamos começar!</p>
+                           <p>Qual dos seguintes controllers poderiam estar no sistema?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>PrecosController</t>
+                           </label>
+                           <label choice="gsd">
+                              <input type="radio">
+                              <t>ProdutosController</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>ComandasController</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>
+                              Excelente. O controller ProdutosController é o que precisamos para lidar com todos os diferentes produtos, e também pode lidar com muitos detalhes deles, como aumentar preço preço, alterar descrição, etc.
+                           </p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Quais desses controllers poderiam estar no sistema?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>RotasController</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>TelaController</t>
+                           </label>
+                           <label choice="gds">
+                              <input type="radio">
+                              <t>EstoqueController</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>
+                              Muito bem. É muito bom pensar que precisaríamos de um controller para o estoque dos produtos. Embora possamos ter essa responsabilidade no ProdutosController, sendo algo muito importante para os negócios, pode ser uma boa decisão lidar com toda essa lógica separadamente. Por outro lado, o TelaController não é, por si só, necessário, pois, a priori, parece ter uma relação maior com a visualização das coisas e isso faz parte da view. Enfim, controlar as rotas não é uma tarefa para um controlleres.
+                           </p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Quais dos controllers poderiam estar no sistema?</p>
+                        </header>
+                        <choices>
+                           <label choice="sdgs">
+                              <input type="radio">
+                              <t>ClientesController</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>RegistrosController</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>CaloteirosController</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Perfeito Nesse caso, podemos inferir que CaloteiroController é um caso de cliente específico, portanto não é necessário criar uma lógica completamente diferente e específica para eles.</p>
+                        </res>
+                     </home>
+                  </quiz>
+
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 1</h2>
+                        <p>
+                           Começa um novo e lindo dia e chega um novo pedido do cliente. Você está trabalhando num controller de um carrinho de compras de um e-commerce. Te pediram para que, quando um cliente adicionasse um produto ao carrinho, ele retorna-se uma mensagem 'Item Adicionado'.
+                        </p>
+                        <p>
+                           O líder técnico em sua área informa que, para atender a esse requisito, você deve modificar a função addItem para receber os parâmetros req e res. Dito isto, o líder técnico se afasta misteriosamente, dizendo que você deve analisar como retornar a mensagem 'Item Adicionado' utilizando os dois parâmetros: req e res.
+                        </p>
+                        <co-de>
+                           let CarrinhoController = {
+                              removeItem: function(){},
+                              getItem: function(){},
+                              addItem: function( req, res ){
+                                 res.send( console.log( "Item Adicionado" ) );
+                              }
+                           };
+                           
+                           module.exports = CarrinhoController;
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 2</h2>
+                        <p>
+                           Você criou um controller para lidar com o carrinho de compras (CarrinhoController). Você já estava indo embora quando o líder do projeto percebeu que não existe uma rota configurada para o seu controller! Você bem que tentou, mas ele te alcançou antes de você tocar na maçaneta! Não teve jeito.
+                        </p>
+                        <p>
+                           Crie uma rota get para o endereço raíz (/) passando como parâmetro :item. Essa rota deve redirecionar para o método addItem do CarrinhoController 
+                        </p>
+                        <co-de>
+                           let express = require('express')
+                           let router = express.Router();
+                           let CarrinhoController = require('../controllers/CarrinhoController')
+                           
+                           router.get( "/:item", CarrinhoController.addItem );
+                           
+                           module.exports = router
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
+               </display>
+            </controllers>
+            
+            <revisao-de-rotas>
+               <h4>Revisão de Rotas</h4>
+               <display>
+                  <h1>Revisão de rotas</h1>
+                  <p>
+                     É muito importante na construção de um serviço web ou de um site, definirmos claramente quais serviços um cliente pode acessar.
+                  </p>
+                  <p>
+                     Para isso, temos que definir os caminhos no nosso servidor, ou seja, as rotas.
+                  </p>
+                  <p>Vamos ver como podemos fazer isso?</p>
+                  <iframe src="./Assets/Revisão de rotas.html" frameborder="0"></iframe>
+               </display>
+            </revisao-de-rotas>
+            
+            <rotas-parametrizadas>
+               <h4>Rotas parametrizadas</h4>
+               <display>
+                  <h1>Rotas parametrizadas</h1>
+                  <p>
+                     Imagine que temos 2000 produtos no nosso site e queremos mostrar os detalhes de cada um deles. Para isso, criamos 2000 rotas diferentes, uma para cada produto. Será que isso seria viável? Com certeza não!
+                  </p>
+                  <p>
+                     Pensando em resolver esse problema, o Express nos permite trabalhar com rotas dinâmicas.
+                  </p>
+                  <p>Uma rota dinâmica é aquela que mostra uma informação ou outra dependendo de determinados critérios. Diferente das rotas estáticas, aquelas que estávamos trabalhando até o momento.</p>
+                  <p>Veremos as configurações necessárias que devemos implementar para poder dar esse dinamismo às nossas rotas.</p>
+                  <video src="./Assets/Rotas parametrizadas.mp4"></video>
+                  <iframe src="./Assets/Rotas parametrizadas.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 1</h2>
+                        <p>
+                           Vamos listar todas as séries!
+                        </p>
+                        <p>
+                           Temos uma lista de muitas séries armazenadas na variável series. O seu trabalho será criar um caminho que aponte para o endereço "/series" e devolva todas elas.
+                        </p>
+                        <co-de>
+                           const express = require('express');
+                           const app = express();
+                           
+                           app.get( '/series', function(req, res) {
+                               res.send(series);
+                           })
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 2</h2>
+                        <p>
+                           Vamos ver como configurar a nossa primeira rota parametrizada com o Express.
+                           <br>
+                           Queremos que você crie uma rota que aponte para "/serie" e que ela, por sua vez, receba um número. Esse número vai representar a identificação da série que tentamos visualizar. Portanto, a rota deve retornar apenas a série que corresponde ao id que veio pelo parâmetro.
+                           <br></br>
+                           Um exemplo de como seria a rota: http://localhost/serie/3
+                           <br>
+                           Lembre-se que a variável da series já foi declarada, contem um array de objetos e você pode usá-la apenas escrevendo seu nome. Clique em Details para ver uma informação adicional.
+                        </p>
+                        <details>
+                           <summary>Saiba mais!</summary>
+                           <display>
+                              <pre>
+const series = [
+   {
+   id: 1,
+   nome: 'Irmão do Jorel'
+   },
+   {
+   id: 2,
+   nome: 'Um maluco no pedaço'
+   }
+]
+                              </pre>
+                           </display>
+                        </details>
+                        <co-de>
+                           const express = require('express');
+                           const app = express();
+                           
+                           app.get( "/serie/:id", (req, res ) => {
+                              let { id } = req.params;
+                        
+                              res.send(
+                                 series.find( v => {
+                                    if( v.id == id) {
+                                       return v;
+                                    }
+                                    } ) 
+                              );   
+                           } );     
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
+               </display>
+            </rotas-parametrizadas>
+            
+            <sistema-de-roteamento>
+               <h4>Sistema de roteamento</h4>
+               <display>
+                  <h1>Sistema de roteamento</h1>
+                  <p>
+                     Toda aplicação que busque ser escalável, precisa ter componentes modularizados. E as rotas não ficam de fora deste processo. Por isso, quando encaramos a implementação das rotas que a nossa aplicação web terá, é conveniente pensar em pequenas "entidades" de funcionamento, mais que em uma estrutura "monolítica".
+                  </p>
+                  <p>
+                     Para esse objetivo, o Express nos dá a possibilidade de criar diferentes arquivos que administrem as possíveis rotas de nosso site. Sempre tenha em mente que o importante, nesta "atomização", é a organização de nossos arquivos dentro de nosso projeto. Tudo com o objetivo de manter mais estável nosso desenvolvimento.
+                  </p>
+                  <p>
+                     Desta forma, podemos concluir então que o sistema de roteamento dentro de um projeto de Express não é nada além de uma modularização das rotas de nossa aplicação, para que as mesmas permaneçam divididas e organizadas, dependendo de suas funcionalidades.
+                  </p>
+                  <p>
+                     Veremos um pouco mais a fundo como é que isso funciona na prática!
+                  </p>
+                  <video src="./Assets/Sistema de roteamento.mp4"></video>
+                  <iframe src="./Assets/Sistema de roteamento.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 1</h2>
+                        <p>Vamos modular as rotas para as séries.</p>
+                        <p>
+                           Queremos que o arquivo series.js processe TODOS os pedidos do recurso. Como primeiro passo pedimos que você crie a variável express e armazene o módulo express nela.
+                           <br><br>
+                           Então, você deve criar a variável router e armazenar nela a execução do método que nos permite gerenciar um sistema de rotas. 
+                        </p>
+                        <co-de>
+                           const express = require('express');
+                           const router = express.Router();
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 2</h2>
+                        <p>No script deste exercício já definimos as rotas relacionadas com os request das informações contidas no array de séries.</p>
+                        <p>
+                           O seu trabalho será tornar esse código "visível" para assim podermos acessá-lo a partir de outros arquivos.
+
+                           <br></br>
+                           Lembra como fazer isso? Quem é responsável pelo compartilhamento de todos esses caminhos definidos?
+                        </p>
+                        <co-de>
+                           const express = require('express');
+                           const router = express.Router();
+                           
+                           router.get('/', (req,res) => {
+                           });
+                           router.get('/:genero', (req,res) => {
+                           });
+                           router.get('/criar', (req,res) => {
+                           });
+                           
+                           module.exports = router;
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 3</h2>
+                        <p>A partir do arquivo index.js queremos acessar o arquivo series.js. Seu trabalho será solicitar esse módulo e armazená-lo na variável rotasSeries. Finalmente, queremos que esse módulo se encarregue de tratar de todos as solicitações que venham de séries. </p>
+                        <p>
+                           Antes de começarmos... Tenha em mente que estamos lidando com um sistema de rotas e organização de diretórios é MUITO importante, portanto o arquivo series.js é armazenado na pasta de routes. 
+                        </p>
+                        <co-de>
+                           const express = require('express');
+                           const app = express();
+                           const rotasSeries = require("./routes/series");
+                           
+                           app.use( "/series", rotasSeries );
+                           
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
+               </display>
+            </sistema-de-roteamento>
+            
+            <estrutura-de-arquivos>
+               <h4>Estrutura de arquivos</h4>
+               <display>
+                  <h1>Estrutura de arquivos</h1>
+                  <p>
+                     Até agora, sabemos que temos que trabalhar com rotas. Controladores e vistas já estão sendo parte natural de nosso processo de desenvolvimento, mas como podemos começar a organizar nossos arquivos?
+                  </p>
+                  <p>
+                     Esta pergunta não tem uma resposta 100% definitiva, mas podemos pensar em um jeito padrão que nos permita organizá-los da melhor maneira possível. É por isso que abaixo compartilhamos uma estrutura de arquivos sugerida para otimizar muito mais o processo de programar.
+                  </p>
+                  <h5>Estrutura de arquivos recomendada:</h5>
+                  <co-de>
+                     ??? node_modules ? Pasta de módulos locais do projeto
+
+                     ??? public ? Pasta de arquivos públicos
+                     
+                     ??? src ? Pasta de arquivos funcionais da aplicação
+                     
+                     ?   ??? controllers
+                     
+                     ?       ??? (aqui vão os controladores)
+                     
+                     ?   ??? views
+                     
+                     ?       ??? (aqui vão as vistas)
+                     
+                     ?   ??? routes
+                     
+                     ?       ??? (aqui vão as rotas)
+                     
+                     ??? app.js ? Arquivo de entrada do projeto
+                     
+                     ??? package.json
+                     
+                     ??? package-lock.json
+                  </co-de>
+                  <p>
+                     Com esta estrutura, podemos separar por responsabilidades cada um dos componentes da nossa aplicação e, desta maneira, gerir melhor o nosso trabalho e o da equipe. Em caso de ter de repartir as tarefas, estas já poderão ser divididas por funcionalidade. Assim, teremos a tranquilidade de que duas pessoas não vão trabalhar no mesmo arquivo.
+                  </p>
+                  <iframe src="./Assets/Como organizar seus arquivos.html" frameborder="0"></iframe>
+                  <iframe src="https://view.genial.ly/6231e35abb04e60018360159" frameborder="0"></iframe>
+               </display>
+            </estrutura-de-arquivos>
+            
+            <express-generator>
+               <h4>Bônus: express-generator</h4>
+               <display>
+                  <h1>Bônus: express-generator</h1>
+                  <p>
+                     Certamente em algum momento você se perguntou: eu realmente tenho que fazer tudo isso manualmente? Embora a resposta (na maioria das vezes) seja um sonoro SIM, já que isso permite que você tenha mais controle sobre o que está fazendo, às vezes um pouco de ajuda não faz mal. E é aí que encontramos ferramentas como o express-generator.
+                  </p>
+                  <p>
+                     Express-generator, como o nome indica, é um gerador de projeto Express. O que isso significa? Basicamente, rodando um único comando no console, você terá um grande conjunto de arquivos e sua estrutura correspondente, prontos para uso.
+                  </p>
+                  <p>
+                     Embora pareça INCRÍVEL, às vezes não é. Afinal, qualquer ferramenta que resolva "muitas" coisas para nós, por sua vez, está nos abstraindo do entendimento "do que está por baixo do capô".
+                  </p>
+                  <p>
+                     Não é ruim usar esses tipos de ferramentas, mas o que eles resolvem você certamente conseguirá com alguns minutos de esforço e várias linhas de código.
+                  </p>
+                  <video src="./Assets/express-generator.mp4"></video>
+                  <iframe src="./Assets/express-generator.html" frameborder="0"></iframe>
+               </display>
+            </express-generator>
+            
+            <ao-vivo>
+               <h4>Para a aula ao vivo</h4>
+               <display>
+                  <h1>Para a aula ao vivo</h1>
+                  <p>
+                     Design patterns. Models, Views e Controllers. Rotas estáticas e rotas dinâmicas. E como um "bônus" uma ótima ferramenta chamada express-generator. Tudo isso era o que estávamos vendo nessa aula, que parece muito, mas realmente não é.
+                  </p>
+                  <p>
+                     Antecipando nossa aula ao vivo, convidamos você a se preparar, pois como sempre, a ideia desse encontro é "arrasar" e tirar o máximo proveito dela.
+                  </p>
+                  <p>
+                     Para fazer isso, podemos verificar internamente se conseguimos responder às seguintes questões de forma simples:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>O que é um pattern design e para que serve?</p>
+                     </li>
+                     <li>
+                        <p>O que a letra M se refere no padrão MVC?</p>
+                     </li>
+                     <li>
+                        <p>Quem interage diretamente com as views?</p>
+                     </li>
+                     <li>
+                        <p>Por que é recomendado implementar um sistema de roteamento em nossa aplicação?</p>
+                     </li>
+                     <li>
+                        <p>Para que servem as rotas dinâmicas?</p>
+                     </li>
+                     <li>
+                        <p>Se você tivesse que revisar o código de outra pessoa, como poderia identificar uma rota que recebe parâmetros?</p>
+                     </li>
+                     <li>
+                        <p>Dentro do corpo do código de um controller, como podemos recuperar os parâmetros que chegam até nós através da rota?</p>
+                     </li>
+                     <li>
+                        <p>Vale sempre a pena usar o express-generator?</p>
+                     </li>
+                  </ul>
+                  <p>
+                     Se você conseguiu responder com força às questões anteriores, relaxe, a gente se vê na aula ao vivo. Se, por outro lado, você demorou um pouco para obter as respostas e ainda tem algumas dúvidas, nós o convidamos a dar uma nova olhada nos tópicos vistos.
+                  </p>
+               </display>
+            </ao-vivo>
+            
+            <padroes-mvc-ao-vivo>
+               <h4>Padrões MVC [ao Vivo]</h4>
+               <display>
+                  <h1>Padrões de desenho MVC</h1>
+                  <p>
+                     Chegou a hora de começar a montar a roda MVC.
+                  </p>
+                  <p>
+                     É importante ter em mente que com este padrão de design não só conseguiremos organizar muito mais nossos arquivos, mas também tornaremos nossos projetos mais escaláveis, porque nos dá a possibilidade de adicionar funcionalidades parciais que fazem parte de um ambiente de programação otimizado.
+                  </p>
+                  <p>
+                     Nesta aula, em particular:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>Vamos nos concentrar muito na parte "VC" do padrão. Bem, só começaremos a trabalhar nos modelos quando soubermos mais sobre bancos de dados;</p>
+                     </li>
+                     <li>
+                        <p>Vamos estruturar nosso trabalho sob o esquema de rotas e controladores, e</p>
+                     </li>
+                     <li>
+                        <p>Vamos gerar a estrutura de pastas ideal e entenderemos para onde as coisas devem ir.</p>
+                     </li>
+                  </ul>
+                  <p>Portanto, sem mais a dizer, vamos colocar as mãos no código.</p>
+                  <iframe src="./Assets/Padrão de desenho MVC.html" frameborder="0"></iframe>
+                  <iframe src="./Assets/Design Pattern MVC - Prática integradora.pdf" frameborder="0"></iframe>
+
+                  <h2>Arquivos para a prática MVC - zip</h2>
+                  <p><a href="./Assets/arquivos-para-a-pratica-mvc (1).zip" download="">arquivos-para-a-pratica-mvc (1).zip</a></p>
+                  <h2>Prática resolvida MVC - zip</h2>
+                  <p><a href="./Assets/meu-porfolio-mvc-resolvido.zip" download="">meu-porfolio-mvc-resolvido.zip</a></p>
+
+               </display>
+            </padroes-mvc-ao-vivo>
+            
+
+         </padroes-mvc>
+
+      </modulo>
+
+   </body>
+</html>
+

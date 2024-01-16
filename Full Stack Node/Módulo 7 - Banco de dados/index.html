@@ -2436,7 +2436,7 @@ no tópico anterior, dentro do MySQL Workbench e utilizá-lo normalmente.
                               <input type="radio">
                               <t>Criar um console.log()</t>
                            </label>
-                           <label choice="ggx>
+                           <label choice="ggx">
                               <input type="radio">
                               <t>Use outro .then()</t>
                            </label>
@@ -2588,58 +2588,1306 @@ no tópico anterior, dentro do MySQL Workbench e utilizá-lo normalmente.
             <usando-promises>
                <h2>Usando Promises</h2>
                <display>
-                  <h1></h1>
+                  <h1>Usando Promises</h1>
+
+                  <p>
+                     Agora que já entendemos todo o ciclo de uma promise, desde sua criação até o seu consumo, está na hora de abordarmos algumas novas features para enriquecer esta funcionalidade.
+                  </p>
+                  <p>
+                     Falaremos um pouco mais sobre o promise all, discutiremos uma nova estratégia para executar promises, chamada async/await e teremos mais exercícios para fixar os conceitos.
+                  </p>
+                  <iframe src="./Assets/Async - Await.html" frameborder="0"></iframe>
+
+                  <h2>Promise All</h2>
+                  <p>
+                     Já falamos sobre a função Promise.all() há alguns tópicos, mas existe um outro método semelhante a este, que ainda não tivemos a oportunidade de abordar. Este é chamado Promise.allSettled().
+                  </p>
+                  <p>
+                     Ambos os métodos recebem um array de promises para resolver, entretanto, a resolução destes difere um pouco. Enquanto o primeiro, caso uma das promises do array falhe, irá descartar as demais (resolvidas ou não) e lançar um erro, o segundo retornará um array de objetos contendo status e valor de cada uma das promises e, mesmo que alguma falhe, não implicará na perda das demais.
+                  </p>
+                  <p>
+                     Legal né? Mas não se esqueça, ambas as funções são úteis em diferentes cenários, portanto o importante é avaliar bem a necessidade de cada momento.
+                  </p>
+
+                  <h2>Promises</h2>
+                  <iframe src="https://view.genial.ly/6062a3986ce0f90d4e236a94" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Questionário _ Async_Await_01</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Qual a palavra reservada que utilizamos para criar uma função assíncrona?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>await</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>simultaneous</t>
+                           </label>
+                           <label choice="d">
+                              <input type="radio">
+                              <t>async</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>sync</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem! Uma função é marcada como assíncrona pela palavra reservada async na sua assinatura.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">O que não pode faltar dentro de uma função assíncrona?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>declaração de variáveis</t>
+                           </label>
+                           <label choice="d">
+                              <input type="radio">
+                              <t>try/catch</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>return</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>req/res</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem! Uma função assíncrona não pode deixar de apresentar tratamento de exceções.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Qual a função que retorna um vetor contendo objetos com status das promises e os valores retornados?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Promise.all()</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>promise.allSafe()</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>promise.array()</t>
+                           </label>
+                           <label choice="sfdf">
+                              <input type="radio" checked>
+                              <t>promise.allSettled()</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="4">
+                              Existe uma promise chamada calculoComplexo, que foi criada para realizar alguns cálculos relacionados ao sistema que a sua equipe está trabalhando.
+                           </p>
+                           <p>
+                              Esta promise é um pouco diferente, só vai ser resolvida quando o then for chamado. Isso quer dizer que, diferente das promises tradicionais, ela já foi executada e está armazenada na constante calculoComplexo. Sua tarefa é anexar o then à essa constante e depois, passar o callback.
+                           </p>
+                        </header>
+                        <choices>
+                           <co-de>
+                              calculoComplexo.then(res => console.log(res))
+                           </co-de>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
                </display>
             </usando-promises>
             
             <sequelize-e-config>
                <h2>Sequelize e configurações</h2>
                <display>
-                  <h1></h1>
+                  <h1>Sequelize e Configuração</h1>
+
+                  <p>
+                     Como mencionamos alguns blocos atrás, Sequelize é um ORM que nos ajuda a conectar e interagir com bancos de dados relacionais como Postgres, MySQL ou SQLite, por exemplo.
+                  </p>
+                  <p>
+                     Este ORM é um pacote Node que está disponível para instalação por meio do NPM. E embora tenha uma versão um pouco mais recente, aqui trabalharemos com a versão 5 deste pacote.
+                  </p>
+                  <p>
+                     Sua instalação é bastante simples, pois basta executar o comando: npm install sequelize@5.21
+                  </p>
+                  <p>
+                     Além disso, você terá que configurar algumas coisas que não são todas difíceis, mas nada melhor do que um vídeo que explica todo esse processo, vamos lá então.
+                  </p>
+                  <video src="./Assets/Sequelize e Configuração.mp4"></video>
+                  <iframe src="./Assets/Sequelize e Configuração.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Sequelize_instalacao</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Qual o comando para inicializar o Sequelize?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Sequelize start</t>
+                           </label>
+                           <label choice="fd">
+                              <input type="radio">
+                              <t>Sequelize init</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Sequelize boot</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Qual o caminho para o arquivo de configuração do Sequelize?</p>
+                        </header>
+                        <choices>
+                           <label choice="sd">
+                              <input type="radio">
+                              <t>/database/config/config.js</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>/db/configure/config.js</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>/db/config/config.js</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
                </display>
             </sequelize-e-config>
             
             <modelos>
                <h2>Modelos</h2>
                <display>
-                  <h1></h1>
+                  <h1>Modelos</h1>
+
+                  <p>
+                     MVC... quando você viu esse conceito, talvez na época fosse algo abstrato, porém nesta fase do jogo, é algo que você já conhece e entende muito bem. Mas o que isso tem a ver com Sequelize e bancos de dados?
+                  </p>
+                  <p>
+                     Dentro desse padrão de projeto, o M se refere a Modelos. E se você se lembra bem, os modelos são a camada do programa que permite que você interaja com o banco de dados.
+                  </p>
+                  <p>
+                     Os modelos são extremamente importantes, porque a partir deles você poderá definir a estrutura que a própria tabela possui e adicionalmente poderá gerar os relacionamentos que aquela tabela possui. O melhor de tudo é que você fará isso com código JavaScript puro.
+                  </p>
+                  <p>
+                     Então, vamos modelar!
+                  </p>
+                  <video src="./Assets/Modelos.mp4"></video>
+                  <iframe src="./Assets/Sequelize Modelos.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4></h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">
+                              Nossa base de dados possui uma tabela chamada usuarios que possui três colunas: nome, email e senha (todas do tipo string).
+                           </p>
+                           <p>
+                              O objetivo deste exercício é ser capaz de criar um model associado à tabela de usuários.
+                           </p>
+                           <p>
+                              Para criar nosso model vamos utilizar o método definir do objeto sequelize. Este método espera dois parâmetros: o primeiro é o nome da tabela e o segundo um JSON, cujas chaves são os nomes das colunas e os valores o tipo de dados.
+                           </p>
+                        </header>
+                        <choices>
+                           <co-de>
+                              const Sequelize = require('sequelize');   <br>
+                              const sequelize = require('../database');    <br>
+                                 <br>
+                              const Usuario = sequelize.define(   <br>
+                                 "usuarios", <br>
+                                 {  <br>
+                                    nome: Sequelize.STRING, <br>
+                                    email: Sequelize.STRING,   <br>
+                                    senha: Sequelize.STRING <br>
+                                 }  <br>
+                              ); <br>
+                                 <br>
+                              module.exports = Usuario;
+                           </co-de>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">
+                              Ao configurar nossos modelos Sequelize você faz algumas suposições sobre nossas tabelas. Uma delas é que espera que todas as nossas tabelas tenham as colunas criadas e atualizadas.
+                           </p>
+                           <p>
+                              Se você criar um model de tabela que não tenha nenhuma destas colunas você pode obter o erro clássico "Unknown column 'createdAt' in 'field list'".
+                           </p>
+                           <p>
+                              Para evitar isso, devemos dizer explicitamente ao Sequelize que não vamos usar nenhuma das colunas criadas ou atualizadas. Para isso, precisamos passar como terceiro parâmetro do método definir um JSON com esta estrutura: {timestamps: false}.
+                           </p>
+                           <p>
+                              Neste exemplo já temos o model configurado para a tabela de usuários, mas precisamos ter certeza de que não temos as colunas created_at ou updated_at. O seu objetivo será adicionar a configuração correspondente.
+                           </p>
+                        </header>
+                        <choices>
+                           <co-de>
+                              const Sequelize = require('sequelize');   <br>
+                              const sequelize = require('../database');    <br>
+                                 <br>
+                              const Usuario = sequelize.define('usuarios',{   <br>
+                                  nome: Sequelize.STRING,   <br>
+                                  email: Sequelize.STRING,  <br>
+                                  senha: Sequelize.STRING,  <br>
+                              },{   <br>
+                                  timestamps: false   <br>
+                              });   <br>
+                                 <br>
+                              module.exports = Usuario;
+                           </co-de>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
                </display>
             </modelos>
             
             <funcoes-basicas>
                <h2>Funções básicas</h2>
                <display>
-                  <h1></h1>
+                  <h1>Funções de busca</h1>
+
+                  <p>
+                     Imaginamos que, se falarmos sobre SELECT * FROM movies, você saberá o que queremos dizer, certo?
+                  </p>
+                  <p>
+                     Bem, esse mesmo tipo de consulta, que você tradicionalmente fazia com sentenças do MySQL, você pode facilmente realizar, mas agora com os métodos Sequelize. Uma maravilha, não acha? E isso não é o melhor de tudo. Você também poderá pesquisar um único registro dependendo de uma condição e até pesquisar por chave primária.
+                  </p>
+                  <p>
+                     Sequelize é projetado para isso, para facilitar a sua vida e deixar que essa biblioteca cuide do "pesado" para você poder se concentrar em outras coisas importantes.
+                  </p>
+                  <p>
+                     Portanto, sem mais delongas, vamos mergulhar no maravilhoso mundo dos métodos findAll(), findOne() e findByPk(). Você vai perceber que eles realmente são ouro puro.
+                  </p>
+                  <video src="./Assets/findAll, findOne, findByPK.mp4"></video>
+                  <iframe src="./Assets/findAll, findOne, findByPK.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 1</h2>
+                        <p>
+                           A partir do nosso model Filmes vamos recuperar todos os filmes da nossa base de dados e fazer um console.log do resultado.
+                        </p>
+                        <p>
+                           Para isso você pode usar o método findAll do model Filmes. <br>
+*** Lembre-se que este método é assíncrono.
+                        </p>
+                        
+                        <co-de>
+                           const Filmes = require('model/filmes.js');   <br>
+                           <br>
+                           Filmes.findAll().then( filmes => console.log(filmes) );
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 2</h2>
+                        <p>
+                           A partir do model Filmes vamos recuperar o filme com a id 1. <br>
+O Sequelize nos oferece o método findByPk que recupera um elemento da base de acordo com sua chave primária. Podemos usar este método a partir do nosso objeto Filmes. <br>
+                        </p>
+                        <p>Tenha em mente que este método é assíncrono, portanto será necessário trabalhar com promises.</p>
+                        
+                        <co-de>
+                           const Filmes = require('model/filmes.js');   <br>
+                           <br>
+                           Filmes.findByPk(1).then( filme => console.log(filme) );
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
                </display>
             </funcoes-basicas>
             
             <where-e-operadores>
                <h2>Where e operadores</h2>
                <display>
-                  <h1></h1>
+                  <h1>Where e operadores</h1>
+
+                  <p>
+                     Queremos encontrar na base de dados os filmes que tenham uma classificação igual ou superior a 7. Você se lembra de como fazer essa consulta? É provável que a primeira coisa que vem em mente é um ótimo ONDE, não?
+                  </p>
+                  <p>
+                     Bem, este e outros tipos de filtros são possíveis de aplicar diretamente no Sequelize, embora aqui você tenha que fazer isso de uma maneira um pouco diferente, mas isso não significa que seja impossível.
+                  </p>
+                  <p>
+                     Em seguida, você verá os operadores no Sequelize, o que permitirá que você filtre as informações que está consultando de diferentes maneiras.
+                  </p>
+                  <video src="./Assets/Where e operadores.mp4"></video>
+                  <iframe src="./Assets/Where e Like.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 1</h2>
+                        <p>
+                           O método findAll nos traz todas as linhas de registros que temos em nossa base. Se precisarmos filtrar o resultado, podemos passar um JSON como parâmetro do métodos com uma query dentro.
+                        </p>
+                        <h4>
+                           Neste exercício, temos o model Auto. Nosso objetivo será trazer todos os carros cujas coluna de marcas correspondam ao valor "Fiat".
+                        </h4>
+                        
+                        <co-de>
+                           const Auto = require( 'model/autos.js' );   <br>
+                           <br>
+                           Auto.findAll(  <br>
+                              {  <br>
+                                 where: { <br>
+                                    marca: "Fiat"  <br>
+                                 }  <br>
+                              }  <br>
+                           ).then(autos => { <br>
+                              console.log( autos )   <br>
+                           } );
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 2</h2>
+                        <p>
+                           Neste exercício, vamos buscar todos os usuários que possuem uma conta Gmail. Para fazer isso, vamos precisar perguntar dentro do findAll se os valores contidos coluna email terminam com a string de texto "@gmail.com".
+                        </p>
+                        <p>
+                           Até agora o where esperava um JSON cuja chave era a coluna a ser pesquisada e valor era o que queríamos pesquisar. Isto nos trouxe combinações idênticas, é como usar o mesmo operador do MySQL. Mas agora vamos precisar usar um operador similar, ou seja, vamos ter que recriar com sequelizar esta consulta MySQL: 'SELECT * FROM users WHERE email LIKE "%gmail"''.
+                        </p>
+                        <h4>
+                           Para isso, dentro do where onde vamos passar um JSON com o nome da coluna e cujo valor é um novo JSON: { [Op.like]: '%gmail.com'}
+                        </h4>
+                        
+                        <co-de>
+                           const 
+                              Sequelize = require( 'sequelize' ), <br>
+                              Usuario = require( 'model/usuarios.js' ), <br>
+                              Op = Sequelize.Op <br>
+                           ;  <br>
+                              <br>
+                           Usuario.findAll( {   <br>
+                              where: { <br>
+                                 email: { <br>
+                                    [Op.like]: "%gmail.com" <br>
+                                 }  <br>
+                              }  <br>
+                           } ).then( usuarios => { <br>
+                              console.log( usuarios ) <br>
+                           } );
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
                </display>
             </where-e-operadores>
             
             <order-e-limit>
                <h2>Order e Limit</h2>
                <display>
-                  <h1></h1>
+                  <h1>Order e Limit</h1>
+
+                  <p>
+                     Vamos arrumar o quarto!
+                  </p>
+                  <p>
+                     É hora de trazer o top 3 das músicas mais ouvidas do aplicativo de música mais popular e ordená-las por número de reproduções, da mais alta para a mais baixa. Você consegue? Mãos à obra!
+                  </p>
+                  <p>
+                     Isso pode facilmente ser um pedido do líder de projeto de qualquer equipe de desenvolvimento e é muito bom, pois se pedíssemos todas as músicas sem pensar em um determinado filtro e ordem, a consulta poderia demorar muito ou até trazer muitas informações que você teria que ordenar, e isso não seria o ideal.
+                  </p>
+                  <p>
+                     Por esse motivo, o Sequelize traz uma forma simples e eficiente de poder gerar este tipo de consultas.
+                  </p>
+                  <p>
+                     Vamos então saber mais sobre Ordem e Limite no Sequelize.
+                  </p>
+                  <video src="./Assets/Order, e Limit.mp4"></video>
+                  <iframe src="./Assets/Order, Limit e Offset.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 1</h2>
+                        <p>
+                           Neste exercício o objetivo será trazer todos os produtos ordenados por preço, do menor para o maior.
+                        </p>
+                        <p>
+                           Lembre-se que dentro do método findAll você pode passar um JSON que tenha como chave a palavra order e cujo valor é um array de array indicando em qual coluna ou colunas iremos ordenar e qual tipo de ordenação terá: ASC ou DESC.
+                        </p>
+                        
+                        <co-de>
+                           const Producto = require('model/produtos.js');  <br>
+                           <br>
+                           Producto.findAll({   <br>
+                              order: [ <br>
+                                    ['preco', 'ASC']  <br>
+                                 ]  <br>
+                           }).then(produtos => {   <br>
+                              console.log(produtos)   <br>
+                           });
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 2</h2>
+                        <p>Quando devolvemos ao usuário uma lista de registros é aconselhável que os resultados sejam paginados, para trazer tanta informação junta da base de dados.</p>
+                        <p>Neste exercício, temos a função findAll aplicado ao model Produto.</p>
+                        <h4>O objetivo da vez é passar um parâmetro para o método findAll para executar um limit e trazer apenas os 5 primeiros produtos.</h4>
+                        
+                        <co-de>
+                           const Produto = require('model/produtos.js');   <br>
+                           <br>
+                           Produto.findAll({ <br>
+                              limit: 5 <br>
+                           }).then(produtos => {   <br>
+                              console.log(produtos)   <br>
+                           });
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
                </display>
             </order-e-limit>
             
             <Sequelize-ao-Vivo>
                <h2>Sequelize - Introdução, models e consultas [ao Vivo]</h2>
                <display>
-                  <h1></h1>
+                  <h1>Para a aula ao vivo</h1>
+
+                  <p>
+                     Acabamos de terminar uma aula onde aprendemos muitas funcionalidades sobre esta grande ferramenta que é a Sequelize.
+                  </p>
+                  <p>
+                     A aula ao vivo é uma excelente oportunidade para colocar em prática todo o conhecimento adquirido neste caso. Mas antes da reunião de Zoom, propomos, como sempre, realizar um pequeno auto questionário para saber se todos os temas foram suficientemente assimilados. Para o fazer, propomos esta lista de perguntas:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>Além de instalar o Sequelize no projeto, que outros pacotes npm precisamos instalar?</p>
+                     </li>
+                     <li>
+                        <p>Com que comando podemos gerar as pastas base (config. e models) dentro do projeto?</p>
+                     </li>
+                     <li>
+                        <p>Como são definidas as colunas ou atributos de uma tabela dentro de um modelo?</p>
+                     </li>
+                     <li>
+                        <p>Qual é a diferença entre os métodos findAll() e findByPk()?</p>
+                     </li>
+                     <li>
+                        <p>Para que servem os operadores - como o Like- fornecidos pela Sequelize?</p>
+                     </li>
+                     <li>
+                        <p>Como podemos gerar uma consulta que classifica os resultados e traz de volta um número limite de resultados?</p>
+                     </li>
+                  </ul>
+                  <iframe src="./Assets/Sequelize - Introdução, models e consultas básicas.html" frameborder="0"></iframe>
+                  <iframe src="./Assets/Exercício - Sequelize - Introdução, models e consultas.pdf" frameborder="0"></iframe>
+                  <iframe src="./Assets/Modelos básicos e consultas - Prática integradora.pdf" frameborder="0"></iframe>
+
+                  <h2>Arquivos com materiais para aula</h2>
+                  <p>
+                     <a href="./Assets/materiais-para-aula2 (1).zip">materiais-para-aula2 (1).zip</a>
+                  </p>
+                  <h2>Arquivo banco de dados - moviesdb</h2>
+                  <p>
+                     <a href="./Assets/materiais-para-aula3 (1).zip">materiais-para-aula3 (1).zip</a>
+                  </p>
                </display>
             </Sequelize-ao-Vivo>
          </sequelize-introducao-models-e-consultas>
 
-         <sequelize-manipulacao-de-dados></sequelize-manipulacao-de-dados>
+         <sequelize-manipulacao-de-dados>
+            <small>Sequelize - Manipulação de dados</small>
 
-         <sequelize-relacionamentos-e-crud></sequelize-relacionamentos-e-crud>
+            <Introducao>
+               <h4>Introdução</h4>
+               <display>
+                  <h1>O que veremos nessa aula?</h1>
+                  <p>
+                     Você lembra que ao trabalhar com MySQL existe a possibilidade de criar, atualizar e deletar registros de um banco de dados, certo?
+                  </p>
+                  <p>
+                     Bem, essas mesmas tarefas também podem ser executadas no Sequelize. Mas ao contrário do MySQL, no Sequelize, para modificar um registro, você terá que usar o método update() e para excluí-lo o método destroy(). A criação permanece a mesma em ambos os casos, apenas dentro do Sequelize para criar um registro, você deve usar o método create().
+                  </p>
+                  <p>
+                     Criar, atualizar ou excluir registros é uma tarefa bastante comum em sistemas de back-end e talvez, como você já sabe, esse processo é denominado CRUD, do inglês Create (Criar), Read (Ler), Update (Atualizar), Delete (Excluir).
+                  </p>
+                  <p>
+                     Assim, com tudo o que foi visto aqui, ao final desta aula você poderá:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>Implementar as tarefas de um sistema CRUD com Sequelize.</p>
+                     </li>
+                     <li>
+                        <p>Entender que os métodos destroy() e update() tem, como pré-requisito, um where.</p>
+                     </li>
+                     <li>
+                        <p>Saber como capturar as informações que trafegam na solicitação para serem salvas no banco de dados.</p>
+                     </li>
+                     <li>
+                        <p>Implementar mecanismos de controle nos cenários em que o registro não pôde ser criado ou atualizado.</p>
+                     </li>
+                  </ul>
+                  <p>
+                     Então, vamos ver como podemos realizar essas tarefas, mas desta vez com a biblioteca Sequelize.
+                  </p>
+               </display>
+            </Introducao>
+            
+            <create>
+               <h4>Create</h4>
+               <display>
+                  <h1>Create</h1>
+                  <p>
+                     Assim como acontece com as instruções do MySQL, com o método create() poderemos adicionar novos registros às nossas tabelas de banco de dados. Lembrando sempre que como argumento, este método recebe um objeto literal com os dados a serem armazenados.
+                  </p>
+                  <p>
+                     Este é talvez um dos métodos mais fáceis de usar no Sequelize, porque na verdade tudo o que você precisa fazer é passar o argumento necessário e pronto.
+                  </p>
+                  <p>
+                     Porém, como é lógico pensar, este método estará atrelado ao que foi definido no modelo, pois é assim que podemos manter a integridade dos dados que estão armazenados no BD.
+                  </p>
+                  <p>
+                     Sem mais delongas então, vamos ver como o método create() é implementado no Sequelize.
+                  </p>
+                  <video src="./Assets/Create.mp4"></video>
+                  <iframe src="./Assets/Sequelize Create.html" frameborder="0"></iframe>
+                  
+                  <exercicio>
+                     <h2>Exercício 1</h2>
+                     <p>
+                        Suponha que tenhamos um model de Sequelize chamado Usuário. Este modelo possui três atributos: nome, email, senha, todos eles do tipo string.
+                     </p>
+                     <p>
+                        O que devemos fazer é, a partir desse modelo, inserir um usuário no banco de dados indicando um valor para cada atributo.
+                     </p>
+                     <p>
+                        Para resolver isso, lembre-se de que você deve usar o método create do seu modelo.
+                     </p>
+                     <co-de>
+                        const Usuario = require('model/usuario.js');
+                        Usuario.create( {
+                            nome: "Noely Oliveira Gangello",
+                            email: "noely.gangello@gmail.com",
+                            senha: "111111"
+                        } );
+                     </co-de>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 2</h2>
+                     <p>
+                        Em certas situações, precisamos fazer mais de um registro no banco de dados. Embora possamos usar o método create várias vezes, a sequenciação facilita essa tarefa com o método bulkCreate. Este método recebe um array, em que cada posição é um objeto com as mesmas características do objeto que o método create recebe. Em outras palavras, o método bulkCreate é como o método create, mas com a vantagem de permitir a inserção de vários registros ao mesmo tempo.
+                     </p>
+                     <p>
+                        Neste exemplo, temos o model de filme. Nosso objetivo é inserir dois filmes usando o método bulkCreate. Cada filme a ser inserido deve ter um título e um gênero (para os nomes dos atributos, use "titulo" e "genero" sem acentos).
+                     </p>
+                     <co-de>
+                        const Filme = require('model/filme.js');
 
-         <sprint-vi-pi></sprint-vi-pi>
+                        Filme.bulkCreate( [
+                            {
+                                titulo: "Titanic",
+                                genero: "Romance"
+                            },
+                            {
+                                titulo: "Avatar",
+                                genero: "Ficção"
+                            }
+                        ] );
+                     </co-de>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 3</h2>
+                     <p>
+                        Neste exemplo, temos o controller produtoController que possui o método create. Ao mesmo tempo, existe um formulário com os campos nome e preço e que envia esses dados para o nosso controlador, através de uma solicitação do tipo POST.
+                     </p>
+                     <p>
+                        A ideia do exercício é poder recuperar os dois campos e usar o model do produto e inseri-los em nosso banco de dados.
+                     </p>
+                     <p>
+                        Para isso, será necessário usar o método create do modelo do produto. Como parâmetro do método, devemos passar um JSON com os atributos nome e preco (sem acentos). Teremos que recuperar os valores para esses atributos a partir da requisição.
+                     </p>
+                     <co-de>
+                        const Produto = require('model/produto.js');
+
+                        const produtoController = {
+                          create: (req, res) => {
+                            Produto.create( {
+                              nome: req.body.nome,
+                              preco: req.body.preco
+                            } );
+                          }  
+                        }
+                     </co-de>
+                  </exercicio>
+                  
+               </display>
+            </create>
+            
+            <update>
+               <h4>Update</h4>
+               <display>
+                  <h1>Update</h1>
+                  <p>
+                     Com o método update() você poderá editar os registros existentes nas tabelas do banco de dados que você está manipulando através do Sequelize.
+                  </p>
+                  <p>
+                     Este método não possui realmente nenhum segredo em si, a única coisa a saber é que necessita como argumento não apenas a informação a ser atualizada, mas também o filtro através do qual a informação de um determinado registro existente será atualizada.
+                  </p>
+                  <p>
+                     Vamos ver a implementação desse método em um projeto Express.
+                  </p>
+                  <video src="./Assets/Update.mp4"></video>
+                  <iframe src="./Assets/Sequelize Update.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <h2>Exercício 1</h2>
+                     <p>
+                        Em nossa base temos um produto chamado "Smartphone x5 MEGA PRO".  O id dele é 1.  Nosso objetivo aqui é atualizar seu preço  para o valor de 899 devido a uma promoção.
+                     </p>
+                     <p>
+                        Para esse desafio iremos usar um modelo  já definido  chamado Produto. Como vimos, o método update altera os dados em uma tabela. Este método, recebe como parâmetro dois objetos: o primeiro contendo as informações que iremos atualizar. O segundo com as condições para selecionarmos qual registro queremos alterar.
+                     </p>
+                     <co-de>
+                        const Produto = require('model/Produto.js');
+
+                        Produto.update( {
+                            preco: 899
+                        }, {
+                            where: { id: 1 }
+                        } );
+                     </co-de>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 2</h2>
+                     <p>
+                        Em determinadas circunstâncias podemos usar o método update para atualizar mais de um registro em nossa base de dados. Nesse próximo desafio queremos mudar os valores da coluna genero  de todas as séries cujo o gênero seja comédia para sitcom.
+                     </p>
+                     <p>
+                        A ideia por aqui é semelhante do nosso primeiro desafio, porém dessa vez, no nosso objeto de configuração ou query, devemos fazer um where pela coluna genero (sem acento!).
+                     </p>
+                     <co-de>
+                        const Serie = require('model/Serie.js');
+
+                        Serie.update( {
+                            genero: "sitcom"
+                        }, {
+                            where: { genero: "comédia" }
+                        } );
+                     </co-de>
+                  </exercicio>
+                  
+               </display>
+            </update>
+            
+            <destroy-soft-deletes>
+               <h4>Destroy-soft deletes</h4>
+               <display>
+                  <h1>Destroy_soft deletes</h1>
+                  <p>
+                     Como o próprio nome menciona, destroy() é um método que permite deletar registros das tabelas de um banco de dados e assim como os métodos vistos em outros tópicos, isso é realmente fácil de implementar, já que tudo o que precisa como argumento é um objeto literal que define o elemento a ser excluído. Mais uma vez, lembramos que: "não se esqueça de colocar o where no delete from".
+                  </p>
+                  <p>Vamos ver como funciona esse método simples.</p>
+                  <video src="./Assets/Destroy.mp4"></video>
+                  <iframe src="./Assets/Sequelize Destroy.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <h2>Exercício 1</h2>
+                     <p>
+                        Da mesma maneira que inserimos e atualizamos dados em nosso banco de dados, o Sequelize também nos permite excluir registros. Para esta tarefa, o método destroy pode ser utilizado em qualquer um dos nossos modelos. Este método espera como parâmetro um objeto com uma query do tipo where que permita identificar a linha a ser excluída.
+                     </p>
+                     <p>O objetivo deste exercício é remover o filme com um ID igual a 3.</p>
+                     <p></p>
+                     <co-de>
+                        const Filme = require('model/filme.js')
+
+                        Filme.destroy( {
+                            where: { id: 3 }
+                        } );
+                     </co-de>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 2</h2>
+                     <p>
+                        Da mesma maneira que um registro pode ser excluído por seu ID, o mesmo pode ser feito para alguma outra coluna que identifique exclusivamente o elemento.
+                     </p>
+                     <p>
+                        Neste exercício, excluiremos um usuário com base no seu email. O objetivo é eliminar o usuário cujo email é igual a "kenny@south-park.com"
+                     </p>
+                     <p>
+                        Para isso, usaremos o método destroy do model Usuario, passando como parâmetro uma consulta que faz um where pelo email.
+                     </p>
+                     <co-de>
+                        const Usuario = require('model/usuario.js');
+
+                        Usuario.destroy( {
+                            where: { email:"kenny@south-park.com" }
+                        } );
+                     </co-de>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 3</h2>
+                     <p>
+                        O método destroy permite, como o select, passar outros operandos para a consulta. Em vez de usar uma comparação de operador igual (a comparação padrão), podemos usar um like.
+                     </p>
+                     <p>
+                        Neste exemplo, removeremos todos os usuários cujo provedor de email é aol.com. Ou seja, aqueles cujo email termina em  "aol.com".
+                     </p>
+                     <p>
+                        Para isso, vamos executar o método de destruição do model Usuario. Dentro do where (no método destroy), vamos passar um objeto com o nome da coluna e cujo valor é um novo JSON com a seguinte sintaxe: email: {[Op.like]: '%aol.com'}
+                     </p>
+                     <co-de>
+                        const Sequelize = require('sequelize');
+                        const Usuario = require('model/usuario.js');
+                        const Op = Sequelize.Op;
+                        
+                        Usuario.destroy( {
+                            where: { email: { [Op.like]: '%aol.com'} }
+                        } );
+                     </co-de>
+                  </exercicio>
+                  
+               </display>
+            </destroy-soft-deletes>
+            
+            <ao-vivo>
+               <h4>Sequelize - Manipulação de dados [ao Vivo]</h4>
+               <display>
+                  <h1>Para aula ao vivo</h1>
+                  <p>
+                     Acabamos de concluir uma aula que retoma os conceitos do CRUD vistos algumas semanas atrás.
+                  </p>
+                  <p>
+                     Portanto, como de costume nesta fase, propomos responder a este pequeno questionário:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>Quais são os métodos fornecidos pela Sequelize para poder realizar as tarefas de um CRUD?</p>
+                     </li>
+                     <li>
+                        <p>Geralmente, de onde vêm as informações que passamos como argumento quando criamos ou editamos um registro?</p>
+                     </li>
+                     <li>
+                        <p>O que devemos lembrar de passar como argumento no método quando quisermos excluir um registro do banco de dados?</p>
+                     </li>
+                  </ul>
+                  <p>São perguntas bem simples, não são?</p>
+                  <p>
+                     Se foram fáceis de responder, então nos preparamos para a aula ao vivo. Mas se, por outro lado, não conseguir responder claramente a nenhuma delas, recomendamos voltar a ver os vídeos e suas explicações.
+                  </p>
+                  <p>Qualquer dúvida, fale com a gente!</p>
+                  <iframe src="./Assets/Sequelize métodos e relacionamentos.html" frameborder="0"></iframe>
+                  <iframe src="./Assets/Manipulação de dados - Prática integradora.pdf" frameborder="0"></iframe>
+                  <h2>Banco de dados exercício - movies_db</h2>
+                  <p><a href="./Assets/movies-db.sql" download="">movies-db.sql</a></p>
+                  <h2>Projeto express para exercicio</h2>
+                  <p><a href="./Assets/projeto-express.zip" download="">projeto-express.zip</a></p>
+               </display>
+            </ao-vivo>
+         </sequelize-manipulacao-de-dados>
+
+         <sequelize-relacionamentos-e-crud>
+            <small>Sequelize Relacionamentos e CRUD completo</small>
+
+            <introducao>
+               <h4>Introdução</h4>
+               <display>
+                  <h1>O que vamos ver nessa aula</h1>
+                  <p>
+                     Uma coisa que ainda temos que ver no pacote Sequelize são as relações e como elas são tratadas. Ao contrário do MySQL onde temos JOINS para juntar tabelas e trazer dados relacionais, em Sequelize este "join" é feito de uma maneira diferente, uma maneira muito diferente mesmo.
+                  </p>
+                  <p>
+                     Entretanto, não há necessidade de entrar em pânico, pois mesmo que seja diferente, não é nada difícil ou impossível, apenas requer algum trabalho adicional no arquivo do modelo.
+                  </p>
+                  <p>
+                     Com isto em mente, ao final desta aula teremos a capacidade de criar relacionamentos:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>De um a muitos.</p>
+                     </li>
+                     <li>
+                        <p>De muitos para muitos.</p>
+                     </li>
+                  </ul>
+                  <p>Nós também poderemos:</p>
+                  <ul>
+                     <li>
+                        <p>Consultar informações relacionais entre diferentes tabelas.</p>
+                     </li>
+                     <li>
+                        <p>Usar as relações para armazenar, modificar ou apagar dados das mesmas.</p>
+                     </li>
+                  </ul>
+                  <p>Com isto em mente, vamos mergulhar em relações de um-para-muitos e muitos-para-muitos com a Sequelize.</p>
+               </display>
+            </introducao>
+            
+            <relacao-1n>
+               <h4>Relações 1:N</h4>
+               <display>
+                  <h1>Relações 1:N</h1>
+                  <p>
+                     "Um usuário tem muitas imagens e uma imagem pertence a um usuário".
+                  </p>
+                  <p>
+                     A frase acima poderia ser usada como um modelo de negócios muito básico para o que agora conhecemos como Instagram. Dentro desse contexto, cada imagem ou fotografia que vemos nesta rede social foi postada por uma determinada pessoa e essa pessoa pode ter zero, uma ou muitas imagens associadas ao seu perfil.
+                  </p>
+                  <p>
+                     Esta é uma relação que já deveria estar clara em nossas cabeças: a relação de um para muitos, ou tradicionalmente chamada de 1 para N.
+                  </p>
+                  <p>
+                     Vejamos então como podemos, com a Sequelize, gerar este tipo de relacionamento presente em nosso banco de dados e, por sua vez, como podemos acessar os dados através deste relacionamento.
+                  </p>
+                  <video src="./Assets/Relações 1_N.mp4"></video>
+                  <iframe src="./Assets/Relações 1_N.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <h2>Exercício 1</h2>
+                     <p>
+                        Vamos imaginar que já criamos um modelo para gênero e agora queremos criar um para um filme.
+                     </p>
+                     <p>
+                        O objetivo será indicar a relação entre um filme e um gênero no modelo "Filme". Ou seja, um filme pertence a um gênero.
+                     </p>
+                     <p>
+                        Para definir isso, após a declaração do model do filme, será necessário chamar o método belongsTo, passando o model "Genero" como o primeiro parâmetro. O segundo parâmetro do método belongsTo será um objeto com a configuração para o ForeignKey e o "as" (apelido para o nome da relação). No nosso caso, a ForeignKey será a coluna chamada "genero_id" e indicaremos como alias "genero".
+                     </p>
+                     <co-de>
+                        module.exports = (sequelize, DataTypes) => {
+    
+                           const Filme = sequelize.define( 'filmes', {
+                               titulo: DataTypes.STRING,
+                               genero_id: DataTypes.INTEGER,
+                           } );
+                           
+                           Filme.associate = function( modelos ) {
+                                       
+                               Filme.belongsTo(
+                                   modelos.Genero,
+                                   {
+                                       foreignKey: "genero_id",
+                                       as: "genero"
+                                   }
+                               );
+                           }
+                       
+                          return Filme;
+                       }
+                       
+                     </co-de>
+                  </exercicio>
+                  <exercicio>
+                     <h2>Exercício 2</h2>
+                     <p>
+                        Para este exercício, nosso objetivo será, após a definição do modelo Genero, vinculá-lo ao modelo Filme.
+                     </p>
+                     <p>
+                        Nesse caso, um gênero tem muitos (has many) filmes. Para indicar isso, vamos usar o método hasMany do modelo Genero.
+                     </p>
+                     <p>
+                        Para a configuração da relação, será utilizada a coluna "genero_id" como foreignKey. Indicaremos como apelido da relação (alias) "filmes".
+                     </p>
+                     <co-de>
+                        module.exports = (sequelize, DataTypes) => {
+                           const Genero = sequelize.define('generos', {
+                               nome: DataTypes.STRING,
+                           });
+                           
+                           Genero.associate = function( modelos ) {
+                               Genero.hasMany( modelos.Filme, {
+                                   foreignKey: "genero_id",
+                                   as: "filmes"
+                               } );
+                           }
+                           
+                           return Genero;
+                       }
+                       
+                     </co-de>
+                  </exercicio>
+                  <exercicio>
+                     <h2>Exercício 3</h2>
+                     <p>
+                        Nesse exemplo teremos um modelo Filme que tem já definida uma relação com o modelo gênero.
+                     </p>
+                     <p>
+                        Queremos buscar o filme com id 1, e para isso podemos usar o método findByPk. É importante dizer que também queremos trazer o gênero do filme em nossos resultados.
+                     </p>
+                     <p>
+                        Para conseguir isso, devemos passar como segundo parâmetro do método findByPk um objeto com o atributo include. O atributo include será um array com a lista de todos os relacionamentos que queremos trazer associados ao filme, no nosso caso, apenas o relacionamento genero.
+                     </p>
+                     <p>
+                        E para nosso desafio se concluir, você deverá dar um console.log no atributo que contem o nome do gênero: filme.genero.nome
+                     </p>
+                     <co-de>
+                        const Filme = require('model/Filme.js');
+
+                        Filme.findByPk( 1, { include: ['genero'] } )
+                        .then( filme => console.log( filme.genero.nome ) );
+                     </co-de>
+                  </exercicio>
+               </display>
+            </relacao-1n>
+            
+            <relacao-nm>
+               <h4>Relações N:M</h4>
+               <display>
+                  <h1>Relações N:M</h1>
+                  <p>
+                     "Um ator trabalha em muitos filmes e um filme tem muitos atores."
+                  </p>
+                  <p>
+                     Este é o contexto tradicional de relacionamentos muitos-para-muitos ou também chamadas de N para M.
+                  </p>
+                  <p>
+                     Esse tipo específico de relacionamento armazena dados relacionados em uma tabela intermediária, também chamada de tabela dinâmica. Mas, como podemos, a partir do Sequelize, acessar os dados da referida tabela?
+                  </p>
+                  <p>
+                     Essa resposta é justamente aquela que vamos resolver no próximo átomo do vídeo, então prepare um lápis e papel, tome nota e fique atento aos conceitos que veremos a seguir.
+                  </p>
+                  <video src="./Assets/Relações NM.mp4"></video>
+                  <iframe src="./Assets/Relações NM.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <h2>Exercício 1</h2>
+                     <p>
+                        Depois de criar o model dinâmico, devemos estabelecer um relacionamento do tipo belongsTo com cada um dos modelos relacionados.
+                     </p>
+                     <p>
+                        Em nosso exemplo, precisaríamos adicionar um belongsTo com Filme e outro com Ator. Como em todos os belongsTo, o primeiro parâmetro será o nome do model e o segundo um JSON indicando a ForeignKey (não é necessário definir "as").
+                     </p>
+                     <co-de>
+                        const Sequelize = require('sequelize');
+                        const sequelize = require('../database'); 
+                        const Ator = require('model/ator.js');
+                        const Filme = require('model/filme.js');
+                        
+                        const FilmeAtor = sequelize.define('filme_ator',{
+                            pelicula_id: {
+                               type: Sequelize.INTEGER,
+                               references: {
+                                  model: 'Filme',
+                                  key: 'id'
+                               }
+                            },
+                            ator_id: {
+                               type: Sequelize.INTEGER,
+                               references: {
+                                  model: 'Ator',
+                                  key: 'id'
+                               }
+                            }
+                        });
+                        
+                        FilmeAtor.belongsTo(
+                           Filme,
+                           {
+                              foreignKey: "filme_id"
+                           }
+                        );
+                        
+                        FilmeAtor.belongsTo(
+                           Ator,
+                           {
+                              foreignKey: "ator_id"
+                           }
+                        );
+                        
+                        module.exports = FilmeAtor;
+                     </co-de>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 2</h2>
+                     <p>
+                        O objetivo deste exercício é relacionar o modelo do filme e ator através de um relacionamento muitos-para-muitos (N-M).
+                     </p>
+                     <p>
+                        Para indicar isso, vamos usar o método belongsToMany no modelo Filme. Não se esqueça que devemos executar esse método dentro da função associate.
+                     </p>
+                     <p>
+                        Para a configuração da relação, a ForeignKey será a coluna filme_id, com alias "atores" e a tabela intermediaria será o modelo FilmeAtor.
+                     </p>
+                     <co-de>
+                        module.exports = (sequelize, DataTypes) =>{
+                           const Filme = sequelize.define('filmes',{
+                               titulo: DataTypes.STRING,
+                               genero_id: DataTypes.INTEGER,
+                           });
+                         
+                         Filme.associate = ( models => {
+                               Filme.belongsToMany(
+                                   models.Ator,
+                                   {
+                                       as: 'atores',
+                                       foreignKey: 'filme_id',
+                                       through: "FilmeAtor"
+                                   }
+                               )
+                           } );
+                       
+                          return Filme
+                       }
+                       
+                     </co-de>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 3</h2>
+                     <p>
+                        Neste exemplo, temos o modelo de filme que tem um relacionamento muitos-para-muitos com o ator.
+                     </p>
+                     <p>Queremos trazer todas as informações do filme com id junto com os atores que ele associou.</p>
+                     <p>
+                        Para conseguir isso, devemos passar como segundo parâmetro do método findByPk um JSON com o atributo include. O atributo include será um array com a lista de todos os relacionamentos que queremos trazer associados ao filme, no nosso caso, apenas o relacionamento "atores".
+                     </p>
+                     <p>
+                        Finalmente, imprimiremos dentro do método e, em seguida, um console.log que nos mostra os atores do filme: filme.atores.
+                     </p>
+                     <p>
+                        Como o relacionamento é de muitos para muitos, o atributo de atores será do tipo de array.
+                     </p>
+                     <co-de>
+                        const Filme = require('model/filme.js');
+
+                        Filme.findByPk(
+                            1,
+                            {
+                                include: [ "atores" ]
+                            }
+                        ).then( filme => console.log( filme.atores ) );
+                     </co-de>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 4</h2>
+                     <p>
+                        Ao criar o relacionamento do tipo belongsToMany entre a sequenciação Filme e Ator, fornecemos os métodos setAtores, que permitem vincular um filme a um ou mais atores.
+                     </p>
+                     <p>
+                        Neste exemplo, já temos uma instância de filme. O que faremos na instância do filme, execute o método setAtores, passando como parâmetro um array com os IDs dos atores que queremos vincular. Isso gerará automaticamente os registros na tabela dinâmica.
+                     </p>
+                     <p>
+                        Link atores 3, 5 e 8
+                     </p>
+                     <co-de>
+                        const Filme = require('model/filme.js');
+
+                        Filme.findByPk(1).then(filme => {
+                           filme.setAtores( 
+                              [ 3, 5, 8 ]
+                            );
+                        });
+                     </co-de>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 5</h2>
+                     <p>
+                        No MySQL, ao indicar relacionamentos muitos para muitos, é necessário criar uma tabela dinâmica. Algo semelhante acontece com Sequelize. Para relacionar dois models por meio da relação belongsToMany, devemos primeiro criar um model "dinâmico".
+                     </p>
+                     <p>
+                        Neste exemplo, queremos relacionar os models de filme e ator. Para isso, vamos criar o modelo FilmeAtor. Como na criação de qualquer model, o primeiro parâmetro é o nome da tabela, neste caso: "filme_ator". Como segundo parâmetro, passamos a JSON as colunas e suas propriedades. Sendo a representação de uma tabela dinâmica, ela terá duas colunas "filme_id" e "ator_id".
+                     </p>
+                     <p>
+                        Além de indicar que cada uma dessas colunas é um número inteiro, devemos definir o parâmetro references indicando os atributos do model e key. O model será com qual model está relacionado e a chave para qual coluna ele aponta.
+                     </p>
+                     <p>
+                        Para a coluna filme_id, o model será "Filme" e a key "id". Enquanto para a coluna ator_id, o model será "Ator" e a key "id".
+                     </p>
+                     <p>
+                        Mãos à obra.
+                     </p>
+                     <co-de>
+                        const Sequelize = require('sequelize');
+                        const sequelize = require('../database'); 
+                        
+                        const FilmeAtor = sequelize.define(
+                            "filme_ator",
+                            {
+                                filme_id: {
+                                    type: Sequelize.INTEGER,
+                                    references: {
+                                        model: 'Filme', key: 'id'
+                                    }
+                                },
+                                ator_id: {
+                                    type: Sequelize.INTEGER,
+                                    references: {
+                                        model: 'Ator', key: 'id'
+                                    }
+                                }
+                            }
+                        );
+                        
+                        module.exports = FilmeAtor;
+                     </co-de>
+                  </exercicio>
+                  
+               </display>
+            </relacao-nm>
+            
+            <crud>
+               <h4>CRUD</h4>
+               <display>
+                  <h1>CRUD</h1>
+                  <p>
+                     Já falamos várias vezes sobre o que é CRUD e a importância desse processo em nosso back-end. E mais uma vez voltamos a esse conceito.
+                  </p>
+                  <p>Desta vez trazemos uma sequência completa de código que busca mostrar do zero cada um dos passos necessários para podermos implementar este sistema em nossos desenvolvimentos.</p>
+                  <p>Vamos preparar um bom café, lápis e papel e fazer anotações, pois o que veremos a seguir nos ajudará a aplicar os mesmos conceitos em nosso projeto integrador. Uma vez que embora este átomo de vídeo dure mais tempo do que o normal, pensamos que é um recurso inestimável em face do que você está realizando no curso.</p>
+                  <sub>
+                     Recomendamos anotar todos os passos necessários para criar um CRUD completo já
+que isso vai nos servir para realizar os exercícios.
+                  </sub>
+                  <video src="./Assets/CRUD - Modelagem.mp4"></video>
+                  <video src="./Assets/CRUD - Create e Read.mp4"></video>
+                  <video src="./Assets/CRUD - Update e Delete.mp4"></video>
+
+                  <h2>CRUD com SQL</h2>
+                  <iframe src="https://view.genial.ly/605d48dfb628210cfd6cbcf2" frameborder="0"></iframe>
+               </display>
+            </crud>
+            
+            <raw-queries>
+               <h4>Raw Queries</h4>
+               <display>
+                  <h1>Raw Queries</h1>
+                  <p>
+                     Mesmo o Sequelize sendo bastante completo para os procedimentos do dia-a-dia, em alguns momentos, quando precisamos de operações mais específicas, acaba sendo mais fácil escrever queries literais, e é para isso que servem as chamadas raw queries.
+                  </p>
+                  <p>
+                     Esta maneira mais livre de escrever SQL no código JavaScript permite que não fiquemos presos apenas nas funções pré-definidas do ORM, o que torna o Sequelize ainda mais poderoso para lidar com o banco de dados, uma vez que ele se torna flexível o bastante para se adequar à qualquer situação.
+                  </p>
+                  <p>
+                     Então, vamos ao que interessa!
+                  </p>
+                  <video src="./Assets/Raw Queries.mp4"></video>
+                  <iframe src="./Assets/Sequelize Raw Queries.html" frameborder="0"></iframe>
+               </display>
+            </raw-queries>
+            
+            <ao-vivo>
+               <h4>Sequelize - Relacionamentos e CRUD completo [ao Vivo]</h4>
+               <display>
+                  <h1>Para a aula ao vivo</h1>
+                  <p>
+                     Outro capítulo encerrado neste belo e maravilhoso caminho de desenvolvimento do Full Stack. Desta vez aprendemos muitas coisas sobre os processos naturais que acontecem em qualquer sistema do tipo CRUD.
+                  </p>
+                  <p>
+                     Com isto em mente, e pensando na aula ao vivo que está por vir, propomos fazer uma auto-avaliação para se ter um termômetro de quão claros estes conceitos eram:
+                  </p>
+                  <p>
+                     Dentro do ambiente Sequelize, onde em nosso código estão definidas as relações entre os diferentes modelos?
+                  </p>
+                  <ul>
+                     <li>
+                        <p>Em Sequelize, qual é o nome do método que funciona com a relação de 1:N?</p>
+                     </li>
+                     <li>
+                        <p>E o método que funciona com a relação N:1, qual é seu nome?</p>
+                     </li>
+                     <li>
+                        <p>Finalmente, qual é o método Sequelize que funciona com as relações N:M?</p>
+                     </li>
+                  </ul>
+                  <p>
+                     Desta vez, estas não são tantas perguntas, mas são importantes para poder enfrentar a classe ao vivo e o desafio final que visa medir os conceitos-chave deste pequeno módulo.
+                  </p>
+                  <p>
+                     Por esta razão, se alguns destes conceitos ainda estiverem um pouco confusos em nossas mentes, recomendamos que revisemos o material novamente para chegarmos prontos para a próxima aula.
+
+                  </p>
+                  <p>
+                     Até a próxima!
+                  </p>
+                  <iframe src="./Assets/Sequelize relações e CRUD.html" frameborder="0"></iframe>
+                  <h2>Prática integradora</h2>
+                  <iframe src="./Assets/Relaçoõs e CRUD - Prática integradora.pdf" frameborder="0"></iframe>
+
+                  <h2>Material para exercício</h2>
+                  <p><a href="./Assets/07. materiais-para-aula (1).zip" download="">07. materiais-para-aula (1).zip</a></p>
+                  <h2>Banco de dados exercício - movies_db</h2>
+                  <p><a href="./Assets/08. movies-db.sql" download="">08. movies-db.sql</a></p>
+               </display>
+            </ao-vivo>
+            
+            <materiais-para-download>
+               <h4>Materiais para download</h4>
+               <display>
+                  <h1>Material para download</h1>
+
+                  <iframe src="./Assets/Banco de Dados.pdf" frameborder="0"></iframe>
+               </display>
+            </materiais-para-download>
+         </sequelize-relacionamentos-e-crud>
+
+         <sprint-vi-pi>
+            <display>
+               <h1>Aula Prática</h1>
+               <sub>
+                  O objetivo dessa aula é colocarmos em prática o que aprendemos nesse módulo!
+               </sub>
+            </display>
+         </sprint-vi-pi>
 
 
       </modulo>
@@ -2647,29 +3895,3 @@ no tópico anterior, dentro do MySQL Workbench e utilizá-lo normalmente.
    </body>
 </html>
 
-<!-- <style>
-   img { width: 100%; }
-</style>
-
-<script>
-   addEventListener( "load", ev => {
-
-      let 
-         rightAnswers = $$( "[choice]" ),
-         videoTags = $$( "video" )
-      ;
-
-      rightAnswers.forEach( ra => {
-         if( ra.getAttribute( "choice" ) != "" ) {
-            ra.querySelector( "input" ).setAttribute( "checked", "checked" );
-            ra.setAttribute( "choice", "certa" );
-            _( "checked" );
-         }
-      } );
-
-      videoTags.forEach( vt => {
-         vt.setAttribute( "controls", "controls" );
-      } );
-
-   } );
-</script> -->
