@@ -131,12 +131,19 @@ Info do curso
 https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/1f162c2a-2203-4695-94ad-a6c3582ba75b/lesson/03325f89-12f5-4eec-a31b-d79f68096504/topic/985f2a27-2f71-4ca4-811c-9b647c5fe960
 
 
+Manual do Houser
+https://drive.google.com/file/d/1XkUEbO3dhjdGcrUDaNCyf-OS529G4kGr/view?usp=sharing
+
 modulos
 
+1
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/9b68f362-d299-40b4-a46a-5300b46fb1e0/lesson/bd76b7c7-0a23-4d17-8951-e80d872ce2f3/topic/0bf235f9-9244-4ea3-ab4c-8477e8bf2fe6
+
 2
-https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/1f162c2a-2203-4695-94ad-a6c3582ba75b/lesson/03325f89-12f5-4eec-a31b-d79f68096504/topic/985f2a27-2f71-4ca4-811c-9b647c5fe960
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/17e442d7-27a2-4ae1-9fc9-0e622019a33c/lesson/35a2db51-509e-4b30-a656-fdb7697653de/topic/a9f87540-45f8-4f33-a6d6-a7ac2cc4ce09
 
 3
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/1f162c2a-2203-4695-94ad-a6c3582ba75b/lesson/eda688e2-ac8c-4f65-a90e-bf50e440e166/topic/eff4e68f-a670-41d3-aaa7-26d4c4ef632f
 
 4
 https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/1f162c2a-2203-4695-94ad-a6c3582ba75b/lesson/03325f89-12f5-4eec-a31b-d79f68096504/topic/985f2a27-2f71-4ca4-811c-9b647c5fe960
@@ -144,9 +151,24 @@ https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf728
 https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/1d339eed-4116-4959-9e50-5f4b07aa25d9/lesson/45afe35b-1d4a-4c26-baef-f232eeb221c1/topic/6528326a-5ceb-415a-8f59-ef2eb4497cd8
 
 
+5
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/274eaae7-e910-447c-8606-3c8f820abc5b/lesson/2684f587-42c7-4f15-b179-4cab34d53b25/topic/2c6844cb-b161-45a9-b2f8-0237a1660364
+
+6
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/c33ab4f2-c489-4196-b927-e2cd67d2cc7f/lesson/2b246175-0741-44cd-b680-43818f58d22a/topic/2dc0759a-6dd3-4f4b-9ae1-89ccf4cf73f1
 
 
+7
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/72d69c0f-73d7-4a5e-a491-87d1de5c5bae/lesson/267b4636-7ae2-4ccc-b313-40176837938e/topic/45db894c-fede-4dc0-a368-0740a9e35015
 
+8
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/06d9212a-bb25-43de-9853-cc65e6008582/lesson/61c97adf-bbd5-4afc-818a-cb91466e5df0/topic/6471d0fd-90e2-4802-b4bf-991eed4e6909
+
+9
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/9d0bfb67-d504-405a-9ead-cb2bef907008/lesson/cdeb847c-dfd7-4ce4-91a1-23be69c3bbaa/topic/21e2f15a-7550-4bea-85c5-64b853d8c4e0
+
+10
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/dcdbaa5e-2b7a-477c-b3a8-b50f0796080f/lesson/d9bc70ad-7454-4dfa-87b8-dd3eeaabb8b9/topic/24e4b8af-2695-41d2-bd22-ba26c9b2843b
 
 
 
