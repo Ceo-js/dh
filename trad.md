@@ -7,7 +7,7 @@
 (exercicio>display>h2{Exercício $}+p*2+co-de^^{})
 
 <!-- quiz -->
-quiz>header>h2{Quiz}+question>h4^^home>header>p[n]^choices>label[choice]>input[type="radio"]+t^^res>p
+quiz>header>h2{Quiz}+question>h4^^(home>header>p[n]^choices>label[choice]>input[type="radio"]+t^^res>p)
 
 
 <!-- troca html para os slides -->

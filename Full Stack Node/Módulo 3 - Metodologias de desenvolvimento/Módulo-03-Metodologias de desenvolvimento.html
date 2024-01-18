@@ -447,17 +447,715 @@
                </display>
             </criando-seu-primeiro-repo>
 
-            <confirmando-arquivos></confirmando-arquivos>
+            <confirmando-arquivos>
+               <small>Confirmando arquivos</small>
+               <display>
+                  <h1>Confirmando arquivos</h1>
+                  <p>
+                     Quando trabalhamos com arquivos de forma contínua, é comum termos o costume de salvá-los automaticamente ou, de tempos em tempos, solicitar que o programa os salve (o famoso ctrl+s). Quando usamos o git, o ato de confirmar as modificações de um arquivo é de maior importância, já que é isso que nos permite estabelecer um ponto de controle.
+                  </p>
+                  <p>
+                     Agora vamos aprender como executar isso.
+                  </p>
+                  <p>Vamos lá!</p>
+                  <video src="./Assets/Confirmando arquivos.mp4"></video>
+                  <iframe src="./Assets/Confirmando arquivos.html" frameborder="0"></iframe>
 
-            <adding-files></adding-files>
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>GIT_confirmando_arquivos_questionario</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Um commit tem...</p>
+                        </header>
+                        <choices>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>Data e autor</t>
+                           </label>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>Data, autor e computador</t>
+                           </label>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>Data e mensagem</t>
+                           </label>
+                           <label for="" choice="sgd">
+                              <input type="radio">
+                              <t>Data, autor e mensagem</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem! Sempre que carregamos arquivos (novos ou modificados) em um Repositório Remoto, eles são carregados na forma de um pequeno pacote de modificação de arquivos. Cada pacote possui uma data de criação (registro de data e hora) e um autor.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Com git...</p>
+                        </header>
+                        <choices>
+                           <label for="" choice="dgsd">
+                              <input type="checkbox">
+                              <t>Podemos ter uma ordem cronológica do projeto.</t>
+                           </label>
+                           <label for="" choice="dgsd">
+                              <input type="checkbox">
+                              <t>Podemos reverter as alterações e retornar ao estado anterior.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>
+                              A ideia com o git é poder ter um histórico em ordem cronológica das alterações feitas.
+                              <br>
+                              Este é um dos conceitos-chave de um sistema de gerenciamento de versões: poder voltar à um estado anterior, como se você estivesse fazendo uma viagem no tempo.
+                           </p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Selecione a ordem correta para manter as alterações em produtos.js.</p>
+                        </header>
+                        <choices>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>git add produtos.js —> modifica o arquivo —> git commit -m "Carrinho alterado"</t>
+                           </label>
+                           <label for="" choice="dgs">
+                              <input type="radio">
+                              <t>git add produtos.js —> modifica o arquivo —> git add produtos.js —> git commit -m "Carrinho alterado"</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="4">
+                              Convidamos você a colocar em prática o que foi visto com alguns pequenos passos!!!
+                              <br></br>
+                              O Git é aprendido com a prática e é normal errar! Por isso praticaremos um pouco mais.
+                              <br></br>
+                              PASSO 1: Copie do terminal todas as linhas de comando que você vai executar e cole todo texto resultante de seus comandos. Os comandos que devem ser executados seguem abaixo:
+                           </p>
+                           <ol>
+                              <li>
+                                 <p>Crie a pasta "OpenMarket" com o comando mkdir.</p>
+                              </li>
+                              <li>
+                                 <p>Entre na pasta com o comando cd.</p>
+                              </li>
+                              <li>
+                                 <p>Crie um repositório local utilizando o comando correspondente. Lembra qual é?</p>
+                              </li>
+                              <li>
+                                 <p>Crie um arquivo produtos.js.</p>
+                              </li>
+                              <li>
+                                 <p>Execute o comando git status e analise sua saída.</p>
+                              </li>
+                           </ol>
+                           <p></p>
+                        </header>
+                        <choices>
+                           <co-de>
+                              $ mkdir OpenMarket <br>
+   
+                              Noely@Ceo MINGW64 ~/Documents/Digital House/web-full-stack/playground/Módulo  3/git (main) <br>
+                              $ cd OpenMarket/ <br>
+                               <br>
+                              Noely@Ceo MINGW64 ~/Documents/Digital House/web-full-stack/playground/Módulo  3/git/OpenMarket (main) <br>
+                              $ git init <br>
+                              Initialized empty Git repository in C:/Users/Noley/Documents/Digital House/web-full-stack/playground/Módulo  3/git/OpenMarket/.git/ <br>
+                               <br>
+                              Noely@Ceo MINGW64 ~/Documents/Digital House/web-full-stack/playground/Módulo  3/git/OpenMarket (main) <br>
+                              $ touch produtos.js <br>
+                              
+                              Noely@Ceo MINGW64 ~/Documents/Digital House/web-full-stack/playground/Módulo  3/git/OpenMarket (main) <br>
+                              $ git status <br>
+                              On branch main <br>
+                               <br>
+                              No commits yet <br>
+                               <br>
+                              Untracked files: <br>
+                                (use "git add <file>..." to include in what will be committed) <br>
+                                      produtos.js <br>
+                               <br>
+                              nothing added to commit but untracked files present (use "git add" to track)
+                           </co-de>
+                        </choices>
+                        <res>
+                           <p>Em breve, esses comandos serão tão naturais como entrar em qualquer site na web.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="5">
+                              PASSO 2: Continuando do ponto anterior, no terminal, execute os comandos a seguir. Copie e cole todos os textos. Isso inclui os seus comandos e as saídas que resultam deles.
+                           </p>
+                           <ol>
+                              <li>
+                                 <p>Adicione produtos.js ao git usando git add produtos.js.</p>
+                              </li>
+                              <li>
+                                 <p>Execute o git status e compare com o resultado anterior.</p>
+                              </li>
+                              <li>
+                                 <p>Execute um git commit  -m "meu primeiro commit"</p>
+                              </li>
+                              <li>
+                                 <p>Agora execute um git status e compare os resultados com os anteriores.</p>
+                              </li>
+                           </ol>
+                        </header>
+                        <choices>
+                           <co-de>
+                              $ git add produtos.js <br>
+                               <br>
+                              Noely@Ceo MINGW64 ~/Documents/Digital House/web-full-stack/playground/Módulo  3/git/OpenMarket (main) <br>
+                              $ git status <br>
+                              On branch main <br>
+                               <br>
+                              No commits yet <br>
+                               <br>
+                              Changes to be committed: <br>
+                                (use "git rm --cached <file>..." to unstage) <br>
+                                      new file:   produtos.js <br>
+                               <br>
+                               <br>
+                              Noely@Ceo MINGW64 ~/Documents/Digital House/web-full-stack/playground/Módulo  3/git/OpenMarket (main) <br>
+                              $ git commit -m "meu primeiro commit" <br>
+                              [main (root-commit) b903658] meu primeiro commit <br>
+                               1 file changed, 0 insertions(+), 0 deletions(-) <br>
+                               create mode 100644 produtos.js <br>
+                               <br>
+                              Noely@Ceo MINGW64 ~/Documents/Digital House/web-full-stack/playground/Módulo  3/git/OpenMarket (main) <br>
+                              $ git status <br>
+                              On branch main <br>
+                              nothing to commit, working tree clean
+                           </co-de>
+                        </choices>
+                        <res>
+                           <p>Em breve, esses comandos serão tão naturais como entrar em qualquer site na web.</p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </confirmando-arquivos>
 
-            <pushing-files></pushing-files>
+            <adding-files>
+               <small>Adicionando arquivos</small>
+               <display>
+                  <h1>Adicionando arquivos</h1>
+                  <p>Agora, já aprendemos como criar nosso repositório e confirmar nossos arquivos, mas ainda precisamos entender como adicionar novos arquivos ao nosso projeto. Como funciona isso? Para que o git acompanhe as mudanças em um arquivo, temos que dizer para quais arquivos queremos que ele olhe.</p>
+                  <p>E como se faz isso?</p>
+                  <p>Para descobrir, veja o seguinte vídeo!</p>
+                  <video src="./Assets/Como adicionar arquivos.mp4"></video>
+                  <iframe src="./Assets/Como adicionar arquivos.html" frameborder="0"></iframe>
 
-            <pulling-files></pulling-files>
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>GIT_adicionando_arquivos_questionario_v0.1</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Como salvar as alterações no Git de forma versionada?</p>
+                        </header>
+                        <choices>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>Arquivo ? Guardar</t>
+                           </label>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>Se guardam sozinhos</t>
+                           </label>
+                           <label for="" choice="fdfd">
+                              <input type="radio">
+                              <t>Commits</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem! É através dos commits que poderemos rastrear as alterações feitas nos projetos, pois cada uma delas gera um ponto cronológico na linha do tempo do projeto.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Como adiciono arquivos no git?</p>
+                        </header>
+                        <choices>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>Se adicionam sozinhos</t>
+                           </label>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>git commit</t>
+                           </label>
+                           <label for="" choice="fdsd">
+                              <input type="radio">
+                              <t>git add</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Se eu tiver o arquivo products.js, adicioná-lo ao git usando o comando git add e modificá-lo posteriormente...</p>
+                        </header>
+                        <choices>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>Não há nada a fazer, ele já foi adicionado.</t>
+                           </label>
+                           <label for="" choice="dgs">
+                              <input type="radio">
+                              <t>Preciso adicioná-lo novamente ao commit com outro git add.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem!. Toda vez que você deseja salvar o status de um arquivo e o git o grava, você deve executar uma um git add</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="4">
+                              Convidamos você a colocar em prática o que vimos em duas etapas!
+                           </p>
+                           <p>PASSO 1: Faça o passo a passo que está abaixo em seu terminal, então copie e cole todo o texto aqui. Isso inclui o que você digitou no terminal e o texto que ele retorna.</p>
+                           <ol>
+                              <li>
+                                 <p>Crie uma pasta usando o comando mkdir.</p>
+                              </li>
+                              <li>
+                                 <p>Entre na pasta usando o comando cd.</p>
+                              </li>
+                              <li>
+                                 <p>Crie um repositório local usando o comando git init</p>
+                              </li>
+                              <li>
+                                 <p>Crie um arquivo app.js (não é necessário usar o terminal aqui).</p>
+                              </li>
+                              <li>
+                                 <p>Execute o comando git status (analise o retorno desse comando).</p>
+                              </li>
+                           </ol>
+                        </header>
+                        <choices>
+                           <co-de>
+                              $ mkdir nova-pasta
 
-            <guia-pratico></guia-pratico>
+                              Noely@Ceo MINGW64 ~/Documents/Digital House/web-full-stack/playground/Módulo  3/git (main)
+                              $ cd nova-pasta/
+                              
+                              Noely@Ceo MINGW64 ~/Documents/Digital House/web-full-stack/playground/Módulo  3/git/nova-pasta (main)
+                              $ git init
+                              Initialized empty Git repository in C:/Users/Noley/Documents/Digital House/web-full-stack/playground/Módulo  3/git/nova-pasta/.git/
+                              
+                              Noely@Ceo MINGW64 ~/Documents/Digital House/web-full-stack/playground/Módulo  3/git/nova-pasta (main)
+                              $ touch app.js
+                              
+                              Noely@Ceo MINGW64 ~/Documents/Digital House/web-full-stack/playground/Módulo  3/git/nova-pasta (main)
+                              $ git status
+                              On branch main
+                              
+                              No commits yet
+                              
+                              Untracked files:
+                                (use "git add &lt;file&gt;..." to include in what will be committed)
+                                      app.js
+                              
+                              nothing added to commit but untracked files present (use "git add" to track)
+                           </co-de>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="5">
+                              PASSO 2: Faça os seguintes comandos no terminal, copie e cole todo o texto aqui. Isso inclui o que você digitou no terminal e o texto que ele retorna.
+                           </p>
+                           <ol>
+                              <li>
+                                 <p>Adicione app.js ao git usando o git add app.js.</p>
+                              </li>
+                              <li>
+                                 <p>Execute o git status e compare com o resultado anterior.</p>
+                              </li>
+                           </ol>
+                        </header>
+                        <choices>
+                           <co-de>
+                              $ git add app.js
 
-            <git-ao-vivo></git-ao-vivo>
+                              Noely@Ceo MINGW64 ~/Documents/Digital House/web-full-stack/playground/Módulo  3/git/nova-pasta (main)
+                              $ git status
+                              On branch main
+                              
+                              No commits yet
+
+                              Changes to be committed:
+                                (use "git rm --cached &lt;file&gt;..." to unstage)
+                                      new file:   app.js
+                           </co-de>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </adding-files>
+
+            <pushing-files>
+               <small>Subindo arquivos</small>
+               <display>
+                  <h1>Subindo arquivos</h1>
+                  <p>Você já fez todas as modificações no código, resolveu todos os erros e bugs existentes. Finalizou as novas funcionalidades e adicionou ao git, só falta subir os arquivos para compartilhar com a sua equipe, que está ansiosa para testar os novos recursos.</p>
+                  <p>Mas a questão é: como vou subir essas mudanças no git? Que comando eu uso, como eu sei que está certo?</p>
+                  <p>No vídeo abaixo, vamos descobrir como compartilhar o código do repositório local.</p>
+                  <video src="./Assets/Como subir arquivos.mp4"></video>
+                  <iframe src="./Assets/Como subir arquivos.html" frameborder="0"></iframe>
+
+                  <hr>
+
+                  <h2>Usuário e senha? De onde?</h2>
+                  <p>Quando executamos os comandos do vídeo pela primeira vez, você pode ter uma certa dificuldade.</p>
+                  <p>
+                     Como estamos utilizando o modo HTTPS, o GitHub precisa saber quem é você antes de aceitar que os commits feitos no seu repositório local sejam adicionados ao repositório remoto.
+                  </p>
+                  <sub>
+                     Tá bom. Mas pra que serve a configuração que eu fiz há duas aulas atrás? Não
+é pra isso?
+                  </sub>
+                  <p>
+                     Infelizmente, a resposta é não.
+                  </p>
+                  <p>
+                     Ele serve, sim, para identificar quem fez o commit, sendo que se você não fizer essa configuração, na hora de confirmar os arquivos, o git emitirá um erro.
+                  </p>
+                  <p>
+                     Mas o que vai para o GitHub é um "pacotinho", então ele espera que você se identifique. Senão, qualquer um poderia enviar código para repositórios que não são seus, o que seria um problemão!
+                  </p>
+                  <p>
+                     Então, na primeira vez que você enviar commits para o GitHub, usando o HTTPS, ele vai te exigir um usuário e senha, que são os mesmos que você configurou quando criou sua conta no GitHub \o/.
+                  </p>
+                  <p>
+                     Depois disso, aquele repositório não vai mais pedir senha ao enviar commits.
+                  </p>
+                  <sub>
+                     Treine bastante o uso de senha e, quando estiver confortável, pesquise sobre chaves
+SSH, para evitar digitar senha a todo momento. Esse é o modo mais profissional e o
+mais usado no mercado.
+<br></br>
+Com as chaves SSH, você pode trocar de senha tranquilamente, sem dor de cabeça
+com todos os repositórios que você teria que trocar.
+                  </sub>
+                  <p>
+                     A 
+                     <a href="https://docs.github.com/pt/github/authenticating-to-github/connecting-to-github-with-ssh">
+                        documentação do GitHub sobre chaves SSH
+                     </a>
+                     é excelente para começar sua pesquisa. Recomendamos a leitura.
+                  </p>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>GIT_subindo_arquivos_questionario</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Com que comando eu envio os arquivos do meu repositório para o Github?</p>
+                        </header>
+                        <choices>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>v</t>
+                           </label>
+                           <label for="" choice="df">
+                              <input type="radio">
+                              <t>git push</t>
+                           </label>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>
+                                 git pull</t>
+                           </label>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>git commit</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Em git, o que é uma branch?</p>
+                        </header>
+                        <choices>
+                           <label for="df" choice="">
+                              <input type="radio">
+                              <t>É uma linha paralela para adicionar funcionalidades sem afetar a branch principal.</t>
+                           </label>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>Cria uma linha paralela local e nunca na nuvem.</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p>Muito bem! É uma prática muito boa criar uma branches para trabalhar em uma nova funcionalidade, para que não afetemos o projeto até que ela seja concluída.</p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Para o git...</p>
+                        </header>
+                        <choices>
+                           <label for="" choice="dfs">
+                              <input type="radio">
+                              <t>o repositório remoto é chamado "origin"</t>
+                           </label>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>o repositório remoto se chama de remote</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </pushing-files>
+
+            <pulling-files>
+               <small>Baixando arquivos</small>
+               <display>
+                  <h1>Baixando arquivos</h1>
+                  <p>
+                     Ufa! Quanta coisa aprendemos até aqui! A realidade é que o Git pode parecer complicado no início, mas acredite, você vai aprender uma coisa nova com ele todo dia e isso vai facilitar muito a sua vida. Mas o que falta aprendermos agora?
+                  </p>
+                  <p>
+                     Vamos imaginar o seguinte cenário: você subiu todo o projeto com as alterações no repositório do GitHub, deu aquele push e foi para casa. Mas aconteceu um problema e você precisa ajustar o projeto em pleno final de semana sem o seu computador do trabalho, onde estão todos os seus arquivos. O que fazer? O Git, sendo maravilhoso, lhe permite baixar o seu repositório da nuvem a partir da sua máquina pessoal.
+                  </p>
+                  <p>
+                     Mas como eu posso fazer isso?
+                  </p>
+                  <p>No vídeo abaixo, vamos lhe ensinar como fazer isso e resolver seus problemas de vez!</p>
+                  <video src="./Assets/Como baixar arquivos.mp4"></video>
+                  <iframe src="./Assets/baixarndo arquivos.html" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Baixando arquivos com Git v0.2</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Como faço para baixar um repositório pela primeira vez?</p>
+                        </header>
+                        <choices>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>git pull origin master</t>
+                           </label>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>git pull "url do projeto"</t>
+                           </label>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>git clone origin master</t>
+                           </label>
+                           <label for="" choice="asfa">
+                              <input type="radio">
+                              <t>git clone "url do projeto"</t>
+                           </label>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>git "url do projeto"</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Como atualizo o código no meu repositório local?</p>
+                        </header>
+                        <choices>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>git clone origin master</t>
+                           </label>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>git clone "url do projeto"</t>
+                           </label>
+                           <label for="" choice="fa">
+                              <input type="radio">
+                              <t>git pull origin master</t>
+                           </label>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>git pull master origin</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Qual a diferença dos comandos git clone e git pull?</p>
+                        </header>
+                        <choices>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>git clone é usado para pegar as útlimas atualizações, enquanto o git pull serve para pegar o repositório pela primeira vez</t>
+                           </label>
+                           <label for="" choice="gsd">
+                              <input type="radio">
+                              <t>git pull é usado para pegar as útlimas atualizações, enquanto o git clone serve para pegar o repositório pela primeira vez</t>
+                           </label>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t>Não há diferença entre os comandos, eles fazem a mesma coisa</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="4">
+                              Convidamos você a colocar em prática o que é visto, nos próximos dois exercícios!
+                           </p>
+                           <p>PASSO 1: Faça o seguintes passos e mantenha o terminal aberto.</p>
+                           <ol>
+                              <li>
+                                 <p>Crie um repositório em github.com</p>
+                              </li>
+                              <li>
+                                 <p>Clone o repositório na sua máquina (git clone)</p>
+                              </li>
+                              <li>
+                                 <p>Entre a pasta do projeto</p>
+                              </li>
+                              <li>
+                                 <p>Crie um app.js</p>
+                              </li>
+                              <li>
+                                 <p>Execute o comando git status e analise sua saída</p>
+                              </li>
+                              <li>
+                                 <p>Adicione app.js ao git, usando git add app.js</p>
+                              </li>
+                              <li>
+                                 <p>Execute git status novamente e compare com o resultado anterior</p>
+                              </li>
+                           </ol>
+                           <p>PASSO 2: Copie todo o texto do terminal, desde o git clone até a saída do último comando, e cole no campo abaixo.</p>
+                        </header>
+                        <choices>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t></t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="5">
+                              PASSO 1: Faça o seguintes passos e mantenha o terminal aberto.
+                           </p>
+                           <ol>
+                              <li>
+                                 <p>Adicione possíveis mudanças no repositório (git add app.js)</p>
+                              </li>
+                              <li>
+                                 <p>Faça um git commit -m "meu primeiro commit" (exatamente como está aqui)</p>
+                              </li>
+                              <li>
+                                 <p>Execute um git status agora e compare os resultados com os anteriores</p>
+                              </li>
+                              <li>
+                                 <p>Envie as alterações no repositório de origem, ou seja, envie as alterações para o GitHub (git push)</p>
+                              </li>
+                              <li>
+                                 <p>Execute um git status e analise o resultado</p>
+                              </li>
+                           </ol>
+                        </header>
+                        <choices>
+                           <label for="" choice="">
+                              <input type="radio">
+                              <t></t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </pulling-files>
+
+            <guia-pratico>
+               <small>Guia prático</small>
+               <display>
+                  <h1>Glossário</h1>
+                  <iframe src="./Assets/Comandos Git.pdf" frameborder="0"></iframe>
+
+                  <iframe src="./Assets/Git avançado.html" frameborder="0"></iframe>
+
+                  <h2>Git Workflow + Git Branch/merge + Git Flow</h2>
+                  <iframe src="https://view.genial.ly/601a1c8b3a203e0d06cc7519" frameborder="0"></iframe>
+
+                  <h2>Git branch/merge</h2>
+                  <iframe src="https://view.genial.ly/6018caca887b020d1f8bdb8c" frameborder="0"></iframe>
+
+                  <h2>Gitflow</h2>
+                  <iframe src="https://view.genial.ly/601a1c8b3a203e0d06cc7519" frameborder="0"></iframe>
+               </display>
+            </guia-pratico>
+
+            <git-ao-vivo>
+               <small>Git [ao-vivo]</small>
+               <display>
+                  <h1>Git</h1>
+                  <iframe src="./Assets/Git e GitHub.html" frameborder="0"></iframe>  
+                  
+                  <h2>Atividade 1</h2>
+                  <iframe src="./Assets/ ATIVIDADE GIT E GITHUB" frameborder="0"></iframe>
+                  <h2>Atividade 2</h2>
+                  <iframe src="./Assets/ ATIVIDADE GIT E GITHUB 2" frameborder="0"></iframe>
+               </display>
+            </git-ao-vivo>
 
          </git>
          
@@ -475,11 +1173,43 @@
          </git-na-pratica>
          
          <metodologias-ageis>
-            <o-que-iremos-conhecer></o-que-iremos-conhecer>
-            <antes-da-metodologia-agil></antes-da-metodologia-agil>
-            <metodologia-agil></metodologia-agil>
-            <scrum></scrum>
-            <metodologias-ageis-ao-vivo></metodologias-ageis-ao-vivo>
+            <small>Metodologias Ágeis</small>
+
+            <o-que-iremos-conhecer>
+               <small></small>
+               <display>
+                  <h1></h1>
+               </display>
+            </o-que-iremos-conhecer>
+
+            <antes-da-metodologia-agil>
+               <small></small>
+               <display>
+                  <h1></h1>
+               </display>
+            </antes-da-metodologia-agil>
+
+            <metodologia-agil>
+               <small></small>
+               <display>
+                  <h1></h1>
+               </display>
+            </metodologia-agil>
+
+            <scrum>
+               <small></small>
+               <display>
+                  <h1></h1>
+               </display>
+            </scrum>
+
+            <metodologias-ageis-ao-vivo>
+               <small></small>
+               <display>
+                  <h1></h1>
+               </display>
+            </metodologias-ageis-ao-vivo>
+            
          </metodologias-ageis>
 
 
