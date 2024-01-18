@@ -112,3 +112,53 @@ https://vod-progressive.akamaized.net/exp=1704936565~acl=%2Fvimeo-transcode-stor
 https://vod-progressive.akamaized.net/exp=1704935687~acl=%2Fvimeo-transcode-storage-prod-us-central1-h264-720p%2F01%2F4897%2F28%2F724486063%2F3360396425.mp4~hmac=34a7b960fe0a5913556d9236419796c165079cb350fc05e96e61a1a2f103c900/vimeo-transcode-storage-prod-us-central1-h264-720p/01/4897/28/724486063/3360396425.mp4
 
 
+<!-- dh links -->
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/1f162c2a-2203-4695-94ad-a6c3582ba75b/lesson/03325f89-12f5-4eec-a31b-d79f68096504/topic/985f2a27-2f71-4ca4-811c-9b647c5fe960
+
+Meu progresso
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/1f162c2a-2203-4695-94ad-a6c3582ba75b/lesson/03325f89-12f5-4eec-a31b-d79f68096504/topic/985f2a27-2f71-4ca4-811c-9b647c5fe960
+
+Manual do Houser
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/1f162c2a-2203-4695-94ad-a6c3582ba75b/lesson/03325f89-12f5-4eec-a31b-d79f68096504/topic/985f2a27-2f71-4ca4-811c-9b647c5fe960
+
+Conteúdo
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/1f162c2a-2203-4695-94ad-a6c3582ba75b/lesson/03325f89-12f5-4eec-a31b-d79f68096504/topic/985f2a27-2f71-4ca4-811c-9b647c5fe960
+
+Aulas gravadas
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/1f162c2a-2203-4695-94ad-a6c3582ba75b/lesson/03325f89-12f5-4eec-a31b-d79f68096504/topic/985f2a27-2f71-4ca4-811c-9b647c5fe960
+
+Info do curso
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/1f162c2a-2203-4695-94ad-a6c3582ba75b/lesson/03325f89-12f5-4eec-a31b-d79f68096504/topic/985f2a27-2f71-4ca4-811c-9b647c5fe960
+
+
+modulos
+
+2
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/1f162c2a-2203-4695-94ad-a6c3582ba75b/lesson/03325f89-12f5-4eec-a31b-d79f68096504/topic/985f2a27-2f71-4ca4-811c-9b647c5fe960
+
+3
+
+4
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/1f162c2a-2203-4695-94ad-a6c3582ba75b/lesson/03325f89-12f5-4eec-a31b-d79f68096504/topic/985f2a27-2f71-4ca4-811c-9b647c5fe960
+
+https://br-playground.digitalhouse.com/course/3884a487-b4a1-4071-b926-45fbcaf72857/unit/1d339eed-4116-4959-9e50-5f4b07aa25d9/lesson/45afe35b-1d4a-4c26-baef-f232eeb221c1/topic/6528326a-5ceb-415a-8f59-ef2eb4497cd8
+
+
+
+
+
+
+
+
+
+
+
+
+canva
+m3
+https://www.canva.com/design/DAF6LzDOoQs/_2Lg6X_fN5vb6IYl2kA63Q/edit?ui=eyJBIjp7IkIiOnsiQiI6dHJ1ZX19LCJHIjp7IkIiOnRydWV9fQ
+
+m4
+
+m5
+
