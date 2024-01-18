@@ -1,0 +1,680 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <title></title>
+      
+      <link rel="icon" href="src/pix/logo.svg" type="svg+xml">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://globals.onrender.com/global-dh.css">
+      <script src="https://globals.onrender.com/global-dh.js" defer></script>
+   </head>
+   <body>
+
+      <top-bar>
+         Módulo:  5 - Javascript Front
+      </top-bar>
+
+      <modulo n="5">
+         
+         <manipulando-elementos-com-js>
+            <small>Manipulando elementos com JS</small>
+            <intro>
+               <h4>O que veremos nesta aula?</h4>
+               <display>
+                  <h1>O que veremos nesta aula?</h1>
+                  <p>
+                     Muito bem, chegou o momento de colocar as mãos no DOM! Vamos trabalhar alguns conceitos interessantes de front-end com Javascript, e para isso vamos passar pelos seguintes tópicos:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>Vinculação</p>
+                     </li>
+                     <li>
+                        <p>Objeto window e document</p>
+                     </li>
+                     <li>
+                        <p>seletores do DOM</p>
+                     </li>
+                     <li>
+                        <p>Modificando o DOM</p>
+                     </li>
+                     <li>
+                        <p>Modificando estilos</p>
+                     </li>
+                     <li>
+                        <p>Modificando classes</p>
+                     </li>
+                  </ul>
+                  <p>Tudo pronto para começar? Então vamos lá!</p>
+                  <hr>
+                  <iframe src="https://view.genial.ly/62a0acdb2f50ec0011132b93" frameborder="0"></iframe>
+               </display>
+            </intro>
+            
+            <vinculacao>
+               <h4>Vinculação</h4>
+               <display>
+                  <h1>Vinculação</h1>
+                  <p>
+                     Para trabalhar com Javascript no front-end, é necessário fazer a vinculação do arquivo JS dentro do nosso arquivo HTML. Como podemos criar esse vínculo? Isso é o que você descobrirá em seguida.
+                  </p>
+                  <video src="./Assets/Link.mp4"></video>
+                  <iframe src="./Assets/JS Front Vinculação.html" frameborder="0"></iframe>
+
+                  <hr>
+
+                  <h2>Boas práticas</h2>
+                  <p>
+                     Uma boa prática é colocar o link com nosso arquivo js no final do corpo do nosso HTML, para que o documento já esteja carregado no momento em que o script for lido. Dessa forma, o carregamento do script não atrasa o restante da página.
+                  </p>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Importar javascript no HTML</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Existem duas formas de vincular o javascript com nosso documento HTML, mas a mais recomendada é:</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Importação inline (em linha)</t>
+                           </label>
+                           <label choice="asf">
+                              <input type="radio">
+                              <t>Importação externa (vinda de outro arquivo)</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">Quando se trata de linkar um javascript ao nosso HTML:</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Podemos ter somente um arquivo javascript vinculado a nosso HTML</t>
+                           </label>
+                           <label choice="sg">
+                              <input type="radio">
+                              <t>Podemos ter vários arquivos javascript vinculados ao nosso documento HTML</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">Somente em uma das opções o console.log() vai funcionar. Qual delas é? </p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>
+                                 &lt;script src="main.js"&gt; console.log('Vinculando JS') &lt;/script&gt;
+                              </t>
+                           </label>
+                           <label choice="sdg">
+                              <input type="radio">
+                              <t>
+                                 &lt;script&gt; console.log('Vinculando JS') &lt;/script&gt;
+                              </t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+                  
+                  <exercicio>
+                     <h2>Exercício</h2>
+                     <p>
+                        Para este exercício, pedimos a você que vincule o arquivo script.js com o arquivo index.html.
+                     </p>
+                     <p>
+                        TIP: Em script.js você vai necessitar de um console.log(). Isso é uma pratica comum que serve para verificarmos de uma maneira simples que vinculamos com sucesso nosso arquivo.
+                     </p>
+                     <h3>html</h3>
+                     <co-de>
+                        &lt;!DOCTYPE html&gt;
+                        &lt;html&gt;
+                          &lt;head&gt;
+                            &lt;meta charset="UTF-8"&gt;
+                            &lt;title&gt;JS Front&lt;/title&gt;
+                          &lt;/head&gt;
+                          &lt;body&gt;
+                            &lt;p&gt;Você pode abrir o console do navegar para checar os resultados&lt;/p&gt;
+                          
+                             &lt;script src="script.js"&gt;&lt;/script&gt;
+                          &lt;/body&gt;
+                        &lt;/html&gt;
+                     </co-de>
+                     <h3>js</h3>
+                     <co-de>
+                        console.log('Arquivo importado com sucesso');
+                     </co-de>
+                  </exercicio>
+                  
+               </display>
+            </vinculacao>
+            
+            <objeto-window-e-document>
+               <h4>Objeto window e document</h4>
+               <display>
+                  <h1>Objeto window e document</h1>
+                  <p>
+                     Vamos ver o que cada uma dessas coisas significa: window e document de acordo com a
+                     <a href="https://developer.mozilla.org/es/docs/Web/API/Window"> documentação da Mozilla.</a>
+                  </p>
+                  <p>
+                     O objeto window representa a janela que contém um documento DOM; a propriedade do documento aponta para o documento DOM carregado nessa janela.
+                  </p>
+                  <p>
+                     O DOM (Document Object Model, em português Modelo de Objeto do Documento) é um modelo de documento carregado no navegador da web e que representa o documento como uma árvore de nós, onde cada nó representa uma parte do documento (pode ser um elemento, uma sequência de texto ou um comentário).
+                  </p>
+                  <h2>Resumo</h2>
+                  <iframe src="https://view.genial.ly/60668a8caecacf0d77316e34" frameborder="0"></iframe>
+
+                  <quiz>
+                     <header>
+                        <h2>Quiz</h2>
+                        <question>
+                           <h4>Objeto Window e Objeto Document</h4>
+                        </question>
+                     </header>
+                     <home>
+                        <header>
+                           <p n="1">Javascript nos permite interagir com o front end do usuário sempre quando existe uma requisição ao servidor</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Verdadeiro</t>
+                           </label>
+                           <label choice="gfds">
+                              <input type="radio">
+                              <t>Falso</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="2">O que é DOM?</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Um método do objeto document</t>
+                           </label>
+                           <label choice="dgfs">
+                              <input type="radio">
+                              <t>
+                                 A representação em objetos que possuem alterações Javascript no documento HTML
+                              </t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Um atributo do objeto window</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="3">O objeto window representa a janela que estamos navegando</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Falso</t>
+                           </label>
+                           <label choice="dfgsd">
+                              <input type="radio">
+                              <t>Verdadeiro</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                     <home>
+                        <header>
+                           <p n="4">Mediante o object document podemos...</p>
+                        </header>
+                        <choices>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Ler alguns elementos do HTML</t>
+                           </label>
+                           <label choice="">
+                              <input type="radio">
+                              <t>Ler todos os elementos do HTML</t>
+                           </label>
+                           <label choice="gfs">
+                              <input type="radio">
+                              <t>Ler todos os elementos do HTML e modifica-los da maneira que queremos</t>
+                           </label>
+                        </choices>
+                        <res>
+                           <p></p>
+                        </res>
+                     </home>
+                  </quiz>
+               </display>
+            </objeto-window-e-document>
+            
+            <DOM-selectors>
+               <h4>Seletores DOM</h4>
+               <display>
+                  <h1>Seletores DOM</h1>
+                  <p>
+                     Para acessar os elementos de uma página, usamos seletores. Cada seletor pode retornar um único elemento ou uma lista de elementos.
+                  </p>
+                  <p>
+                     Para recorre aos seletores, devemos utilizar o objeto document, uma vez que os seletores são métodos do mesmo.
+                  </p>
+                  <p>Vejamos mais a fundo sobre seletores a seguir:</p>
+                  <iframe src="./Assets/JS Front Seletores.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 1</h2>
+                        <p>
+                           Temos um site HTML definido e queremos começar a manipular seus elementos.
+                        </p>
+                        <p>
+                           Para este exercício te pedimos que:
+                           <ul>
+                              <li>
+                                 <p>Crie a variável tituloFilme</p>
+                              </li>
+                              <li>
+                                 <p>Armazene nessa variável a seleção do elemento h2 do arquivo index.html</p>
+                              </li>
+                           </ul>
+                           <br><br>
+                           <p>Utilize o método do objeto document que te permita selecionar a tag &lt;h2&gt; do documento.</p>
+                        </p>
+                        <h4>html</h4>
+                        <co-de>
+                           // this file is read only, you cannot write it
+                           &lt;html &gt;
+                             &lt;head &gt;
+                               &lt;title &gt;JS Front &lt;/title &gt;
+                               &lt;script src="script.js" &gt; &lt;/script &gt;
+                             &lt;/head &gt;
+                             &lt;body &gt;
+                             &lt;h2 &gt;TARANTINO'S MOVIES &lt;/h2 &gt;
+                               &lt;ul class="nav-bar" &gt;
+                                   &lt;li &gt; &lt;a href="#kill-bill" &gt;Kill Bill &lt;/a &gt; &lt;/li &gt;
+                                   &lt;li &gt; &lt;a href="#pulp-fiction" &gt;Pulp Fiction &lt;/a &gt; &lt;/li &gt;
+                                   &lt;li &gt; &lt;a href="#once-upon" &gt;Once Upon a Time In Hollywood &lt;/a &gt; &lt;/li &gt;
+                                   &lt;li &gt; &lt;a href="#reservouir-dogs" &gt;Reresvouir Dogs &lt;/a &gt; &lt;/li &gt;
+                               &lt;/ul &gt;
+                          
+                               &lt;h3 id="kill-bill" &gt;Kill Bill &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                          
+                               &lt;h3 id="pulp-fiction" &gt;Pulp Fiction &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                          
+                               &lt;h3 id="once-upon" &gt;Once Upon a Time In Hollywood &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                          
+                               &lt;h3 id="reservouir-dogs" &gt;Reresvouir Dogs &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                             &lt;/body &gt;
+                           &lt;/html &gt;
+                        </co-de>
+                        <h4>js</h4>
+                        <co-de>
+                           window.addEventListener('load', function() {
+
+                              var tituloFilme = document.querySelector( "h2" );
+                            
+                           });
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 2</h2>
+                        <p>
+                           Temos um site HTML definido e queremos começar a manipular seus elementos.
+                        </p>
+                        <p>Para este exercício te pedimos que:</p>
+                        <ul>
+                           <li>
+                              <p>crie a variável paragrafos</p>
+                           </li>
+                           <li>
+                              <p>armazene nessa variável todos os paragrafos do documento HTML.</p>
+                           </li>
+                        </ul>
+                        <p>
+                           Deverá usar o método do objeto document que te permita selecionar todas as tags &lt;p&gt; do documento.
+                        </p>
+                        <h4>html</h4>
+                        <co-de>
+                           // this file is read only, you cannot write it
+                           &lt;html &gt;
+                             &lt;head &gt;
+                               &lt;title &gt;JS Front &lt;/title &gt;
+                               &lt;script src="script.js" &gt; &lt;/script &gt;
+                             &lt;/head &gt;
+                             &lt;body &gt;
+                             &lt;h2 &gt;TARANTINO'S MOVIES &lt;/h2 &gt;
+                               &lt;ul class="nav-bar" &gt;
+                                   &lt;li &gt; &lt;a href="#kill-bill" &gt;Kill Bill &lt;/a &gt; &lt;/li &gt;
+                                   &lt;li &gt; &lt;a href="#pulp-fiction" &gt;Pulp Fiction &lt;/a &gt; &lt;/li &gt;
+                                   &lt;li &gt; &lt;a href="#once-upon" &gt;Once Upon a Time In Hollywood &lt;/a &gt; &lt;/li &gt;
+                                   &lt;li &gt; &lt;a href="#reservouir-dogs" &gt;Reresvouir Dogs &lt;/a &gt; &lt;/li &gt;
+                               &lt;/ul &gt;
+                          
+                               &lt;h3 id="kill-bill" &gt;Kill Bill &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                          
+                               &lt;h3 id="pulp-fiction" &gt;Pulp Fiction &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                          
+                               &lt;h3 id="once-upon" &gt;Once Upon a Time In Hollywood &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                          
+                               &lt;h3 id="reservouir-dogs" &gt;Reresvouir Dogs &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                             &lt;/body &gt;
+                           &lt;/html &gt;
+                        </co-de>
+                        <h4>js</h4>
+                        <co-de>
+                           window.addEventListener('load', function() {
+                              var paragrafos = document.querySelectorAll( "p" );
+                           });
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 3</h2>
+                        <p>Temos um site HTML definido e queremos começar a manipular seus elementos.</p>
+                        <p>Para este exercício te pedimos que:</p>
+                        <ul>
+                           <li>
+                              <p>crie a variável pulpFiction</p>
+                           </li>
+                           <li>
+                              <p>
+                                 armazene nessa variavel o elemento &lt;h3&gt; com id "pulp-fiction".
+                              </p>
+                           </li>
+                        </ul>
+                        <p>Mas dessa vez, não queremos que você utilize o método querySelector()...</p>
+                        <h4>html</h4>
+                        <co-de>
+                           // this file is read only, you cannot write it
+                           &lt;html &gt;
+                             &lt;head &gt;
+                               &lt;title &gt;JS Front &lt;/title &gt;
+                               &lt;script src="script.js" &gt; &lt;/script &gt;
+                             &lt;/head &gt;
+                             &lt;body &gt;
+                             &lt;h2 &gt;TARANTINO'S MOVIES &lt;/h2 &gt;
+                               &lt;ul class="nav-bar" &gt;
+                                   &lt;li &gt; &lt;a href="#kill-bill" &gt;Kill Bill &lt;/a &gt; &lt;/li &gt;
+                                   &lt;li &gt; &lt;a href="#pulp-fiction" &gt;Pulp Fiction &lt;/a &gt; &lt;/li &gt;
+                                   &lt;li &gt; &lt;a href="#once-upon" &gt;Once Upon a Time In Hollywood &lt;/a &gt; &lt;/li &gt;
+                                   &lt;li &gt; &lt;a href="#reservouir-dogs" &gt;Reresvouir Dogs &lt;/a &gt; &lt;/li &gt;
+                               &lt;/ul &gt;
+                          
+                               &lt;h3 id="kill-bill" &gt;Kill Bill &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                          
+                               &lt;h3 id="pulp-fiction" &gt;Pulp Fiction &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                          
+                               &lt;h3 id="once-upon" &gt;Once Upon a Time In Hollywood &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                          
+                               &lt;h3 id="reservouir-dogs" &gt;Reresvouir Dogs &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                             &lt;/body &gt;
+                           &lt;/html &gt;
+                        </co-de>
+                        <h4>js</h4>
+                        <co-de>
+                           window.addEventListener('load', function() {
+                              var pulpFiction = document.getElementById( "pulp-fiction" );
+                          
+                           });
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <display>
+                        <h2>Exercício 4</h2>
+                        <p>Temos um site HTML definido e queremos começar a manipular seus elementos.</p>
+                        <p>Para este exercício te pedimos que:</p>
+                        <ul>
+                           <li>
+                              <p>crie a variavel barraDeNavegacao</p>
+                           </li>
+                           <li>
+                              <p>
+                                 armazene nesta variável a seleção do elemento &lt;ul&gt; com a classe "nav-bar".
+                              </p>
+                           </li>
+                        </ul>
+                        <p>Mas dessa vez não queremos que use o querySelector(), precisamos usar a classe para selecioná-lo...</p>
+                        <h4>html</h4>
+                        <co-de>
+                           // this file is read only, you cannot write it
+                           &lt;html &gt;
+                             &lt;head &gt;
+                               &lt;title &gt;JS Front &lt;/title &gt;
+                               &lt;script src="script.js" &gt; &lt;/script &gt;
+                             &lt;/head &gt;
+                             &lt;body &gt;
+                             &lt;h2 &gt;TARANTINO'S MOVIES &lt;/h2 &gt;
+                               &lt;ul class="nav-bar" &gt;
+                                   &lt;li &gt; &lt;a href="#kill-bill" &gt;Kill Bill &lt;/a &gt; &lt;/li &gt;
+                                   &lt;li &gt; &lt;a href="#pulp-fiction" &gt;Pulp Fiction &lt;/a &gt; &lt;/li &gt;
+                                   &lt;li &gt; &lt;a href="#once-upon" &gt;Once Upon a Time In Hollywood &lt;/a &gt; &lt;/li &gt;
+                                   &lt;li &gt; &lt;a href="#reservouir-dogs" &gt;Reresvouir Dogs &lt;/a &gt; &lt;/li &gt;
+                               &lt;/ul &gt;
+                          
+                               &lt;h3 id="kill-bill" &gt;Kill Bill &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                          
+                               &lt;h3 id="pulp-fiction" &gt;Pulp Fiction &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                          
+                               &lt;h3 id="once-upon" &gt;Once Upon a Time In Hollywood &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                          
+                               &lt;h3 id="reservouir-dogs" &gt;Reresvouir Dogs &lt;/h3 &gt;
+                               &lt;p &gt;
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias nesciunt impedit reiciendis blanditiis? Minima quia doloribus similique consequuntur eos in aperiam enim ad atque tenetur. Fuga soluta perferendis deserunt. Sequi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam debitis labore similique necessitatibus magni aspernatur. Delectus nobis earum asperiores quam quas, veniam incidunt deserunt repellat laboriosam voluptatem pariatur, quibusdam quos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tenetur temporibus hic, molestias quidem id quisquam perspiciatis repudiandae! Voluptatibus sequi necessitatibus distinctio corporis asperiores excepturi consequatur magnam inventore reiciendis dicta?
+                               &lt;/p &gt;
+                             &lt;/body &gt;
+                           &lt;/html &gt;
+                        </co-de>
+                        <h4>js</h4>
+                        <co-de>
+                           window.addEventListener('load', function() {
+                              var barraDeNavegacao = document.getElementsByClassName( "nav-bar" );
+                          
+                           });
+                        </co-de>
+                     </display>
+                  </exercicio>
+                  
+               </display>
+            </DOM-selectors>
+            
+            <modificando-a-dom>
+               <h4>Modificando o DOM</h4>
+               <display>
+                  <h1>Modificando o DOM</h1>
+                  <p>
+                     Quando queremos modificar o DOM, a primeira coisa que precisamos ter é a referência do objeto a ser modificado, para isso devemos utilizar os seletores.
+                  </p>
+                  <p>
+                     Entraremos em mais detalhes, vamos lá?
+                  </p>
+                  <iframe src="./Assets/JS Front Modificando o DOM.html" frameborder="0"></iframe>
+
+                  <exercicio>
+                     <h2>Exercício 1</h2>
+                     <p>
+                        O subtítulo do &lt;h3&gt;  não nos agradou e queremos adicionar um texto ao final do mesmo usando Javascript.
+                     </p>
+                     <p>
+                        Para isso pedimos que, usando o método innerText selecione a tag &lt;h3&gt;  e adicione o texto " usando código" no final.
+                     </p>
+                     <p>
+                        Não se esqueça de adicionar o espaço correspondente para que os textos não fiquem grudados. Você deverá ver o seguinte resultado no seu navegador.:
+                     </p>
+
+                     <h3>html</h3>
+                     <co-de>
+                        // this file is read only, you cannot write it
+                        &lt;html &gt;
+                        &lt;head &gt;
+                            &lt;script src="main.js" &gt; &lt;/script &gt;
+                            &lt;title &gt;JS Front &lt;/title &gt;
+                        &lt;/head &gt;
+                        &lt;body &gt;
+                           
+                            &lt;h1 &gt;Javascript Front &lt;/h1 &gt;
+                            &lt;h3 &gt;Adicionando conteúdo &lt;/h3 &gt;
+                       
+                        &lt;/body &gt;
+                        &lt;/html &gt;
+                     </co-de>
+                     <h3>JS</h3>
+                     <co-de>
+                        window.addEventListener('load', function() {
+                           document.querySelector( "h3" ).innerText += " usando código";
+                       
+                        });
+                     </co-de>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 2</h2>
+                     <p>Adicionando Tags!</p>
+                     <p>Para este exercícios precisamos que você:</p>
+                     <ul>
+                        <li>
+                           <p>selecione a tag &ltbody&gt;  usando querySelector()</p>
+                        </li>
+                        <li>
+                           <p>e adicione a seguinte tag: &lt;mark&gt; Javascript ROCKS &lt;/mark&gt; </p>
+                        </li>
+                     </ul>
+                     <p>
+                        Mas cuidado: o  &lt;body &gt; já tem as tags  &lt;h1 &gt; e  &lt;h3 &gt; definidas e não queremos que elas sejam apagadas.
+                     </p>
+
+                     <h3>html</h3>
+                     <co-de>
+                        // this file is read only, you cannot write it
+                        &lt;html &gt;
+                        &lt;head &gt;
+                            &lt;script src="script.js" &gt; &lt;/script &gt;
+                            &lt;title &gt;JS Front &lt;/title &gt;
+                        &lt;/head &gt;
+                        &lt;body &gt;
+                           
+                            &lt;h1 &gt;Javascript Front &lt;/h1 &gt;
+                            &lt;h3 &gt;Adicionando conteúdo &lt;/h3 &gt;
+                       
+                        &lt;/body &gt;
+                        &lt;/html &gt;
+                     </co-de>
+                     <h3>JS</h3>
+                     <co-de>
+                        // this file is read only, you cannot write it
+                        window.addEventListener('load', function() {
+                            document.querySelector( "body" ).innerHTML += "<mark>Javascript ROCKS</mark>";
+                        
+                        });
+                     </co-de>
+                  </exercicio>
+                  
+               </display>
+            </modificando-a-dom>
+            
+            <modificando-estilos>
+               <h4></h4>
+               <display>
+                  <h1></h1>
+               </display>
+            </modificando-estilos>
+            
+            <modificando-classes>
+               <h4></h4>
+               <display>
+                  <h1></h1>
+               </display>
+            </modificando-classes>
+            
+         </manipulando-elementos-com-js>
+
+      </modulo>
+
+   </body>
+</html>
+
