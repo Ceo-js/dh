@@ -39,3 +39,6 @@ quiz>header>h2{Quiz}+question>h4^^(home>header>p[n]^choices>label[choice]>input[
 
 
 
+white-space: pre;
+    white-space-collapse: ;
+    text-wrap: ;
