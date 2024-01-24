@@ -47,7 +47,7 @@
                <exercicio n="1">
                   <h2>Exercício  1</h2>
                   A seguir, temos uma função expressa, que retorna uma String. Mas ela precisa de um nome. Sua tarefa é preencher os espaços com a declaração de variável e dar à ela o nome de exemplo.
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      var exemplo = function () {
                         return 'Oi, eu sou uma função expressa';
                   }
@@ -59,7 +59,7 @@
                   Agora pense nesse exemplo, temos que validar algumas pessoas pelas suas idades. Nosso critério será 18 anos como idade miníma e 99 como idade máxima. Ninguém pode mudar essas definições. Para isso acontecer, iremos escrever constantes. Vale dizer que, por questões de boas práticas,  é comum utilizar nome com letras maiúsculas na hora de definir uma constante.﻿﻿
 
    Bom agora, você deve criar um constante chamada IDADE_MINIMA, e outra chamada IDADE_MAXIMA. Que por sua vez, devem ter os valores 18 e 99 respectivamente
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      const IDADE_MINIMA = 18;
    const IDADE_MAXIMA = 99;
                   </co-de>
@@ -106,7 +106,7 @@
                   Exercício
    Para este exercício, solicitamos que você declare 4 variáveis ​​usando o let com os nomes: verdadeiro, nada, texto e numero. Para cada um deles, você deve atribuir o tipo de dados que sugere seu nome, conforme apropriado.
 
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      let verdadeiro = true
    let nada = null
    let texto = "string"
@@ -182,7 +182,7 @@
 
                         Declare uma variável com o nome dado e atribua um valor booleano.
                         Então você deve fazer um  if para avaliar essa variável: se for true imprimir "É verdadeiro!", caso contrário "É falso!".
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      var dado = true
 
                      if(dado == true){
@@ -198,7 +198,7 @@
                   Vamos trabalhar com condicionais agora, fazendo comparações rigorosas/estritas.
 
                         Neste exercício te damos uma variável chamada linguagem, que tem uma String atribuída. Seu trabalho agora é construir uma condicional if / else para que, se a variável contém "javascript" imprima no console o texto "Estou aprendendo", se não imprima"Vou aprender mais pra frente".
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      let linguagem = "javascript";
                      if(linguagem === "javascript"){;
                      console.log("Estou aprendendo");
@@ -277,7 +277,7 @@
       
                      Declare as variáveis  indiceJoao, indiceFrancisco e armazene a posição correspondente de cada um.
                
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      let alunos = ["João", "Pedro", "Jorge", "Francisco"]
    
    let indiceJoao = alunos.indexOf("João");
@@ -678,7 +678,7 @@ bibliotecas para incorporar ao nosso projeto.
                      </p>
                      
                      
-                     <co-de>
+                     <co-de file="JavaScript.js">
                         let moduloNativo = require('http'); <br>
                         let moduloInstalado = require('axios'); <br>
                         let moduloProprio = require('./minhaFuncao');
@@ -688,7 +688,7 @@ bibliotecas para incorporar ao nosso projeto.
                      <h2>Exercício 2</h2>
                      <p>Temos alguns dados do cachorro Scooby armazenados na variável cachorro, o qual queremos usar em outros módulos. Seu trabalho é exportar essa variável, para ser usada em outros pontos do nosso código.</p>
                      
-                     <co-de>
+                     <co-de file="JavaScript.js">
                         let cachorro = { <br>
                            nome: 'Scooby', <br>
                            idade: 7, <br>
@@ -747,7 +747,7 @@ bibliotecas para incorporar ao nosso projeto.
 
                   <h2>Estrutura de um JSON</h2>
 
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      // Estrutura JSON genérica <br>
                      { <br>
                          "propriedade1" : "valor", <br>
@@ -950,7 +950,7 @@ bibliotecas para incorporar ao nosso projeto.
                   <p>
                      Lembre-se que esses são exemplos, a função deve ser genérica para adicionar esse texto a qualquer site, não só esses.
                   </p>
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      function dominio( url ) { <br>
                        if( url ) <br>
                          return `http://${ url }`; <br>
@@ -1126,7 +1126,7 @@ Vimos que os arrays podem guardar vários valores posicionados em uma determinad
                   <iframe src="./Assets/Arrow Functions.html" frameborder="0"></iframe>
 
                   <h2>Estrutura de uma Arrow Functions</h2>
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      // Função convencional  <br>
                      function somar(n1,n2) { <br>
                          return n1 + n2 <br>
@@ -1144,7 +1144,7 @@ Vimos que os arrays podem guardar vários valores posicionados em uma determinad
                   <p>
                      Para este exercício vamos dar três funções definidas Seu trabalho será alterá-las para que sejam arrow functions.
                   </p>
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      let cincoNumeros = () => [1,2,3,4,5]; <br>
                      <br>
                      let multiplicarPorDois = () =>  123 * 2 ; <br>
@@ -1176,7 +1176,7 @@ Vimos que os arrays podem guardar vários valores posicionados em uma determinad
                      Para programar os nossos sistemas para tomar esse tipo de decisão, utilizamos uma estrutura chamada de if.Pense, por exemplo, que uma variável chamada idade guarda quantos anos um usuário possui. Podemos definir alguma ação específica caso o usuário tenha menos de 12 anos. Em Javascript, ficaria assim:
                   </p>
 
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      if(idade < 12){ <br>
                         // Fazer alguma coisa <br>
                      }    <br>
@@ -1200,7 +1200,7 @@ Vimos que os arrays podem guardar vários valores posicionados em uma determinad
                         Declare uma variável com o nome dado e atribua um valor booleano.
 Então você deve fazer um  if para avaliar essa variável: se for true imprimir "É verdadeiro!", caso contrário "É falso!".
                      </p>
-                     <co-de>
+                     <co-de file="JavaScript.js">
                         var dado = true; <br>
                         if(dado == true){ <br>
                         console.log("É verdadeiro!") <br>
@@ -1214,7 +1214,7 @@ Então você deve fazer um  if para avaliar essa variável: se for true imprimir
                      <p>
                         Usando "switch" você deve avaliar se a variável "dia" é segunda, quarta ou sexta-feira e, nesse caso, você deve imprimir o texto " você tem aulas!".Para qualquer outro caso, você deve imprimir "você não tem aulas".
                      </p>
-                     <co-de>
+                     <co-de file="JavaScript.js">
                         let dia = "sabado"; <br>
                         <br>
                         function fimDeSemana(dia){ <br>
@@ -1236,7 +1236,7 @@ Então você deve fazer um  if para avaliar essa variável: se for true imprimir
                   <exercicio>
                      <h2>Exercício 3</h2>
                      <p>O objetivo deste exercício é imprimir no console um texto que varia de acordo com o dia que contém na variável dia. Para isso, já apresentamos um código feito com if / else que você precisará modificá-lo para testar as diferentes mensagem.</p>
-                     <co-de>
+                     <co-de file="JavaScript.js">
                         let dia = 'segunda-feira' <br>
                         <br>
                         function fimDeSemana(dia) { <br>
@@ -1295,7 +1295,7 @@ Então você deve fazer um  if para avaliar essa variável: se for true imprimir
                   </ul>
                   <p>Em Javascript, ficaria assim:</p>
 
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      for(let i = 0; i < 21; i = i + 1){ <br>
                         // Uma ou mais ações a realizar <br>
                      }
@@ -1327,7 +1327,7 @@ Então você deve fazer um  if para avaliar essa variável: se for true imprimir
                   <p>
                      Você só precisa declarar a função. Não há necessidade de chamar após a declaração, pois isso vai causar um erro!
                   </p>
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      function papagaio(texto){ <br>
                         for(i = 1; i <= 5; i++){ <br>
                     console.log(texto) <br>
@@ -1417,7 +1417,7 @@ Então você deve fazer um  if para avaliar essa variável: se for true imprimir
                         </li>
                      </ul>
                      
-                     <co-de>
+                     <co-de file="JavaScript.js">
                         function dobro(numero){return numero * 2} <br>
                         function triplo(numero){return numero * 3} <br>
                         function aplicar(valor, funcao){ <br>
@@ -1437,7 +1437,7 @@ Então você deve fazer um  if para avaliar essa variável: se for true imprimir
                      </p>
 
                      
-                     <co-de>
+                     <co-de file="JavaScript.js">
                         function somar( numero1, numero2 ) { <br>
                            return numero1 + numero2; <br>
                        } <br>
@@ -1469,7 +1469,7 @@ Então você deve fazer um  if para avaliar essa variável: se for true imprimir
                      <p>A primeira função deverá se chamar adicionarHttp , a mesma, receberá por parâmetro uma URL que será concatenada com a String "http://" no começo da URL e em seguida retornará esse valor. A segunda função se chamará processar  e receberá uma lista de sites web e uma função. A função processar  retornará um array contendo todos os resultados aplicando a função que foi passada.</p>
                      
                      
-                     <co-de>
+                     <co-de file="JavaScript.js">
                         function adicionarHttp(url) { <br>
                            return "http://" + url <br>
                        } <br>
@@ -1517,7 +1517,7 @@ Então você deve fazer um  if para avaliar essa variável: se for true imprimir
                      Seu trabalho será definir a variável maiores e armazenar nela os números que cumpram com essa condição, utilizando o método filter.
                   </p>
                   
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      let numeros = [12, 34, 22, 46, 18, 29, 44, 43, 39]; <br>
                      let maiores = []; <br>
                       <br>
@@ -1554,7 +1554,7 @@ Então você deve fazer um  if para avaliar essa variável: se for true imprimir
                         Para este exercício considere a variável bart, que armazena um objeto literal com diferentes propriedades e valores. Queremos que, utilizando um for in, imprima no console os valores de cada propriedade desse objeto.
                      </p>
                      
-                     <co-de>
+                     <co-de file="JavaScript.js">
                         let bart = { <br>
                            mae: "Marge", <br>
                            pai: "Homer", <br>
@@ -1583,7 +1583,7 @@ Então você deve fazer um  if para avaliar essa variável: se for true imprimir
                         </li>
                      </ul>
                      
-                     <co-de>
+                     <co-de file="JavaScript.js">
                         let frase = "Essa semana vou no colearning"; <br>
  <br>
                         for( let vert of frase ) { <br>
@@ -1632,7 +1632,7 @@ Então você deve fazer um  if para avaliar essa variável: se for true imprimir
                         </p>
                      </li>
                   </ul>
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      let data = new Date; <br>
  <br>
                      data.setFullYear( 2022 ); <br>
@@ -1670,7 +1670,7 @@ Então você deve fazer um  if para avaliar essa variável: se for true imprimir
                      Queremos que, usando a desestruturação, você defina as variáveis ​​bariloche e china e extraia apenas os destinos "Bariloche" e "China" da array.
                   </p>
                   
-                  <co-de>
+                  <co-de file="JavaScript.js">
                      let destinosIncriveis = ['Marrocos', 'Bariloche', 'Barcelona', 'China', 'Grecia'] <br>
  <br>
                      let [ , bariloche, , china ] = destinosIncriveis; <br>

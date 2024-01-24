@@ -149,7 +149,7 @@
                         TIP: Em script.js você vai necessitar de um console.log(). Isso é uma pratica comum que serve para verificarmos de uma maneira simples que vinculamos com sucesso nosso arquivo.
                      </p>
                      <h3>html</h3>
-                     <co-de>
+                     <co-de file="html.html">
                         &lt;!DOCTYPE html&gt; 
                         &lt;html&gt; 
                           &lt;head&gt; 
@@ -163,8 +163,8 @@
                           &lt;/body&gt; 
                         &lt;/html&gt;
                      </co-de>
-                     <h3>js</h3>
-                     <co-de>
+                     
+                     <co-de file="script.js">
                         console.log('Arquivo importado com sucesso');
                      </co-de>
                   </exercicio>
@@ -314,8 +314,7 @@
                            <br><br>
                            <p>Utilize o método do objeto document que te permita selecionar a tag &lt;h2&gt; do documento.</p>
                         </p>
-                        <h4>html</h4>
-                        <co-de>
+                        <co-de file="html.html">
 // this file is read only, you cannot write it
 &lt;html &gt;
   &lt;head &gt;
@@ -353,8 +352,7 @@
   &lt;/body &gt;
 &lt;/html &gt;
                         </co-de>
-                        <h4>js</h4>
-                        <co-de>
+                        <co-de file="script.js">
 window.addEventListener('load', function() {
    var tituloFilme = document.querySelector( "h2" );
  
@@ -381,8 +379,7 @@ window.addEventListener('load', function() {
                         <p>
                            Deverá usar o método do objeto document que te permita selecionar todas as tags &lt;p&gt; do documento.
                         </p>
-                        <h4>html</h4>
-                        <co-de>
+                        <co-de file="html.html">
 // this file is read only, you cannot write it
 &lt;html &gt;
   &lt;head &gt;
@@ -420,8 +417,7 @@ window.addEventListener('load', function() {
   &lt;/body &gt;
 &lt;/html &gt;
                         </co-de>
-                        <h4>js</h4>
-                        <co-de>
+                        <co-de file="script.js">
 window.addEventListener('load', function() {
    var paragrafos = document.querySelectorAll( "p" );
 });
@@ -445,8 +441,7 @@ window.addEventListener('load', function() {
                            </li>
                         </ul>
                         <p>Mas dessa vez, não queremos que você utilize o método querySelector()...</p>
-                        <h4>html</h4>
-                        <co-de>
+                        <co-de file="html.html">
 // this file is read only, you cannot write it
 &lt;html &gt;
   &lt;head &gt;
@@ -484,8 +479,7 @@ window.addEventListener('load', function() {
   &lt;/body &gt;
 &lt;/html &gt;
                         </co-de>
-                        <h4>js</h4>
-                        <co-de>
+                        <co-de file="script.js">
 window.addEventListener('load', function() {
    var pulpFiction = document.getElementById( "pulp-fiction" );
 
@@ -510,8 +504,7 @@ window.addEventListener('load', function() {
                            </li>
                         </ul>
                         <p>Mas dessa vez não queremos que use o querySelector(), precisamos usar a classe para selecioná-lo...</p>
-                        <h4>html</h4>
-                        <co-de>
+                        <co-de file="html.html">
 // this file is read only, you cannot write it
 &lt;html &gt;
    &lt;head &gt;
@@ -549,8 +542,7 @@ window.addEventListener('load', function() {
    &lt;/body &gt;
 &lt;/html &gt;
                         </co-de>
-                        <h4>js</h4>
-                        <co-de>
+                        <co-de file="script.js">
 window.addEventListener('load', function() {
    var barraDeNavegacao = document.getElementsByClassName( "nav-bar" );
 
@@ -586,8 +578,7 @@ window.addEventListener('load', function() {
                         Não se esqueça de adicionar o espaço correspondente para que os textos não fiquem grudados. Você deverá ver o seguinte resultado no seu navegador.:
                      </p>
 
-                     <h3>html</h3>
-                     <co-de>
+                     <co-de file="html.html">
 // this file is read only, you cannot write it
 &lt;html &gt;
 &lt;head &gt;
@@ -602,8 +593,7 @@ window.addEventListener('load', function() {
 &lt;/body &gt;
 &lt;/html &gt;
                      </co-de>
-                     <h3>JS</h3>
-                     <co-de>
+                     <co-de file="script.js">
                         window.addEventListener('load', function() {
                            document.querySelector( "h3" ).innerText += " usando código";
                        
@@ -627,8 +617,7 @@ window.addEventListener('load', function() {
                         Mas cuidado: o  &lt;body &gt; já tem as tags  &lt;h1 &gt; e  &lt;h3 &gt; definidas e não queremos que elas sejam apagadas.
                      </p>
 
-                     <h3>html</h3>
-                     <co-de>
+                     <co-de file="html.html">
 // this file is read only, you cannot write it
 &lt;html &gt;
 &lt;head &gt;
@@ -643,24 +632,172 @@ window.addEventListener('load', function() {
 &lt;/body &gt;
 &lt;/html &gt;
                      </co-de>
-                     <h3>JS</h3>
-                     <co-de>
+                     <co-de file="script.js">
                         // this file is read only, you cannot write it
-                        window.addEventListener('load', function() {
+                        window.addEventListener( "load", function() {
                             document.querySelector( "body" ).innerHTML += "<mark>Javascript ROCKS</mark>";
-                        
-                        });
+                        } );
                      </co-de>
                   </exercicio>
-                  
                </display>
             </modificando-a-dom>
             
             <modificando-estilos>
-               <h4></h4>
+               <h4>Modificando Estilos</h4>
                <display>
-                  <h1></h1>
+                  <h1>Modificando Estilos</h1>
+
+                  <p>
+                     Além de adicionar e modificar elementos HTML, com seletores também podemos modificar seus estilos. Vamos ver como se faz?
+                  </p>
+
+                  <video src="./Assets/Modificando estilos.mp4"></video>
+
+                  <iframe src="./Assets/Modificando Estilos.html" frameborder="0"></iframe>
+
                </display>
+               <exercicios>
+                  <exercicio>
+                     <h2>Exercício 1</h2>
+                     <p>
+                        Para este exercício contamos com um pequeno site e uma classe de css definida, contudo ela não está sendo aplicada em nenhum elemento.
+                        <br></br>
+                        Por isso te pedimos que, usando javascript, selecione a <div> e atribua a classe 'container' à ela, essa classe já foi definida no arquivo styles.css.
+                     </p>
+                     <res>
+                        <co-de file="index.html">
+                           &lt;html&gt;
+                              &lt;head&gt;
+                                  &lt;script src="main.js"&gt;&lt;/script&gt;
+                                  &lt;title&gt;JS Front&lt;/title&gt;
+                              &lt;/head&gt;
+                              &lt;body&gt;
+                                  &lt;div&gt;
+                                      &lt;h1&gt;clases de css com javascript&lt;/h2&gt;
+                                  &lt;/div&gt;
+                              &lt;body&gt;
+                              &lt;/html&gt;
+                        </co-de>
+                        <co-de file="style.css">
+                           .container {
+                              background:#ccc;
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                           }
+                        </co-de>
+                        <co-de file="script.js">
+                           window.addEventListener('load', function() {
+                              document.querySelector( "div" ).classList.add( "container" );
+                           });
+                        </co-de>
+                     </res>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 2</h2>
+                     <p>
+                        Temos um &lt;h1&gt; mas não gostamos do resultado dele...
+                     </p>
+                     <p>
+                        Queremos que, usando javascript, você selecione o &lt;h1&gt; e remova a classe 'titulo'.
+                     </p>
+                     <p>
+                        <b>
+                           Sugestão: 
+                        </b>
+                        envie a resposta sem resolver, assim você pode visualizar a diferença (na representação do browser abaixo) antes e depois das modificações.
+                     </p>
+                     <res>
+                        <co-de file="index.html">
+                           &lt;html&gt;
+                           &lt;head&gt;
+                              &lt;script src="main.js"&gt;&lt;/script&gt;
+                              &lt;title&gt;JS Front&lt;/title&gt;
+                           &lt;/head&gt;
+                           &lt;body&gt;
+                              &lt;div class="container"&gt;
+                                 &lt;h1 class="titulo"&gt;clases de css com javascript&lt;/h2&gt;
+                              &lt;/div&gt;
+                           &lt;body&gt;
+                              &lt;/html&gt;
+                        </co-de>
+                        <co-de file="style.css">
+.container {
+   background:#ccc;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.titulo {
+   text-transform: uppercase;
+   color: lightslategrey;
+}
+                        </co-de>
+                        <co-de file="script.js">
+window.addEventListener('load', function() {
+   document.querySelector( "h1" ).classList.remove( "titulo" ) ;
+});
+                        </co-de>
+                     </res>
+                  </exercicio>
+                  
+                  <exercicio>
+                     <h2>Exercício 3</h2>
+                     <p>
+                        Temos um site com alguns elementos e classes definidas mas, não temos acesso ao HTML, portanto não podemos ver quais classes cada elemento possui.
+                     </p>
+                     <p>
+                        E neste caso queremos trabalhar com a classe titulo-tuneado . 
+                     </p>   
+                     <p>
+                        Para isso pedimos que, usando javascript, cheque se o &lt;h1&gt; possui essa classe definida para que, se não a tenha a mesma seja adicionada e se já a possuir, mantenha-a.
+                     </p>
+                     <res>
+                        <co-de file="index.html">
+&lt;html&gt;
+   &lt;head&gt;
+         &lt;script src="main.js"&gt;&lt;/script&gt;
+         &lt;title&gt;JS Front&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+         &lt;div class="container"&gt;
+            &lt;h1 class="titulo"&gt;clases css com javascript&lt;/h1&gt;
+         &lt;/div&gt;
+   &lt;body&gt;
+&lt;/html&gt;
+                        </co-de>
+                        <co-de file="style.css">
+.container {
+   background:#ccc;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.titulo {
+   text-transform: uppercase;
+   color: lightslategrey;
+}
+.titulo-tuneado {
+   font-size: 50px;
+   text-transform: uppercase;
+   background-color: #565656;
+   color: transparent;
+   text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+   -webkit-background-clip: text;
+   -moz-background-clip: text;
+   background-clip: text;
+}
+                        </co-de>
+                        <co-de file="script.js">
+window.addEventListener('load', function() {
+   document.querySelector( "h1" ).classList.toggle( "titulo-tuneado" );
+});
+                        </co-de>
+                     </res>
+                  </exercicio>
+                  
+               </exercicios>
             </modificando-estilos>
             
             <modificando-classes>
